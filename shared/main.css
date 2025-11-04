@@ -1,0 +1,133 @@
+
+*{
+    box-sizing: border-box; /* không tăng width khi dùng mergin và padding*/
+}
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    /*color: var(--text-primary);
+    background-color: var(--white-color);*/
+    margin:0px;
+    color: white; /* Tạm thời*/
+
+}
+/* ---HEADER---*/
+.header{
+    margin-bottom: 5px;
+
+}
+.header_top{
+    width: 100%;
+    height: 30px;
+    border: 1px solid black;
+    background: black;
+    padding-left: 10px ;
+    padding-right: 10px ;
+    padding-top: 1px;
+
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.header_center{
+    width: 100%;
+    height: 120px;
+    background: gray;
+    text-align: center;
+    align-content: center;
+    border-bottom: red solid 2px;
+
+
+}
+.header_center img {
+    float: left;
+    margin-left : 60px
+}
+.header_search{
+    margin-right: 50px;
+}
+
+.header_search input{
+    width: 600px;
+    height: 40px;
+    border: none;
+}
+.header_search button {
+    width: 50px;
+    height: 40px;
+    border: none;
+    background: red;
+}
+.action-item{
+    margin-right: 20px;
+}
+
+/* ---MAIN---*/
+    /* Left*/
+main{
+    display: flex;
+
+}
+.main_menu{
+    margin-top: 0px;
+    margin-left: 20px;
+    padding : 0px;
+
+}
+.main_container_left{
+    color : black; /* Tạm thời*/
+    width: 400px;
+
+
+
+}
+.main_menu_item {
+    border: 1px solid black;
+    padding-left: 15px;
+
+    align-content: center;
+}
+.main_container_left a{
+    color : black;
+
+
+}
+li{
+    list-style: none;
+}
+.main_container_left .main_menu .main_menu_item:hover{
+    background: lightgray;
+    cursor: pointer;
+    text-shadow: 0 0 1px black;
+}
+
+.main_container_left .main_menu .main_menu_item:hover .submenu{
+    display: block;
+    position: absolute;
+}
+.main_container_left .main_menu .main_menu_item .submenu{
+    display: none;
+
+}
+
+
+   /* right*/
+.main_container_right{
+    margin-left: 10px;
+     width: 1120px ;
+     height: 120px;
+    border: 1px solid black;
+}
+
+
+
+/* ---FOOTER--- */
+.footer_container{
+    width: 100%;
+    height: 100px;
+    background: black;
+
+}
