@@ -1,0 +1,312 @@
+/* ===== CÀI ĐẶT CHUNG & BIẾN ===== */
+:root {
+    --primary-color: #007bff; /* Màu chủ đạo */
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+    --text-color: #555;
+    --container-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+img {
+    max-width: 100%;
+}
+
+.section-padding {
+    padding: 50px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    color: var(--dark-color);
+}
+
+.bg-light {
+    background-color: var(--light-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+}
+.btn-secondary {
+    background-color: var(--dark-color);
+}
+
+/* ===== BLOCK 0: HEADER ===== */
+.header__top-bar {
+    background: var(--dark-color);
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 8px 0;
+}
+.header__top-bar .container {
+    display: flex;
+    align-items: center;
+}
+.header__top-bar .spacer {
+    flex-grow: 1;
+}
+.header__top-bar a {
+    color: #fff;
+    margin-left: 20px;
+}
+.header__main {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+.header__main .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--dark-color);
+}
+.header__search {
+    display: flex;
+    width: 50%;
+}
+.header__search input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-right: none;
+}
+.header__search button {
+    padding: 10px 15px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.header__actions a {
+    margin-left: 25px;
+    color: var(--dark-color);
+    font-size: 1.1rem;
+}
+.header__nav {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+.header__nav .container ul {
+    list-style: none;
+    display: flex;
+}
+.header__nav .nav-item a {
+    display: block;
+    padding: 15px 20px;
+    color: var(--dark-color);
+    font-weight: bold;
+}
+.header__nav .nav-item:hover a {
+    background-color: var(--light-color);
+}
+/* (Cần JS/CSS phức tạp hơn cho Mega Menu) */
+
+
+/* ===== BLOCK 1: HERO BANNER ===== */
+.hero-slide {
+    height: 500px; /* Chiều cao cố định cho banner */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+.hero-content {
+    background: rgba(0, 0, 0, 0.5); /* Lớp nền mờ để nổi text */
+    padding: 30px;
+    border-radius: 10px;
+}
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* ===== BLOCK 2: TRUST BADGES ===== */
+.trust-badges .container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.trust-badge {
+    flex-basis: 23%;
+}
+.trust-badge i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* ===== BLOCK 3: FEATURED CATEGORIES ===== */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 cột */
+    gap: 20px;
+}
+.category-item {
+    text-align: center;
+    color: var(--dark-color);
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+.category-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+.category-item:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* ===== BLOCK 4: BEST SELLERS (Product Card) ===== */
+.product-card {
+    border: 1px solid #eee;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+}
+.product-card img {
+    margin-bottom: 15px;
+}
+.product-card h3 {
+    font-size: 1.1rem;
+    color: var(--dark-color);
+}
+.product-card .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+/* ===== BLOCK 5: SHOP BY ECOSYSTEM ===== */
+.ecosystem-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.ecosystem-item {
+    padding: 30px;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.ecosystem-item img {
+    display: block;
+    margin: 0 auto 15px auto;
+    width: 80px;
+}
+
+/* ===== BLOCK 10: FOOTER ===== */
+.footer {
+    background: var(--dark-color);
+    color: #ccc;
+    padding-top: 50px;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+.footer-col h4 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+.footer-col p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+.footer-col ul {
+    list-style: none;
+}
+.footer-col ul li a {
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 2.2;
+}
+.footer-col ul li a:hover {
+    color: #fff;
+}
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-right: 15px;
+}
+.subscribe-form {
+    display: flex;
+    margin-top: 15px;
+}
+.subscribe-form input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+}
+.subscribe-form button {
+    padding: 8px 12px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+}
+
+/* CSS cho SWIPER.JS (Cần thiết cho slider) */
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+/* Định kiểu lại cho các nút next/prev của Swiper nếu cần */
+#bestseller-slider .swiper-button-next,
+#bestseller-slider .swiper-button-prev {
+    color: var(--primary-color);
+}
