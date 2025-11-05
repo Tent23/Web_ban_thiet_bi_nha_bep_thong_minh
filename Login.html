@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập </title>
+    <link rel="stylesheet" href="pages/TrongBao/Login.css">
+
+</head>
+<body>
+
+<div class="login-container">
+    <form id="login-form">
+        <h1>Đăng Nhập</h1>
+
+        <div class="input-group">
+            <label for="username">Tên đăng nhập:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <div class="input-group">
+            <label for="password">Mật khẩu:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="extra-links">
+            <a href="#" id="forgot-password-link">Quên mật khẩu?</a>
+        </div>
+
+        <button type="submit" class="btn-primary">Đăng Nhập</button>
+
+        <p id="message"></p>
+    </form>
+
+    <div class="divider">
+        <span>HOẶC</span>
+    </div>
+
+    <div class="social-login">
+        <button class="social-btn google" id="google-login">
+            Đăng nhập với Google
+        </button>
+        <button class="social-btn facebook" id="facebook-login">
+            Đăng nhập với Facebook
+        </button>
+    </div>
+
+    <div class="register-link">
+        <p>Chưa có tài khoản? <a href="#" id="register-link">Đăng ký ngay</a></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -30,39 +30,6 @@ a {
     color: var(--primary-color);
 }
 
-img {
-    max-width: 100%;
-}
-
-.section-padding {
-    padding: 50px 0;
-}
-
-.section-title {
-    text-align: center;
-    font-size: 2.2rem;
-    margin-bottom: 40px;
-    color: var(--dark-color);
-}
-
-.bg-light {
-    background-color: var(--light-color);
-}
-
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    border: none;
-}
-.btn-primary {
-    background-color: var(--primary-color);
-}
-.btn-secondary {
-    background-color: var(--dark-color);
-}
 
 /* ===== BLOCK 0: HEADER ===== */
 .header__top-bar {
