@@ -3,13 +3,18 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f2f5;
     display: flex;
+    flex-direction: column;
+
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Sử dụng min-height để linh hoạt */
     margin: 0;
-    padding: 20px 0; /* Thêm padding cho màn hình nhỏ */
+    padding: 0px;
 }
-
+header{
+    width: 100%;
+    margin-bottom: 30px;
+}
 /* Container chính */
 .login-container {
     background-color: #ffffff;
@@ -168,3 +173,8 @@ h1 {
 
 .success {
     color: green;
+}
+footer{
+    width: 100%;
+    margin-top :30px;
+}
