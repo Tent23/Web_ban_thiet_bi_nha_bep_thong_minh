@@ -131,11 +131,16 @@ h1 {
 .social-btn.google {
     background-color: #db4437; /* Màu của Google */
     color: white;
+    padding-right: 30px;
 }
 
 .social-btn.facebook {
     background-color: #4267b2; /* Màu của Facebook */
     color: white;
+}
+.social-btn i {
+    margin-right: 20px;
+    font-size: 18px;
 }
 
 /* Liên kết đăng ký */
