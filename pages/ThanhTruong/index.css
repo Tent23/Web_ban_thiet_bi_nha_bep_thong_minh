@@ -1,13 +1,4 @@
-/* ===== CÀI ĐẶT CHUNG & BIẾN (Cần thiết cho Footer) ===== */
-:root {
-    --primary-color: #007bff; /* Màu chủ đạo */
-    --dark-color: #333;
-    --light-color: #f4f4f4;
-    --text-color: #555;
-    --container-width: 1200px;
-}
 
-/* Lớp layout container (Cần thiết cho Footer) */
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
