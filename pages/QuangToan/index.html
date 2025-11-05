@@ -1,16 +1,55 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sản phẩm - Thiết bị nhà bếp thông minh</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tất cả sản phẩm</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <script src="./script.js"></script>
-     <div id="header"></div>
-    <div class="product-container">
-          <h1 class="title">Sản phẩm nổi bật</h1>
-          <div class="product-grid" id="productList"></div>
+  <!-- Header -->
+  <header class="header">
+    <div class="header_top">
+      <span style="float: left;">Hotline: </span>
+      <a style="float:right;" href="#"><i class="fa fa-user"></i> Đăng nhập</a>
     </div>
-    <div id="footer"></div>
+
+    <div class="header_center">
+      <img style="float: left" src="../../assets/images/logo.png" alt="LOGO" height="50">
+      <div class="header_search">
+        <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi...">
+        <button class="search"><i class="fa fa-search"></i></button>
+      </div>
+      <div class="action">
+        <a class="action-item" href="#"><i class="fa fa-heart"></i> Yêu thích</a>
+        <a class="action-item" href="#"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <div class="container">
+    <aside>
+      <h3>Danh mục</h3>
+      <div class="category">
+        <button data-cat="tu-bep">🏠 Tủ bếp</button>
+        <button data-cat="ban-ghe">🪑 Bàn ghế</button>
+        <button data-cat="giuong-ngu">🛏️ Giường ngủ</button>
+        <button data-cat="tu-quan-ao">👔 Tủ quần áo</button>
+        <button data-cat="sofa">🛋️ Sofa</button>
+        <button data-cat="den-trang-tri">💡 Đèn trang trí</button>
+      </div>
+    </aside>
+
+    <main>
+      <h2 id="categoryTitle">Vui lòng chọn danh mục</h2>
+      <div id="productList" class="product-grid"></div>
+    </main>
+  </div>
+
+  <footer>© 2024 Cửa Hàng Nội Thất - Chất lượng là danh dự</footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
