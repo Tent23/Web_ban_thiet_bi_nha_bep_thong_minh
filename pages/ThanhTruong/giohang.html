@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giỏ hàng - Thế Giới Bếp Thông Minh</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="giohang.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="../TrongBao/Header.css">
     <script src="../../js/jsTruong/giohang.js"></script>
+    <script src="yeuthich.js"></script>
+    <link rel="stylesheet" href="../../shared/main.css">
+    <link rel="stylesheet" href="giohang.css">
 </head>
 <body>
 
@@ -27,14 +28,14 @@
     </div>
     <div class="header__main">
         <div class="container">
-            <a href="/" class="header__logo">LOGO</a>
+            <a href="../../index.html" class="header__logo">LOGO</a>
             <div class="header__search">
                 <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi...">
                 <button><i class="fa fa-search"></i></button>
             </div>
             <div class="header__actions">
                 <a href="#"><i class="fa fa-user"></i> Tài khoản</a>
-                <a href="#"><i class="fa fa-heart"></i> Yêu thích</a>
+                <a href="./yeuthich.html"><i class="fa fa-heart"></i> Yêu thích</a>
                 <a href="giohang.html"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
             </div>
         </div>
@@ -69,7 +70,7 @@
                     <table class="cart-table">
                         <thead>
                         <tr>
-                            <th colspan="2">Sản phẩm</th>
+                            <th>Sản phẩm</th>
                             <th>Giá</th>
                             <th>Số lượng</th>
                             <th>Tạm tính</th>
@@ -78,45 +79,45 @@
                         </thead>
                         <tbody>
                         <tr class="cart-item-row" data-price="15000000">
-                            <td class="cart-item-image">
-                                <img src="https://placehold.co/100x100/eee/333?text=Bếp+Từ" alt="Bếp từ">
-                            </td>
                             <td class="cart-item-info">
-                                <a href="#">Bếp từ Thông minh Bosch XYZ</a>
-                                <small>Thương hiệu: Bosch</small>
+                                <a href="#" class="cart-item-name">Bếp từ Thông minh Bosch XYZ</a>
+                                <div class="cart-item-details">
+                                    <img src="https://placehold.co/100x100/eee/333?text=Bếp+Từ" alt="Bếp từ">
+                                    <small>Thương hiệu: Bosch</small>
+                                </div>
                             </td>
-                            <td class="cart-item-price">15.000.000đ</td>
-                            <td class="cart-item-quantity">
+                            <td class="cart-item-price" data-label="Giá">15.000.000đ</td>
+                            <td class="cart-item-quantity" data-label="Số lượng">
                                 <div class="quantity-control">
                                     <button class="quantity-down">-</button>
                                     <input type="number" class="quantity-input" value="1" min="1">
                                     <button class="quantity-up">+</button>
                                 </div>
                             </td>
-                            <td class="cart-item-subtotal">15.000.000đ</td>
-                            <td class="cart-item-remove">
+                            <td class="cart-item-subtotal" data-label="Tạm tính">15.000.000đ</td>
+                            <td class="cart-item-remove" data-label="Xóa">
                                 <a href="#" class="cart-remove-btn"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>
 
                         <tr class="cart-item-row" data-price="8500000">
-                            <td class="cart-item-image">
-                                <img src="https://placehold.co/100x100/eee/333?text=Robot" alt="Robot Hút Bụi">
-                            </td>
                             <td class="cart-item-info">
-                                <a href="#">Robot Hút bụi Xiaomi ABC</a>
-                                <small>Thương hiệu: Xiaomi</small>
+                                <a href="#" class="cart-item-name">Robot Hút bụi Xiaomi ABC</a>
+                                <div class="cart-item-details">
+                                    <img src="https://placehold.co/100x100/eee/333?text=Robot" alt="Robot Hút Bụi">
+                                    <small>Thương hiệu: Xiaomi</small>
+                                </div>
                             </td>
-                            <td class="cart-item-price">8.500.000đ</td>
-                            <td class="cart-item-quantity">
+                            <td class="cart-item-price" data-label="Giá">8.500.000đ</td>
+                            <td class="cart-item-quantity" data-label="Số lượng">
                                 <div class="quantity-control">
                                     <button class="quantity-down">-</button>
                                     <input type="number" class="quantity-input" value="1" min="1">
                                     <button class="quantity-up">+</button>
                                 </div>
                             </td>
-                            <td class="cart-item-subtotal">8.500.000đ</td>
-                            <td class="cart-item-remove">
+                            <td class="cart-item-subtotal" data-label="Tạm tính">8.500.000đ</td>
+                            <td class="cart-item-remove" data-label="Xóa">
                                 <a href="#" class="cart-remove-btn"><i class="fa fa-trash"></i></a>
                             </td>
                         </tr>

@@ -154,13 +154,9 @@
     display: block;
     text-align: center;
     margin-top: 20px;
+    color: var(--text-secondary);
     font-weight: 500;
 }
-
-.continue-shopping-link {
-    color: var(--text-secondary);
-}
-
 .continue-shopping-link i {
     margin-right: 5px;
 }
@@ -169,7 +165,9 @@
 }
 @media (max-width: 992px) {
     .cart-container {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 2.5fr 1.5fr;
+        gap: 30px;
     }
     .cart-summary {
         margin-top: 30px;
@@ -203,16 +201,9 @@
     .cart-table td::before {
         content: attr(data-label);
         font-weight: 600;
+        color: var(--text-secondary);
         margin-right: 10px;
     }
-
-    .cart-table td::before {
-    }
-
-    .cart-table td::before {
-        color: var(--text-secondary);
-    }
-
     .cart-item-image {
         display: none;
     }
@@ -270,12 +261,8 @@
     text-align: right;
     white-space: nowrap;
     font-weight: 600;
-    font-size: 1.1rem;
-}
-
-.cart-item-price,
-.cart-item-subtotal {
     color: var(--text-primary);
+    font-size: 1.1rem;
 }
 
 .cart-item-quantity,
@@ -290,4 +277,67 @@
 .cart-item-info {
     white-space: normal;
     word-wrap: break-word;
+}
+.section-padding {
+    padding: 50px 0;
+}
+.cart-item-image {
+    display: none;
+}
+
+.cart-item-info {
+    vertical-align: top;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.cart-item-name {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 12px;
+}
+.cart-item-name:hover {
+    color: var(--primary-color);
+}
+
+.cart-item-details {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-details img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin-right: 15px;
+}
+
+.cart-item-details small {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.cart-table th:nth-child(1) {
+    width: auto;
+}
+.cart-table th:nth-child(2) {
+    width: 160px;
+    text-align: right;
+}
+.cart-table th:nth-child(3) {
+    width: 120px;
+    text-align: center;
+}
+.cart-table th:nth-child(4) {
+    width: 170px;
+    text-align: right;
+}
+.cart-table th:nth-child(5) {
+    width: 60px;
+    text-align: center;
 }

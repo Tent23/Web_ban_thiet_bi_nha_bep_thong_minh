@@ -125,24 +125,35 @@ img {
 
 /* ===== BLOCK 4: BEST SELLERS (Product Card) ===== */
 .product-card {
-    border: 1px solid #eee;
+    border: 1px solid var(--light-color);
     background: #fff;
     text-align: center;
     padding: 15px;
-    border-radius: 8px;
-}
-.product-card img {
-    margin-bottom: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 .product-card h3 {
     font-size: 1.1rem;
     color: var(--dark-color);
 }
+.product-card h3 {
+    font-size: 1.1rem;
+    color: var(--dark-color);
+    min-height: 2.5em;
+}
 .product-card .price {
     font-size: 1.2rem;
     font-weight: bold;
     color: var(--primary-color);
-    margin: 10px 0;
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+.product-card .btn-secondary {
+    display: block;
+    width: 100%;
 }
 
 /* ===== BLOCK 5: SHOP BY ECOSYSTEM ===== */
