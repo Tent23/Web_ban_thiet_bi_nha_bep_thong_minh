@@ -1,63 +1,46 @@
-const data = {
+// ========== GIẢ LẬP DỮ LIỆU SẢN PHẨM ==========
+const products = {
   "tu-bep": [
-    { name: "Tủ bếp hiện đại", price: "15.000.000đ", desc: "Tủ bếp gỗ công nghiệp cao cấp" },
-    { name: "Tủ bếp chữ L", price: "18.000.000đ", desc: "Thiết kế tối ưu không gian" }
+    { name: "Tủ bếp gỗ sồi", price: "12.000.000đ", img: "https://via.placeholder.com/250x180?text=Tủ+bếp+1" },
+    { name: "Tủ bếp thông minh", price: "18.500.000đ", img: "https://via.placeholder.com/250x180?text=Tủ+bếp+2" }
   ],
-  "ban-ghe": [
-    { name: "Bàn ăn 4 ghế", price: "5.000.000đ", desc: "Gỗ tự nhiên bền đẹp" },
-    { name: "Ghế sofa đơn", price: "4.000.000đ", desc: "Êm ái, thoải mái" }
+  "chen": [
+    { name: "Bộ chén sứ trắng cao cấp", price: "450.000đ", img: "https://via.placeholder.com/250x180?text=Chén+1" },
+    { name: "Bộ chén họa tiết xanh", price: "520.000đ", img: "https://via.placeholder.com/250x180?text=Chén+2" }
   ],
-  "giuong-ngu": [
-    { name: "Giường 1m8", price: "8.000.000đ", desc: "Giường ngủ cao cấp" },
-    { name: "Giường tầng trẻ em", price: "10.000.000đ", desc: "Tiện lợi cho bé" }
+  "noi": [
+    { name: "Nồi inox 3 đáy", price: "650.000đ", img: "https://via.placeholder.com/250x180?text=Nồi+1" },
+    { name: "Nồi áp suất điện", price: "1.200.000đ", img: "https://via.placeholder.com/250x180?text=Nồi+2" }
   ],
-  "tu-quan-ao": [
-    { name: "Tủ 3 cánh", price: "7.000.000đ", desc: "Rộng rãi, hiện đại" },
-    { name: "Tủ cửa lùa", price: "12.000.000đ", desc: "Tiết kiệm không gian" }
-  ],
-  "sofa": [
-    { name: "Sofa 2 chỗ", price: "8.000.000đ", desc: "Thiết kế tinh tế" },
-    { name: "Sofa góc L", price: "15.000.000đ", desc: "Phù hợp phòng khách lớn" }
-  ],
-  "den-trang-tri": [
-    { name: "Đèn chùm pha lê", price: "5.000.000đ", desc: "Sang trọng, đẳng cấp" },
-    { name: "Đèn ngủ để bàn", price: "500.000đ", desc: "Nhỏ gọn, ấm cúng" }
+  "bep-tu": [
+    { name: "Bếp từ đôi Panasonic", price: "5.900.000đ", img: "https://via.placeholder.com/250x180?text=Bếp+từ+1" },
+    { name: "Bếp từ cảm ứng Bosch", price: "7.200.000đ", img: "https://via.placeholder.com/250x180?text=Bếp+từ+2" }
   ]
 };
 
-const catButtons = document.querySelectorAll('.category button');
-const title = document.getElementById('categoryTitle');
-const productList = document.getElementById('productList');
+// ========== XỬ LÝ KHI CLICK DANH MỤC ==========
+const heroBanner = document.getElementById("hero-banner");
+const productSection = document.getElementById("product-section");
+const menuItems = document.querySelectorAll(".menu-item");
 
-catButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    catButtons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const cat = btn.dataset.cat;
-    showProducts(cat);
+menuItems.forEach(item => {
+  item.addEventListener("click", () => {
+    const category = item.dataset.category;
+    const list = products[category] || [];
+
+    // Cập nhật hero banner
+    heroBanner.innerHTML = `
+      <h1>${item.textContent}</h1>
+      <p>Các sản phẩm nổi bật về ${item.textContent.toLowerCase()}.</p>
+    `;
+
+    // Render sản phẩm
+    productSection.innerHTML = list.map(p => `
+      <div class="product-card">
+        <img src="${p.img}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p>${p.price}</p>
+      </div>
+    `).join("");
   });
 });
-
-function showProducts(cat) {
-  const products = data[cat] || [];
-  title.textContent = getCategoryName(cat);
-  productList.innerHTML = products.map(p => `
-    <div class="product-card">
-      <h4>${p.name}</h4>
-      <p class="price">${p.price}</p>
-      <p>${p.desc}</p>
-    </div>
-  `).join('');
-}
-
-function getCategoryName(cat) {
-  const names = {
-    "tu-bep": "Tủ bếp",
-    "ban-ghe": "Bàn ghế",
-    "giuong-ngu": "Giường ngủ",
-    "tu-quan-ao": "Tủ quần áo",
-    "sofa": "Sofa",
-    "den-trang-tri": "Đèn trang trí"
-  };
-  return names[cat] || "Sản phẩm";
-}

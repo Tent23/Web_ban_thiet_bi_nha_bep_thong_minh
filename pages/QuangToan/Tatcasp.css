@@ -1,0 +1,58 @@
+/* ===== DROPDOWN ===== */
+.nav-item {
+  position: relative;
+}
+.mega-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  width: 250px;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+  padding: 10px;
+}
+.nav-item.has-megamenu:hover .mega-menu {
+  display: block;
+}
+.mega-menu-column h4 {
+  font-size: 0.95rem;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+.mega-menu-column a {
+  display: block;
+  color: var(--dark-color);
+  padding: 5px 0;
+}
+.mega-menu-column a:hover {
+  color: var(--primary-color);
+}
+/* css cho sanpham 
+*/
+.product-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+.product-card {
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.2s;
+}
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
