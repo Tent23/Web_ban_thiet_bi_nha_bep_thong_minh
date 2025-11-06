@@ -3,53 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tất cả sản phẩm</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Trang chủ - Thế Giới Bếp Thông Minh</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="../pages/TrongBao/Header.css">
+
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="header_top">
-      <span style="float: left;">Hotline: </span>
-      <a style="float:right;" href="#"><i class="fa fa-user"></i> Đăng nhập</a>
+
+<header class="header">
+  <div class="header__top-bar">
+    <div class="container">
+      <span><i class="fa fa-phone"></i> Hỗ trợ Kỹ thuật: 1900.1234</span>
+      <span><i class="fa fa-phone"></i> Kinh doanh: 1900.5678</span>
+      <span class="spacer"></span>
+      <a href="#">Hệ thống Showroom</a>
+      <a href="#">Tra cứu Bảo hành</a>
     </div>
-
-    <div class="header_center">
-      <img style="float: left" src="../../assets/images/logo.png" alt="LOGO" height="50">
-      <div class="header_search">
-        <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi...">
-        <button class="search"><i class="fa fa-search"></i></button>
-      </div>
-      <div class="action">
-        <a class="action-item" href="#"><i class="fa fa-heart"></i> Yêu thích</a>
-        <a class="action-item" href="#"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- Content -->
-  <div class="container">
-    <aside>
-      <h3>Danh mục</h3>
-      <div class="category">
-        <button data-cat="tu-bep">🏠 Tủ bếp</button>
-        <button data-cat="ban-ghe">🪑 Bàn ghế</button>
-        <button data-cat="giuong-ngu">🛏️ Giường ngủ</button>
-        <button data-cat="tu-quan-ao">👔 Tủ quần áo</button>
-        <button data-cat="sofa">🛋️ Sofa</button>
-        <button data-cat="den-trang-tri">💡 Đèn trang trí</button>
-      </div>
-    </aside>
-
-    <main>
-      <h2 id="categoryTitle">Vui lòng chọn danh mục</h2>
-      <div id="productList" class="product-grid"></div>
-    </main>
   </div>
 
-  <footer>© 2024 Cửa Hàng Nội Thất - Chất lượng là danh dự</footer>
+  <div class="header__main">
+    <div class="container">
+      <a href="/" class="header__logo">LOGO</a>
+      <div class="header__search">
+        <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi...">
+        <button><i class="fa fa-search"></i></button>
+      </div>
+      <div class="header__actions">
+        <a href="login_index.html"><i class="fa fa-user"></i> Tài khoản</a>
+        <a href="#"><i class="fa fa-heart"></i> Yêu thích</a>
+        <a href="#"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
+      </div>
+    </div>
+  </div>
 
-  <script src="script.js"></script>
+  <nav class="header__nav">
+    <div class="container">
+      <ul>
+        <li class="nav-item has-megamenu">
+          <a href="#">Sản phẩm <i class="fa fa-chevron-down"></i></a>
+          <div class="mega-menu">
+            <!-- ⚡ Thêm danh mục linh động -->
+            <div class="mega-menu-content">
+              <div class="mega-menu-column">
+                <h4>🔹 Thiết bị bếp</h4>
+                <a class="menu-item" data-category="tu-bep">Tủ bếp</a>
+                <a class="menu-item" data-category="chen">Chén dĩa</a>
+                <a class="menu-item" data-category="noi">Nồi</a>
+                <a class="menu-item" data-category="bep-tu">Bếp từ</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-item"><a href="#">Giải pháp & Combo</a></li>
+        <li class="nav-item"><a href="#">Góc Tư vấn</a></li>
+        <li class="nav-item"><a href="#">Dịch vụ Lắp đặt</a></li>
+        <li class="nav-item"><a href="#">Về chúng tôi</a></li>
+        <li class="nav-item"><a href="#">Khuyến mãi</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<!-- ⚡ Thêm hero banner -->
+<section id="hero-banner" class="hero-banner">
+  <h1>Chào mừng đến với Thế Giới Bếp Thông Minh</h1>
+  <p>Chọn danh mục để xem sản phẩm nổi bật.</p>
+</section>
+
+<!-- ⚡ Khu vực hiển thị sản phẩm -->
+<section id="product-section" class="product-section">
+  <!-- Sản phẩm sẽ được render bằng JS -->
+</section>
+
+<!-- ⚡ Script -->
+<script src="script.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng - Thế Giới Bếp Thông Minh</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../TrongBao/Header.css">
+    <script src="../../js/jsTruong/giohang.js"></script>
+    <script src="yeuthich.js"></script>
+    <link rel="stylesheet" href="../../shared/main.css">
+    <link rel="stylesheet" href="giohang.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="header__top-bar">
+        <div class="container">
+            <span><i class="fa fa-phone"></i> Hỗ trợ Kỹ thuật: 1900.1234</span>
+            <span><i class="fa fa-phone"></i> Kinh doanh: 1900.5678</span>
+            <span class="spacer"></span>
+            <a href="#">Hệ thống Showroom</a>
+            <a href="#">Tra cứu Bảo hành</a>
+        </div>
+    </div>
+    <div class="header__main">
+        <div class="container">
+            <a href="./index.html" class="header__logo">
+                <img src="../../assets/images/banners/logo.png" alt="TTB">
+            </a>
+            <div class="header__search">
+                <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+            <div class="header__actions">
+                <a href="#"><i class="fa fa-user"></i> Tài khoản</a>
+                <a href="./yeuthich.html"><i class="fa fa-heart"></i> Yêu thích</a>
+                <a href="giohang.html"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
+            </div>
+        </div>
+    </div>
+    <nav class="header__nav">
+        <div class="container">
+            <ul>
+                <li class="nav-item has-megamenu">
+                    <a href="#">Sản phẩm <i class="fa fa-chevron-down"></i></a>
+                    <div class="mega-menu">
+                        <p>Đây là nội dung Mega Menu cho Sản phẩm</p>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="#">Giải pháp & Combo</a></li>
+                <li class="nav-item"><a href="#">Góc Tư vấn</a></li>
+                <li class="nav-item"><a href="#">Dịch vụ Lắp đặt</a></li>
+                <li class="nav-item"><a href="#">Về chúng tôi</a></li>
+                <li class="nav-item"><a href="#">Khuyến mãi</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main class="main-content">
+    <section class="cart-section section-padding">
+        <div class="container">
+            <h1 class="section-title">Giỏ hàng của bạn</h1>
+
+            <div class="cart-container">
+
+                <div class="cart-items-list">
+                    <table class="cart-table">
+                        <thead>
+                        <tr>
+                            <th>Sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Tạm tính</th>
+                            <th>Xóa</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="cart-item-row" data-price="15000000">
+                            <td class="cart-item-info">
+                                <a href="#" class="cart-item-name">Bếp từ Thông minh Bosch XYZ</a>
+                                <div class="cart-item-details">
+                                    <img src="https://placehold.co/100x100/eee/333?text=Bếp+Từ" alt="Bếp từ">
+                                    <small>Thương hiệu: Bosch</small>
+                                </div>
+                            </td>
+                            <td class="cart-item-price" data-label="Giá">15.000.000đ</td>
+                            <td class="cart-item-quantity" data-label="Số lượng">
+                                <div class="quantity-control">
+                                    <button class="quantity-down">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1">
+                                    <button class="quantity-up">+</button>
+                                </div>
+                            </td>
+                            <td class="cart-item-subtotal" data-label="Tạm tính">15.000.000đ</td>
+                            <td class="cart-item-remove" data-label="Xóa">
+                                <a href="#" class="cart-remove-btn"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+
+                        <tr class="cart-item-row" data-price="8500000">
+                            <td class="cart-item-info">
+                                <a href="#" class="cart-item-name">Robot Hút bụi Xiaomi ABC</a>
+                                <div class="cart-item-details">
+                                    <img src="https://placehold.co/100x100/eee/333?text=Robot" alt="Robot Hút Bụi">
+                                    <small>Thương hiệu: Xiaomi</small>
+                                </div>
+                            </td>
+                            <td class="cart-item-price" data-label="Giá">8.500.000đ</td>
+                            <td class="cart-item-quantity" data-label="Số lượng">
+                                <div class="quantity-control">
+                                    <button class="quantity-down">-</button>
+                                    <input type="number" class="quantity-input" value="1" min="1">
+                                    <button class="quantity-up">+</button>
+                                </div>
+                            </td>
+                            <td class="cart-item-subtotal" data-label="Tạm tính">8.500.000đ</td>
+                            <td class="cart-item-remove" data-label="Xóa">
+                                <a href="#" class="cart-remove-btn"><i class="fa fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cart-summary">
+                    <h3>Tổng quan Đơn hàng</h3>
+                    <div class="summary-row">
+                        <span>Tạm tính</span>
+                        <span id="cart-subtotal">23.500.000đ</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Phí vận chuyển</span>
+                        <span>Miễn phí</span>
+                    </div>
+                    <div class="summary-row total-row">
+                        <span>Tổng cộng</span>
+                        <span id="cart-total">23.500.000đ</span>
+                    </div>
+                    <a href="#" class="btn btn-primary checkout-btn">Tiến hành Thanh toán</a>
+                    <a href="../../index.html" class="continue-shopping-link">
+                        <i class="fa fa-arrow-left"></i> Tiếp tục mua sắm
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>VỀ CHÚNG TÔI</h4>
+                <p>Công ty TNHH Bếp Thông Minh TTB<br>
+                    MST: 031xxxxxxx<br>
+                    Địa chỉ: Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh<br>
+                    Hotline: 1900.1234<br>
+                    Email: 23130356@.hcmuaf.edu.vn</p>
+            </div>
+            <div class="footer-col">
+                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                <ul>
+                    <li><a href="#">Chính sách Bảo hành</a></li>
+                    <li><a href="#">Chính sách Vận chuyển & Lắp đặt</a></li>
+                    <li><a href="#">Chính sách Đổi trả</a></li>
+                    <li><a href="#">Phương thức Thanh toán</a></li>
+                    <li><a href="#">Câu hỏi Thường gặp (FAQs)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>LIÊN KẾT NHANH</h4>
+                <ul>
+                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="#">Hệ thống Showroom</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Dành cho Đối tác B2B</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p>Đăng ký nhận tin khuyến mãi:</p>
+                <form class="subscribe-form">
+                    <input type="email" placeholder="Email của bạn">
+                    <button type="submit">Đăng ký</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Bản quyền thuộc về Bếp Thông Minh TTB.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
