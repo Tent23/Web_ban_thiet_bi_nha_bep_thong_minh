@@ -2,16 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Hệ thống Showroom</title>
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="../ThanhTruong/index.css">
+    <link rel="stylesheet" href="showroom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="../TrongBao/Header.css">
-    <script src="../../js/jsTruong/giohang.js"></script>
-    <link rel="stylesheet" href="yeuthich.css">
-    <script src="yeuthich.js"></script>
-    <link rel="stylesheet" href="../../shared/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="../../js/jsBao/showroom.js"></script>
+
 </head>
 <body>
 <header class="header">
@@ -26,17 +24,15 @@
     </div>
     <div class="header__main">
         <div class="container">
-            <a href="../../index.html" class="header__logo">
-                <img src="../../assets/images/banners/logo.png" alt="TTB">
-            </a>
+            <a href="" class="header__logo">LOGO</a>
             <div class="header__search">
                 <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi...">
                 <button><i class="fa fa-search"></i></button>
             </div>
             <div class="header__actions">
-                <a href="pages/TrongBao/Login.html"><i class="fa fa-user"></i> Tài khoản</a>
+                <a href="login_index.html"><i class="fa fa-user"></i> Tài khoản</a>
                 <a href="#"><i class="fa fa-heart"></i> Yêu thích</a>
-                <a href="./giohang.html"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
+                <a href="#"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
             </div>
         </div>
     </div>
@@ -58,41 +54,62 @@
         </div>
     </nav>
 </header>
-
 <main class="main-content">
-    <section class="wishlist-section section-padding">
-        <div class="container">
-            <h1 class="section-title">Sản phẩm Yêu thích</h1>
+   <div style = "text-align: center;"><h1>Showroom tại Hà Nội </h1> </div>
+    <div class = "introduce">Hà Nội là thủ đô của Việt Nam, đồng thời là thành phố đông dân thứ hai cả nước với hơn 8 triệu dân, chính vì vậy mà nhu cầu sử dụng thiết bị bếp ở nơi đây là không có gì để bàn cãi.</div>
+    <section class="hero-banner swiper" id="hero-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide hero-slide" style="background-image: url('https://placehold.co/1920x600/333/fff?text=Hero+Banner+1');">
+                <div class="hero-content">
+                    <img src="https://thegioibepnhapkhau.vn/media/news/1205_the-gioi-bep-nhap-khau-3.jpg">
 
-            <div class="wishlist-grid">
-
-                <div class="product-card wishlist-item">
-                    <a href="#" class="wishlist-remove-btn"><i class="fa fa-times"></i></a>
-                    <img src="https://placehold.co/300x300/fff/333?text=Sản+Phẩm+1" alt="Sản phẩm 1">
-                    <h3>Bếp từ Thông minh Bosch XYZ</h3>
-                    <div class="price">15.000.000đ</div>
-                    <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
                 </div>
+            </div>
+            <div class="swiper-slide hero-slide" style="background-image: url('https://placehold.co/1920x600/444/fff?text=Hero+Banner+2');">
+                <div class="hero-content">
+                    <img src="https://thegioibepnhapkhau.vn/media/news/1205_the-gioi-bep-nhap-khau-3.jpg">
 
-                <div class="product-card wishlist-item">
-                    <a href="#" class="wishlist-remove-btn"><i class="fa fa-times"></i></a>
-                    <img src="https://placehold.co/300x300/fff/333?text=Sản+Phẩm+2" alt="Sản phẩm 2">
-                    <h3>Robot Hút bụi Xiaomi ABC</h3>
-                    <div class="price">8.500.000đ</div>
-                    <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
                 </div>
-
-                <div class="product-card wishlist-item">
-                    <a href="#" class="wishlist-remove-btn"><i class="fa fa-times"></i></a>
-                    <img src="https://placehold.co/300x300/fff/333?text=Sản+Phẩm+3" alt="Sản phẩm 3">
-                    <h3>Tủ lạnh Thông minh Samsung</h3>
-                    <div class="price">22.000.000đ</div>
-                    <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                </div>
-
             </div>
         </div>
+        <div class="swiper-pagination"></div>
     </section>
+    <div class = "content">
+          <div class = "adress">Cửa hàng bếp : 41 Thanh Nhàn - Q. Hai Bà Trưng - TP. Hà Nội (Đối diện BV Thanh Nhàn)</div>
+          <ul>
+              <li>Hotline: </li>
+              <li>ĐT: </li>
+          </ul>
+    </div>
+</main>
+<hr>
+<main class="main-content">
+    <div style = "text-align: center;"><h1>Showroom tại TP.HCM </h1> </div>
+    <div class = "introduce">Thành phố Hồ Chí minh là thành phố nhộn nhịp và đông đúc nhất cả nước hiện nay với hơn 9 triệu dân. Sống trong một thành phố hoa lệ và phát triển nhất cả nước, chắc chắn nhu cầu của người tiêu dùng là rất lớn. Vậy nên không quá khó để bạn có thể tìm được những showroom thiết bị nhà bếp tại TP Hồ Chí Minh.</div>
+    <section class="hero-banner swiper" id="hero-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide hero-slide" style="background-image: url('https://placehold.co/1920x600/333/fff?text=Hero+Banner+1');">
+                <div class="hero-content">
+                    <img src="https://thegioibepnhapkhau.vn/media/news/1205_the-gioi-bep-nhap-khau-3.jpg">
+
+                </div>
+            </div>
+            <div class="swiper-slide hero-slide" style="background-image: url('https://placehold.co/1920x600/444/fff?text=Hero+Banner+2');">
+                <div class="hero-content">
+                    <img src="https://thegioibepnhapkhau.vn/media/news/1205_the-gioi-bep-nhap-khau-3.jpg">
+
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+    </section>
+    <div class = "content">
+        <div class = "adress">Cửa hàng bếp : 591 Hoàng Văn Thụ - Q. Tân Bình - TP. HCM (Đối diện TT triển lãm Tân Bình)</div>
+        <ul>
+            <li>Hotline: </li>
+            <li>ĐT: </li>
+        </ul>
+    </div>
 </main>
 
 <footer class="footer">
@@ -145,5 +162,6 @@
         <p>&copy; 2025 Bản quyền thuộc về Bếp Thông Minh TTB.</p>
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 </html>

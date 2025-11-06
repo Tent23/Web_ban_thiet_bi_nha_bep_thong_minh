@@ -4,7 +4,7 @@
     --dark-color: #333;
     --light-color: #f4f4f4;
     --text-color: #555;
-    --container-width: 1500px;
+    --container-width: 1200px;
 }
 
 * {
@@ -101,4 +101,9 @@ a {
 }
 .header__nav .nav-item:hover a {
     background-color: var(--light-color);
+}
+.header__logo img {
+    height:80px;
+    width: auto;
+    display: block;
 }
