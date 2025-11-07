@@ -1,88 +1,138 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trang chủ - Thế Giới Bếp Thông Minh</title>
 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../TrongBao/Header.css">
-    <link rel="stylesheet" href="Tatcasp.css">
-    <link rel="stylesheet" href="../../shared/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../TrongBao/Header.css">
+  <link rel="stylesheet" href="Tatcasp.css">
+  <link rel="stylesheet" href="../../shared/main.css">
 </head>
+
 <body>
 
-<header class="header">
-  <div class="header__top-bar">
-    <div class="container">
-      <span><i class="fa fa-phone"></i> Hỗ trợ Kỹ thuật: 1900.1234</span>
-      <span><i class="fa fa-phone"></i> Kinh doanh: 1900.5678</span>
-      <span class="spacer"></span>
-      <a href="#">Hệ thống Showroom</a>
-      <a href="#">Tra cứu Bảo hành</a>
+  <header class="header">
+    <div class="header__top-bar">
+      <div class="container">
+        <span><i class="fa fa-phone"></i> Hỗ trợ Kỹ thuật: 1900.1234</span>
+        <span><i class="fa fa-phone"></i> Kinh doanh: 1900.5678</span>
+        <span class="spacer"></span>
+        <a href="#">Hệ thống Showroom</a>
+        <a href="#">Tra cứu Bảo hành</a>
+      </div>
     </div>
-  </div>
 
-  <div class="header__main">
-    <div class="container">
-      <a href="/" class="header__logo">
+    <div class="header__main">
+      <div class="container">
+        <a href="/" class="header__logo">
           <img src="../../assets/images/banners/logo.png" alt="TTB">
-      </a>
-      <div class="header__search">
-        <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi...">
-        <button><i class="fa fa-search"></i></button>
-      </div>
-      <div class="header__actions">
-        <a href="login_index.html"><i class="fa fa-user"></i> Tài khoản</a>
-        <a href="#"><i class="fa fa-heart"></i> Yêu thích</a>
-        <a href="#"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
+        </a>
+        <div class="header__search">
+          <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi...">
+          <button><i class="fa fa-search"></i></button>
+        </div>
+        <div class="header__actions">
+          <a href="login_index.html"><i class="fa fa-user"></i> Tài khoản</a>
+          <a href="#"><i class="fa fa-heart"></i> Yêu thích</a>
+          <a href="#"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
+        </div>
       </div>
     </div>
-  </div>
 
-  <nav class="header__nav">
-    <div class="container">
-      <ul>
-        <li class="nav-item has-megamenu">
-          <a href="#">Sản phẩm <i class="fa fa-chevron-down"></i></a>
-          <div class="mega-menu">
-            <!-- ⚡ Thêm danh mục linh động -->
-            <div class="mega-menu-content">
-              <div class="mega-menu-column">
-                <h4>🔹 Thiết bị bếp</h4>
-                <a class="menu-item" data-category="tu-bep">Tủ bếp</a>
-                <a class="menu-item" data-category="chen">Chén dĩa</a>
-                <a class="menu-item" data-category="noi">Nồi</a>
-                <a class="menu-item" data-category="bep-tu">Bếp từ</a>
+    <nav class="header__nav">
+      <div class="container">
+        <ul>
+          <li class="nav-item has-megamenu">
+            <a href="#">Sản phẩm <i class="fa fa-chevron-down"></i></a>
+            <div class="mega-menu">
+              <!-- ⚡ Thêm danh mục linh động -->
+              <div class="mega-menu-content">
+                <div class="mega-menu-column">
+                  <a class="menu-item" href="Tatcasp.html?category=bep-tu" data-category="bep-tu">Bếp từ</a>
+                  <a class="menu-item" href="Tatcasp.html?category=robot" data-category="robot">Robot</a>
+                  <a class="menu-item" href="Tatcasp.html?category=tu-lanh" data-category="tu-lanh">Tủ lạnh</a>
+                  <a class="menu-item" href="Tatcasp.html?category=may-rua-bat" data-category="may-rua-bat">Máy rửa bát</a>
+                  <a class="menu-item" href="Tatcasp.html?category=cam-bieng" data-category="cam-bieng">Cảm biến</a>
+                  <a class="menu-item" href="Tatcasp.html?category=pha-che" data-category="pha-che">Pha chế</a>
+                </div>
               </div>
             </div>
+          </li>
+          <li class="nav-item"><a href="#">Giải pháp & Combo</a></li>
+          <li class="nav-item"><a href="#">Góc Tư vấn</a></li>
+          <li class="nav-item"><a href="#">Dịch vụ Lắp đặt</a></li>
+          <li class="nav-item"><a href="#">Về chúng tôi</a></li>
+          <li class="nav-item"><a href="#">Khuyến mãi</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ⚡ Khu vực hiển thị sản phẩm -->
+  <section id="product-section" class="product-section">
+    <!-- Sản phẩm sẽ được render bằng JS -->
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>VỀ CHÚNG TÔI</h4>
+          <p>Công ty TNHH Bếp Thông Minh TTB<br>
+            MST: 031xxxxxxx<br>
+            Địa chỉ: Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh<br>
+            Hotline: 1900.1234<br>
+            Email: 23130356@.hcmuaf.edu.vn</p>
+        </div>
+        <div class="footer-col">
+          <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+          <ul>
+            <li><a href="#">Chính sách Bảo hành</a></li>
+            <li><a href="#">Chính sách Vận chuyển & Lắp đặt</a></li>
+            <li><a href="#">Chính sách Đổi trả</a></li>
+            <li><a href="#">Phương thức Thanh toán</a></li>
+            <li><a href="#">Câu hỏi Thường gặp (FAQs)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>LIÊN KẾT NHANH</h4>
+          <ul>
+            <li><a href="#">Về chúng tôi</a></li>
+            <li><a href="#">Hệ thống Showroom</a></li>
+            <li><a href="#">Tuyển dụng</a></li>
+            <li><a href="#">Dành cho Đối tác B2B</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
           </div>
-        </li>
-        <li class="nav-item"><a href="#">Giải pháp & Combo</a></li>
-        <li class="nav-item"><a href="#">Góc Tư vấn</a></li>
-        <li class="nav-item"><a href="#">Dịch vụ Lắp đặt</a></li>
-        <li class="nav-item"><a href="#">Về chúng tôi</a></li>
-        <li class="nav-item"><a href="#">Khuyến mãi</a></li>
-      </ul>
+          <p>Đăng ký nhận tin khuyến mãi:</p>
+          <form class="subscribe-form">
+            <input type="email" placeholder="Email của bạn">
+            <button type="submit">Đăng ký</button>
+          </form>
+        </div>
+      </div>
     </div>
-  </nav>
-</header>
-
-<!-- ⚡ Thêm hero banner -->
-<section id="hero-banner" class="hero-banner">
-  <h1>Chào mừng đến với Thế Giới Bếp Thông Minh</h1>
-  <p>Chọn danh mục để xem sản phẩm nổi bật.</p>
-</section>
-
-<!-- ⚡ Khu vực hiển thị sản phẩm -->
-<section id="product-section" class="product-section">
-  <!-- Sản phẩm sẽ được render bằng JS -->
-</section>
-
-<!-- ⚡ Script -->
-<script src="../../js/jsToan/Tatcasp.js"></script>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Bản quyền thuộc về Bếp Thông Minh TTB.</p>
+    </div>
+  </footer>
+  <!-- ⚡ Script -->
+  <script src="../../js/jsToan/Tatcasp.js"></script>
 
 </body>
+
 </html>
