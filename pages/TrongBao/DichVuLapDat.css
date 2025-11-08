@@ -1,6 +1,16 @@
+:root {
+    --primary-color: #007bff; /* Màu chủ đạo */
+    --dark-color: #333;
+    --light-color: #f4f4f4;
+    --text-color: #555;
+    --container-width: 1200px;
+}
+html {
+    scroll-behavior: smooth;
+}
 .main_container{
-    margin-left:50px;
-    margin-right:50px;
+    margin-left:200px;
+    margin-right:200px;
 }
 .content_block{
     margin-top: 20px;
@@ -16,16 +26,44 @@
     margin-top:50px;
     margin-bottom: 50px;
 }
-.title{
+.main_container .title{
     text-align: center;
     margin-top: 20px;
 }
-h2{
+.main_container h2{
     margin-top: 30px;
     margin-bottom:20px;
 }
-li{
+.main_container h3{
+    font-weight: bold;
+}
+.main_container li{
     margin-top: 10px;
     margin-bottom:10px;
     margin-left: 60px;
+}
+.fast_trans{
+    background: lightgray;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 300px;
+    border-radius: 10px;
+    margin-left: 50px;
+    border-left: var(--primary-color) solid 10px;
+    border-top: var(--primary-color) solid 1px;
+}
+.main_container .fast_trans ul{
+    list-style-type: none;
+}
+.main_container .fast_trans ul li{
+    margin-left: 20px;
+    font-weight: bold;
+}
+.main_container .fast_trans ul li a{
+    text-decoration: none;
+    color: black;
+}
+.main_container .fast_trans ul li a:hover{
+    color: var(--primary-color);
+    text-shadow: 0px 0px 10px var(--primary-color) ;
 }
