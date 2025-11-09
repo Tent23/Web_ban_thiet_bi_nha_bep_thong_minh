@@ -1,326 +1,357 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
 
     <title>Cửa hàng bếp</title>
-    <link rel="stylesheet" href="pages/ThanhTruong/index.css">
-    <link rel="stylesheet" href="assets/fonts/indexfont.css">
-    <link rel="stylesheet" href="pages/TrongBao/Header.css">
+    <link rel="stylesheet" href="pages/ThanhTruong/index.css" />
+    <link rel="stylesheet" href="assets/fonts/indexfont.css" />
+    <link rel="stylesheet" href="pages/TrongBao/Header.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <script src="js/jsBao/Main.js"></script>
-    <link rel="stylesheet" href="shared/main.css">
-
-
+    <link rel="stylesheet" href="shared/main.css" />
 </head>
+
 <body>
-<header class="header">
-    <div class="header__top-bar">
-        <div class="container">
-            <span><i class="fa fa-phone"></i> Hỗ trợ Kỹ thuật: 1900.1234</span>
-            <span><i class="fa fa-phone"></i> Kinh doanh: 1900.5678</span>
-            <span class="spacer"></span>
-            <a href="pages/TrongBao/Showroom.html">Hệ thống Showroom</a>
-            <a href="pages/TrongBao/BaoHanh.html">Tra cứu Bảo hành</a>
-        </div>
-    </div>
-    <div class="header__main">
-        <div class="container">
-            <a href="./index.html" class="header__logo">
-                <img src="./assets/images/banners/logo.png" alt="TTB">
-            </a>
-            <div class="header__search">
-                <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi...">
-                <button><i class="fa fa-search"></i></button>
-            </div>
-            <div class="header__actions">
-                <a href="./pages/TrongBao/Login.html"><i class="fa fa-user"></i> Tài khoản</a>
-                <a href="./pages/ThanhTruong/yeuthich.html"><i class="fa fa-heart"></i> Yêu thích</a>
-                <a href="./pages/ThanhTruong/giohang.html"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
+    <header class="header">
+        <div class="header__top-bar">
+            <div class="container">
+                <span><i class="fa fa-phone"></i> Hỗ trợ Kỹ thuật: 1900.1234</span>
+                <span><i class="fa fa-phone"></i> Kinh doanh: 1900.5678</span>
+                <span class="spacer"></span>
+                <a href="pages/TrongBao/Showroom.html">Hệ thống Showroom</a>
+                <a href="#">Tra cứu Bảo hành</a>
             </div>
         </div>
-    </div>
-    <nav class="header__nav">
-        <div class="container">
-            <ul>
-                <li class="nav-item has-megamenu">
-                    <a href="#">Sản phẩm <i class="fa fa-chevron-down"></i></a>
-                    <div class="mega-menu">
-                           <div class = "subitem"><a href="#">Bếp</a></div>
-                            <div class = "subitem"><a href="#">Máy Rửa Bát</a></div>
-                            <div class = "subitem"><a href="#">Chậu rửa bát</a></div>
-                            <div class = "subitem"><a href="#">Robot Hút Bụi</a></div>
-                            <div class = "subitem"><a href="#">Máy Hút Mùi</a></div>
-                            <div class = "subitem"><a href="#">Thiết Bị Gia Dụng Khác</a></div>
-                            <div class = "subitem"><a href="#">Phụ Kiện Bếp</a></div>
-
-                    </div>
-                </li>
-                <li class="nav-item"><a href="#">Giải pháp & Combo</a></li>
-                <li class="nav-item"><a href="./pages/TrongBao/goctuvan.html">Góc Tư vấn</a></li>
-                <li class="nav-item"><a href="pages/TrongBao/DichVuLapDat.html">Dịch vụ Lắp đặt</a></li>
-                <li class="nav-item"><a href="#">Về chúng tôi</a></li>
-                <li class="nav-item"><a href="#">Khuyến mãi</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-
-<main class="main-content">
-    <section class="hero-banner swiper" id="hero-slider">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide hero-slide" style="background-image: url('https://placehold.co/1920x600/333/fff?text=Hero+Banner+1');">
-                <div class="hero-content">
-                    <h1>Nâng Tầm Trải Nghiệm Bếp</h1>
-                    <p>Khám phá các giải pháp nhà bếp thông minh, tự động hóa toàn diện.</p>
-                    <a href="#" class="btn btn-primary">Khám Phá Ngay</a>
+        <div class="header__main">
+            <div class="container">
+                <a href="./index.html" class="header__logo">
+                    <img src="./assets/images/banners/logo.png" alt="TTB" />
+                </a>
+                <div class="header__search">
+                    <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi..." />
+                    <button><i class="fa fa-search"></i></button>
                 </div>
-            </div>
-            <div class="swiper-slide hero-slide" style="background-image: url('https://placehold.co/1920x600/444/fff?text=Hero+Banner+2');">
-                <div class="hero-content">
-                    <h1>An Toàn & Tiện Lợi</h1>
-                    <p>Hệ thống cảm biến và điều khiển từ xa.</p>
-                    <a href="#" class="btn btn-primary">Xem Sản Phẩm</a>
+                <div class="header__actions">
+                    <a href="./pages/TrongBao/Login.html"><i class="fa fa-user"></i> Tài khoản</a>
+                    <a href="./pages/ThanhTruong/yeuthich.html"><i class="fa fa-heart"></i> Yêu thích</a>
+                    <a href="./pages/ThanhTruong/giohang.html"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
                 </div>
             </div>
         </div>
-        <div class="swiper-pagination"></div>
-    </section>
-
-    <section class="trust-badges section-padding">
-        <div class="container">
-            <div class="trust-badge">
-                <i class="fa fa-shield-halved"></i>
-                <h3>Cam kết 100% Chính Hãng</h3>
-            </div>
-            <div class="trust-badge">
-                <i class="fa fa-tools"></i>
-                <h3>Miễn phí Lắp Đặt & Cài Đặt</h3>
-            </div>
-            <div class="trust-badge">
-                <i class="fa fa-headset"></i>
-                <h3>Hỗ trợ Kỹ thuật 24/7</h3>
-            </div>
-            <div class="trust-badge">
-                <i class="fa fa-truck-fast"></i>
-                <h3>Bảo hành Tận nhà</h3>
-            </div>
-        </div>
-    </section>
-
-    <section class="featured-categories section-padding">
-        <div class="container">
-            <h2 class="section-title">Danh mục Nổi bật</h2>
-            <div class="category-grid">
-                <a href="#" class="category-item">
-                    <img src="https://placehold.co/150x150/eee/333?text=Bếp+Từ" alt="Bếp từ">
-                    <span>Bếp từ & Nấu nướng</span>
-                </a>
-                <a href="#" class="category-item">
-                    <img src="https://placehold.co/150x150/eee/333?text=Robot+Hút+Bụi" alt="Robot Hút Bụi">
-                    <span>Robot Hút Bụi</span>
-                </a>
-                <a href="#" class="category-item">
-                    <img src="https://placehold.co/150x150/eee/333?text=Tủ+Lạnh" alt="Tủ Lạnh">
-                    <span>Tủ lạnh Thông minh</span>
-                </a>
-                <a href="#" class="category-item">
-                    <img src="https://placehold.co/150x150/eee/333?text=Máy+Rửa+Bát" alt="Máy Rửa Bát">
-                    <span>Máy rửa bát</span>
-                </a>
-                <a href="#" class="category-item">
-                    <img src="https://placehold.co/150x150/eee/333?text=Cảm+Biến" alt="Cảm Biến">
-                    <span>Cảm biến & An ninh</span>
-                </a>
-                <a href="#" class="category-item">
-                    <img src="https://placehold.co/150x150/eee/333?text=Pha+Chế" alt="Pha Chế">
-                    <span>Pha chế Thông minh</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="best-sellers section-padding bg-light">
-        <div class="container">
-            <h2 class="section-title">Sản phẩm Bán chạy nhất</h2>
-            <div class="swiper" id="bestseller-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide product-card">
-                        <img src="https://placehold.co/300x300/fff/333?text=Sản+Phẩm+1" alt="Sản phẩm 1">
-                        <h3>Bếp từ Thông minh Bosch XYZ</h3>
-                        <div class="price">15.000.000đ</div>
-                        <a href="#" class="btn btn-secondary">Xem chi tiết</a>
-                    </div>
-                    <div class="swiper-slide product-card">
-                        <img src="https://placehold.co/300x300/fff/333?text=Sản+Phẩm+2" alt="Sản phẩm 2">
-                        <h3>Robot Hút bụi Xiaomi ABC</h3>
-                        <div class="price">8.500.000đ</div>
-                        <a href="#" class="btn btn-secondary">Xem chi tiết</a>
-                    </div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="shop-by-ecosystem section-padding">
-        <div class="container">
-            <h2 class="section-title">Mua theo Hệ sinh thái</h2>
-            <div class="ecosystem-grid">
-                <a href="#" class="ecosystem-item" style="background-color: #4285F4;">
-                    <img src="https://placehold.co/80x80/fff/4285F4?text=Google" alt="Google Home">
-                    <span>Google Home</span>
-                </a>
-                <a href="#" class="ecosystem-item" style="background-color: #000;">
-                    <img src="https://placehold.co/80x80/fff/000?text=Apple" alt="Apple HomeKit">
-                    <span>Apple HomeKit</span>
-                </a>
-                <a href="#" class="ecosystem-item" style="background-color: #232F3E;">
-                    <img src="https://placehold.co/80x80/fff/232F3E?text=Alexa" alt="Amazon Alexa">
-                    <span>Amazon Alexa</span>
-                </a>
-                <a href="#" class="ecosystem-item" style="background-color: #FF6900;">
-                    <img src="https://placehold.co/80x80/fff/FF6900?text=Xiaomi" alt="Mi Home">
-                    <span>Mi Home</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="solutions-combo section-padding bg-light">
-        <div class="container">
-            <h2 class="section-title">Gợi ý Giải pháp</h2>
-            <div class="solutions-grid">
-                <a href="#" class="solution-item" style="background-image: url('https://placehold.co/600x400/555/fff?text=Combo+Căn+Hộ');">
-                    <div class="solution-content">
-                        <h3>Combo Bếp Căn hộ 25 Triệu</h3>
-                        <p>Bếp từ + Hút mùi + Robot</p>
-                    </div>
-                </a>
-                <a href="#" class="solution-item" style="background-image: url('https://placehold.co/600x400/666/fff?text=Giải+Pháp+An+Ninh');">
-                    <div class="solution-content">
-                        <h3>Giải pháp An ninh Bếp</h3>
-                        <p>Cảm biến gas, khói, camera...</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-hub section-padding">
-        <div class="container">
-            <h2 class="section-title">Góc Tư vấn & Đánh giá</h2>
-            <div class="hub-grid">
-                <div class="hub-video">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="hub-articles">
-                    <a href="#" class="article-item">
-                        <h4>So sánh Bếp từ thông minh Bosch và Hafele</h4>
-                        <p>Đâu là lựa chọn tối ưu cho căn bếp của bạn?</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <h4>5 Kịch bản tự động hóa bếp bạn PHẢI BIẾT</h4>
-                        <p>Tự động bật hút mùi, tắt đèn khi ra khỏi...</p>
-                    </a>
-                    <a href="#" class="article-item">
-                        <h4>Hướng dẫn cài đặt App Mi Home cho người mới</h4>
-                        <p>Kết nối tất cả thiết bị Xiaomi trong 5 phút.</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials section-padding bg-light">
-        <div class="container">
-            <h2 class="section-title">Khách hàng Nói về Chúng tôi</h2>
-            <div class="swiper" id="testimonial-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide testimonial-item">
-                        <p>"Dịch vụ lắp đặt rất chuyên nghiệp, các bạn kỹ thuật viên hỗ trợ cài app rất nhiệt tình."</p>
-                        <h4>- Chị An (Quận 7)</h4>
-                    </div>
-                    <div class="swiper-slide testimonial-item">
-                        <p>"Sản phẩm chính hãng, dùng rất ưng ý. Sẽ tiếp tục ủng hộ shop."</p>
-                        <h4>- Anh Bách (Hà Nội)</h4>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="brands section-padding">
-        <div class="container">
-            <h2 class="section-title">Các Thương hiệu Hàng đầu</h2>
-            <div class="swiper" id="brand-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide brand-item"><img src="https://placehold.co/150x80/eee/777?text=Bosch" alt="Bosch"></div>
-                    <div class="swiper-slide brand-item"><img src="https://placehold.co/150x80/eee/777?text=Xiaomi" alt="Xiaomi"></div>
-                    <div class="swiper-slide brand-item"><img src="https://placehold.co/150x80/eee/777?text=Hafele" alt="Hafele"></div>
-                    <div class="swiper-slide brand-item"><img src="https://placehold.co/150x80/eee/777?text=Samsung" alt="Samsung"></div>
-                    <div class="swiper-slide brand-item"><img src="https://placehold.co/150x80/eee/777?text=Ecovacs" alt="Ecovacs"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<footer class="footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-col">
-                <h4>VỀ CHÚNG TÔI</h4>
-                <p>Công ty TNHH Bếp Thông Minh TTB<br>
-                    MST: 031xxxxxxx<br>
-                    Địa chỉ: Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh<br>
-                    Hotline: 1900.1234<br>
-                    Email: 23130356@.hcmuaf.edu.vn</p>
-            </div>
-            <div class="footer-col">
-                <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+        <nav class="header__nav">
+            <div class="container">
                 <ul>
-                    <li><a href="#">Chính sách Bảo hành</a></li>
-                    <li><a href="#">Chính sách Vận chuyển & Lắp đặt</a></li>
-                    <li><a href="#">Chính sách Đổi trả</a></li>
-                    <li><a href="#">Phương thức Thanh toán</a></li>
-                    <li><a href="#">Câu hỏi Thường gặp (FAQs)</a></li>
+                    <li class="nav-item has-megamenu">
+                        <a href="#">Sản phẩm <i class="fa fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <a href="./pages/QuangToan/Beptu.html">Bếp từ</a>
+                            <a href="./pages/QuangToan/Tulanh.html">Tủ lạnh</a>
+                            <a href="./pages/QuangToan/Robot.html">Robot Hút bụi</a>
+                            <a href="./pages/QuangToan/Mayruabat.html">Máy rửa bát</a>
+                            <a href="./pages/QuangToan/Cambien.html">Cảm biến & An ninh</a>
+                            <a href="./pages/QuangToan/Phache.html">Pha chế</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="#">Giải pháp & Combo</a></li>
+                    <li class="nav-item"><a href="#">Góc Tư vấn</a></li>
+                    <li class="nav-item"><a href="#">Dịch vụ Lắp đặt</a></li>
+                    <li class="nav-item"><a href="#">Về chúng tôi</a></li>
+                    <li class="nav-item"><a href="#">Khuyến mãi</a></li>
                 </ul>
             </div>
-            <div class="footer-col">
-                <h4>LIÊN KẾT NHANH</h4>
-                <ul>
-                    <li><a href="#">Về chúng tôi</a></li>
-                    <li><a href="pages/TrongBao/Showroom.html">Hệ thống Showroom</a></li>
-                    <li><a href="./pages/ThanhTruong/tuyendung.html">Tuyển dụng</a></li>
-                    <li><a href="#">Dành cho Đối tác B2B</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-tiktok"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="hero-banner swiper" id="hero-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide hero-slide" style="
+              background-image: url('https://placehold.co/1920x600/333/fff?text=Hero+Banner+1');
+            ">
+                    <div class="hero-content">
+                        <h1>Nâng Tầm Trải Nghiệm Bếp</h1>
+                        <p>
+                            Khám phá các giải pháp nhà bếp thông minh, tự động hóa toàn
+                            diện.
+                        </p>
+                        <a href="#" class="btn btn-primary">Khám Phá Ngay</a>
+                    </div>
                 </div>
-                <p>Đăng ký nhận tin khuyến mãi:</p>
-                <form class="subscribe-form">
-                    <input type="email" placeholder="Email của bạn">
-                    <button type="submit">Đăng ký</button>
-                </form>
+                <div class="swiper-slide hero-slide" style="
+              background-image: url('https://placehold.co/1920x600/444/fff?text=Hero+Banner+2');
+            ">
+                    <div class="hero-content">
+                        <h1>An Toàn & Tiện Lợi</h1>
+                        <p>Hệ thống cảm biến và điều khiển từ xa.</p>
+                        <a href="#" class="btn btn-primary">Xem Sản Phẩm</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </section>
+
+        <section class="trust-badges section-padding">
+            <div class="container">
+                <div class="trust-badge">
+                    <i class="fa fa-shield-halved"></i>
+                    <h3>Cam kết 100% Chính Hãng</h3>
+                </div>
+                <div class="trust-badge">
+                    <i class="fa fa-tools"></i>
+                    <h3>Miễn phí Lắp Đặt & Cài Đặt</h3>
+                </div>
+                <div class="trust-badge">
+                    <i class="fa fa-headset"></i>
+                    <h3>Hỗ trợ Kỹ thuật 24/7</h3>
+                </div>
+                <div class="trust-badge">
+                    <i class="fa fa-truck-fast"></i>
+                    <h3>Bảo hành Tận nhà</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-categories section-padding">
+            <div class="container">
+                <h2 class="section-title">Danh mục Nổi bật</h2>
+                <div class="category-grid">
+                    <a href="#" class="category-item">
+                        <img src="https://placehold.co/150x150/eee/333?text=Bếp+Từ" alt="Bếp từ" />
+                        <span>Bếp từ & Nấu nướng</span>
+                    </a>
+                    <a href="#" class="category-item">
+                        <img src="https://placehold.co/150x150/eee/333?text=Robot+Hút+Bụi" alt="Robot Hút Bụi" />
+                        <span>Robot Hút Bụi</span>
+                    </a>
+                    <a href="#" class="category-item">
+                        <img src="https://placehold.co/150x150/eee/333?text=Tủ+Lạnh" alt="Tủ Lạnh" />
+                        <span>Tủ lạnh Thông minh</span>
+                    </a>
+                    <a href="#" class="category-item">
+                        <img src="https://placehold.co/150x150/eee/333?text=Máy+Rửa+Bát" alt="Máy Rửa Bát" />
+                        <span>Máy rửa bát</span>
+                    </a>
+                    <a href="#" class="category-item">
+                        <img src="https://placehold.co/150x150/eee/333?text=Cảm+Biến" alt="Cảm Biến" />
+                        <span>Cảm biến & An ninh</span>
+                    </a>
+                    <a href="#" class="category-item">
+                        <img src="https://placehold.co/150x150/eee/333?text=Pha+Chế" alt="Pha Chế" />
+                        <span>Pha chế Thông minh</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="best-sellers section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title">Sản phẩm Bán chạy nhất</h2>
+                <div class="swiper" id="bestseller-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide product-card">
+                            <img src="https://placehold.co/300x300/fff/333?text=Sản+Phẩm+1" alt="Sản phẩm 1" />
+                            <h3>Bếp từ Thông minh Bosch XYZ</h3>
+                            <div class="price">15.000.000đ</div>
+                            <a href="#" class="btn btn-secondary">Xem chi tiết</a>
+                        </div>
+                        <div class="swiper-slide product-card">
+                            <img src="https://placehold.co/300x300/fff/333?text=Sản+Phẩm+2" alt="Sản phẩm 2" />
+                            <h3>Robot Hút bụi Xiaomi ABC</h3>
+                            <div class="price">8.500.000đ</div>
+                            <a href="#" class="btn btn-secondary">Xem chi tiết</a>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="shop-by-ecosystem section-padding">
+            <div class="container">
+                <h2 class="section-title">Mua theo Hệ sinh thái</h2>
+                <div class="ecosystem-grid">
+                    <a href="#" class="ecosystem-item" style="background-color: #4285f4">
+                        <img src="https://placehold.co/80x80/fff/4285F4?text=Google" alt="Google Home" />
+                        <span>Google Home</span>
+                    </a>
+                    <a href="#" class="ecosystem-item" style="background-color: #000">
+                        <img src="https://placehold.co/80x80/fff/000?text=Apple" alt="Apple HomeKit" />
+                        <span>Apple HomeKit</span>
+                    </a>
+                    <a href="#" class="ecosystem-item" style="background-color: #232f3e">
+                        <img src="https://placehold.co/80x80/fff/232F3E?text=Alexa" alt="Amazon Alexa" />
+                        <span>Amazon Alexa</span>
+                    </a>
+                    <a href="#" class="ecosystem-item" style="background-color: #ff6900">
+                        <img src="https://placehold.co/80x80/fff/FF6900?text=Xiaomi" alt="Mi Home" />
+                        <span>Mi Home</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="solutions-combo section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title">Gợi ý Giải pháp</h2>
+                <div class="solutions-grid">
+                    <a href="#" class="solution-item" style="
+                background-image: url('https://placehold.co/600x400/555/fff?text=Combo+Căn+Hộ');
+              ">
+                        <div class="solution-content">
+                            <h3>Combo Bếp Căn hộ 25 Triệu</h3>
+                            <p>Bếp từ + Hút mùi + Robot</p>
+                        </div>
+                    </a>
+                    <a href="#" class="solution-item" style="
+                background-image: url('https://placehold.co/600x400/666/fff?text=Giải+Pháp+An+Ninh');
+              ">
+                        <div class="solution-content">
+                            <h3>Giải pháp An ninh Bếp</h3>
+                            <p>Cảm biến gas, khói, camera...</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-hub section-padding">
+            <div class="container">
+                <h2 class="section-title">Góc Tư vấn & Đánh giá</h2>
+                <div class="hub-grid">
+                    <div class="hub-video">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="hub-articles">
+                        <a href="#" class="article-item">
+                            <h4>So sánh Bếp từ thông minh Bosch và Hafele</h4>
+                            <p>Đâu là lựa chọn tối ưu cho căn bếp của bạn?</p>
+                        </a>
+                        <a href="#" class="article-item">
+                            <h4>5 Kịch bản tự động hóa bếp bạn PHẢI BIẾT</h4>
+                            <p>Tự động bật hút mùi, tắt đèn khi ra khỏi...</p>
+                        </a>
+                        <a href="#" class="article-item">
+                            <h4>Hướng dẫn cài đặt App Mi Home cho người mới</h4>
+                            <p>Kết nối tất cả thiết bị Xiaomi trong 5 phút.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title">Khách hàng Nói về Chúng tôi</h2>
+                <div class="swiper" id="testimonial-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide testimonial-item">
+                            <p>
+                                "Dịch vụ lắp đặt rất chuyên nghiệp, các bạn kỹ thuật viên hỗ
+                                trợ cài app rất nhiệt tình."
+                            </p>
+                            <h4>- Chị An (Quận 7)</h4>
+                        </div>
+                        <div class="swiper-slide testimonial-item">
+                            <p>
+                                "Sản phẩm chính hãng, dùng rất ưng ý. Sẽ tiếp tục ủng hộ
+                                shop."
+                            </p>
+                            <h4>- Anh Bách (Hà Nội)</h4>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="brands section-padding">
+            <div class="container">
+                <h2 class="section-title">Các Thương hiệu Hàng đầu</h2>
+                <div class="swiper" id="brand-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide brand-item">
+                            <img src="https://placehold.co/150x80/eee/777?text=Bosch" alt="Bosch" />
+                        </div>
+                        <div class="swiper-slide brand-item">
+                            <img src="https://placehold.co/150x80/eee/777?text=Xiaomi" alt="Xiaomi" />
+                        </div>
+                        <div class="swiper-slide brand-item">
+                            <img src="https://placehold.co/150x80/eee/777?text=Hafele" alt="Hafele" />
+                        </div>
+                        <div class="swiper-slide brand-item">
+                            <img src="https://placehold.co/150x80/eee/777?text=Samsung" alt="Samsung" />
+                        </div>
+                        <div class="swiper-slide brand-item">
+                            <img src="https://placehold.co/150x80/eee/777?text=Ecovacs" alt="Ecovacs" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>VỀ CHÚNG TÔI</h4>
+                    <p>
+                        Công ty TNHH Bếp Thông Minh TTB<br />
+                        MST: 031xxxxxxx<br />
+                        Địa chỉ: Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí
+                        Minh<br />
+                        Hotline: 1900.1234<br />
+                        Email: 23130356@.hcmuaf.edu.vn
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                    <ul>
+                        <li><a href="#">Chính sách Bảo hành</a></li>
+                        <li><a href="#">Chính sách Vận chuyển & Lắp đặt</a></li>
+                        <li><a href="#">Chính sách Đổi trả</a></li>
+                        <li><a href="#">Phương thức Thanh toán</a></li>
+                        <li><a href="#">Câu hỏi Thường gặp (FAQs)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>LIÊN KẾT NHANH</h4>
+                    <ul>
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Hệ thống Showroom</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                        <li><a href="#">Dành cho Đối tác B2B</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p>Đăng ký nhận tin khuyến mãi:</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Email của bạn" />
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2025 Bản quyền thuộc về Bếp Thông Minh TTB.</p>
-    </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="Main.js"></script>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bản quyền thuộc về Bếp Thông Minh TTB.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="Main.js"></script>
 </body>
+
 </html>
