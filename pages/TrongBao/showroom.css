@@ -36,6 +36,15 @@ h1{
     margin-bottom: 20px;
     margin-top: 10px;
 }
+main li {
+    list-style: none;
+    margin-bottom: 10px;
+
+}
+main li i {
+    color: var(--primary-color);
+    margin-right: 20px;
+}
 .main-content{
 
    margin : 0px 200px 0px 200px
