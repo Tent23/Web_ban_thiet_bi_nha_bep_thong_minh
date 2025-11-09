@@ -107,3 +107,29 @@ a {
     width: auto;
     display: block;
 }
+
+.header__nav .container .has-megamenu .mega-menu{
+   display: block;
+    position: absolute;
+    border-bottom-right-radius:10px;
+    top: 215px;
+    left: 180px;
+    z-index: 100; /* thứ tự xếp chồng*/
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+
+}
+.header__nav .nav-item.has-megamenu:hover .mega-menu {
+    max-height: 500px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+.mega-menu .subitem  {
+    border-bottom: lightgray solid 2px;
+}
+.mega-menu .subitem:hover a {
+    background:  var(--primary-color);
+    text-shadow: 0px 0px 10px var(--light-color);
+}
