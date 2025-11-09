@@ -1,58 +1,127 @@
-/* ===== DROPDOWN ===== */
-.nav-item {
-  position: relative;
-}
-.mega-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #fff;
-  width: 250px;
-  border: 1px solid #eee;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  z-index: 100;
-  padding: 10px;
-}
-.nav-item.has-megamenu:hover .mega-menu {
-  display: block;
-}
-.mega-menu-column h4 {
-  font-size: 0.95rem;
-  color: var(--primary-color);
-  margin-bottom: 8px;
-}
-.mega-menu-column a {
-  display: block;
+.section-title {
+  text-align: center;
+  margin: 40px 0 25px;
+  font-size: 26px;
+  font-weight: bold;
   color: var(--dark-color);
-  padding: 5px 0;
 }
-.mega-menu-column a:hover {
-  color: var(--primary-color);
-}
-/* css cho sanpham 
-*/
-.product-section {
+
+.product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
 }
-.product-card {
+
+/* ===== KHUNG SẢN PHẨM ===== */
+.product {
   border: 1px solid #eee;
   border-radius: 10px;
-  padding: 15px;
-  text-align: center;
-  transition: 0.2s;
+  background: #fff;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
 }
-.product-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+.product:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transform: translateY(-4px);
+  border-color: var(--primary-color);
 }
-.product-card img {
+
+/* ===== ẢNH SẢN PHẨM ===== */
+.product img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 10px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: transform 0.4s ease;
 }
 
+.product:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== NHÃN GIẢM GIÁ ===== */
+.product .discount {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ff4d4f;
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+/* ===== THÔNG TIN SẢN PHẨM ===== */
+.product h3 {
+  font-size: 15px;
+  color: #333;
+  margin: 10px;
+  height: 38px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.product p {
+  color: #e60000;
+  font-weight: bold;
+  margin: 0 10px 10px;
+  font-size: 16px;
+}
+
+/* ===== NÚT MUA HÀNG ===== */
+.product .btn {
+  display: block;
+  width: calc(100% - 20px);
+  margin: 0 auto 10px;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 8px 0;
+  border-radius: 5px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.product .btn:hover {
+  background: #0056b3;
+}
+
+/* ===== NHÃN HOT / YÊU THÍCH ===== */
+.product .badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: orange;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .product-list {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  .product img {
+    height: 140px;
+  }
+
+  .product h3 {
+    font-size: 14px;
+  }
+
+  .product p {
+    font-size: 14px;
+  }
+}

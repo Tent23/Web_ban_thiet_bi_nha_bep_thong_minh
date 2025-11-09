@@ -2,16 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Giải pháp và Combo</title>
+    <link rel="stylesheet" href="Header.css">
+    <link rel="stylesheet" href="../ThanhTruong/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="../TrongBao/Header.css">
-    <script src="../../js/jsTruong/giohang.js"></script>
-    <link rel="stylesheet" href="yeuthich.css">
-    <link rel="stylesheet" href="../../shared/main.css">
-    <script src="../../js/jsTruong/yeuthich.js"></script>
+    <link rel="stylesheet" href="GiaiPhapVaComBo.css">
+
 </head>
 <body>
 <header class="header">
@@ -20,23 +16,23 @@
             <span><i class="fa fa-phone"></i> Hỗ trợ Kỹ thuật: 1900.1234</span>
             <span><i class="fa fa-phone"></i> Kinh doanh: 1900.5678</span>
             <span class="spacer"></span>
-            <a href="#">Hệ thống Showroom</a>
-            <a href="#">Tra cứu Bảo hành</a>
+            <a href="Showroom.html">Hệ thống Showroom</a>
+            <a href="BaoHanh.html">Tra cứu Bảo hành</a>
         </div>
     </div>
     <div class="header__main">
         <div class="container">
-            <a href="../../index.html" class="header__logo">
-                <img src="../../assets/images/banners/logo.png" alt="TTB">
+            <a href="./index.html" class="header__logo">
+                <img src="./assets/images/banners/logo.png" alt="TTB">
             </a>
             <div class="header__search">
                 <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi...">
                 <button><i class="fa fa-search"></i></button>
             </div>
             <div class="header__actions">
-                <a href="pages/TrongBao/Login.html"><i class="fa fa-user"></i> Tài khoản</a>
-                <a href="#"><i class="fa fa-heart"></i> Yêu thích</a>
-                <a href="./giohang.html"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
+                <a href="Login.html"><i class="fa fa-user"></i> Tài khoản</a>
+                <a href="../ThanhTruong/yeuthich.html"><i class="fa fa-heart"></i> Yêu thích</a>
+                <a href="../ThanhTruong/giohang.html"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
             </div>
         </div>
     </div>
@@ -46,54 +42,37 @@
                 <li class="nav-item has-megamenu">
                     <a href="#">Sản phẩm <i class="fa fa-chevron-down"></i></a>
                     <div class="mega-menu">
-                        <p>Đây là nội dung Mega Menu cho Sản phẩm</p>
+                        <div class = "subitem"><a href="#">Bếp</a></div>
+                        <div class = "subitem"><a href="#">Máy Rửa Bát</a></div>
+                        <div class = "subitem"><a href="#">Chậu rửa bát</a></div>
+                        <div class = "subitem"><a href="#">Robot Hút Bụi</a></div>
+                        <div class = "subitem"><a href="#">Máy Hút Mùi</a></div>
+                        <div class = "subitem"><a href="#">Thiết Bị Gia Dụng Khác</a></div>
+                        <div class = "subitem"><a href="#">Phụ Kiện Bếp</a></div>
+
                     </div>
                 </li>
                 <li class="nav-item"><a href="#">Giải pháp & Combo</a></li>
                 <li class="nav-item"><a href="#">Góc Tư vấn</a></li>
-                <li class="nav-item"><a href="#">Dịch vụ Lắp đặt</a></li>
-                <li class="nav-item"><a href="#">Về chúng tôi</a></li>
+                <li class="nav-item"><a href="DichVuLapDat.html">Dịch vụ Lắp đặt</a></li>
+                <li class="nav-item"><a href="../ThanhTruong/vechungtoi.html">Về chúng tôi</a></li>
                 <li class="nav-item"><a href="#">Khuyến mãi</a></li>
             </ul>
         </div>
     </nav>
 </header>
-
-<main class="main-content">
-    <section class="wishlist-section section-padding">
-        <div class="container">
-            <h1 class="section-title">Sản phẩm Yêu thích</h1>
-
-            <div class="wishlist-grid">
-
-                <div class="product-card wishlist-item">
-                    <a href="#" class="wishlist-remove-btn"><i class="fa fa-times"></i></a>
-                    <img src="https://placehold.co/300x300/fff/333?text=Sản+Phẩm+1" alt="Sản phẩm 1">
-                    <h3>Bếp từ Thông minh Bosch XYZ</h3>
-                    <div class="price">15.000.000đ</div>
-                    <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                </div>
-
-                <div class="product-card wishlist-item">
-                    <a href="#" class="wishlist-remove-btn"><i class="fa fa-times"></i></a>
-                    <img src="https://placehold.co/300x300/fff/333?text=Sản+Phẩm+2" alt="Sản phẩm 2">
-                    <h3>Robot Hút bụi Xiaomi ABC</h3>
-                    <div class="price">8.500.000đ</div>
-                    <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                </div>
-
-                <div class="product-card wishlist-item">
-                    <a href="#" class="wishlist-remove-btn"><i class="fa fa-times"></i></a>
-                    <img src="https://placehold.co/300x300/fff/333?text=Sản+Phẩm+3" alt="Sản phẩm 3">
-                    <h3>Tủ lạnh Thông minh Samsung</h3>
-                    <div class="price">22.000.000đ</div>
-                    <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
+<main>
+        <h1>Combo bếp đa năng</h1>
+    <div class = "combo_container">
+       <a href="#">
+           <div class="combo">
+               <img src="https://placehold.co/200x300/333/fff?text=Hero+Banner+1">
+               <div class ="content"></div>
+           </div>
+       </a>
+    </div>
 </main>
+
 
 <footer class="footer">
     <div class="container">
@@ -109,19 +88,19 @@
             <div class="footer-col">
                 <h4>HỖ TRỢ KHÁCH HÀNG</h4>
                 <ul>
-                    <li><a href="#">Chính sách Bảo hành</a></li>
+                    <li><a href="../ThanhTruong/chinhsachbaohanh.html">Chính sách Bảo hành</a></li>
                     <li><a href="#">Chính sách Vận chuyển & Lắp đặt</a></li>
                     <li><a href="#">Chính sách Đổi trả</a></li>
-                    <li><a href="#">Phương thức Thanh toán</a></li>
+                    <li><a href="../ThanhTruong/phuongthucthanhtoan.html">Phương thức Thanh toán</a></li>
                     <li><a href="#">Câu hỏi Thường gặp (FAQs)</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>LIÊN KẾT NHANH</h4>
                 <ul>
-                    <li><a href="#">Về chúng tôi</a></li>
-                    <li><a href="#">Hệ thống Showroom</a></li>
-                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="../ThanhTruong/vechungtoi.html">Về chúng tôi</a></li>
+                    <li><a href="Showroom.html">Hệ thống Showroom</a></li>
+                    <li><a href="../ThanhTruong/tuyendung.html">Tuyển dụng</a></li>
                     <li><a href="#">Dành cho Đối tác B2B</a></li>
                 </ul>
             </div>

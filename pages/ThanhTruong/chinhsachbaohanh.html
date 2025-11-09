@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giỏ hàng - Thế Giới Bếp Thông Minh</title>
+    <title>Chính sách Bảo hành - Thế Giới Bếp Thông Minh</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="../TrongBao/Header.css">
-    <script src="../../js/jsTruong/giohang.js"></script>
-    <script src="yeuthich.js"></script>
     <link rel="stylesheet" href="../../shared/main.css">
-    <link rel="stylesheet" href="giohang.css">
+    <link rel="stylesheet" href="chinhsachbaohanh.css">
+    <link rel="stylesheet" href="../../assets/fonts/indexfont.css">
 </head>
 <body>
 
@@ -62,91 +64,63 @@
 </header>
 
 <main class="main-content">
-    <section class="cart-section section-padding">
+    <section class="policy-section section-padding">
         <div class="container">
-            <h1 class="section-title">Giỏ hàng của bạn</h1>
+            <h1 class="section-title">Chính sách Bảo hành</h1>
 
-            <div class="cart-container">
-
-                <div class="cart-items-list">
-                    <table class="cart-table">
-                        <thead>
-                        <tr>
-                            <th>Sản phẩm</th>
-                            <th>Giá</th>
-                            <th>Số lượng</th>
-                            <th>Tạm tính</th>
-                            <th>Xóa</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr class="cart-item-row" data-price="15000000">
-                            <td class="cart-item-info">
-                                <a href="#" class="cart-item-name">Bếp từ Thông minh Bosch XYZ</a>
-                                <div class="cart-item-details">
-                                    <img src="https://placehold.co/100x100/eee/333?text=Bếp+Từ" alt="Bếp từ">
-                                    <small>Thương hiệu: Bosch</small>
-                                </div>
-                            </td>
-                            <td class="cart-item-price" data-label="Giá">15.000.000đ</td>
-                            <td class="cart-item-quantity" data-label="Số lượng">
-                                <div class="quantity-control">
-                                    <button class="quantity-down">-</button>
-                                    <input type="number" class="quantity-input" value="1" min="1">
-                                    <button class="quantity-up">+</button>
-                                </div>
-                            </td>
-                            <td class="cart-item-subtotal" data-label="Tạm tính">15.000.000đ</td>
-                            <td class="cart-item-remove" data-label="Xóa">
-                                <a href="#" class="cart-remove-btn"><i class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-
-                        <tr class="cart-item-row" data-price="8500000">
-                            <td class="cart-item-info">
-                                <a href="#" class="cart-item-name">Robot Hút bụi Xiaomi ABC</a>
-                                <div class="cart-item-details">
-                                    <img src="https://placehold.co/100x100/eee/333?text=Robot" alt="Robot Hút Bụi">
-                                    <small>Thương hiệu: Xiaomi</small>
-                                </div>
-                            </td>
-                            <td class="cart-item-price" data-label="Giá">8.500.000đ</td>
-                            <td class="cart-item-quantity" data-label="Số lượng">
-                                <div class="quantity-control">
-                                    <button class="quantity-down">-</button>
-                                    <input type="number" class="quantity-input" value="1" min="1">
-                                    <button class="quantity-up">+</button>
-                                </div>
-                            </td>
-                            <td class="cart-item-subtotal" data-label="Tạm tính">8.500.000đ</td>
-                            <td class="cart-item-remove" data-label="Xóa">
-                                <a href="#" class="cart-remove-btn"><i class="fa fa-trash"></i></a>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+            <div class="policy-content">
+                <div class="policy-block">
+                    <h3>1. Thời hạn bảo hành</h3>
+                    <p>Tất cả sản phẩm do Bếp Thông Minh ABC phân phối đều được bảo hành chính hãng theo thời hạn quy định của nhà sản xuất. Thời gian bảo hành tiêu chuẩn là 24 tháng kể từ ngày mua hàng (trừ các phụ kiện hoặc sản phẩm tiêu hao).</p>
                 </div>
 
-                <div class="cart-summary">
-                    <h3>Tổng quan Đơn hàng</h3>
-                    <div class="summary-row">
-                        <span>Tạm tính</span>
-                        <span id="cart-subtotal">23.500.000đ</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>Phí vận chuyển</span>
-                        <span>Miễn phí</span>
-                    </div>
-                    <div class="summary-row total-row">
-                        <span>Tổng cộng</span>
-                        <span id="cart-total">23.500.000đ</span>
-                    </div>
-                    <a href="#" class="btn btn-primary checkout-btn">Tiến hành Thanh toán</a>
-                    <a href="../../index.html" class="continue-shopping-link">
-                        <i class="fa fa-arrow-left"></i> Tiếp tục mua sắm
-                    </a>
+                <div class="policy-block">
+                    <h3>2. Điều kiện bảo hành (Sản phẩm được bảo hành miễn phí)</h3>
+                    <ul>
+                        <li>Sản phẩm còn trong thời hạn bảo hành được ghi trên phiếu bảo hành hoặc tem bảo hành.</li>
+                        <li>Lỗi kỹ thuật do nhà sản xuất, không bao gồm các lỗi do người dùng gây ra.</li>
+                        <li>Sản phẩm không bị can thiệp, sửa chữa bởi bên thứ ba không được ủy quyền.</li>
+                        <li>Tem bảo hành (nếu có) phải còn nguyên vẹn, không bị rách, tẩy xóa.</li>
+                        <li>Khách hàng phải xuất trình phiếu bảo hành (bản cứng hoặc bản điện tử) khi có yêu cầu.</li>
+                    </ul>
                 </div>
 
+                <div class="policy-block">
+                    <h3>3. Các trường hợp từ chối bảo hành (Sửa chữa có tính phí)</h3>
+                    <ul>
+                        <li>Sản phẩm đã hết thời hạn bảo hành.</li>
+                        <li>Sản phẩm bị hư hỏng do thiên tai, hỏa hoạn, lụt lội, sét đánh, côn trùng xâm nhập.</li>
+                        <li>Sản phẩm bị hư hỏng do lỗi của người sử dụng:
+                            <ul>
+                                <li>Sử dụng sai điện áp quy định, nguồn điện không ổn định.</li>
+                                <li>Lắp đặt, sử dụng không đúng theo hướng dẫn của nhà sản xuất.</li>
+                                <li>Sản phẩm bị rơi, vỡ, va đập mạnh trong quá trình sử dụng.</li>
+                                <li>Sản phẩm bị ẩm ướt, oxy hóa do để trong môi trường không phù hợp.</li>
+                            </ul>
+                        </li>
+                        <li>Tự ý tháo dỡ, sửa chữa hoặc thay đổi cấu trúc sản phẩm.</li>
+                        <li>Phiếu bảo hành bị mất, rách, hoặc thông tin bị tẩy xóa.</li>
+                    </ul>
+                </div>
+
+                <div class="policy-block">
+                    <h3>4. Quy trình tiếp nhận bảo hành</h3>
+                    <p>Khi sản phẩm phát sinh lỗi, quý khách vui lòng thực hiện theo các bước sau:</p>
+                    <ol>
+                        <li>Liên hệ Hotline Kỹ thuật <strong>1900.1234</strong> để được hỗ trợ từ xa. Rất nhiều sự cố về cài đặt app hoặc kết nối có thể được giải quyết ngay lập tức.</li>
+                        <li>Nếu không thể khắc phục từ xa, quý khách vui lòng mang sản phẩm đến trung tâm bảo hành của Bếp Thông Minh ABC hoặc trung tâm bảo hành ủy quyền của hãng.</li>
+                        <li>Đối với các sản phẩm cồng kềnh (tủ lạnh, bếp từ, máy rửa bát...), chúng tôi sẽ hỗ trợ bảo hành tận nhà trong phạm vi nội thành TP.HCM.</li>
+                        <li>Thời gian xử lý bảo hành dự kiến: từ 3 - 7 ngày làm việc (không tính Thứ 7, Chủ Nhật) tùy thuộc vào mức độ hư hỏng của thiết bị.</li>
+                    </ol>
+                </div>
+
+                <div class="policy-block">
+                    <h3>5. Địa điểm tiếp nhận bảo hành</h3>
+                    <p><strong>Trung tâm Bảo hành Bếp Thông Minh TTB</strong></p>
+                    <p><strong>Địa chỉ:</strong> Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh</p>
+                    <p><strong>Hotline:</strong> 1900.1234</p>
+                    <p><strong>Giờ làm việc:</strong> 08:30 - 17:30 (Thứ 2 - Thứ 7)</p>
+                </div>
             </div>
         </div>
     </section>
@@ -160,7 +134,7 @@
                 <p>Công ty TNHH Bếp Thông Minh TTB<br>
                     MST: 031xxxxxxx<br>
                     Địa chỉ: Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh<br>
-                    Hotline: 0399733824<br>
+                    Hotline: 1900.1234<br>
                     Email: 23130356@.hcmuaf.edu.vn</p>
             </div>
             <div class="footer-col">
@@ -177,7 +151,7 @@
                 <h4>LIÊN KẾT NHANH</h4>
                 <ul>
                     <li><a href="#">Về chúng tôi</a></li>
-                    <li><a href="#">Hệ thống Showroom</a></li>
+                    <li><a href="pages/TrongBao/Showroom.html">Hệ thống Showroom</a></li>
                     <li><a href="#">Tuyển dụng</a></li>
                     <li><a href="#">Dành cho Đối tác B2B</a></li>
                 </ul>
@@ -204,6 +178,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="script.js"></script>
+<script src="/js/script.js"></script>
 </body>
 </html>
