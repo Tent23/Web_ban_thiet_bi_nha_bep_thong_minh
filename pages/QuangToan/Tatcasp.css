@@ -29,13 +29,21 @@
 }
 
 /* ===== ẢNH SẢN PHẨM ===== */
-.product img {
+.product-img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: 220px; /* 👈 Chiều cao cố định cho tất cả ảnh */
+  overflow: hidden; /* Ẩn phần bị tràn */
   border-bottom: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 👈 Cắt ảnh cho vừa khung mà không méo */
   transition: transform 0.4s ease;
 }
+
 
 .product:hover img {
   transform: scale(1.05);
