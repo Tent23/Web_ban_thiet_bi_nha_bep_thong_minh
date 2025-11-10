@@ -12,7 +12,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../TrongBao/Header.css">
-    <link rel="stylesheet" href="Tatcasp.css">
+    <link rel="stylesheet" href="Chitietsp.css">
     <link rel="stylesheet" href="../../shared/main.css">
 </head>
 
@@ -82,114 +82,63 @@
     </header>
 
     <main>
-        <div class="breadcrumb">
-            <a href="#home">Trang chủ</a> /
-            <a href="#products">Sản phẩm</a> /
-            <span id="breadcrumb-product">Máy rửa bát Bosch Serie 4</span>
-        </div>
 
-        <div class="product-detail">
-            <div class="product-grid">
-                <!-- Image section -->
-                <div class="product-image-section">
-                    <div class="main-image" id="main-image">🍽️</div>
-                    <div class="thumbnail-gallery">
-                        <div class="thumbnail active">🍽️</div>
-                        <div class="thumbnail">📸</div>
-                        <div class="thumbnail">🔍</div>
-                        <div class="thumbnail">⚙️</div>
-                    </div>
+        <!-- SECTION 1: Thông tin sản phẩm -->
+        <section class="product-info">
+            <div class="product-detail">
+                <div class="image">
+                    <img src="img/noi-com.jpg" alt="Nồi cơm điện Sharp 1.8L">
                 </div>
-
-                <!-- Info -->
-                <div class="product-info">
-                    <h1 class="product-title" id="product-name">Máy rửa bát Bosch Serie 4</h1>
-                    <div class="product-rating">
-                        <div class="stars">★★★★★</div>
-                        <span class="review-count">(128 đánh giá)</span>
-                    </div>
-                    <div>
-                        <span class="product-price" id="product-price">15.990.000₫</span>
-                        <span class="original-price">19.990.000₫</span>
-                        <span class="discount-badge">-20%</span>
-                    </div>
-                    <p class="product-description" id="product-description">
-                        Máy rửa bát Bosch Serie 4 với công nghệ tiên tiến, tiết kiệm nước và năng lượng.
-                        Thiết kế hiện đại, dễ sử dụng với nhiều chương trình rửa thông minh.
+                <div class="details">
+                    <h2>Nồi cơm điện Sharp 1.8L</h2>
+                    <p class="price">1.290.000₫</p>
+                    <p class="desc">
+                        Nồi cơm điện Sharp dung tích 1.8 lít, phù hợp cho gia đình 4-6 người.
+                        Thiết kế hiện đại, dễ sử dụng, lòng nồi chống dính, bền bỉ theo thời gian.
                     </p>
-
-                    <div class="product-features">
-                        <h3>Tính năng nổi bật</h3>
-                        <ul class="feature-list">
-                            <li>Công suất 12 bộ bát đĩa</li>
-                            <li>Công nghệ EcoSilence Drive siêu tiết kiệm</li>
-                            <li>6 chương trình rửa tự động</li>
-                            <li>Hệ thống sấy khô Zeolith</li>
-                            <li>Màn hình LED hiển thị thời gian</li>
-                            <li>Bảo hành 2 năm chính hãng</li>
-                        </ul>
-                    </div>
-
-                    <div class="quantity-selector">
-                        <span class="quantity-label">Số lượng:</span>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn" id="decrease-btn">−</button>
-                            <span class="quantity-value" id="quantity">1</span>
-                            <button class="quantity-btn" id="increase-btn">+</button>
-                        </div>
-                    </div>
-
-                    <div class="action-buttons">
-                        <button class="btn btn-primary" id="add-to-cart-btn">🛒 Thêm vào giỏ hàng</button>
-                        <button class="btn btn-secondary" id="buy-now-btn">⚡ Mua ngay</button>
+                    <div class="buttons">
+                        <button class="btn add-cart">🛒 Thêm vào giỏ</button>
+                        <button class="btn buy-now">⚡ Mua ngay</button>
+                        <button class="btn favorite">❤️ Yêu thích</button>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!-- Specifications -->
-            <div class="specifications">
-                <h2>Thông số kỹ thuật</h2>
-                <table class="spec-table">
-                    <tbody>
-                        <tr>
-                            <td>Thương hiệu</td>
-                            <td>Bosch</td>
-                        </tr>
-                        <tr>
-                            <td>Model</td>
-                            <td>Serie 4 SMS46MI05E</td>
-                        </tr>
-                        <tr>
-                            <td>Xuất xứ</td>
-                            <td>Đức</td>
-                        </tr>
-                        <tr>
-                            <td>Công suất</td>
-                            <td>12 bộ bát đĩa</td>
-                        </tr>
-                        <tr>
-                            <td>Kích thước</td>
-                            <td>60 x 60 x 84.5 cm</td>
-                        </tr>
-                        <tr>
-                            <td>Mức tiêu thụ nước</td>
-                            <td>9.5 lít/chu kỳ</td>
-                        </tr>
-                        <tr>
-                            <td>Mức tiêu thụ điện</td>
-                            <td>0.92 kWh/chu kỳ</td>
-                        </tr>
-                        <tr>
-                            <td>Độ ồn</td>
-                            <td>46 dB</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- SECTION 2: Tính năng nổi bật -->
+        <section class="product-features">
+            <h3>Tính năng nổi bật</h3>
+            <ul>
+                <li>Lòng nồi chống dính siêu bền.</li>
+                <li>Công suất 700W nấu chín cơm nhanh chóng.</li>
+                <li>Thiết kế hiện đại, dễ lau chùi.</li>
+                <li>Bảo hành chính hãng 12 tháng.</li>
+            </ul>
+        </section>
+
+        <!-- SECTION 3: Sản phẩm tương tự -->
+        <section class="related-products">
+            <h3>Sản phẩm tương tự</h3>
+            <div class="product-section">
+                <div class="product-card">
+                    <img src="img/noi1.jpg" alt="Nồi cơm Sunhouse 1.8L">
+                    <h4>Nồi cơm Sunhouse 1.8L</h4>
+                    <p>Giá: 1.190.000₫</p>
+                </div>
+                <div class="product-card">
+                    <img src="img/noi2.jpg" alt="Nồi cơm Philips 1.5L">
+                    <h4>Nồi cơm Philips 1.5L</h4>
+                    <p>Giá: 1.250.000₫</p>
+                </div>
+                <div class="product-card">
+                    <img src="img/noi3.jpg" alt="Nồi cơm Toshiba 2.0L">
+                    <h4>Nồi cơm Toshiba 2.0L</h4>
+                    <p>Giá: 1.350.000₫</p>
+                </div>
             </div>
-        </div>
+        </section>
+
     </main>
-
-
 
     <footer class="footer">
         <div class="container">
