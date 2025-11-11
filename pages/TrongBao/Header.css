@@ -108,19 +108,47 @@ a {
     display: block;
 }
 
-.header__nav .container .has-megamenu .mega-menu{
-   display: block;
+
+.header__nav .container .has-megamenu {
+    position: relative;
+}
+
+
+.header__nav .container .has-megamenu .mega-menu {
     position: absolute;
-    border-bottom-right-radius:10px;
-    top: 215px;
-    left: 180px;
-    z-index: 100; /* thứ tự xếp chồng*/
+    top: 100%;     
+    left: 0;        
+    z-index: 100;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
     max-height: 0;
     overflow: hidden;
     padding: 0;
-    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
-
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    width: max-content; 
 }
+
+
+.header__nav .nav-item.has-megamenu:hover .mega-menu {
+    max-height: 500px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+.mega-menu .subitem {
+    border-bottom: 2px solid lightgray;
+}
+
+.mega-menu .subitem:hover a {
+    background: var(--primary-color);
+    text-shadow: 0 0 10px var(--light-color);
+    color: #fff;
+}
+
 .header__nav .nav-item.has-megamenu:hover .mega-menu {
     max-height: 500px;
     padding-top: 0px;
