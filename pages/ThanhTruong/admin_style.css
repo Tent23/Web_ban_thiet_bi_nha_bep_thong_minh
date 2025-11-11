@@ -322,3 +322,87 @@ body {
     color: var(--admin-white);
     border-color: var(--admin-sidebar-active);
 }
+/* --- CSS CHO SIDEBAR ACCORDION --- */
+.sidebar-menu li.menu-item-has-children .sidebar-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sidebar-menu li.menu-item-has-children .toggle-icon {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+.sidebar-menu li.menu-item-has-children.open .toggle-icon {
+    transform: rotate(180deg);
+}
+.submenu {
+    list-style: none;
+    background-color: #0f172a; /* Màu nền tối hơn 1 chút */
+    padding-left: 30px; /* Thụt vào */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.sidebar-menu li.menu-item-has-children.open .submenu {
+    max-height: 500px; /* Chiều cao đủ lớn để chứa các mục con */
+}
+.submenu li a {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+}
+.submenu li a.active-sub {
+    color: var(--admin-white);
+    font-weight: 600;
+}
+
+/* --- CSS CHO HEADER (THÊM NÚT) --- */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.admin-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.btn-primary {
+    padding: 10px 15px;
+    background-color: var(--admin-sidebar-active);
+    color: var(--admin-white);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- CSS CHO BẢNG SẢN PHẨM --- */
+.product-thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #e2e8f0;
+}
+.status.instock { background-color: #dcfce7; color: #16a34a; }
+.status.lowstock { background-color: #fef9c3; color: #ca8a04; }
+.status.outofstock { background-color: #fee2e2; color: #dc2626; }
+
+.btn-action {
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin-right: 5px;
+    font-weight: 600;
+}
+.btn-action.edit {
+    background-color: #e0f2fe;
+    color: #0284c7;
+}
+.btn-action.delete {
+    background-color: #fee2e2;
+    color: #dc2626;
+}

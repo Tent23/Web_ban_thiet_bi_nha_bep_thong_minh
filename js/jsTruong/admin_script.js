@@ -74,3 +74,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 });
+// --- LOGIC CHO SIDEBAR ACCORDION ---
+document.querySelectorAll('.menu-item-has-children .sidebar-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        // Ngăn click vào link cha (href="#")
+        if (this.getAttribute('href') === '#') {
+            e.preventDefault();
+        }
+
+        // Lấy mục li cha
+        const parentLi = this.closest('.menu-item-has-children');
+
+        // Toggle class 'open'
+        parentLi.classList.toggle('open');
+    });
+});
