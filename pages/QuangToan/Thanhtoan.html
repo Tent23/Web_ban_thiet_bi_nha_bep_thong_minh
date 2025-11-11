@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="Thanhtoan.css">
     <link rel="stylesheet" href="../../shared/main.css">
     <link rel="stylesheet" href="../ThanhTruong/index.css">
-    
+
 </head>
 
 <body>
@@ -82,28 +82,231 @@
         </nav>
     </header>
 
-  <div class="container">
-   <h1 class="page-title">🛒 Thanh toán</h1>
-   <div id="checkoutForm" class="checkout-container">
-    <div class="checkout-section">
-     <h2 class="section-title">Thông tin giao hàng</h2>
-     <form id="orderForm">
-      <div class="form-row">
-       <div class="form-group"><label for="fullName">Họ và tên *</label> <input type="text" id="fullName" required placeholder="Nguyễn Văn A">
-       </div>
-       <div class="form-group"><label for="phone">Số điện thoại *</label> <input type="tel" id="phone" required placeholder="0912345678">
-       </div>
-      </div>
-      <div class="form-group"><label for="email">Email</label> <input type="email" id="email" placeholder="example@email.com">
-      </div>
-      <div class="form-group"><label for="address">Địa chỉ giao hàng *</label> <input type="text" id="address" required placeholder="Số nhà, tên đường">
-      </div>
-      <div class="form-row">
-       <div class="form-group"><label for="city">Tỉnh/Thành phố *</label> <select id="city" required> <option value="">Chọn Tỉnh/Thành phố</option> <option value="hanoi">Hà Nội</option> <option value="hcm">TP. Hồ Chí Minh</option> <option value="danang">Đà Nẵng</option> <option value="haiphong">Hải Phòng</option> <option value="cantho">Cần Thơ</option> </select>
-       </div>
-       <div class="form-group"><label for="district">Quận/Huyện *</label> <select id="district" required> <option value="">Chọn Quận/Huyện</option> <option value="district1">Quận 1</option> <option value="district2">Quận 2</option> <option value="district3">Quận 3</option> </select>
-       </div>
-      </div>
-      <div class="form-group"><label for="notes">Ghi chú đơn hàng</label> <textarea id="notes" placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn"></textarea>
-      </div>
-   
+    <!-- ========== MAIN CONTENT ========== -->
+    <div class="container">
+        <h1 class="page-title"> Thanh toán</h1>
+        <div id="checkoutForm" class="checkout-container">
+            <div class="checkout-section">
+                <h2 class="section-title">Thông tin giao hàng</h2>
+                <form id="orderForm">
+                    <div class="form-row">
+                        <div class="form-group"><label for="fullName">Họ và tên *</label> <input type="text"
+                                id="fullName" required placeholder="Nguyễn Văn A">
+                        </div>
+                        <div class="form-group"><label for="phone">Số điện thoại *</label> <input type="tel" id="phone"
+                                required placeholder="0912345678">
+                        </div>
+                    </div>
+                    <div class="form-group"><label for="email">Email</label> <input type="email" id="email"
+                            placeholder="example@email.com">
+                    </div>
+                    <div class="form-group"><label for="address">Địa chỉ giao hàng *</label> <input type="text"
+                            id="address" required placeholder="Số nhà, tên đường">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group"><label for="city">Tỉnh/Thành phố *</label> <select id="city" required>
+                                <option value="">Chọn Tỉnh/Thành phố</option>
+                                <option value="hanoi">Hà Nội</option>
+                                <option value="hcm">TP. Hồ Chí Minh</option>
+                                <option value="danang">Đà Nẵng</option>
+                                <option value="haiphong">Hải Phòng</option>
+                                <option value="cantho">Cần Thơ</option>
+                            </select>
+                        </div>
+                        <div class="form-group"><label for="district">Quận/Huyện *</label> <select id="district"
+                                required>
+                                <option value="">Chọn Quận/Huyện</option>
+                                <option value="district1">Quận 1</option>
+                                <option value="district2">Quận 2</option>
+                                <option value="district3">Quận 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group"><label for="notes">Ghi chú đơn hàng</label> <textarea id="notes"
+                            placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn"></textarea>
+                    </div>
+                    <h2 class="section-title" style="margin-top: 40px;">Phương thức thanh toán</h2>
+                    <div class="payment-methods"><label class="payment-method selected"> <input type="radio"
+                                name="payment" value="cod">
+                            <div class="payment-method-info">
+                                <div class="payment-method-name">
+                                    Thanh toán khi nhận hàng (COD)
+                                </div>
+                                <div class="payment-method-desc">
+                                    Thanh toán bằng tiền mặt khi nhận hàng
+                                </div>
+                            </div>
+                        </label> <label class="payment-method"> <input type="radio" name="payment" value="bank">
+                            <div class="payment-method-info">
+                                <div class="payment-method-name">
+                                    Chuyển khoản ngân hàng
+                                </div>
+                                <div class="payment-method-desc">
+                                    Chuyển khoản trực tiếp vào tài khoản ngân hàng
+                                </div>
+                            </div>
+                        </label> <label class="payment-method"> <input type="radio" name="payment" value="momo">
+                            <div class="payment-method-info">
+                                <div class="payment-method-name">
+                                    Ví MoMo
+                                </div>
+                                <div class="payment-method-desc">
+                                    Thanh toán qua ví điện tử MoMo
+                                </div>
+                            </div>
+                        </label> <label class="payment-method"> <input type="radio" name="payment" value="vnpay">
+                            <div class="payment-method-info">
+                                <div class="payment-method-name">
+                                    VNPay
+                                </div>
+                                <div class="payment-method-desc">
+                                    Thanh toán qua cổng VNPay
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </form>
+            </div>
+            <div class="checkout-section order-summary">
+                <h2 class="section-title">Đơn hàng của bạn</h2>
+                <div id="orderItems">
+                    <div class="order-item">
+                        <div class="order-item-image">
+                            <img src="../../assets/images/products/beptu-2.jpg" alt="Bếp từ Bosch PID775DC1E">
+                        </div>
+                        <div class="order-item-details">
+                            <div class="order-item-name">
+                                Bếp từ Bosch PID775DC1E
+                            </div>
+                            <div class="order-item-quantity">
+                                Số lượng: 1
+                            </div>
+                            <div class="order-item-price">
+                                15.990.000₫
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-item-image">
+                            <img src="../../assets/images/products/robot-2.jpg" alt=" Robot hút bụi Xiaomi S10">
+                        </div>
+                        <div class="order-item-details">
+                            <div class="order-item-name">
+                                Robot hút bụi Xiaomi S10
+                            </div>
+                            <div class="order-item-quantity">
+                                Số lượng: 1
+                            </div>
+                            <div class="order-item-price">
+                                8.990.000₫
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-item">
+                        <div class="order-item-image">
+                            <img src="../../assets/images/products/Tulanh-3.png" alt=" Tủ lạnh Samsung Inverter">
+                        </div>
+                        <div class="order-item-details">
+                            <div class="order-item-name">
+                                Tủ lạnh Samsung Inverter
+                            </div>
+                            <div class="order-item-quantity">
+                                Số lượng: 1
+                            </div>
+                            <div class="order-item-price">
+                                12.500.000₫
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-totals">
+                    <div class="order-total-row"><span>Tạm tính:</span> <span id="subtotal">37.480.000₫</span>
+                    </div>
+                    <div class="order-total-row"><span>Phí vận chuyển:</span> <span id="shipping">Miễn phí</span>
+                    </div>
+                    <div class="order-total-row"><span>Giảm giá:</span> <span id="discount"
+                            style="color: #e74c3c;">-500.000₫</span>
+                    </div>
+                    <div class="order-total-row final"><span>Tổng cộng:</span> <span class="amount"
+                            id="total">36.980.000₫</span>
+                    </div>
+                </div>
+                <button type="button" class="checkout-button" id="submitOrder"> <i class="fa fa-check-circle"></i> Đặt
+                    hàng </button>
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p style="margin-top: 15px; color: #7f8c8d;">Đang xử lý đơn hàng...</p>
+                </div>
+            </div>
+        </div>
+        <div id="successMessage" class="success-message">
+            <div class="success-icon"><i class="fa fa-check-circle"></i>
+            </div>
+            <h2>Đặt hàng thành công!</h2>
+            <p>Cảm ơn bạn đã đặt hàng</p>
+            <div class="order-code">
+                Mã đơn hàng: <span id="orderCode"></span>
+            </div>
+            <p>Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất để xác nhận đơn hàng.</p>
+            <p>Thông tin đơn hàng đã được gửi đến email của bạn.</p>
+            <a href="../../index.html" class="continue-shopping-link"> <i class="fa fa-arrow-left"></i> Tiếp tục mua sắm </a>
+
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>VỀ CHÚNG TÔI</h4>
+                    <p>
+                        Công ty TNHH Bếp Thông Minh TTB<br />
+                        MST: 031xxxxxxx<br />
+                        Địa chỉ: Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí
+                        Minh<br />
+                        Hotline: 1900.1234<br />
+                        Email: 23130356@.hcmuaf.edu.vn
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+                    <ul>
+                        <li><a href="#">Chính sách Bảo hành</a></li>
+                        <li><a href="#">Chính sách Vận chuyển & Lắp đặt</a></li>
+                        <li><a href="#">Chính sách Đổi trả</a></li>
+                        <li><a href="#">Phương thức Thanh toán</a></li>
+                        <li><a href="#">Câu hỏi Thường gặp (FAQs)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>LIÊN KẾT NHANH</h4>
+                    <ul>
+                        <li><a href="#">Về chúng tôi</a></li>
+                        <li><a href="#">Hệ thống Showroom</a></li>
+                        <li><a href="#">Tuyển dụng</a></li>
+                        <li><a href="#">Dành cho Đối tác B2B</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <p>Đăng ký nhận tin khuyến mãi:</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Email của bạn" />
+                        <button type="submit">Đăng ký</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bản quyền thuộc về Bếp Thông Minh TTB.</p>
+        </div>
+    </footer>
+    <script src="../../js/jsToan/Thanhtoan.js"></script>
+</body>
+
+</html>
