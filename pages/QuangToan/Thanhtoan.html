@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Thế Giới Bếp Thông Minh</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../TrongBao/Header.css">
+    <link rel="stylesheet" href="Thanhtoan.css">
+    <link rel="stylesheet" href="../../shared/main.css">
+    <link rel="stylesheet" href="../ThanhTruong/index.css">
+    
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__top-bar">
+            <div class="container">
+                <span><i class="fa fa-phone"></i> Hỗ trợ Kỹ thuật: 1900.1234</span>
+                <span><i class="fa fa-phone"></i> Kinh doanh: 1900.5678</span>
+                <span class="spacer"></span>
+                <a href="#">Hệ thống Showroom</a>
+                <a href="#">Tra cứu Bảo hành</a>
+            </div>
+        </div>
+
+        <div class="header__main">
+            <div class="container">
+                <a href="/" class="header__logo">
+                    <img src="../../assets/images/banners/logo.png" alt="TTB">
+                </a>
+                <div class="header__search">
+                    <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi...">
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+                <div class="header__actions">
+                    <a href="login_index.html"><i class="fa fa-user"></i> Tài khoản</a>
+                    <a href="#"><i class="fa fa-heart"></i> Yêu thích</a>
+                    <a href="#"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="header__nav">
+            <div class="container">
+                <ul>
+                    <li class="nav-item has-megamenu">
+                        <a href="#">Sản phẩm <i class="fa fa-chevron-down"></i></a>
+                        <div class="mega-menu">
+                            <!-- ⚡ Thêm danh mục linh động -->
+                            <div class="mega-menu-content">
+                                <div class="mega-menu-column">
+                                    <a class="menu-item" href="Tatcasp.html?category=bep-tu" data-category="bep-tu">Bếp
+                                        từ</a>
+                                    <a class="menu-item" href="Tatcasp.html?category=robot"
+                                        data-category="robot">Robot</a>
+                                    <a class="menu-item" href="Tatcasp.html?category=tu-lanh" data-category="tu-lanh">Tủ
+                                        lạnh</a>
+                                    <a class="menu-item" href="Tatcasp.html?category=may-rua-bat"
+                                        data-category="may-rua-bat">Máy rửa bát</a>
+                                    <a class="menu-item" href="Tatcasp.html?category=cam-bieng"
+                                        data-category="cam-bieng">Cảm biến</a>
+                                    <a class="menu-item" href="Tatcasp.html?category=pha-che"
+                                        data-category="pha-che">Pha chế</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="#">Giải pháp & Combo</a></li>
+                    <li class="nav-item"><a href="#">Góc Tư vấn</a></li>
+                    <li class="nav-item"><a href="#">Dịch vụ Lắp đặt</a></li>
+                    <li class="nav-item"><a href="#">Về chúng tôi</a></li>
+                    <li class="nav-item"><a href="#">Khuyến mãi</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+  <div class="container">
+   <h1 class="page-title">🛒 Thanh toán</h1>
+   <div id="checkoutForm" class="checkout-container">
+    <div class="checkout-section">
+     <h2 class="section-title">Thông tin giao hàng</h2>
+     <form id="orderForm">
+      <div class="form-row">
+       <div class="form-group"><label for="fullName">Họ và tên *</label> <input type="text" id="fullName" required placeholder="Nguyễn Văn A">
+       </div>
+       <div class="form-group"><label for="phone">Số điện thoại *</label> <input type="tel" id="phone" required placeholder="0912345678">
+       </div>
+      </div>
+      <div class="form-group"><label for="email">Email</label> <input type="email" id="email" placeholder="example@email.com">
+      </div>
+      <div class="form-group"><label for="address">Địa chỉ giao hàng *</label> <input type="text" id="address" required placeholder="Số nhà, tên đường">
+      </div>
+      <div class="form-row">
+       <div class="form-group"><label for="city">Tỉnh/Thành phố *</label> <select id="city" required> <option value="">Chọn Tỉnh/Thành phố</option> <option value="hanoi">Hà Nội</option> <option value="hcm">TP. Hồ Chí Minh</option> <option value="danang">Đà Nẵng</option> <option value="haiphong">Hải Phòng</option> <option value="cantho">Cần Thơ</option> </select>
+       </div>
+       <div class="form-group"><label for="district">Quận/Huyện *</label> <select id="district" required> <option value="">Chọn Quận/Huyện</option> <option value="district1">Quận 1</option> <option value="district2">Quận 2</option> <option value="district3">Quận 3</option> </select>
+       </div>
+      </div>
+      <div class="form-group"><label for="notes">Ghi chú đơn hàng</label> <textarea id="notes" placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn"></textarea>
+      </div>
+   
