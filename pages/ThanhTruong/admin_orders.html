@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Trang Tổng quan</title>
+    <title>Admin - Quản lý Đơn hàng</title>
 
-    <!-- CSS riêng cho trang Admin -->
     <link rel="stylesheet" href="admin_style.css">
-    <!-- Font Awesome (cho icons) -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Font (Inter/Manrope - đồng bộ với web) -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Thư viện Chart.js (để vẽ biểu đồ) -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../../js/jsTruong/admin_script.js"></script>
 </head>
 <body>
 
@@ -29,13 +26,13 @@
         </div>
         <ul class="sidebar-menu">
             <li>
-                <a href="admin_dashboard.html" class="active">
+                <a href="admin_dashboard.html">
                     <i class="fa-solid fa-chart-line"></i>
                     <span>Tổng quan</span>
                 </a>
             </li>
             <li>
-                <a href="./admin_orders.html">
+                <a href="admin_orders.html" class="active">
                     <i class="fa-solid fa-file-invoice-dollar"></i>
                     <span>Quản lý Đơn hàng</span>
                 </a>
@@ -78,7 +75,7 @@
 
         <!-- HEADER CỦA NỘI DUNG CHÍNH -->
         <header class="admin-header">
-            <h2>Tổng quan</h2>
+            <h2>Quản lý Đơn hàng</h2>
             <div class="admin-profile">
                 <img src="https://placehold.co/40x40" alt="Admin">
                 <span>Xin chào, Admin!</span>
@@ -88,66 +85,29 @@
         <!-- VÙNG NỘI DUNG CHÍNH -->
         <main class="admin-content">
 
-            <!-- Hàng 1: Các thẻ thống kê nhanh -->
-            <div class="admin-grid stat-cards">
-                <div class="stat-card">
-                    <div class="card-icon blue">
-                        <i class="fa-solid fa-dollar-sign"></i>
-                    </div>
-                    <div class="card-info">
-                        <span class="card-title">Doanh thu hôm nay</span>
-                        <span class="card-value">15.000.000đ</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="card-icon green">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                    </div>
-                    <div class="card-info">
-                        <span class="card-title">Đơn hàng mới</span>
-                        <span class="card-value">12</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="card-icon yellow">
-                        <i class="fa-solid fa-users"></i>
-                    </div>
-                    <div class="card-info">
-                        <span class="card-title">Khách hàng mới</span>
-                        <span class="card-value">30</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="card-icon red">
-                        <i class="fa-solid fa-box-open"></i>
-                    </div>
-                    <div class="card-info">
-                        <span class="card-title">Sản phẩm hết hàng</span>
-                        <span class="card-value">5</span>
-                    </div>
-                </div>
+            <!-- KHUNG BỘ LỌC -->
+            <div class="admin-card admin-filters">
+                <input type="text" placeholder="Tìm theo Mã đơn, Tên khách hàng...">
+                <select>
+                    <option value="">Tất cả Trạng thái</option>
+                    <option value="processing">Đang xử lý</option>
+                    <option value="completed">Hoàn thành</option>
+                    <option value="cancelled">Đã hủy</option>
+                </select>
+                <input type="date" placeholder="Từ ngày">
+                <input type="date" placeholder="Đến ngày">
+                <button class="btn-filter">Lọc</button>
             </div>
 
-            <!-- Hàng 2: Biểu đồ -->
-            <div class="admin-grid charts">
-                <div class="chart-container">
-                    <h3>Doanh thu 7 ngày qua</h3>
-                    <canvas id="revenueChart"></canvas>
-                </div>
-                <div class="chart-container">
-                    <h3>Top 5 Sản phẩm bán chạy</h3>
-                    <canvas id="productChart"></canvas>
-                </div>
-            </div>
-
-            <!-- Hàng 3: Đơn hàng mới nhất -->
+            <!-- KHUNG DANH SÁCH ĐƠN HÀNG -->
             <div class="admin-card">
-                <h3>Đơn hàng Mới nhất</h3>
+                <h3>Danh sách Đơn hàng</h3>
                 <table class="admin-table">
                     <thead>
                     <tr>
                         <th>Mã Đơn</th>
                         <th>Khách hàng</th>
+                        <th>Ngày đặt</th>
                         <th>Tổng tiền</th>
                         <th>Trạng thái</th>
                         <th>Hành động</th>
@@ -155,32 +115,63 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td>#23130356</td>
-                        <td>Lơ Thanh Trường</td>
+                        <td>#12345</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>10/11/2025</td>
                         <td>8.500.000đ</td>
                         <td><span class="status processing">Đang xử lý</span></td>
                         <td><a href="#" class="btn-view">Xem</a></td>
                     </tr>
                     <tr>
-                        <td>#23130335</td>
-                        <td>Ngiễn Quang Tòn</td>
+                        <td>#12344</td>
+                        <td>Trần Thị B</td>
+                        <td>09/11/2025</td>
                         <td>15.000.000đ</td>
                         <td><span class="status completed">Hoàn thành</span></td>
                         <td><a href="#" class="btn-view">Xem</a></td>
                     </tr>
                     <tr>
-                        <td>#23130024</td>
-                        <td>Ngiễn Trọng Bẻo</td>
+                        <td>#12343</td>
+                        <td>Lê Văn C</td>
+                        <td>09/11/2025</td>
                         <td>500.000đ</td>
                         <td><span class="status cancelled">Đã hủy</span></td>
                         <td><a href="#" class="btn-view">Xem</a></td>
                     </tr>
+                    <tr>
+                        <td>#12342</td>
+                        <td>Phạm Thị D</td>
+                        <td>08/11/2025</td>
+                        <td>22.000.000đ</td>
+                        <td><span class="status completed">Hoàn thành</span></td>
+                        <td><a href="#" class="btn-view">Xem</a></td>
+                    </tr>
+                    <tr>
+                        <td>#12341</td>
+                        <td>Hoàng Văn E</td>
+                        <td>07/11/2025</td>
+                        <td>1.200.000đ</td>
+                        <td><span class="status processing">Đang xử lý</span></td>
+                        <td><a href="#" class="btn-view">Xem</a></td>
+                    </tr>
                     </tbody>
                 </table>
+
+                <!-- PHÂN TRANG -->
+                <div class="admin-pagination">
+                    <a href="#" class="page-link">&laquo; Trước</a>
+                    <a href="#" class="page-link active">1</a>
+                    <a href="#" class="page-link">2</a>
+                    <a href="#" class="page-link">3</a>
+                    <a href="#" class="page-link">Sau &raquo;</a>
+                </div>
             </div>
 
         </main>
     </div>
 </div>
+
+<!-- Tệp JS (không cần sửa) -->
+<script src="admin_script.js"></script>
 </body>
 </html>
