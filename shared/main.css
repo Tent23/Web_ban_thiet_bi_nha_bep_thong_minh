@@ -135,6 +135,13 @@ img {
     display: flex;
     flex-direction: column;
 }
+.product-card img {
+    height: 500px; /* Đặt chiều cao cố định */
+    width: 100%; /* Đảm bảo ảnh chiếm hết chiều rộng card */
+    object-fit: cover; /* Cắt ảnh vừa vặn, không làm méo ảnh */
+    border-radius: 8px; /* Bo góc ảnh cho đẹp */
+    margin-bottom: 15px; /* Khoảng cách với tiêu đề */
+}
 .product-card h3 {
     font-size: 1.1rem;
     color: var(--dark-color);

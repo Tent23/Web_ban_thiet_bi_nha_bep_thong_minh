@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/images/banners/banner1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/banners/banner2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/banners/banner3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/banners/banner4.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/chinhsachbaohanh.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/chinhsachbaohanh.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/giohang.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/giohang.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/khuyenmai.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/khuyenmai.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/phuongthucthanhtoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/phuongthucthanhtoan.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/tuyendung.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/tuyendung.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/vechungtoi.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/vechungtoi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/yeuthich.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/yeuthich.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/TrongBao/DichVuLapDat.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/TrongBao/DichVuLapDat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/TrongBao/goctuvan.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/TrongBao/goctuvan.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/TrongBao/goctuvan.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/TrongBao/goctuvan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/shared/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,27 +41,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/THANH TRUONG/Web_ban_thiet_bi_nha_bep_thong_minh&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/THANH TRUONG/Web_ban_thiet_bi_nha_bep_thong_minh/assets/images/banners",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\assets\images\banners" />
+      <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\assets\images\products" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\assets\images\banners" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -84,7 +90,8 @@
       <workItem from="1762864688868" duration="9000" />
       <workItem from="1762864699410" duration="3598000" />
       <workItem from="1762939699852" duration="711000" />
-      <workItem from="1762941683610" duration="4375000" />
+      <workItem from="1762941683610" duration="5217000" />
+      <workItem from="1762946975112" duration="2550000" />
     </task>
     <servers />
   </component>
