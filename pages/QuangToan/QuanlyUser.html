@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Khách Hàng</title>
+
+    <!-- CSS riêng cho trang Admin -->
+    <link rel="stylesheet" href="../ThanhTruong/admin_style.css">
+    <!-- Font Awesome (cho icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Font (Inter/Manrope - đồng bộ với web) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Thư viện Chart.js (để vẽ biểu đồ) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../js/jsTruong/admin_script.js"></script>
+    <link rel="stylesheet" href="QuanlyUser.css">
+</head>
+<body>
+
+<div class="admin-layout">
+
+    <!-- SIDEBAR (MENU BÊN TRÁI) -->
+    <nav class="admin-sidebar">
+        <div class="sidebar-header">
+            <h3>Admin Panel</h3>
+        </div>
+        <ul class="sidebar-menu">
+            <li>
+                <a href="admin_dashboard.html" class="active">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Tổng quan</span>
+                </a>
+            </li>
+            <li>
+                <a href="./admin_orders.html">
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    <span>Quản lý Đơn hàng</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-box-archive"></i>
+                    <span>Quản lý Sản phẩm</span>
+                </a>
+            </li>
+            <li>
+                <a href="../QuangToan/QuanlyUser.html">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Quản lý Khách hàng</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-file-pen"></i>
+                    <span>Quản lý Nội dung</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Cài đặt</span>
+                </a>
+            </li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="#">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Đăng xuất</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- NỘI DUNG CHÍNH (BÊN PHẢI) -->
+    <div class="admin-main">
+
+        <!-- HEADER CỦA NỘI DUNG CHÍNH -->
+        <header class="admin-header">
+            <h2>Tổng quan</h2>
+            <div class="admin-profile">
+                <img src="https://placehold.co/40x40" alt="Admin">
+                <span>Xin chào, Admin!</span>
+            </div>
+        </header>
+        <div class="bg-white rounded-lg shadow overflow-hidden">
+    <div class="overflow-x-auto">
+      <table class="w-full text-left">
+        <thead class="bg-gray-50 border-b">
+          <tr>
+            <th class="px-6 py-3">Tên</th>
+            <th class="px-6 py-3">Email</th>
+            <th class="px-6 py-3">Vai trò</th>
+            <th class="px-6 py-3">Trạng thái</th>
+            <th class="px-6 py-3">Ngày tạo</th>
+            <th class="px-6 py-3 text-right">Thao tác</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="px-6 py-4">Nguyễn Văn A</td>
+            <td class="px-6 py-4">a@example.com</td>
+            <td class="px-6 py-4">User</td>
+            <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-green-100 text-green-700 text-sm">Hoạt động</span></td>
+            <td class="px-6 py-4">01/11/2025</td>
+            <td class="px-6 py-4 text-right">
+              <button class="text-blue-600 mr-2">✏️ Sửa</button>
+              <button class="text-red-600">🗑️ Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4">Trần Thị B</td>
+            <td class="px-6 py-4">b@example.com</td>
+            <td class="px-6 py-4">Manager</td>
+            <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-red-100 text-red-700 text-sm">Không hoạt động</span></td>
+            <td class="px-6 py-4">02/11/2025</td>
+            <td class="px-6 py-4 text-right">
+              <button class="text-blue-600 mr-2">✏️ Sửa</button>
+              <button class="text-red-600">🗑️ Xóa</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="px-6 py-4">Lê Văn C</td>
+            <td class="px-6 py-4">c@example.com</td>
+            <td class="px-6 py-4">Admin</td>
+            <td class="px-6 py-4"><span class="px-2 py-1 rounded bg-green-100 text-green-700 text-sm">Hoạt động</span></td>
+            <td class="px-6 py-4">03/11/2025</td>
+            <td class="px-6 py-4 text-right">
+              <button class="text-blue-600 mr-2">✏️ Sửa</button>
+              <button class="text-red-600">🗑️ Xóa</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  </body>
