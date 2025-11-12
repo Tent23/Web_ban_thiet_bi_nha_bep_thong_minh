@@ -5,12 +5,14 @@
     --text-color: #555;
     --container-width: 1200px;
 }
+
 main{
     max-width: 1200px;
+    margin: auto;
 }
+
 main .content{
-    margin-left:200px;
-    margin-right:200px;
+
     width: 100%;
     margin-top: 20px;
     margin-bottom: 50px;

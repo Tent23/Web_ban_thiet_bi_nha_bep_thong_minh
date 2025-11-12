@@ -8,17 +8,23 @@
 html {
     scroll-behavior: smooth;
 }
+main{
+    max-width: 1200px;
+    margin: auto;
+}
 .main_container{
-    margin-left:200px;
-    margin-right:200px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
 .content_block{
     margin-top: 20px;
     margin-bottom:20px;
 }
 .main_container img{
-    width:300px;
+    width:400px;
     height:300px;
+    box-shadow: 2px 2px 4px lightgray;
 
 }
 .main_container .img{

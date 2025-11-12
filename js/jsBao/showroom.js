@@ -14,5 +14,17 @@ document.addEventListener('DOMContentLoaded', function() {
             clickable: true,
         },
     });
+    const heroSlider2 = new Swiper('#hero-slider2', {
+        // Tùy chọn
+        loop: true, // Lặp lại
+        autoplay: {
+            delay: 5000, // Tự động trượt sau 5 giây
+        },
+        pagination: { // Hiển thị dấu chấm phân trang
+            el: '#hero-slider2 .swiper-pagination', // Chỉ định rõ phần tử phân trang thuộc slider này
+            clickable: true,
+        },
+    });
 });
+
 
