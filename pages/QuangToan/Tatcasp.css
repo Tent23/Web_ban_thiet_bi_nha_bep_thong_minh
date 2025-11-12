@@ -133,3 +133,31 @@
     font-size: 14px;
   }
 }
+/* ===== NÚT THÊM VÀO GIỎ ===== */
+.btn-buy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: calc(100% - 20px);
+  margin: 0 auto 12px;
+  background: #007bff; /* màu xanh chủ đạo */
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 8px; /* bo tròn */
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-buy i {
+  font-size: 16px;
+}
+
+.btn-buy:hover {
+  background: #0056b3; /* xanh đậm khi hover */
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
