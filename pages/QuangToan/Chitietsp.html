@@ -2,193 +2,189 @@
 <html lang="vi">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ - Thế Giới Bếp Thông Minh</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bếp từ đôi Bosch PUC631BB2E - Thế Giới Bếp Thông Minh</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="../TrongBao/Header.css">
-    <link rel="stylesheet" href="Chitietsp.css">
-    <link rel="stylesheet" href="../../shared/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../TrongBao/Header.css">
+  <link rel="stylesheet" href="Chitietsp.css">
+  <link rel="stylesheet" href="../../shared/main.css">
+  <link rel="stylesheet" href="../ThanhTruong/index.css">
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="header__top-bar">
-            <div class="container">
-                <span><i class="fa fa-phone"></i> Hỗ trợ Kỹ thuật: 1900.1234</span>
-                <span><i class="fa fa-phone"></i> Kinh doanh: 1900.5678</span>
-                <span class="spacer"></span>
-                <a href="#">Hệ thống Showroom</a>
-                <a href="#">Tra cứu Bảo hành</a>
-            </div>
+  <header class="header">
+    <div class="header__top-bar">
+      <div class="container">
+        <span><i class="fa fa-phone"></i> Hỗ trợ Kỹ thuật: 1900.1234</span>
+        <span><i class="fa fa-phone"></i> Kinh doanh: 1900.5678</span>
+        <span class="spacer"></span>
+        <a href="#">Hệ thống Showroom</a>
+        <a href="#">Tra cứu Bảo hành</a>
+      </div>
+    </div>
+
+    <div class="header__main">
+      <div class="container">
+        <a href="/" class="header__logo">
+          <img src="../../assets/images/banners/logo.png" alt="TTB">
+        </a>
+        <div class="header__search">
+          <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi...">
+          <button><i class="fa fa-search"></i></button>
         </div>
-
-        <div class="header__main">
-            <div class="container">
-                <a href="/" class="header__logo">
-                    <img src="../../assets/images/banners/logo.png" alt="TTB">
-                </a>
-                <div class="header__search">
-                    <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi...">
-                    <button><i class="fa fa-search"></i></button>
-                </div>
-                <div class="header__actions">
-                    <a href="login_index.html"><i class="fa fa-user"></i> Tài khoản</a>
-                    <a href="#"><i class="fa fa-heart"></i> Yêu thích</a>
-                    <a href="#"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
-                </div>
-            </div>
+        <div class="header__actions">
+          <a href="../TrongBao/Login.html"><i class="fa fa-user"></i> Tài khoản</a>
+          <a href="../ThanhTruong/giohang.html"><i class="fa fa-heart"></i> Yêu thích</a>
+          <a href="../ThanhTruong/giohang.html"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
         </div>
+      </div>
+    </div>
 
-        <nav class="header__nav">
-            <div class="container">
-                <ul>
-                    <li class="nav-item has-megamenu">
-                        <a href="#">Sản phẩm <i class="fa fa-chevron-down"></i></a>
-                        <div class="mega-menu">
-                            <!-- ⚡ Thêm danh mục linh động -->
-                            <div class="mega-menu-content">
-                                <div class="mega-menu-column">
-                                    <a class="menu-item" href="Tatcasp.html?category=bep-tu" data-category="bep-tu">Bếp
-                                        từ</a>
-                                    <a class="menu-item" href="Tatcasp.html?category=robot"
-                                        data-category="robot">Robot</a>
-                                    <a class="menu-item" href="Tatcasp.html?category=tu-lanh" data-category="tu-lanh">Tủ
-                                        lạnh</a>
-                                    <a class="menu-item" href="Tatcasp.html?category=may-rua-bat"
-                                        data-category="may-rua-bat">Máy rửa bát</a>
-                                    <a class="menu-item" href="Tatcasp.html?category=cam-bieng"
-                                        data-category="cam-bieng">Cảm biến</a>
-                                    <a class="menu-item" href="Tatcasp.html?category=pha-che"
-                                        data-category="pha-che">Pha chế</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a href="#">Giải pháp & Combo</a></li>
-                    <li class="nav-item"><a href="#">Góc Tư vấn</a></li>
-                    <li class="nav-item"><a href="#">Dịch vụ Lắp đặt</a></li>
-                    <li class="nav-item"><a href="#">Về chúng tôi</a></li>
-                    <li class="nav-item"><a href="#">Khuyến mãi</a></li>
-                </ul>
+    <nav class="header__nav">
+      <div class="container">
+        <ul>
+          <li class="nav-item has-megamenu">
+            <a href="#">Sản phẩm <i class="fa fa-chevron-down"></i></a>
+            <div class="mega-menu">
+              <div class="mega-menu-content">
+                <div class="mega-menu-column">
+                  <a href="Beptu.html">Bếp từ</a>
+                  <a href="Tulanh.html">Tủ lạnh</a>
+                  <a href="Robot.html">Robot Hút bụi</a>
+                  <a href="Mayruabat.html">Máy rửa bát</a>
+                  <a href="Cambien.html">Cảm biến & An ninh</a>
+                  <a href="Phache.html">Pha chế</a>
+                </div>
+              </div>
             </div>
-        </nav>
-    </header>
+          </li>
+          <li class="nav-item"><a href="../TrongBao/giaiphapvacombo.html">Giải pháp & Combo</a></li>
+          <li class="nav-item"><a href="../TrongBao/goctuvan.html">Góc Tư vấn</a></li>
+          <li class="nav-item"><a href="../TrongBao/DichVuLapDat.html">Dịch vụ Lắp đặt</a></li>
+          <li class="nav-item"><a href="../ThanhTruong/vechungtoi.html">Về chúng tôi</a></li>
+          <li class="nav-item"><a href="../ThanhTruong/khuyenmai.html">Khuyến mãi</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
 
-    <main>
-
-        <!-- SECTION 1: Thông tin sản phẩm -->
-        <section class="product-info">
-            <div class="product-detail">
-                <div class="image">
-                    <img src="img/noi-com.jpg" alt="Nồi cơm điện Sharp 1.8L">
-                </div>
-                <div class="details">
-                    <h2>Nồi cơm điện Sharp 1.8L</h2>
-                    <p class="price">1.290.000₫</p>
-                    <p class="desc">
-                        Nồi cơm điện Sharp dung tích 1.8 lít, phù hợp cho gia đình 4-6 người.
-                        Thiết kế hiện đại, dễ sử dụng, lòng nồi chống dính, bền bỉ theo thời gian.
-                    </p>
-                    <div class="buttons">
-                        <button class="btn add-cart">🛒 Thêm vào giỏ</button>
-                        <button class="btn buy-now">⚡ Mua ngay</button>
-                        <button class="btn favorite">❤️ Yêu thích</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 2: Tính năng nổi bật -->
-        <section class="product-features">
-            <h3>Tính năng nổi bật</h3>
-            <ul>
-                <li>Lòng nồi chống dính siêu bền.</li>
-                <li>Công suất 700W nấu chín cơm nhanh chóng.</li>
-                <li>Thiết kế hiện đại, dễ lau chùi.</li>
-                <li>Bảo hành chính hãng 12 tháng.</li>
-            </ul>
-        </section>
-
-        <!-- SECTION 3: Sản phẩm tương tự -->
-        <section class="related-products">
-            <h3>Sản phẩm tương tự</h3>
-            <div class="product-section">
-                <div class="product-card">
-                    <img src="img/noi1.jpg" alt="Nồi cơm Sunhouse 1.8L">
-                    <h4>Nồi cơm Sunhouse 1.8L</h4>
-                    <p>Giá: 1.190.000₫</p>
-                </div>
-                <div class="product-card">
-                    <img src="img/noi2.jpg" alt="Nồi cơm Philips 1.5L">
-                    <h4>Nồi cơm Philips 1.5L</h4>
-                    <p>Giá: 1.250.000₫</p>
-                </div>
-                <div class="product-card">
-                    <img src="img/noi3.jpg" alt="Nồi cơm Toshiba 2.0L">
-                    <h4>Nồi cơm Toshiba 2.0L</h4>
-                    <p>Giá: 1.350.000₫</p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>VỀ CHÚNG TÔI</h4>
-                    <p>Công ty TNHH Bếp Thông Minh TTB<br>
-                        MST: 031xxxxxxx<br>
-                        Địa chỉ: Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh<br>
-                        Hotline: 1900.1234<br>
-                        Email: 23130356@.hcmuaf.edu.vn</p>
-                </div>
-                <div class="footer-col">
-                    <h4>HỖ TRỢ KHÁCH HÀNG</h4>
-                    <ul>
-                        <li><a href="#">Chính sách Bảo hành</a></li>
-                        <li><a href="#">Chính sách Vận chuyển & Lắp đặt</a></li>
-                        <li><a href="#">Chính sách Đổi trả</a></li>
-                        <li><a href="#">Phương thức Thanh toán</a></li>
-                        <li><a href="#">Câu hỏi Thường gặp (FAQs)</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>LIÊN KẾT NHANH</h4>
-                    <ul>
-                        <li><a href="#">Về chúng tôi</a></li>
-                        <li><a href="#">Hệ thống Showroom</a></li>
-                        <li><a href="#">Tuyển dụng</a></li>
-                        <li><a href="#">Dành cho Đối tác B2B</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <p>Đăng ký nhận tin khuyến mãi:</p>
-                    <form class="subscribe-form">
-                        <input type="email" placeholder="Email của bạn">
-                        <button type="submit">Đăng ký</button>
-                    </form>
-                </div>
-            </div>
+  <main>
+    <!-- SECTION 1: Thông tin sản phẩm -->
+    <section class="product-info">
+      <div class="product-detail">
+        <div class="image">
+          <img src="../../assets/images/products/beptu-1.jpg" alt="Bếp từ đôi Bosch PUC631BB2E">
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Bản quyền thuộc về Bếp Thông Minh TTB.</p>
+        <div class="details">
+          <h2>Bếp từ đôi Bosch PUC631BB2E</h2>
+          <p class="price">13.900.000₫</p>
+          <p class="desc">
+            Bếp từ đôi Bosch PUC631BB2E thiết kế âm sang trọng, mặt kính Schott Ceran chịu nhiệt và chống trầy xước.
+            Tích hợp 3 vùng nấu thông minh, điều khiển cảm ứng DirectSelect, chức năng Booster giúp nấu nhanh hơn 50%.
+          </p>
+          <div class="buttons">
+            <a href="../ThanhTruong/giohang.html" class="btn add-cart">🛒 Thêm vào giỏ</a>
+            <a href="../QuangToan/Thanhtoan.html" class="btn buy-now">⚡ Mua ngay</a>
+            <a href="../ThanhTruong/yeuthich.html">❤️ Yêu thích</a>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Tính năng nổi bật -->
+    <section class="product-features">
+      <h3>Tính năng nổi bật</h3>
+      <ul>
+        <li>Mặt kính Schott Ceran cao cấp, chịu lực, chịu nhiệt tốt.</li>
+        <li>Điều khiển cảm ứng DirectSelect dễ dàng điều chỉnh công suất.</li>
+        <li>Chức năng Booster giúp tăng tốc độ nấu nhanh gấp đôi.</li>
+        <li>Tự động ngắt khi quá nhiệt hoặc không có nồi trên bếp.</li>
+        <li>Khóa an toàn trẻ em, đảm bảo an toàn tuyệt đối khi sử dụng.</li>
+      </ul>
+    </section>
+
+    <!-- SECTION 3: Sản phẩm tương tự -->
+    <section class="related-products">
+      <h3>Sản phẩm tương tự</h3>
+      <div class="product-section">
+        <div class="product-card">
+          <img src="../../assets/images/products/beptu-2.jpg" alt="Bếp từ Electrolux EHI7260BA">
+          <h4>Bếp từ Electrolux EHI7260BA</h4>
+          <p>Giá: 11.500.000₫</p>
+        </div>
+        <div class="product-card">
+          <img src="../../assets/images/products/beptu-3.jpg" alt="Bếp từ Kaff KF-228IC">
+          <h4>Bếp từ Kaff KF-228IC</h4>
+          <p>Giá: 9.900.000₫</p>
+        </div>
+        <div class="product-card">
+          <img src="../../assets/images/products/beptu-4.jpg" alt="Bếp từ Malloca MI 732 SL">
+          <h4>Bếp từ Malloca MI 732 SL</h4>
+          <p>Giá: 12.200.000₫</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>VỀ CHÚNG TÔI</h4>
+          <p>
+            Công ty TNHH Bếp Thông Minh TTB<br>
+            MST: 031xxxxxxx<br>
+            Địa chỉ: Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh<br>
+            Hotline: 1900.1234<br>
+            Email: 23130356@.hcmuaf.edu.vn
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>HỖ TRỢ KHÁCH HÀNG</h4>
+          <ul>
+            <li><a href="#">Chính sách Bảo hành</a></li>
+            <li><a href="#">Chính sách Vận chuyển & Lắp đặt</a></li>
+            <li><a href="#">Chính sách Đổi trả</a></li>
+            <li><a href="#">Phương thức Thanh toán</a></li>
+            <li><a href="#">Câu hỏi Thường gặp (FAQs)</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>LIÊN KẾT NHANH</h4>
+          <ul>
+            <li><a href="#">Về chúng tôi</a></li>
+            <li><a href="#">Hệ thống Showroom</a></li>
+            <li><a href="#">Tuyển dụng</a></li>
+            <li><a href="#">Dành cho Đối tác B2B</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>KẾT NỐI VỚI CHÚNG TÔI</h4>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+          <p>Đăng ký nhận tin khuyến mãi:</p>
+          <form class="subscribe-form">
+            <input type="email" placeholder="Email của bạn">
+            <button type="submit">Đăng ký</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Bản quyền thuộc về Bếp Thông Minh TTB.</p>
+    </div>
+  </footer>
 
 </body>
+</html>
