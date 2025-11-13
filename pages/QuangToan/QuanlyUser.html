@@ -1,148 +1,148 @@
-  <!DOCTYPE html>
-  <html lang="vi">
+<!DOCTYPE html>
+<html lang="vi">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quản lý Khách Hàng</title>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý Khách Hàng</title>
 
-    <!-- CSS riêng cho trang Admin -->
-    <link rel="stylesheet" href="../ThanhTruong/admin_style.css">
-    <!-- Font Awesome (cho icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Font (Inter/Manrope - đồng bộ với web) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap"
-      rel="stylesheet">
+  <!-- CSS riêng cho trang Admin -->
+  <link rel="stylesheet" href="../ThanhTruong/admin_style.css">
+  <!-- Font Awesome (cho icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Font (Inter/Manrope - đồng bộ với web) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap"
+    rel="stylesheet">
 
-    <!-- Thư viện Chart.js (để vẽ biểu đồ) -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../../js/jsTruong/admin_script.js"></script>
-    <link rel="stylesheet" href="QuanlyUser.css">
-  </head>
+  <!-- Thư viện Chart.js (để vẽ biểu đồ) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../../js/jsTruong/admin_script.js"></script>
+  <link rel="stylesheet" href="QuanlyUser.css">
+</head>
 
-  <body>
+<body>
 
-    <div class="admin-layout">
+  <div class="admin-layout">
 
-      <!-- SIDEBAR (MENU BÊN TRÁI) -->
-      <nav class="admin-sidebar">
-        <div class="sidebar-header">
-          <h3>Admin Panel</h3>
-        </div>
-        <ul class="sidebar-menu">
-          <li>
-            <a href="admin_dashboard.html" >
-              <i class="fa-solid fa-chart-line"></i>
-              <span>Tổng quan</span>
-            </a>
-          </li>
-          <li>
-            <a href="../ThanhTruong/admin_dashboard.html">
-              <i class="fa-solid fa-file-invoice-dollar"></i>
-              <span>Quản lý Đơn hàng</span>
-            </a>
-          </li>
-          <li>
-            <a href="../ThanhTruong/admin_orders.html">
-              <i class="fa-solid fa-box-archive"></i>
-              <span>Quản lý Sản phẩm</span>
-            </a>
-          </li>
-          <li>
-            <a href="../QuangToan/QuanlyUser.html" class="active">
-              <i class="fa-solid fa-users"></i>
-              <span>Quản lý Khách hàng</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa-solid fa-file-pen"></i>
-              <span>Quản lý Nội dung</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fa-solid fa-gear"></i>
-              <span>Cài đặt</span>
-            </a>
-          </li>
-        </ul>
-        <div class="sidebar-footer">
-          <a href="#">
-            <i class="fa-solid fa-right-from-bracket"></i>
-            <span>Đăng xuất</span>
+    <!-- SIDEBAR (MENU BÊN TRÁI) -->
+    <nav class="admin-sidebar">
+      <div class="sidebar-header">
+        <h3>Admin Panel</h3>
+      </div>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="../ThanhTruong/admin_dashboard.html">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Tổng quan</span>
           </a>
+        </li>
+        <li>
+          <a href="../ThanhTruong/admin_orders.html">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+            <span>Quản lý Đơn hàng</span>
+          </a>
+        </li>
+        <li>
+          <a href="../ThanhTruong/admin_products.html">
+            <i class="fa-solid fa-box-archive"></i>
+            <span>Quản lý Sản phẩm</span>
+          </a>
+        </li>
+        <li>
+          <a href="QuanlyUser.html" class="active">
+            <i class="fa-solid fa-users"></i>
+            <span>Quản lý Khách hàng</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-file-pen"></i>
+            <span>Quản lý Nội dung</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa-solid fa-gear"></i>
+            <span>Cài đặt</span>
+          </a>
+        </li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="#">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Đăng xuất</span>
+        </a>
+      </div>
+    </nav>
+
+
+    <div class="admin-main">
+
+
+      <header class="admin-header">
+        <h2>Quản lý khách hàng</h2>
+        <div class="admin-profile">
+          <img src="https://placehold.co/40x40" alt="Admin">
+          <span>Xin chào, Admin!</span>
         </div>
-      </nav>
-
-      <!-- NỘI DUNG CHÍNH (BÊN PHẢI) -->
-      <div class="admin-main">
-
-        <!-- HEADER CỦA NỘI DUNG CHÍNH -->
-        <header class="admin-header">
-          <h2>Quản lý khách hàng</h2>
-          <div class="admin-profile">
-            <img src="https://placehold.co/40x40" alt="Admin">
-            <span>Xin chào, Admin!</span>
+      </header>
+      <div class="bg-white rounded-lg shadow overflow-hidden">
+        <main class="user-table-container">
+          <div class="table-wrapper">
+            <table class="user-table">
+              <thead>
+                <tr>
+                  <th>Tên</th>
+                  <th>Email</th>
+                  <th>Vai trò</th>
+                  <th>Trạng thái</th>
+                  <th>Ngày tạo</th>
+                  <th class="text-right">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nguyễn Văn A</td>
+                  <td>a@example.com</td>
+                  <td>User</td>
+                  <td><span class="status active">Hoạt động</span></td>
+                  <td>01/11/2025</td>
+                  <td class="text-right">
+                    <button class="edit-btn"><i class="fa-solid fa-pencil"></i> Sửa</button>
+                    <button class="delete-btn"><i class="fa-solid fa-trash"></i> Xóa</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Trần Thị B</td>
+                  <td>b@example.com</td>
+                  <td>Manager</td>
+                  <td><span class="status inactive">Không hoạt động</span></td>
+                  <td>02/11/2025</td>
+                  <td class="text-right">
+                    <button class="edit-btn"><i class="fa-solid fa-pencil"></i> Sửa</button>
+                    <button class="delete-btn"><i class="fa-solid fa-trash"></i> Xóa</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Lê Văn C</td>
+                  <td>c@example.com</td>
+                  <td>Admin</td>
+                  <td><span class="status active">Hoạt động</span></td>
+                  <td>03/11/2025</td>
+                  <td class="text-right">
+                    <button class="edit-btn"><i class="fa-solid fa-pencil"></i> Sửa</button>
+                    <button class="delete-btn"><i class="fa-solid fa-trash"></i> Xóa</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </header>
-        <div class="bg-white rounded-lg shadow overflow-hidden">
-          <main class="user-table-container">
-            <div class="table-wrapper">
-              <table class="user-table">
-                <thead>
-                  <tr>
-                    <th>Tên</th>
-                    <th>Email</th>
-                    <th>Vai trò</th>
-                    <th>Trạng thái</th>
-                    <th>Ngày tạo</th>
-                    <th class="text-right">Thao tác</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Nguyễn Văn A</td>
-                    <td>a@example.com</td>
-                    <td>User</td>
-                    <td><span class="status active">Hoạt động</span></td>
-                    <td>01/11/2025</td>
-                    <td class="text-right">
-                      <button class="edit-btn">✏️ Sửa</button>
-                      <button class="delete-btn">🗑️ Xóa</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Trần Thị B</td>
-                    <td>b@example.com</td>
-                    <td>Manager</td>
-                    <td><span class="status inactive">Không hoạt động</span></td>
-                    <td>02/11/2025</td>
-                    <td class="text-right">
-                      <button class="edit-btn">✏️ Sửa</button>
-                      <button class="delete-btn">🗑️ Xóa</button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Lê Văn C</td>
-                    <td>c@example.com</td>
-                    <td>Admin</td>
-                    <td><span class="status active">Hoạt động</span></td>
-                    <td>03/11/2025</td>
-                    <td class="text-right">
-                      <button class="edit-btn">✏️ Sửa</button>
-                      <button class="delete-btn">🗑️ Xóa</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </main>
+        </main>
 
 
-        </div>
+      </div>
 
-  </body>
+</body>
