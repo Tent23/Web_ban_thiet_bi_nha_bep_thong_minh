@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="Header.css">
     <link rel="stylesheet" href="../ThanhTruong/index.css">
+    <link rel="stylesheet" href="DangKy.css">
 </head>
 <body>
 <header class="header">
@@ -21,16 +22,16 @@
     <div class="header__main">
         <div class="container">
             <a href="../../index.html" class="header__logo">
-                <img src="../../assets/images/banners/logo.png" alt="TTB">
+                <img src="../../assets/images/banners/logo.png" alt="TTB" />
             </a>
             <div class="header__search">
-                <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi...">
+                <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi..." />
                 <button><i class="fa fa-search"></i></button>
             </div>
             <div class="header__actions">
                 <a href="Login.html"><i class="fa fa-user"></i> Tài khoản</a>
-                <a href="../../pages/ThanhTruong/yeuthich.html"><i class="fa fa-heart"></i> Yêu thích</a>
-                <a href="../../pages/ThanhTruong/giohang.html"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
+                <a href="../ThanhTruong/yeuthich.html"><i class="fa fa-heart"></i> Yêu thích</a>
+                <a href="../ThanhTruong/giohang.html"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
             </div>
         </div>
     </div>
@@ -40,20 +41,70 @@
                 <li class="nav-item has-megamenu">
                     <a href="#">Sản phẩm <i class="fa fa-chevron-down"></i></a>
                     <div class="mega-menu">
-                        <p>Đây là nội dung Mega Menu cho Sản phẩm</p>
+                        <a href="../QuangToan/Beptu.html">Bếp từ</a>
+                        <a href="../QuangToan/Tulanh.html">Tủ lạnh</a>
+                        <a href="../QuangToan/Robot.html">Robot Hút bụi</a>
+                        <a href="../QuangToan/Mayruabat.html">Máy rửa bát</a>
+                        <a href="../QuangToan/Cambien.html">Cảm biến & An ninh</a>
+                        <a href="../QuangToan/Phache.html">Pha chế</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="#">Giải pháp & Combo</a></li>
-                <li class="nav-item"><a href="#">Góc Tư vấn</a></li>
-                <li class="nav-item"><a href="#">Dịch vụ Lắp đặt</a></li>
-                <li class="nav-item"><a href="#">Về chúng tôi</a></li>
-                <li class="nav-item"><a href="#">Khuyến mãi</a></li>
+                <li class="nav-item"><a href="giaiphapvacombo.html">Giải pháp & Combo</a></li>
+                <li class="nav-item"><a href="goctuvan.html">Góc Tư vấn</a></li>
+                <li class="nav-item"><a href="DichVuLapDat.html">Dịch vụ Lắp đặt</a></li>
+                <li class="nav-item"><a href="../ThanhTruong/vechungtoi.html">Về chúng tôi</a></li>
+                <li class="nav-item"><a href="../ThanhTruong/khuyenmai.html">Khuyến mãi</a></li>
             </ul>
         </div>
     </nav>
 </header>
+<main>
+    <main class = "main_container">
+        <form class = "resigter">
+            <h1>Đăng Ký Tài Khoản</h1>
+            <div class ="input_group main_group">
 
+                <div class ="name_input">
+                    <input  type="text" id="lastname" name="lastname" placeholder="Họ" >
+                    <input  type="text" id="firstname" name="firstname" placeholder="Tên">
+                </div>
+                <div class="input_field">
+                 *   <i class="fa fa-user"></i>
+                    <input type="text" id="username" name="username" placeholder="Tên đăng nhập" required>
+                </div>
 
+                <div class="input_field">
+                  *  <i class="fa fa-phone"></i>
+                    <input type="text" id="Sdt" name="Sdt" placeholder="Số ĐTDD" required>
+                </div>
+
+                <div class="input_field">
+                  *  <i class="fa fa-envelope"></i>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="input_field">
+                  *  <i class="fa fa-lock"></i>
+                    <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
+                    <i class="fa fa-eye-slash"></i> </div>
+
+                <div class="input_field">
+                  *  <i class="fa fa-lock"></i>
+                    <input type="password" id="confirmpassword" name="confirmpassword" placeholder="Xác nhận lại mật khẩu" required>
+                    <i class="fa fa-eye-slash"></i> </div>
+
+            </div>
+            <div class = "check">
+                 <div class = "check_deal"><input type="checkbox"> Xác nhận đồng ý với điều kiện sử dụng thông tin của TTB</div>
+                 <div class = "check_info"><input type="checkbox"> Nhận thông tin/Khuyến mãi từ TTB</div>
+            </div>
+
+            <button type="submit" class="register_button">ĐĂNG KÝ</button>
+            <div class = "haveaccount"><a href="Login.html">Bạn đã có tài khoản ?</a></div>
+
+        </form>
+    </main>
+</main>
 
 
 <footer class="footer">
@@ -61,28 +112,31 @@
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>VỀ CHÚNG TÔI</h4>
-                <p>Công ty TNHH Bếp Thông Minh TTB<br>
-                    MST: 031xxxxxxx<br>
-                    Địa chỉ: Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh<br>
-                    Hotline: 1900.1234<br>
-                    Email: 23130356@.hcmuaf.edu.vn</p>
+                <p>
+                    Công ty TNHH Bếp Thông Minh TTB<br />
+                    MST: 031xxxxxxx<br />
+                    Địa chỉ: Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí
+                    Minh<br />
+                    Hotline: 1900.1234<br />
+                    Email: 23130356@.hcmuaf.edu.vn
+                </p>
             </div>
             <div class="footer-col">
                 <h4>HỖ TRỢ KHÁCH HÀNG</h4>
                 <ul>
-                    <li><a href="#">Chính sách Bảo hành</a></li>
-                    <li><a href="#">Chính sách Vận chuyển & Lắp đặt</a></li>
-                    <li><a href="#">Chính sách Đổi trả</a></li>
-                    <li><a href="#">Phương thức Thanh toán</a></li>
+                    <li><a href="../ThanhTruong/chinhsachbaohanh.html">Chính sách Bảo hành</a></li>
+                    <li><a href="chinhsachvanchuyenvalapdat.html">Chính sách Vận chuyển & Lắp đặt</a></li>
+                    <li><a href="chinhsachdoitra.html">Chính sách Đổi trả</a></li>
+                    <li><a href="../ThanhTruong/phuongthucthanhtoan.html">Phương thức Thanh toán</a></li>
                     <li><a href="#">Câu hỏi Thường gặp (FAQs)</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>LIÊN KẾT NHANH</h4>
                 <ul>
-                    <li><a href="#">Về chúng tôi</a></li>
+                    <li><a href="../ThanhTruong/vechungtoi.html">Về chúng tôi</a></li>
                     <li><a href="Showroom.html">Hệ thống Showroom</a></li>
-                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="../ThanhTruong/tuyendung.html">Tuyển dụng</a></li>
                     <li><a href="#">Dành cho Đối tác B2B</a></li>
                 </ul>
             </div>
@@ -96,7 +150,7 @@
                 </div>
                 <p>Đăng ký nhận tin khuyến mãi:</p>
                 <form class="subscribe-form">
-                    <input type="email" placeholder="Email của bạn">
+                    <input type="email" placeholder="Email của bạn" />
                     <button type="submit">Đăng ký</button>
                 </form>
             </div>
