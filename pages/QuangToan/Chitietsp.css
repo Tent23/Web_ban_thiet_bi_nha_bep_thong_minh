@@ -80,3 +80,12 @@
   border-radius: 10px;
   object-fit: cover;
 }
+main{
+    max-width: 1200px;
+    margin: auto;
+}
+main .content{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
