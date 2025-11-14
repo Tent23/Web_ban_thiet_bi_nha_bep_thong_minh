@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/giohang.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/giohang.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/khuyenmai.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/khuyenmai.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/phuongthucthanhtoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/phuongthucthanhtoan.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/tuyendung.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/tuyendung.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/vechungtoi.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/vechungtoi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/yeuthich.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/yeuthich.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/yeuthich.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/yeuthich.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/shared/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +96,9 @@
       <workItem from="1763020220911" duration="5575000" />
       <workItem from="1763047272542" duration="2826000" />
       <workItem from="1763054439667" duration="769000" />
-      <workItem from="1763055575160" duration="3319000" />
+      <workItem from="1763055575160" duration="3464000" />
+      <workItem from="1763097129845" duration="196000" />
+      <workItem from="1763097505048" duration="1875000" />
     </task>
     <servers />
   </component>
