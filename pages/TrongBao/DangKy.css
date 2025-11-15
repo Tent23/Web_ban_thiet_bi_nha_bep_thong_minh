@@ -124,6 +124,7 @@ h1 {
 }
 .haveaccount a{
     color: var(--text-color);
-
-
+}
+.input_field .toggle-password:hover {
+    cursor: pointer;
 }
