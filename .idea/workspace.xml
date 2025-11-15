@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="" />
+    <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pages/ThanhTruong/admin_content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/QuanlyUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/QuangToan/QuanlyUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/admin_orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/admin_products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/admin_style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -96,6 +103,7 @@
       <workItem from="1763097129845" duration="196000" />
       <workItem from="1763097505048" duration="1875000" />
       <workItem from="1763152783487" duration="20000" />
+      <workItem from="1763183492533" duration="2075000" />
     </task>
     <servers />
   </component>
