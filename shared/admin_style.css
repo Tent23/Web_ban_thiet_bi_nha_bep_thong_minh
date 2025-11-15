@@ -406,12 +406,3 @@ body {
     background-color: #fee2e2;
     color: #dc2626;
 }
-/* noi dung admin*/
-.status.status-published {
-    background-color: #dcfce7; /* Xanh lá nhạt */
-    color: #16a34a; /* Xanh lá đậm */
-}
-.status.status-draft {
-    background-color: #f1f5f9; /* Xám nhạt */
-    color: #64748b; /* Xám đậm */
-}

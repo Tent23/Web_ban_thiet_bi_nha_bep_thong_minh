@@ -1,4 +1,13 @@
 /* ==== PRODUCT DETAIL ==== */
+main{
+    max-width: 1200px;
+    margin: auto;
+}
+main .content{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
 .product-detail {
   display: flex;
   gap: 30px;
