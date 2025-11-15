@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Quản lý Sản phẩm</title>
+    <title>Admin - Quản lý Nội dung</title>
 
     <link rel="stylesheet" href="admin_style.css">
 
@@ -14,7 +14,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../../js/jsTruong/admin_script.js"></script>
 </head>
 <body>
 
@@ -27,27 +26,26 @@
         </div>
         <ul class="sidebar-menu">
             <li>
-                <a href="admin_dashboard.html">
+                <a href="./admin_dashboard.html">
                     <i class="fa-solid fa-chart-line"></i>
                     <span>Tổng quan</span>
                 </a>
             </li>
             <li>
-                <a href="admin_orders.html">
+                <a href="./admin_orders.html">
                     <i class="fa-solid fa-file-invoice-dollar"></i>
                     <span>Quản lý Đơn hàng</span>
                 </a>
             </li>
 
-            <!-- MENU SẢN PHẨM (DẠNG ACCORDION) -->
-            <li class="menu-item-has-children active open">
-                <a href="#" class="sidebar-link">
+            <li class="menu-item-has-children">
+                <a href="./admin_products.html" class="sidebar-link">
                     <i class="fa-solid fa-box-archive"></i>
                     <span>Quản lý Sản phẩm</span>
                     <i class="fa-solid fa-chevron-down toggle-icon"></i>
                 </a>
                 <ul class="submenu">
-                    <li><a href="admin_products.html" class="active-sub">Tất cả Sản phẩm</a></li>
+                    <li><a href="./admin_products.html">Tất cả Sản phẩm</a></li>
                     <li><a href="#">Danh mục</a></li>
                     <li><a href="#">Thương hiệu</a></li>
                     <li><a href="#">Hệ sinh thái</a></li>
@@ -61,12 +59,21 @@
                     <span>Quản lý Khách hàng</span>
                 </a>
             </li>
-            <li>
-                <a href="./admin_content.html">
+
+            <li class="menu-item-has-children active open">
+                <a href="#" class="sidebar-link">
                     <i class="fa-solid fa-file-pen"></i>
                     <span>Quản lý Nội dung</span>
+                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
                 </a>
+                <ul class="submenu">
+                    <li><a href="./admin_content.html" class="active-sub">Bài viết (Góc tư vấn)</a></li>
+                    <li><a href="#">Trang tĩnh</a></li>
+                    <li><a href="#">Khuyến mãi</a></li>
+                    <li><a href="#">Hero banner</a></li>
+                </ul>
             </li>
+
             <li>
                 <a href="#">
                     <i class="fa-solid fa-gear"></i>
@@ -87,10 +94,10 @@
 
         <!-- HEADER CỦA NỘI DUNG CHÍNH -->
         <header class="admin-header">
-            <h2>Tất cả Sản phẩm</h2>
+            <h2>Quản lý Bài viết (Góc tư vấn)</h2>
             <div class="admin-header-actions">
                 <a href="#" class="btn-primary">
-                    <i class="fa-solid fa-plus"></i> Thêm Sản phẩm
+                    <i class="fa-solid fa-plus"></i> Thêm Bài viết
                 </a>
                 <div class="admin-profile">
                     <img src="https://placehold.co/40x40" alt="Admin">
@@ -104,67 +111,70 @@
 
             <!-- KHUNG BỘ LỌC -->
             <div class="admin-card admin-filters">
-                <input type="text" placeholder="Tìm theo Tên Sản phẩm, SKU...">
+                <input type="text" placeholder="Tìm theo Tên bài viết...">
                 <select>
-                    <option value="">Lọc theo Danh mục</option>
-                    <option value="bep-tu">Bếp từ</option>
-                    <option value="robot">Robot hút bụi</option>
-                </select>
-                <select>
-                    <option value="">Lọc theo Thương hiệu</option>
-                    <option value="bosch">Bosch</option>
-                    <option value="xiaomi">Xiaomi</option>
+                    <option value="">Lọc theo Thể loại</option>
+                    <option value="tu-van">Góc tư vấn</option>
+                    <option value="khuyen-mai">Khuyến mãi</option>
+                    <option value="trang-tinh">Trang tĩnh</option>
                 </select>
                 <button class="btn-filter">Lọc</button>
             </div>
 
-            <!-- KHUNG DANH SÁCH SẢN PHẨM -->
+            <!-- KHUNG DANH SÁCH BÀI VIẾT -->
             <div class="admin-card">
-                <h3>Danh sách Sản phẩm</h3>
+                <h3>Danh sách Bài viết / Nội dung</h3>
                 <table class="admin-table">
                     <thead>
                     <tr>
-                        <th>Ảnh</th>
-                        <th>Tên Sản phẩm</th>
-                        <th>SKU</th>
-                        <th>Giá</th>
-                        <th>Tồn kho</th>
-                        <th>Danh mục</th>
+                        <th>Tiêu đề</th>
+                        <th>Tác giả</th>
+                        <th>Thể loại</th>
+                        <th>Trạng thái</th>
+                        <th>Ngày đăng</th>
                         <th>Hành động</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td><img src="https://placehold.co/60x60" alt="Sản phẩm" class="product-thumbnail"></td>
-                        <td>Bếp từ Thông minh Bosch XYZ</td>
-                        <td>BOSCH-XYZ</td>
-                        <td>15.000.000đ</td>
-                        <td><span class="status instock">Còn hàng (50)</span></td>
-                        <td>Bếp từ</td>
+                        <td>So sánh Bếp từ Bosch và Hafele</td>
+                        <td>Admin</td>
+                        <td>Góc tư vấn</td>
+                        <td><span class="status status-published">Đã xuất bản</span></td>
+                        <td>10/11/2025</td>
                         <td>
                             <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i> Sửa</a>
                             <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> Xóa</a>
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="https://placehold.co/60x60" alt="Sản phẩm" class="product-thumbnail"></td>
-                        <td>Robot Hút bụi Xiaomi ABC</td>
-                        <td>XI-ABC</td>
-                        <td>8.500.000đ</td>
-                        <td><span class="status lowstock">Sắp hết (5)</span></td>
-                        <td>Robot hút bụi</td>
+                        <td>Chính sách Bảo hành</td>
+                        <td>Admin</td>
+                        <td>Trang tĩnh</td>
+                        <td><span class="status status-published">Đã xuất bản</span></td>
+                        <td>05/11/2025</td>
                         <td>
                             <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i> Sửa</a>
                             <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> Xóa</a>
                         </td>
                     </tr>
                     <tr>
-                        <td><img src="https://placehold.co/60x60" alt="Sản phẩm" class="product-thumbnail"></td>
-                        <td>Tủ lạnh Samsung DEF</td>
-                        <td>SS-DEF</td>
-                        <td>22.000.000đ</td>
-                        <td><span class="status outofstock">Hết hàng (0)</span></td>
-                        <td>Tủ lạnh</td>
+                        <td>Black Friday Sale - Giảm đến 50%</td>
+                        <td>Admin</td>
+                        <td>Khuyến mãi</td>
+                        <td><span class="status status-published">Đã xuất bản</span></td>
+                        <td>01/11/2025</td>
+                        <td>
+                            <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i> Sửa</a>
+                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> Xóa</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5 Kịch bản tự động hóa bếp (Bản nháp)</td>
+                        <td>Admin</td>
+                        <td>Góc tư vấn</td>
+                        <td><span class="status status-draft">Bản nháp</span></td>
+                        <td>-</td>
                         <td>
                             <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i> Sửa</a>
                             <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> Xóa</a>
@@ -172,20 +182,12 @@
                     </tr>
                     </tbody>
                 </table>
-
-                <!-- PHÂN TRANG -->
-                <div class="admin-pagination">
-                    <a href="#" class="page-link">&laquo; Trước</a>
-                    <a href="#" class="page-link active">1</a>
-                    <a href="#" class="page-link">2</a>
-                    <a href="#" class="page-link">3</a>
-                    <a href="#" class="page-link">Sau &raquo;</a>
-                </div>
             </div>
 
         </main>
     </div>
 </div>
 
+<script src="admin_script.js"></script>
 </body>
 </html>
