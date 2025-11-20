@@ -1,12 +1,15 @@
+
 .profile-container {
     width: 100%;
     background: #f5f5f5;
     padding: 30px 0;
 }
 
-.profile-wrapper {
-    width: 80%;
-    margin: auto;
+.profile-container .profile-wrapper {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+
     display: grid;
     grid-template-columns: 220px 1fr 260px;
     gap: 30px;
