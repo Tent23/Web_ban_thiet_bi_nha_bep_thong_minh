@@ -30,7 +30,7 @@ body {
 
 /* --- SIDEBAR --- */
 .admin-sidebar {
-    width: 250px;
+    width: 260px;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -414,4 +414,214 @@ body {
 .status.status-draft {
     background-color: #f1f5f9; /* Xám nhạt */
     color: #64748b; /* Xám đậm */
+}
+/* --- CSS FORM THÊM SẢN PHẨM --- */
+
+.admin-form-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Cột trái lớn gấp đôi cột phải */
+    gap: 30px;
+}
+
+/* Style cho các Input */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--admin-text);
+    font-size: 0.9rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--admin-sidebar-active);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+/* Khu vực Upload Ảnh */
+.image-upload-area {
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.image-upload-area:hover {
+    background-color: #f8fafc;
+    border-color: var(--admin-sidebar-active);
+}
+
+.upload-placeholder i {
+    font-size: 2.5rem;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+.upload-placeholder p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Preview Ảnh */
+.image-preview-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.preview-item {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Nút xóa ảnh preview */
+.btn-remove-img {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Checkbox list */
+.checkbox-list label {
+    display: block;
+    font-weight: normal;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.checkbox-list input {
+    margin-right: 8px;
+}
+
+/* Header Actions */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-back {
+    color: var(--admin-text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.btn-secondary {
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #cbd5e1;
+    color: var(--admin-text);
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Toggle Switch (Nút gạt) */
+.toggle-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--admin-sidebar-active);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .admin-form-layout {
+        grid-template-columns: 1fr; /* Chuyển về 1 cột trên mobile */
+    }
+    .form-col-sidebar {
+        order: -1; /* Đẩy thông tin trạng thái lên trên nếu muốn */
+    }
 }
