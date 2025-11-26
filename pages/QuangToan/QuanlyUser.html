@@ -13,8 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap"
-            rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Thư viện Chart.js (để vẽ biểu đồ) -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -24,121 +24,126 @@
 
 <body>
 
-<div class="admin-layout">
+    <div class="admin-layout">
 
-    <!-- SIDEBAR (MENU BÊN TRÁI) -->
-    <nav class="admin-sidebar">
-        <div class="sidebar-header">
-            <h3>Admin Panel</h3>
-        </div>
-        <ul class="sidebar-menu">
-            <li>
-                <a href="../ThanhTruong/admin_dashboard.html">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <span>Tổng quan</span>
-                </a>
-            </li>
-            <li>
-                <a href="../ThanhTruong/admin_orders.html">
-                    <i class="fa-solid fa-file-invoice-dollar"></i>
-                    <span>Quản lý Đơn hàng</span>
-                </a>
-            </li>
-            <li>
-                <a href="../ThanhTruong/admin_products.html">
-                    <i class="fa-solid fa-box-archive"></i>
-                    <span>Quản lý Sản phẩm</span>
-                </a>
-            </li>
-            <li>
-                <a href="QuanlyUser.html" class="active">
-                    <i class="fa-solid fa-users"></i>
-                    <span>Quản lý Khách hàng</span>
-                </a>
-            </li>
-            <li>
-                <a href="../ThanhTruong/admin_content.html">
-                    <i class="fa-solid fa-file-pen"></i>
-                    <span>Quản lý Nội dung</span>
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-gear"></i>
-                    <span>Cài đặt</span>
-                </a>
-            </li>
-        </ul>
-        <div class="sidebar-footer">
-            <a href="#">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span>Đăng xuất</span>
-            </a>
-        </div>
-    </nav>
-
-
-    <div class="admin-main">
-
-
-        <header class="admin-header">
-            <h2>Quản lý khách hàng</h2>
-            <div class="admin-profile">
-                <img src="https://placehold.co/40x40" alt="Admin">
-                <span>Xin chào, Admin!</span>
+        <!-- SIDEBAR (MENU BÊN TRÁI) -->
+        <nav class="admin-sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
             </div>
-        </header>
-        <div class="bg-white rounded-lg shadow overflow-hidden">
-            <main class="user-table-container">
-                <div class="table-wrapper">
-                    <table class="user-table">
-                        <thead>
-                        <tr>
-                            <th>Tên</th>
-                            <th>Email</th>
-                            <th>Vai trò</th>
-                            <th>Trạng thái</th>
-                            <th>Ngày tạo</th>
-                            <th class="text-right">Thao tác</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Nguyễn Văn A</td>
-                            <td>a@example.com</td>
-                            <td>User</td>
-                            <td><span class="status active">Hoạt động</span></td>
-                            <td>01/11/2025</td>
-                            <td class="text-right">
-                                <button class="edit-btn"><i class="fa-solid fa-pencil"></i> Sửa</button>
-                                <button class="delete-btn"><i class="fa-solid fa-trash"></i> Xóa</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Trần Thị B</td>
-                            <td>b@example.com</td>
-                            <td>Manager</td>
-                            <td><span class="status inactive">Không hoạt động</span></td>
-                            <td>02/11/2025</td>
-                            <td class="text-right">
-                                <button class="edit-btn"><i class="fa-solid fa-pencil"></i> Sửa</button>
-                                <button class="delete-btn"><i class="fa-solid fa-trash"></i> Xóa</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Lê Văn C</td>
-                            <td>c@example.com</td>
-                            <td>Admin</td>
-                            <td><span class="status active">Hoạt động</span></td>
-                            <td>03/11/2025</td>
-                            <td class="text-right">
-                                <button class="edit-btn"><i class="fa-solid fa-pencil"></i> Sửa</button>
-                                <button class="delete-btn"><i class="fa-solid fa-trash"></i> Xóa</button>
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="../ThanhTruong/admin_dashboard.html">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Tổng quan</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../ThanhTruong/admin_orders.html">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                        <span>Quản lý Đơn hàng</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../ThanhTruong/admin_products.html">
+                        <i class="fa-solid fa-box-archive"></i>
+                        <span>Quản lý Sản phẩm</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="QuanlyUser.html" class="active">
+                        <i class="fa-solid fa-users"></i>
+                        <span>Quản lý Khách hàng</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../ThanhTruong/admin_content.html">
+                        <i class="fa-solid fa-file-pen"></i>
+                        <span>Quản lý Nội dung</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-gear"></i>
+                        <span>Cài đặt</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Đăng xuất</span>
+                </a>
+            </div>
+        </nav>
+
+
+        <div class="admin-main">
+
+
+            <header class="admin-header">
+                <h2>Quản lý khách hàng</h2>
+                <div class="admin-profile">
+                    <img src="https://placehold.co/40x40" alt="Admin">
+                    <span>Xin chào, Admin!</span>
                 </div>
-            </main>
-        </div>
+            </header>
+            <div class="bg-white rounded-lg shadow overflow-hidden">
+                <main class="user-table-container">
+                    <div class="table-wrapper">
+                        <table class="user-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Tên</th>
+                                    <th>Địa Chỉ</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>Trạng thái</th>
+                                    <th>Ngày tạo</th>
+                                    <th class="text-right">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#001</td>
+                                    <td>Nguyễn Văn Trường </td>
+                                    <td>Hồ Chí Minh</td>
+                                    <td>0353334530</td>
+                                    <td>a@example.com</td>
+                                    <td><span class="status active">Hoạt động</span></td>
+                                    <td>01/11/2025</td>
+                                    <td class="text-right">
+                                        <button class="delete-btn"><i class="fa-solid fa-trash"></i> Xóa</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#002</td>
+                                    <td>Trần Thị B</td>
+                                    <td>Hồ Chí Minh</td>
+                                    <td>0353334530</td>
+                                    <td>b@example.com</td>
+                                    <td><span class="status inactive">Không hoạt động</span></td>
+                                    <td>02/11/2025</td>
+                                    <td class="text-right">
+                                        <button class="delete-btn"><i class="fa-solid fa-trash"></i> Xóa</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#003</td>
+                                    <td>Lê Văn C</td>
+                                    <td>Hồ Chí Minh</td>
+                                    <td>0353334530</td>
+                                    <td>c@example.com</td>
+                                    <td><span class="status active">Hoạt động</span></td>
+                                    <td>03/11/2025</td>
+                                    <td class="text-right">
+                                        <button class="delete-btn"><i class="fa-solid fa-trash"></i> Xóa</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </main>
+            </div>
 </body>

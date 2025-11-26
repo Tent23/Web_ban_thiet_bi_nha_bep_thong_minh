@@ -5,11 +5,12 @@
 }
 
 .order-container .order-wrapper {
+    width: 100%;
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 20px;
     display: grid;
-    grid-template-columns: 220px 1fr 260px;
+    grid-template-columns: 220px 1fr;
     gap: 30px;
 }
 
@@ -85,14 +86,19 @@
 .menu-item i {
     width: 20px;
 }
+.order-content{
+    width: 100%;
+}
 
 /* ===== TABS ===== */
 .order-tabs {
+    width: 100%;
     display: flex;
     gap: 25px;
     border-bottom: 1px solid #eee;
     padding: 12px 0;
     margin-bottom: 20px;
+    justify-content: flex-start;
 }
 
 .order-tabs a {
