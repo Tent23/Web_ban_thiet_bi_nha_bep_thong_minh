@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/ThanhTruong/admin_add_product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/ThanhTruong/admin_edit_product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/ThanhTruong/admin_order_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/ThanhTruong/admin_product_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/QuangToan/QuanlyUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/QuangToan/QuanlyUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/admin_content.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/admin_dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Donhang.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/QuangToan/Donhang.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/admin_orders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/admin_products.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ThanhTruong/admin_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="HTML File" />
         <option value="CSS File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -111,7 +110,8 @@
       <workItem from="1763638789573" duration="130000" />
       <workItem from="1763648807269" duration="1019000" />
       <workItem from="1763991787681" duration="299000" />
-      <workItem from="1764073784170" duration="6364000" />
+      <workItem from="1764073784170" duration="6944000" />
+      <workItem from="1764149457571" duration="4407000" />
     </task>
     <servers />
   </component>
