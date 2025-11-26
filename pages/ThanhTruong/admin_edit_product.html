@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Sửa Sản phẩm</title>
+
+    <link rel="stylesheet" href="admin_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/fonts/indexfont.css">
+</head>
+<body>
+
+<div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <nav class="admin-sidebar">
+        <div class="sidebar-header">
+            <h3>Bảng quản trị</h3>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="admin_dashboard.html"><i class="fa-solid fa-chart-line"></i><span>Tổng quan</span></a></li>
+            <li><a href="admin_orders.html"><i class="fa-solid fa-file-invoice-dollar"></i><span>Quản lý Đơn hàng</span></a></li>
+
+            <!-- Menu Sản phẩm đang mở -->
+            <li class="menu-item-has-children active open">
+                <a href="#" class="sidebar-link">
+                    <i class="fa-solid fa-box-archive"></i>
+                    <span>Quản lý Sản phẩm</span>
+                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                </a>
+                <ul class="submenu">
+                    <li><a href="admin_products.html" class="active-sub">Tất cả Sản phẩm</a></li>
+                    <li><a href="admin_add_product.html">Thêm Sản phẩm</a></li>
+                    <li><a href="#">Danh mục</a></li>
+                    <li><a href="#">Thương hiệu</a></li>
+                </ul>
+            </li>
+
+            <li><a href="QuanlyUser.html"><i class="fa-solid fa-users"></i><span>Quản lý Khách hàng</span></a></li>
+            <li><a href="admin_content.html"><i class="fa-solid fa-file-pen"></i><span>Quản lý Nội dung</span></a></li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i><span>Cài đặt</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="admin-main">
+        <header class="admin-header">
+            <div class="header-left">
+                <a href="admin_products.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Quay lại</a>
+                <h2>Sửa Sản phẩm: Bếp từ Bosch PXY875</h2>
+            </div>
+            <div class="admin-header-actions">
+                <button class="btn-secondary">Hủy bỏ</button>
+                <button class="btn-primary">Cập nhật</button>
+            </div>
+        </header>
+
+        <main class="admin-content">
+            <form action="#" class="admin-form-layout">
+
+                <!-- CỘT TRÁI -->
+                <div class="form-col-main">
+
+                    <div class="admin-card">
+                        <h3>Thông tin chung</h3>
+                        <div class="form-group">
+                            <label for="product-name">Tên sản phẩm</label>
+                            <!-- VALUE ĐƯỢC ĐIỀN SẴN -->
+                            <input type="text" id="product-name" class="form-control" value="Bếp từ Thông minh Bosch PXY875KW1E">
+                        </div>
+                        <div class="form-group">
+                            <label for="product-desc">Mô tả chi tiết</label>
+                            <!-- NỘI DUNG ĐƯỢC ĐIỀN SẴN -->
+                            <textarea id="product-desc" class="form-control" rows="6">Bếp từ Bosch PXY875KW1E thuộc dòng Series 8 cao cấp, được trang bị màn hình cảm ứng TFT hiện đại và tính năng Home Connect giúp điều khiển từ xa.
+- Vùng nấu linh hoạt FlexInduction.
+- Cảm biến chiên xào PerfectFry.</textarea>
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3>Hình ảnh</h3>
+                        <div class="image-upload-area">
+                            <div class="upload-placeholder" onclick="document.getElementById('product-images').click()">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                <p>Thêm ảnh mới</p>
+                                <input type="file" id="product-images" multiple hidden accept="image/*">
+                            </div>
+
+                            <!-- ẢNH CŨ ĐÃ CÓ SẴN -->
+                            <div class="image-preview-container" id="image-preview">
+                                <div class="preview-item">
+                                    <img src="https://placehold.co/100x100" alt="Ảnh 1">
+                                    <button type="button" class="btn-remove-img"><i class="fa-solid fa-xmark"></i></button>
+                                </div>
+                                <div class="preview-item">
+                                    <img src="https://placehold.co/100x100" alt="Ảnh 2">
+                                    <button type="button" class="btn-remove-img"><i class="fa-solid fa-xmark"></i></button>
+                                </div>
+                                <div class="preview-item">
+                                    <img src="https://placehold.co/100x100" alt="Ảnh 3">
+                                    <button type="button" class="btn-remove-img"><i class="fa-solid fa-xmark"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CỘT PHẢI -->
+                <div class="form-col-sidebar">
+
+                    <div class="admin-card">
+                        <h3>Trạng thái</h3>
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option value="published" selected>Đã xuất bản</option>
+                                <option value="draft">Bản nháp</option>
+                                <option value="hidden">Ẩn</option>
+                            </select>
+                        </div>
+                        <div class="toggle-group">
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider round"></span>
+                            </label>
+                            <span>Sản phẩm nổi bật</span>
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3>Giá cả</h3>
+                        <div class="form-group">
+                            <label>Giá gốc (VNĐ)</label>
+                            <input type="number" class="form-control" value="25000000">
+                        </div>
+                        <div class="form-group">
+                            <label>Giá khuyến mãi (VNĐ)</label>
+                            <input type="number" class="form-control" value="23500000">
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3>Phân loại</h3>
+                        <div class="form-group">
+                            <label>Danh mục</label>
+                            <select class="form-control">
+                                <option value="">-- Chọn danh mục --</option>
+                                <option value="bep-tu" selected>Bếp từ</option>
+                                <option value="robot">Robot hút bụi</option>
+                                <option value="tu-lanh">Tủ lạnh</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Thương hiệu</label>
+                            <select class="form-control">
+                                <option value="">-- Chọn thương hiệu --</option>
+                                <option value="bosch" selected>Bosch</option>
+                                <option value="xiaomi">Xiaomi</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Hệ sinh thái</label>
+                            <div class="checkbox-list">
+                                <label><input type="checkbox" checked> Google Home</label>
+                                <label><input type="checkbox"> Apple HomeKit</label>
+                                <label><input type="checkbox" checked> Amazon Alexa</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="admin-card">
+                        <h3>Kho hàng</h3>
+                        <div class="form-group">
+                            <label>Mã SKU</label>
+                            <input type="text" class="form-control" value="BOSCH-PXY-875">
+                        </div>
+                        <div class="form-group">
+                            <label>Số lượng</label>
+                            <input type="number" class="form-control" value="50">
+                        </div>
+                    </div>
+
+                </div>
+
+            </form>
+        </main>
+    </div>
+</div>
+
+<script src="admin_script.js"></script>
+</body>
+</html>
