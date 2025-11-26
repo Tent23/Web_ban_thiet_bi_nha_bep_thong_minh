@@ -22,6 +22,12 @@ body {
 main{
     max-width: 1200px;
     margin: auto;
+    margin-bottom: 50px;
+
+}
+.showroom-name{
+    text-align: center;
+    padding-top: 30px;
 }
 
 a {
