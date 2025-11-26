@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Chi tiết Sản phẩm</title>
+
+    <link rel="stylesheet" href="admin_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <nav class="admin-sidebar">
+        <div class="sidebar-header">
+            <h3>Bảng quản trị</h3>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="admin_dashboard.html"><i class="fa-solid fa-chart-line"></i><span>Tổng quan</span></a></li>
+            <li><a href="admin_orders.html"><i class="fa-solid fa-file-invoice-dollar"></i><span>Quản lý Đơn hàng</span></a></li>
+
+            <li class="menu-item-has-children active open">
+                <a href="#" class="sidebar-link">
+                    <i class="fa-solid fa-box-archive"></i>
+                    <span>Quản lý Sản phẩm</span>
+                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
+                </a>
+                <ul class="submenu">
+                    <li><a href="admin_products.html" class="active-sub">Tất cả Sản phẩm</a></li>
+                    <li><a href="admin_add_product.html">Thêm Sản phẩm</a></li>
+                    <li><a href="#">Danh mục</a></li>
+                    <li><a href="#">Thương hiệu</a></li>
+                </ul>
+            </li>
+
+            <li><a href="QuanlyUser.html"><i class="fa-solid fa-users"></i><span>Quản lý Khách hàng</span></a></li>
+            <li><a href="admin_content.html"><i class="fa-solid fa-file-pen"></i><span>Quản lý Nội dung</span></a></li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i><span>Cài đặt</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="admin-main">
+        <header class="admin-header">
+            <div class="header-left">
+                <a href="admin_products.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Quay lại danh sách</a>
+                <h2>Chi tiết Sản phẩm</h2>
+            </div>
+            <div class="admin-header-actions">
+                <a href="#" class="btn-primary"><i class="fa-solid fa-pencil"></i> Sửa Sản phẩm</a>
+            </div>
+        </header>
+
+        <main class="admin-content">
+            <div class="detail-grid">
+
+                <!-- CỘT TRÁI: ẢNH -->
+                <div class="detail-left">
+                    <div class="admin-card">
+                        <div class="product-main-image">
+                            <img src="https://placehold.co/500x500" alt="Bếp từ Bosch">
+                        </div>
+                        <div class="product-gallery">
+                            <img src="https://placehold.co/100x100" alt="Ảnh nhỏ 1">
+                            <img src="https://placehold.co/100x100" alt="Ảnh nhỏ 2">
+                            <img src="https://placehold.co/100x100" alt="Ảnh nhỏ 3">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CỘT PHẢI: THÔNG TIN -->
+                <div class="detail-right">
+                    <div class="admin-card">
+                        <div class="product-header-info">
+                            <span class="status instock">Còn hàng</span>
+                            <h1>Bếp từ Thông minh Bosch PXY875KW1E</h1>
+                            <p class="sku">SKU: BOSCH-PXY-875</p>
+                        </div>
+
+                        <div class="info-grid">
+                            <div class="info-item">
+                                <span class="label">Giá gốc:</span>
+                                <span class="value price">25.000.000đ</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Giá khuyến mãi:</span>
+                                <span class="value price-sale">23.500.000đ</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Danh mục:</span>
+                                <span class="value">Bếp từ</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Thương hiệu:</span>
+                                <span class="value">Bosch</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Tồn kho:</span>
+                                <span class="value">50 sản phẩm</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="label">Hệ sinh thái:</span>
+                                <span class="value"><i class="fa-brands fa-google"></i> Google Home</span>
+                            </div>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="product-description">
+                            <h3>Mô tả chi tiết</h3>
+                            <p>Bếp từ Bosch PXY875KW1E thuộc dòng Series 8 cao cấp, được trang bị màn hình cảm ứng TFT hiện đại...</p>
+                            <p>Tính năng nổi bật:</p>
+                            <ul>
+                                <li>Kết nối Home Connect</li>
+                                <li>Cảm biến chiên xào PerfectFry</li>
+                                <li>Vùng nấu linh hoạt FlexInduction</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="admin_script.js"></script>
+</body>
+</html>
