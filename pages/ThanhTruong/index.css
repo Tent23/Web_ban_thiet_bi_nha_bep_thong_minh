@@ -64,3 +64,127 @@
     border-top: 1px solid #444;
     font-size: 0.9rem;
 }
+/* ===== CSS CHO TRANG CỬA HÀNG (SHOP PAGE) ===== */
+
+/* Layout chia 2 cột: Sidebar và Main Content */
+.shop-layout {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 40px;
+}
+
+/* Sidebar (Bộ lọc) */
+.shop-sidebar {
+    background: var(--white-color, #fff);
+    padding: 20px;
+    border: 1px solid var(--light-color, #eee);
+    border-radius: 8px;
+    height: fit-content;
+    position: sticky;    /* Kích hoạt chế độ dính */
+    top: 20px;           /* Cách đỉnh màn hình 20px khi cuộn xuống */
+    z-index: 10;
+}
+
+.filter-group {
+    margin-bottom: 30px;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 20px;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.filter-group h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--brand-dark, #333);
+}
+
+.filter-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-group li {
+    margin-bottom: 10px;
+}
+
+.filter-group label {
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--text-primary, #333);
+    display: flex;
+    align-items: center;
+}
+
+.filter-group input {
+    margin-right: 10px;
+}
+
+/* Phần chính (Danh sách sản phẩm) */
+.shop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.shop-header h1 {
+    font-size: 1.8rem;
+    color: var(--brand-dark, #333);
+}
+
+.sort-box select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+/* Lưới sản phẩm - Tự động co dãn */
+.shop-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+/* Phân trang */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 10px;
+}
+
+.pagination a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: var(--text-primary, #333);
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.pagination a:hover,
+.pagination a.active {
+    background-color: var(--primary-color, #007bff);
+    color: #fff;
+    border-color: var(--primary-color, #007bff);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .shop-layout {
+        grid-template-columns: 1fr; /* Ẩn sidebar hoặc chồng lên trên mobile */
+    }
+
+    .shop-sidebar {
+        display: none; /* Tạm ẩn bộ lọc trên mobile cho gọn (hoặc dùng nút mở) */
+    }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Quản lý Khuyến mãi</title>
+    <link rel="stylesheet" href="admin_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/fonts/indexfont.css">
+</head>
+<body>
+<div class="admin-layout">
+    <!-- SIDEBAR (Giống trang trên) -->
+    <nav class="admin-sidebar">
+        <div class="sidebar-header"><h3>Bảng quản trị</h3></div>
+        <ul class="sidebar-menu">
+            <li><a href="admin_dashboard.html"><i class="fa-solid fa-chart-line"></i><span>Tổng quan</span></a></li>
+            <li><a href="admin_orders.html"><i class="fa-solid fa-file-invoice-dollar"></i><span>Quản lý Đơn hàng</span></a></li>
+            <li class="menu-item-has-children"><a href="#" class="sidebar-link"><i class="fa-solid fa-box-archive"></i><span>Quản lý Sản phẩm</span><i class="fa-solid fa-chevron-down toggle-icon"></i></a><ul class="submenu"><li><a href="admin_products.html">Tất cả Sản phẩm</a></li></ul></li>
+            <li><a href="QuanlyUser.html"><i class="fa-solid fa-users"></i><span>Quản lý Khách hàng</span></a></li>
+
+            <li class="menu-item-has-children active open">
+                <a href="#" class="sidebar-link"><i class="fa-solid fa-file-pen"></i><span>Quản lý Nội dung</span><i class="fa-solid fa-chevron-down toggle-icon"></i></a>
+                <ul class="submenu">
+                    <li><a href="admin_content.html">Bài viết (Blog)</a></li>
+                    <li><a href="admin_static_pages.html">Trang tĩnh</a></li>
+                    <li><a href="admin_promotions.html" class="active-sub">Khuyến mãi</a></li>
+                    <li><a href="admin_banners.html">Hero Banner</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i><span>Cài đặt</span></a></li>
+        </ul>
+    </nav>
+
+    <div class="admin-main">
+        <header class="admin-header">
+            <h2>Chương trình Khuyến mãi</h2>
+            <div class="admin-header-actions">
+                <a href="#" class="btn-primary"><i class="fa-solid fa-plus"></i> Thêm Khuyến mãi</a>
+            </div>
+        </header>
+
+        <main class="admin-content">
+            <div class="admin-card">
+                <div class="admin-filters">
+                    <input type="text" placeholder="Tìm kiếm chương trình...">
+                    <select>
+                        <option value="">Tất cả trạng thái</option>
+                        <option value="active">Đang chạy</option>
+                        <option value="expired">Đã kết thúc</option>
+                    </select>
+                    <button class="btn-filter">Lọc</button>
+                </div>
+
+                <table class="admin-table">
+                    <thead>
+                    <tr>
+                        <th>Ảnh bìa</th>
+                        <th>Tên chương trình</th>
+                        <th>Thời gian</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><img src="https://placehold.co/80x40" alt="Banner" style="border-radius: 4px;"></td>
+                        <td><strong>Black Friday Sale - Giảm đến 50%</strong></td>
+                        <td>20/11/2025 - 30/11/2025</td>
+                        <td><span class="status status-published">Đang chạy</span></td>
+                        <td>
+                            <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i></a>
+                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://placehold.co/80x40" alt="Banner" style="border-radius: 4px;"></td>
+                        <td>Mua Bếp từ - Tặng Hút mùi</td>
+                        <td>01/12/2025 - 31/12/2025</td>
+                        <td><span class="status status-draft">Sắp diễn ra</span></td>
+                        <td>
+                            <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i></a>
+                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://placehold.co/80x40" alt="Banner" style="border-radius: 4px;"></td>
+                        <td>Chào hè rực rỡ</td>
+                        <td>01/06/2025 - 30/06/2025</td>
+                        <td><span class="status outofstock">Đã kết thúc</span></td>
+                        <td>
+                            <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i></a>
+                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="admin_script.js"></script>
+</body>
+</html>

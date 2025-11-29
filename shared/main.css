@@ -136,7 +136,7 @@ img {
     flex-direction: column;
 }
 .product-card img {
-    height: 500px; /* Đặt chiều cao cố định */
+    height: 311px; /* Đặt chiều cao cố định */
     width: 100%; /* Đảm bảo ảnh chiếm hết chiều rộng card */
     object-fit: cover; /* Cắt ảnh vừa vặn, không làm méo ảnh */
     border-radius: 8px; /* Bo góc ảnh cho đẹp */
@@ -274,7 +274,6 @@ img {
   font-size: 0.9rem;
   color: #666;
 }
-
 
 
 
