@@ -57,6 +57,7 @@ h1 {
     border-bottom: 1px solid #ddd ;
     border-radius: 0;
     box-sizing: border-box;
+    outline: none;
 }
 
 
@@ -123,7 +124,10 @@ h1 {
 
 }
 .haveaccount a{
-    color: var(--text-color);
+    color: var(--primary-color);
+}
+.haveaccount a:hover{
+    text-decoration: underline;
 }
 .input_field .toggle-password:hover {
     cursor: pointer;

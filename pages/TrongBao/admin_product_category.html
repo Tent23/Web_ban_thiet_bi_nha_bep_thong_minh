@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Quản lý Đơn hàng</title>
+    <title>Admin - Quản lý Sản phẩm</title>
 
-    <link rel="stylesheet" href="admin_style.css">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -14,36 +14,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../js/jsTruong/admin_script.js"></script>
     <link rel="stylesheet" href="../../assets/fonts/indexfont.css">
+    <link rel="stylesheet" href="../ThanhTruong/admin_style.css">
 </head>
 <body>
 
 <div class="admin-layout">
 
-    <!-- SIDEBAR (MENU BÊN TRÁI) -->
+    <!-- SIDEBAR (MENU BÊN TRÁI) - ĐÃ CẬP NHẬT -->
     <nav class="admin-sidebar">
         <div class="sidebar-header">
             <h3>Admin Panel</h3>
         </div>
         <ul class="sidebar-menu">
             <li>
-                <a href="admin_dashboard.html">
+                <a href="../ThanhTruong/admin_dashboard.html">
                     <i class="fa-solid fa-chart-line"></i>
                     <span>Tổng quan</span>
                 </a>
             </li>
             <li>
-                <a href="./admin_orders.html" class="active">
+                <a href="../ThanhTruong/admin_orders.html">
                     <i class="fa-solid fa-file-invoice-dollar"></i>
                     <span>Quản lý Đơn hàng</span>
                 </a>
             </li>
-            <li>
-                <a href="./admin_products.html">
+
+            <!-- MENU SẢN PHẨM (DẠNG ACCORDION) -->
+            <li class="menu-item-has-children active open">
+                <a href="#" class="sidebar-link">
                     <i class="fa-solid fa-box-archive"></i>
                     <span>Quản lý Sản phẩm</span>
+                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
                 </a>
+                <ul class="submenu">
+                    <li><a href="../ThanhTruong/admin_products.html" class="active-sub">Tất cả Sản phẩm</a></li>
+                    <li><a href="admin_product_category.html">Danh mục</a></li>
+                    <li><a href="admin_product_brand.html">Thương hiệu</a></li>
+                    <li><a href="admin_product_ecosystem.html">Hệ sinh thái</a></li>
+                    <li><a href="admin_product_Combo.html">Combo / Giải pháp</a></li>
+                </ul>
             </li>
+
             <li>
                 <a href="../QuangToan/QuanlyUser.html">
                     <i class="fa-solid fa-users"></i>
@@ -51,7 +64,7 @@
                 </a>
             </li>
             <li>
-                <a href="./admin_content.html">
+                <a href="../ThanhTruong/admin_content.html">
                     <i class="fa-solid fa-file-pen"></i>
                     <span>Quản lý Nội dung</span>
                 </a>
@@ -76,10 +89,15 @@
 
         <!-- HEADER CỦA NỘI DUNG CHÍNH -->
         <header class="admin-header">
-            <h2>Quản lý Đơn hàng</h2>
-            <div class="admin-profile">
-                <img src="https://placehold.co/40x40" alt="Admin">
-                <span>Xin chào, Admin!</span>
+            <h2>Danh mục </h2>
+            <div class="admin-header-actions">
+                <a href="" class="btn-primary">
+                    <i class="fa-solid fa-plus"></i> Thêm danh mục
+                </a>
+                <div class="admin-profile">
+                    <img src="https://placehold.co/40x40" alt="Admin">
+                    <span>Xin chào, Admin!</span>
+                </div>
             </div>
         </header>
 
@@ -88,72 +106,54 @@
 
             <!-- KHUNG BỘ LỌC -->
             <div class="admin-card admin-filters">
-                <input type="text" placeholder="Tìm theo Mã đơn, Tên khách hàng...">
+                <input type="text" placeholder="Tìm theo Tên danh mục, Mã danh mục...">
                 <select>
-                    <option value="">Tất cả Trạng thái</option>
-                    <option value="processing">Đang xử lý</option>
-                    <option value="completed">Hoàn thành</option>
-                    <option value="cancelled">Đã hủy</option>
+                    <option value="filterAZ">Lọc từ A - Z theo danh mục </option>
+                    <option value="ZA">Lọc từ Z - A theo danh mục </option>
                 </select>
-                <input type="date" placeholder="Từ ngày">
-                <input type="date" placeholder="Đến ngày">
+
                 <button class="btn-filter">Lọc</button>
             </div>
 
-            <!-- KHUNG DANH SÁCH ĐƠN HÀNG -->
+            <!-- KHUNG DANH SÁCH SẢN PHẨM -->
             <div class="admin-card">
-                <h3>Danh sách Đơn hàng</h3>
+                <h3>Các Danh mục</h3>
                 <table class="admin-table">
                     <thead>
                     <tr>
-                        <th>Mã Đơn</th>
-                        <th>Khách hàng</th>
-                        <th>Ngày đặt</th>
-                        <th>Tổng tiền</th>
-                        <th>Trạng thái</th>
+                        <th>Ảnh</th>
+                        <th>Tên danh mục</th>
+                        <th>Mã danh mục</th>
                         <th>Hành động</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>#12345</td>
-                        <td>Nguyễn Văn A</td>
-                        <td>10/11/2025</td>
-                        <td>8.500.000đ</td>
-                        <td><span class="status processing">Đang xử lý</span></td>
-                        <td><a href="./admin_order_detail.html" class="btn-view">Xem</a></td>
+                        <td><img src="https://placehold.co/60x60" alt="Thương hiệu" class="brand-thumbnail"></td>
+                        <td>Tủ lạnh</td>
+                        <td>#11221</td>
+                        <td>
+                            <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i> Sửa</a>
+                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> Xóa</a>
+                        </td>
                     </tr>
                     <tr>
-                        <td>#12344</td>
-                        <td>Trần Thị B</td>
-                        <td>09/11/2025</td>
-                        <td>15.000.000đ</td>
-                        <td><span class="status completed">Hoàn thành</span></td>
-                        <td><a href="./admin_order_detail.html" class="btn-view">Xem</a></td>
+                        <td><img src="https://placehold.co/60x60" alt="Thương hiệu" class="brand-thumbnail"></td>
+                        <td>Bếp từ</td>
+                        <td>#11222</td>
+                        <td>
+                            <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i> Sửa</a>
+                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> Xóa</a>
+                        </td>
                     </tr>
                     <tr>
-                        <td>#12343</td>
-                        <td>Lê Văn C</td>
-                        <td>09/11/2025</td>
-                        <td>500.000đ</td>
-                        <td><span class="status cancelled">Đã hủy</span></td>
-                        <td><a href="./admin_order_detail.html" class="btn-view">Xem</a></td>
-                    </tr>
-                    <tr>
-                        <td>#12342</td>
-                        <td>Phạm Thị D</td>
-                        <td>08/11/2025</td>
-                        <td>22.000.000đ</td>
-                        <td><span class="status completed">Hoàn thành</span></td>
-                        <td><a href="./admin_order_detail.html" class="btn-view">Xem</a></td>
-                    </tr>
-                    <tr>
-                        <td>#12341</td>
-                        <td>Hoàng Văn E</td>
-                        <td>07/11/2025</td>
-                        <td>1.200.000đ</td>
-                        <td><span class="status processing">Đang xử lý</span></td>
-                        <td><a href="./admin_order_detail.html" class="btn-view">Xem</a></td>
+                        <td><img src="https://placehold.co/60x60" alt="Thương hiệu" class="brand-thumbnail"></td>
+                        <td>Robot hút bụi</td>
+                        <td>#11223</td>
+                        <td>
+                            <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i> Sửa</a>
+                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> Xóa</a>
+                        </td>
                     </tr>
                     </tbody>
                 </table>
@@ -172,6 +172,5 @@
     </div>
 </div>
 
-<script src="admin_script.js"></script>
 </body>
 </html>
