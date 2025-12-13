@@ -4,7 +4,161 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="" />
+    <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/indexfont.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/Dichvulapdat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/LapdatChauruabat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/Lapdatbep.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/Lapdatmaykhumui.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/Lapdtamayruabat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/ShowroomHN1 .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/ShowroomHN2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/ShowroomHN3 .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/ShowroomHaNoi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/banner1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/banner2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/banner3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/banner4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/comboanninh.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/combocanho.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/combocaocap.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/showroomHCM1 .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/showroomHCM2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/banners/showroomHCM3 .png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/icons/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/AppleHomekit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/LogoMitsubishi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/LogoPanasonic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/LogoSunhouse.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/LogoXiaomi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/MiHome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/Tulanh-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/Tulanh-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/Tulanh-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/Tulanh-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/amzTexla.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/beptu-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/beptu-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/beptu-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/beptu-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/cambieng-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/cambieng-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/cambieng-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/cambieng-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/combosp1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/combosp2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/ggHome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/logoTesla.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/mayruabat-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/mayruabat-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/mayruabat-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/mayruabat-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/phache-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/phache-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/phache-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/phache-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/robot-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/robot-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/robot-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/products/robot-4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jsBao/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jsBao/Dangky.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jsBao/Main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jsBao/showroom.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jsToan/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jsToan/Chitietsp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jsToan/Thanhtoan.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jsTruong/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jsTruong/admin_script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jsTruong/giohang.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jsTruong/yeuthich.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Account.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Account.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Beptu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Brand.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Brand.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Cambien.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Chitietsp.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Chitietsp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Donhang.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Donhang.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Login.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Mayruabat.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Phache.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/QuanlyUser.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/QuanlyUser.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Robot.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Tatcasp.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Thanhtoan.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Thanhtoan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/QuangToan/Tulanh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_add_product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_banners.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_content.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_edit_product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_order_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_orders.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_product_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_products.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_promotions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_static_pages.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/admin_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/chinhsachbaohanh.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/chinhsachbaohanh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/doitacB2B.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/doitacB2B.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/giohang.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/giohang.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/khuyenmai.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/khuyenmai.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/phuongthucthanhtoan.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/phuongthucthanhtoan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/products.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/tuyendung.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/tuyendung.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/vechungtoi.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/vechungtoi.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/yeuthich.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ThanhTruong/yeuthich.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/BaoHanh.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/BaoHanh.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/DangKy.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/Dangky.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/DichVuLapDat.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/DichVuLapDat.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/Header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/Showroom.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/admin_product_Combo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/admin_product_brand.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/admin_product_category.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/admin_product_ecosystem.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/chinhsachdoitra.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/chinhsachdoitra.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/chinhsachvanchuyenvalapdat.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/chinhsachvanchuyenvalapdat.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/giaiphapvacombo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/giaiphapvacombo.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/goctuvan.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/goctuvan.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/TrongBao/showroom.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/admin_style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/main.css" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,9 +197,10 @@
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/THANH TRUONG/Web_ban_thiet_bi_nha_bep_thong_minh",
+    "last_opened_file_path": "C:/Users/THANH TRUONG/webdong/Web_ban_thiet_bi_nha_bep_thong_minh",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
