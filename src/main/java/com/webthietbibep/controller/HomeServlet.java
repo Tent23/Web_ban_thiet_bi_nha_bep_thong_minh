@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "HomeServlet", urlPatterns = {"/trang-chu", ""})
+@WebServlet(name = "HomeServlet", value = "/index")
 public class HomeServlet extends HttpServlet {
 
     @Override
