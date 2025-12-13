@@ -1,26 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="WebThietBiBep:war" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/IntelliLang.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/common/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/META-INF/context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/common/sidebar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/web/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Account.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Account.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Beptu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Beptu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Brand.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Brand.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Cambien.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Cambien.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Chitietsp.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Chitietsp.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Donhang.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Donhang.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Mayruabat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Mayruabat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Phache.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Phache.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Robot.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Robot.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Thanhtoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Thanhtoan.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Tulanh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Tulanh.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_add_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_add_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_banners.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_banners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_dashboard.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_edit_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_edit_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_order_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_order_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_promotions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_promotions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_static_pages.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_static_pages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/admin_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/admin_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/chinhsachvanchuyenvalapdat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chinhsachvanchuyenvalapdat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,11 +59,20 @@
         <option value="JavaScript File" />
         <option value="CSS File" />
         <option value="HTML File" />
+        <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -51,34 +86,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/THANH TRUONG/Web_ban_thiet_bi_nha_bep_thong_minh",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.tomcat 9 .executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/THANH TRUONG/Web_ban_thiet_bi_nha_bep_thong_minh&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\shared" />
@@ -98,6 +134,19 @@
       <visibility group="Run configurations" flag="true" />
     </myKeys>
   </component>
+  <component name="RunDashboard">
+    <option name="configurationStatuses">
+      <map>
+        <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+          <value>
+            <map>
+              <entry key="tomcat 9 " value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="Web_ban_thiet_bi_nha_bep_thong_minh" />
@@ -109,6 +158,93 @@
       <module name="Web_ban_thiet_bi_nha_bep_thong_minh" />
       <option name="filePath" />
       <method v="2" />
+    </configuration>
+    <configuration name="tomcat 9 " type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.113" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="WebThietBiBep:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/WebThietBiBep_war" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="44bbf8fd-c52d-4038-9de3-38f371b76069" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="63639" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="WebThietBiBep:war" />
+        </option>
+      </method>
     </configuration>
   </component>
   <component name="SharedIndexes">
@@ -156,7 +292,9 @@
       <workItem from="1764149457571" duration="9423000" />
       <workItem from="1764333400184" duration="4330000" />
       <workItem from="1764430539333" duration="4796000" />
-      <workItem from="1765602198920" duration="130000" />
+      <workItem from="1765602198920" duration="5205000" />
+      <workItem from="1765611890304" duration="1365000" />
+      <workItem from="1765618387062" duration="2685000" />
     </task>
     <servers />
   </component>

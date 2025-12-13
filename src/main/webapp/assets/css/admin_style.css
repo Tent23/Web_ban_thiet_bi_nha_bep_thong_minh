@@ -20,26 +20,36 @@
 }
 
 body {
-    background-color: var(--admin-bg);
-    color: var(--admin-text);
+    body {
+        background-color: var(--admin-bg);
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Ngăn thanh cuộn ngang */
+    }
 }
 
-.admin-layout {
+/* --- BỐ CỤC MỚI (FLEXBOX WRAPPER) --- */
+/* Class này bao quanh cả Sidebar và Content để chia cột */
+.admin-wrapper {
     display: flex;
+    min-height: 100vh;
+    width: 100%;
 }
 
 /* --- SIDEBAR --- */
 .admin-sidebar {
     width: 250px;
-    height: 100vh;
-    position: fixed;
+    height: 100vh;      /* Chiều cao full màn hình */
+    position: fixed;    /* QUAN TRỌNG: Ghim cứng sidebar */
     top: 0;
     left: 0;
+    z-index: 1000;      /* Đảm bảo sidebar luôn nổi lên trên nếu cần */
     background-color: var(--admin-sidebar-bg);
     color: var(--admin-sidebar-text);
     display: flex;
     flex-direction: column;
-
+    overflow-y: auto;   /* Cho phép cuộn trong sidebar nếu menu dài */
+    transition: all 0.3s;
 }
 
 .sidebar-header {
@@ -96,14 +106,18 @@ body {
     margin-right: 10px;
 }
 
-/* --- MAIN CONTENT --- */
-.admin-main {
-    margin-left: 250px;
-    width: calc(100% - 250px);
-    display: flex;
-    flex-direction: column;
+/* --- MAIN CONTENT (NỘI DUNG BÊN PHẢI) --- */
+/* Dùng class .main-content cho đúng với JSP mới */
+.main-content, .admin-main {
+    margin-left: 250px;          /* QUAN TRỌNG: Đẩy nội dung ra khỏi vùng sidebar */
+    width: calc(100% - 250px);   /* Chiều rộng phần còn lại */
+    padding: 30px;
+    background-color: var(--admin-bg);
+    min-height: 100vh;
+    transition: all 0.3s;
 }
 
+/* Giữ lại các class cũ bên trong nội dung để không bị lỗi */
 .admin-header {
     height: 70px;
     background-color: var(--admin-white);
@@ -112,6 +126,8 @@ body {
     align-items: center;
     padding: 0 30px;
     border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 30px; /* Thêm khoảng cách với nội dung dưới */
+    border-radius: 8px; /* Bo góc cho đẹp hơn */
 }
 
 .admin-header h2 {
@@ -128,11 +144,6 @@ body {
     margin-right: 10px;
 }
 
-.admin-content {
-    padding: 30px;
-    flex-grow: 1;
-}
-
 .admin-grid {
     display: grid;
     gap: 30px;
@@ -140,7 +151,9 @@ body {
 
 /* Thẻ thống kê */
 .stat-cards {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
 }
 
 .stat-card {
@@ -177,7 +190,9 @@ body {
 
 /* Biểu đồ */
 .charts {
+    display: grid;
     grid-template-columns: 2fr 1fr;
+    gap: 30px;
     margin-top: 30px;
 }
 
@@ -254,22 +269,35 @@ body {
 }
 
 @media (max-width: 768px) {
+    .admin-wrapper {
+        flex-direction: column; /* Trên mobile thì xếp dọc */
+    }
+
     .stat-cards {
         grid-template-columns: 1fr;
     }
 
-    /* Ẩn sidebar, chỉ hiện nội dung (demo) */
     .admin-sidebar {
-        /* (Trong 1 app thật, đây sẽ là 'display: none' và được toggle bằng JS) */
-        position: static;
         width: 100%;
+        min-height: auto;
         height: auto;
+        position: relative;
     }
-    .admin-main {
-        margin-left: 0;
+
+    .sidebar-menu {
+        display: none; /* Mặc định ẩn menu trên mobile, cần nút toggle để hiện */
+    }
+
+    .admin-sidebar:hover .sidebar-menu {
+        display: block; /* Demo: hover vào thì hiện */
+    }
+
+    .main-content {
         width: 100%;
+        padding: 15px;
     }
 }
+
 /* --- CSS CHO BỘ LỌC --- */
 .admin-filters {
     display: flex;
@@ -288,7 +316,7 @@ body {
     color: var(--admin-text);
 }
 .admin-filters input[type="text"] {
-    flex-grow: 1; /* Cho thanh tìm kiếm dài nhất */
+    flex-grow: 1;
 }
 .btn-filter {
     padding: 10px 15px;
@@ -323,6 +351,7 @@ body {
     color: var(--admin-white);
     border-color: var(--admin-sidebar-active);
 }
+
 /* --- CSS CHO SIDEBAR ACCORDION --- */
 .sidebar-menu li.menu-item-has-children .sidebar-link {
     display: flex;
@@ -338,18 +367,23 @@ body {
 }
 .submenu {
     list-style: none;
-    background-color: #0f172a; /* Màu nền tối hơn 1 chút */
-    padding-left: 30px; /* Thụt vào */
+    background-color: #0f172a;
+    padding-left: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
 }
 .sidebar-menu li.menu-item-has-children.open .submenu {
-    max-height: 500px; /* Chiều cao đủ lớn để chứa các mục con */
+    max-height: 500px;
 }
 .submenu li a {
-    padding: 12px 20px;
-    font-size: 0.95rem;
+    padding: 12px 20px 12px 50px; /* Thụt lề chữ */
+    font-size: 0.90rem;
+    color: #94a3b8;
+}
+.submenu li a:hover {
+    color: #fff;
+    background: transparent;
 }
 .submenu li a.active-sub {
     color: var(--admin-white);
@@ -357,11 +391,6 @@ body {
 }
 
 /* --- CSS CHO HEADER (THÊM NÚT) --- */
-.admin-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 .admin-header-actions {
     display: flex;
     align-items: center;
@@ -377,6 +406,8 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+    cursor: pointer;
+    border: none;
 }
 
 /* --- CSS CHO BẢNG SẢN PHẨM --- */
@@ -398,6 +429,7 @@ body {
     font-size: 0.9rem;
     margin-right: 5px;
     font-weight: 600;
+    display: inline-block;
 }
 .btn-action.edit {
     background-color: #e0f2fe;

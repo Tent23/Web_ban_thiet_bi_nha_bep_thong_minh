@@ -20,7 +20,7 @@
                 <button><i class="fa fa-search"></i></button>
             </div>
             <div class="header__actions">
-                <a href="account.jsp"><i class="fa fa-user"></i> Tài khoản</a>
+                <a href="account.jsp"><i class="fa fa-user"></i> Tài kho</a>
                 <a href="yeu-thich.jsp"><i class="fa fa-heart"></i> Yêu thích</a>
                 <a href="gio-hang.jsp"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
             </div>
