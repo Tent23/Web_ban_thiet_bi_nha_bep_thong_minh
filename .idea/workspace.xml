@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/IntelliLang.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/common/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Account.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Beptu.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Beptu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Chitietsp.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Chitietsp.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Donhang.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Donhang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Mayruabat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Mayruabat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Phache.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Phache.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Robot.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Robot.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Thanhtoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Thanhtoan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Tulanh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Tulanh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/footer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/header.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +58,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -55,6 +71,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "advanced.settings",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -68,6 +88,15 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\assets\images\banners" />
     </key>
+  </component>
+  <component name="RunAnythingCache">
+    <myKeys>
+      <visibility group="Gradle Tasks" flag="true" />
+      <visibility group="HTTP Requests" flag="true" />
+      <visibility group="Maven Goals" flag="true" />
+      <visibility group="Recent projects" flag="true" />
+      <visibility group="Run configurations" flag="true" />
+    </myKeys>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JetRunConfigurationType">
@@ -86,6 +115,7 @@
     <attachedChunks>
       <set>
         <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
       </set>
     </attachedChunks>
   </component>
@@ -126,6 +156,7 @@
       <workItem from="1764149457571" duration="9423000" />
       <workItem from="1764333400184" duration="4330000" />
       <workItem from="1764430539333" duration="4796000" />
+      <workItem from="1765602198920" duration="130000" />
     </task>
     <servers />
   </component>
