@@ -19,14 +19,15 @@
 
 <main>
     <main class="main_container">
-        <form class="resigter" action="login-action" method="post">
+        <form class="resigter" action="login" method="post">
             <h1>Đăng Nhập</h1>
 
+            <%-- Hiển thị thông báo lỗi nếu có --%>
             <%
                 String error = (String) request.getAttribute("errorMessage");
                 if (error != null) {
             %>
-            <div style="color: red; text-align: center; margin-bottom: 10px; font-weight: bold;">
+            <div style="color: red; text-align: center; margin-bottom: 10px; font-weight: bold; background-color: #ffe6e6; padding: 10px; border-radius: 5px;">
                 <i class="fa fa-circle-exclamation"></i> <%= error %>
             </div>
             <% } %>
@@ -34,7 +35,10 @@
             <div class="input_group main_group">
                 <div class="input_field">
                     <i class="fa fa-user"></i>
-                    <input type="text" id="username" name="username" placeholder="Tên đăng nhập hoặc Email" required>
+                    <input type="text" id="username" name="username"
+                           placeholder="Tên đăng nhập hoặc Email"
+                           value=""
+                           required>
                 </div>
 
                 <div class="input_field">
@@ -48,7 +52,7 @@
                 <label class="check_deal">
                     <input type="checkbox"> Ghi nhớ đăng nhập
                 </label>
-                <a href="Dangky.html" class="no_account">Tôi chưa có tài khoản</a>
+                <a href="${pageContext.request.contextPath}/Dangky.html" class="no_account">Tôi chưa có tài khoản</a>
             </div>
 
             <button type="submit" class="register_button">ĐĂNG NHẬP</button>
@@ -60,7 +64,7 @@
                         <i class="fab fa-instagram"></i> Instagram
                     </a>
                     <a class="facebook_btn" href="#">
-                        <i class="fab fa-facebook - f"></i> Facebook
+                        <i class="fab fa-facebook-f"></i> Facebook
                     </a>
                 </div>
             </div>
@@ -70,6 +74,6 @@
 
 <jsp:include page="common/footer.jsp"></jsp:include>
 
-<script src="assets/js/Dangky.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/Dangky.js"></script>
 </body>
 </html>
