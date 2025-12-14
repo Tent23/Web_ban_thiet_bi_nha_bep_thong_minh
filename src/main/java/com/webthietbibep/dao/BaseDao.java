@@ -5,7 +5,7 @@ import org.jdbi.v3.core.Jdbi;
 
 import java.sql.SQLException;
 
-public class BaseDao {
+public abstract class BaseDao {
     private Jdbi jdbi;
     protected Jdbi get() {
         if (jdbi == null) {
@@ -30,4 +30,5 @@ public class BaseDao {
         }
         jdbi = Jdbi.create(src);
     }
+
 }

@@ -3,6 +3,7 @@ package com.webthietbibep.controller;
 import com.webthietbibep.dao.ProductDAO;
 import com.webthietbibep.model.Product;
 
+import com.webthietbibep.service.ProductService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -15,9 +16,10 @@ public class HomeServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ProductService ps = new ProductService();
+
         // 1. Gọi DAO lấy danh sách sản phẩm bán chạy
-        ProductDAO dao = new ProductDAO();
-        List<Product> listBestSellers = dao.getBestSellers();
+        List<Product> listBestSellers = ps.getBestSeller();
 
         // 2. Đẩy dữ liệu sang JSP
         request.setAttribute("listP", listBestSellers);

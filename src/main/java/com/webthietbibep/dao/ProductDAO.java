@@ -1,22 +1,40 @@
 package com.webthietbibep.dao;
 
 import com.webthietbibep.model.Product;
-import java.util.ArrayList;
-import java.util.List;
+import org.jdbi.v3.core.Jdbi;
+import org.jdbi.v3.core.JdbiException;
+import org.jdbi.v3.core.statement.PreparedBatch;
 
-public class ProductDAO {
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class ProductDAO extends BaseDao{
+    static Map<Integer,Product> data = new HashMap<>();
+
+    static {
+    data.put(1,new Product(1,"Bep","xxx",500.0,"assets/images/products/beptu-1.jpg",1,1,"c"));
+
+    }
+
+    public void insertProduct(List<Product> products){
+        Jdbi jdbi = get();
+        jdbi.useHandle(h -> {
+            PreparedBatch batch = h.prepareBatch("insert into products values(?,?,?,?)");
+           products.forEach(product -> {
+               batch.bindBean(product).add();
+           });
+           batch.execute();
+        });
+    }
 
     public List<Product> getBestSellers() {
-        List<Product> list = new ArrayList<>();
 
-        // Dữ liệu mô phỏng lấy từ giao diện cũ của bạn
-        list.add(new Product(1, "Bếp từ Thông minh Bosch", 15000000, "assets/images/products/beptu-1.jpg"));
-        list.add(new Product(2, "Robot Hút bụi Xiaomi", 8500000, "assets/images/products/robot-4.jpg"));
+        return null;
+    }
 
-        // Thêm vài sản phẩm nữa để slide chạy đẹp hơn
-        list.add(new Product(3, "Tủ Lạnh Hitachi Inverter", 32000000, "assets/images/products/Tulanh-1.jpg"));
-        list.add(new Product(4, "Máy Rửa Bát Bosch Series 6", 21500000, "assets/images/products/mayruabat-4.jpg"));
-
-        return list;
+    public List<Product> getListProduct() {
+        return new ArrayList<>(data.values());
     }
 }
