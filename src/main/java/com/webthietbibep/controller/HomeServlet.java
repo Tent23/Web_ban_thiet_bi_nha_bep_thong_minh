@@ -1,6 +1,10 @@
 package com.webthietbibep.controller;
 
+import com.webthietbibep.dao.CategoryDAO;
+import com.webthietbibep.dao.ComboDAO;
 import com.webthietbibep.dao.ProductDAO;
+import com.webthietbibep.model.Category;
+import com.webthietbibep.model.Combo;
 import com.webthietbibep.model.Product;
 
 import jakarta.servlet.ServletException;
@@ -11,19 +15,17 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "HomeServlet", urlPatterns = {"/trang-chu", ""})
+@WebServlet("/")
 public class HomeServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 1. Gọi DAO lấy danh sách sản phẩm bán chạy
-        ProductDAO dao = new ProductDAO();
-        List<Product> listBestSellers = dao.getBestSellers();
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
-        // 2. Đẩy dữ liệu sang JSP
-        request.setAttribute("listP", listBestSellers);
+        request.setAttribute("categories", CategoryDAO.getAll());
+        request.setAttribute("bestProducts", ProductDAO.getBestSeller());
+        request.setAttribute("combos", ComboDAO.getAll());
 
-        // 3. Chuyển hướng về trang giao diện
-        request.getRequestDispatcher("Login.jsp").forward(request, response);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }

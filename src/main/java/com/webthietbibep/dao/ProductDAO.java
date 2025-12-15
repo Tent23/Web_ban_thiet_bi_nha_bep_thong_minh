@@ -1,22 +1,43 @@
 package com.webthietbibep.dao;
 
+import com.webthietbibep.context.DBContext;
 import com.webthietbibep.model.Product;
+
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductDAO {
 
-    public List<Product> getBestSellers() {
+    public static List<Product> getBestSeller() {
         List<Product> list = new ArrayList<>();
 
-        // Dữ liệu mô phỏng lấy từ giao diện cũ của bạn
-        list.add(new Product(1, "Bếp từ Thông minh Bosch", 15000000, "assets/images/products/beptu-1.jpg"));
-        list.add(new Product(2, "Robot Hút bụi Xiaomi", 8500000, "assets/images/products/robot-4.jpg"));
+        String sql = """
+            SELECT p.*, SUM(oi.quantity) AS sold
+            FROM Products p
+            JOIN Order_Items oi ON p.product_id = oi.product_id
+            GROUP BY p.product_id
+            ORDER BY sold DESC
+            LIMIT 10
+        """;
 
-        // Thêm vài sản phẩm nữa để slide chạy đẹp hơn
-        list.add(new Product(3, "Tủ Lạnh Hitachi Inverter", 32000000, "assets/images/products/Tulanh-1.jpg"));
-        list.add(new Product(4, "Máy Rửa Bát Bosch Series 6", 21500000, "assets/images/products/mayruabat-4.jpg"));
+        try (Connection conn = new DBContext().getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
 
+            while (rs.next()) {
+                Product p = new Product();
+                p.setProductId(rs.getInt("product_id"));
+                p.setName(rs.getString("name"));
+                p.setPrice(rs.getDouble("price"));
+                p.setThumbnailUrl(rs.getString("thumbnail_url"));
+                p.setSlug(rs.getString("slug"));
+                list.add(p);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return list;
     }
 }

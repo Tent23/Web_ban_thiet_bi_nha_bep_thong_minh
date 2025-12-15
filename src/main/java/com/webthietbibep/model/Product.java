@@ -1,40 +1,76 @@
 package com.webthietbibep.model;
 
-import java.text.NumberFormat;
-import java.util.Locale;
-
 public class Product {
-    private int id;
+    private int productId;
     private String name;
+    private String description;
     private double price;
-    private String image;
+    private int stockQuantity;
+    private String thumbnailUrl;
+    private int categoryId;
+    private int brandId;
+    private String slug;
 
-    public Product() {
+    public int getProductId() {
+        return productId;
+    }
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
-    public Product(int id, String name, double price, String image) {
-        this.id = id;
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
         this.name = name;
-        this.price = price;
-        this.image = image;
     }
 
-    // Getters and Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    public double getPrice() {
+        return price;
+    }
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
-    public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price; }
+    public int getStockQuantity() {
+        return stockQuantity;
+    }
+    public void setStockQuantity(int stockQuantity) {
+        this.stockQuantity = stockQuantity;
+    }
 
-    public String getImage() { return image; }
-    public void setImage(String image) { this.image = image; }
+    public String getThumbnailUrl() {
+        return thumbnailUrl;
+    }
+    public void setThumbnailUrl(String thumbnailUrl) {
+        this.thumbnailUrl = thumbnailUrl;
+    }
 
-    // Hàm định dạng tiền tệ (Ví dụ: 15.000.000 đ)
-    public String getPriceFormat() {
-        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
-        return nf.format(price);
+    public int getCategoryId() {
+        return categoryId;
+    }
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public int getBrandId() {
+        return brandId;
+    }
+    public void setBrandId(int brandId) {
+        this.brandId = brandId;
+    }
+
+    public String getSlug() {
+        return slug;
+    }
+    public void setSlug(String slug) {
+        this.slug = slug;
     }
 }
