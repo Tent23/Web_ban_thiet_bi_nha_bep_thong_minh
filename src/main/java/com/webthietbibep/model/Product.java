@@ -1,54 +1,69 @@
 package com.webthietbibep.model;
 
+import java.io.Serializable;
 import java.text.NumberFormat;
+import java.time.LocalDateTime;
 import java.util.Locale;
 
-public class Product {
-    private int id;
-    private String name;
-    private double price;
-    private String image;
-    private String category;
-    private String brand;
+public class Product implements Serializable {
+    private int product_id;
+    private int category_id;
+    private String product_name;
     private String description;
+    private double price;
+    private int stock_quantity;
+    private String image;
+    private LocalDateTime create_at;
 
-    public Product(String name, double price, String image,
-                   String category, String brand, String decription) {
-        this.name = name;
-        this.price = price;
-        this.image = image;
-        this.category = category;
-        this.brand = brand;
-        this.description = description;
+    public Product() {
     }
 
-    // Constructor đầy đủ (dùng khi lấy từ database)
-    public Product(int id, String name, double price, String image,
-                   String category, String brand, String description) {
-        this.id = id;
-        this.name = name;
-        this.price = price;
-        this.image = image;
-        this.category = category;
-        this.brand = brand;
+    public Product(int product_id, int category_id, String product_name,
+                   String description, double price, int stock_quantity,
+                   String image, LocalDateTime create_at) {
+
+        this.product_id = product_id;
+        this.category_id = category_id;
+        this.product_name = product_name;
         this.description = description;
+        this.price = price;
+        this.stock_quantity = stock_quantity;
+        this.image = image;
+        this.create_at = create_at;
     }
 
     // Getter & Setter
-    public int getId() {
-        return id;
+
+    public int getProduct_id() {
+        return product_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setProduct_id(int product_id) {
+        this.product_id = product_id;
     }
 
-    public String getName() {
-        return name;
+    public int getCategory_id() {
+        return category_id;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCategory_id(int category_id) {
+        this.category_id = category_id;
+    }
+
+    public String getProduct_name() {
+        return product_name;
+    }
+
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public double getPrice() {
@@ -59,6 +74,14 @@ public class Product {
         this.price = price;
     }
 
+    public int getStock_quantity() {
+        return stock_quantity;
+    }
+
+    public void setStock_quantity(int stock_quantity) {
+        this.stock_quantity = stock_quantity;
+    }
+
     public String getImage() {
         return image;
     }
@@ -67,29 +90,14 @@ public class Product {
         this.image = image;
     }
 
-    public String getCategory() {
-        return category;
+    public LocalDateTime getCreate_at() {
+        return create_at;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCreate_at(LocalDateTime create_at) {
+        this.create_at = create_at;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
 
     // Hàm định dạng tiền tệ (Ví dụ: 15.000.000 đ)
