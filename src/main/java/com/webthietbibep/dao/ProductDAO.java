@@ -29,7 +29,14 @@ public class ProductDAO extends BaseDao{
 
     public List<Product> getBestSellers() {
 
-        return null;
+        return get().withHandle(h ->{
+            return h.createQuery("SELECT p.*, SUM(o.quantity) AS TongSoLuongDaBan\n" +
+                            " FROM orderitems o JOIN products p ON p.id = o.product_id\n" +
+                            "GROUP BY p.id,p.name,p.description,p.price,p.image,p.category_id,p.brand_id,p.slug\n" +
+                            "ORDER BY SUM(o.quantity) DESC\n" +
+                            "LIMIT 2 ")
+                   .mapToBean(Product.class).list();
+        });
     }
 
     public List<Product> getListProduct() {
@@ -45,6 +52,7 @@ public class ProductDAO extends BaseDao{
 
         });
     }
+
 
 //    public static void main(String[] args) {
 //        ProductDAO dao = new ProductDAO();

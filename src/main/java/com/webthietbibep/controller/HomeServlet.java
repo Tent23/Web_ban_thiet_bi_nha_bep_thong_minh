@@ -11,7 +11,7 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "HomeServlet", value = "/index")
+@WebServlet(name = "HomeServlet", value = "/Home")
 public class HomeServlet extends HttpServlet {
 
     @Override
@@ -19,12 +19,20 @@ public class HomeServlet extends HttpServlet {
         ProductService ps = new ProductService();
 
         // 1. Gọi DAO lấy danh sách sản phẩm bán chạy
-        List<Product> listBestSellers = ps.getBestSeller();
+        List<Product> listP = ps.getBestSeller();
 
         // 2. Đẩy dữ liệu sang JSP
-        request.setAttribute("listP", listBestSellers);
+        request.setAttribute("listP", listP);
 
         // 3. Chuyển hướng về trang giao diện
         request.getRequestDispatcher("index.jsp").forward(request, response);
+    }
+
+    public static void main(String[] args) {
+        ProductService ps = new ProductService();
+
+        // 1. Gọi DAO lấy danh sách sản phẩm bán chạy
+        List<Product> listP = ps.getBestSeller();
+        System.out.println("So luong san pham: " + listP.size()); // Kiểm tra ở console
     }
 }

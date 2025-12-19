@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -111,18 +112,15 @@
             <h2 class="section-title">Sản phẩm Bán chạy nhất</h2>
             <div class="swiper" id="bestseller-slider">
                 <div class="swiper-wrapper">
+                    <c:forEach var = "pbs" items="${listP}">
                     <div class="swiper-slide product-card">
-                        <img src="./assets/images/products/beptu-1.jpg" alt="Sản phẩm 1" />
-                        <h3>Bếp từ Thông minh Bosch</h3>
-                        <div class="price">15.000.000đ</div>
+                        <img src="${pbs.image}" alt="Sản phẩm 1" />
+                        <h3>${pbs.name}</h3>
+                        <div class="price">${pbs.priceFormat}</div>
                         <a href="pages/QuangToan/Chitietsp.html" class="btn btn-secondary">Xem chi tiết</a>
                     </div>
-                    <div class="swiper-slide product-card">
-                        <img src="./assets/images/products/robot-4.jpg" alt="Sản phẩm 2" />
-                        <h3>Robot Hút bụi Xiaomi</h3>
-                        <div class="price">8.500.000đ</div>
-                        <a href="pages/QuangToan/Chitietsp.html" class="btn btn-secondary">Xem chi tiết</a>
-                    </div>
+                    </c:forEach>
+
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
