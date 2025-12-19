@@ -43,7 +43,7 @@ public class ProductDAO extends BaseDao {
         return get().withHandle(h -> h.createQuery("select * from products").mapToBean(Product.class).list());
     }
     public Product getProduct(int id){
-        return get().withHandle(h -> h.createQuery("select * from products where id=:id").bind("id",id).mapToBean(Product.class).stream().findFirst().orElse(null));
+        return get().withHandle(h -> h.createQuery("select * from products where product_id=:product_id").bind("product_id",id).mapToBean(Product.class).stream().findFirst().orElse(null));
 
     }
 }

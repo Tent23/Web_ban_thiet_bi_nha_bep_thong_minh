@@ -2,6 +2,7 @@ package com.webthietbibep.dao;
 
 import com.mysql.cj.jdbc.MysqlDataSource;
 import com.webthietbibep.model.Product;
+import com.webthietbibep.model.User;
 import org.jdbi.v3.core.Jdbi;
 
 import java.sql.SQLException;
@@ -35,7 +36,6 @@ public abstract class BaseDao {
         }
         jdbi = Jdbi.create(src);
     }
-
 
 
 }

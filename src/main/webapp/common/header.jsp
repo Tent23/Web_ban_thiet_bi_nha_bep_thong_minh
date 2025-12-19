@@ -7,7 +7,7 @@
             <span class="spacer"></span>
             <a href="showroom">Hệ thống Showroom</a>
             <a href="tra-cuu-bao-hanh">Tra cứu Bảo hành</a>
-            <a href="login.jsp">Đăng nhập</a>
+            <li>${sessionScope.get("auth").username } </li>
         </div>
     </div>
     <div class="header__main">

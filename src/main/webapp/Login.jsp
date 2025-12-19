@@ -19,7 +19,7 @@
 
 <main>
     <main class="main_container">
-        <form class="resigter" action="login-action" method="post">
+        <form class="login" action="login" method="post">
             <h1>Đăng Nhập</h1>
 
             <%
@@ -30,7 +30,6 @@
                 <i class="fa fa-circle-exclamation"></i> <%= error %>
             </div>
             <% } %>
-
             <div class="input_group main_group">
                 <div class="input_field">
                     <i class="fa fa-user"></i>
