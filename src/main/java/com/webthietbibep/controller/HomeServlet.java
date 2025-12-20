@@ -15,7 +15,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/")
+@WebServlet("/home")
 public class HomeServlet extends HttpServlet {
 
     @Override
@@ -23,9 +23,11 @@ public class HomeServlet extends HttpServlet {
             throws ServletException, IOException {
 
         request.setAttribute("categories", CategoryDAO.getAll());
-        request.setAttribute("bestProducts", ProductDAO.getBestSeller());
+     //   request.setAttribute("bestProducts", ProductDAO.getBestSeller());
         request.setAttribute("combos", ComboDAO.getAll());
-
-        request.getRequestDispatcher("index.jsp").forward(request, response);
+        List<Product> products = ProductDAO.getAll();
+        request.setAttribute("products", products);
+        request.getRequestDispatcher("/products.jsp").forward(request, response);
     }
+
 }

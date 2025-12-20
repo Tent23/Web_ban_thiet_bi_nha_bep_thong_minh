@@ -9,10 +9,10 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}../assets/css/admin_style.css">
-    <link rel="stylesheet" href="../assets/css/admin_style.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/admin/admin_style.css">
+    <link rel="stylesheet" href="./assets/css/admin_style.css" />
 
-    <link rel="stylesheet" href="../assets/css/indexfont.css" />
+    <link rel="stylesheet" href="/admin/admin_style.css" />
 
 </head>
 <body>

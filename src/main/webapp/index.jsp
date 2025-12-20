@@ -1,5 +1,25 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Cửa hàng bếp</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+    <link rel="stylesheet" href="assets/css/Header.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/Login.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+
+</head>
+
+<body>
+
+<jsp:include page="common/header.jsp"/>
 
 <main class="main-content">
 
@@ -57,13 +77,15 @@
 
                     <c:forEach var="p" items="${bestProducts}">
                         <div class="swiper-slide product-card">
-                            <img src="${pageContext.request.contextPath}/${p.image}" alt="${p.name}" />
+                            <img src="${pageContext.request.contextPath}/${p.thumbnailUrl}" alt="${p.name}" />
                             <h3>${p.name}</h3>
                             <div class="price">
                                 <fmt:formatNumber value="${p.price}" type="number"/> đ
                             </div>
-                            <a href="${pageContext.request.contextPath}/product?id=${p.id}"
-                               class="btn btn-secondary">Xem chi tiết</a>
+                            <a href="${pageContext.request.contextPath}/product/${p.slug}"
+                               class="btn btn-secondary">
+                                Xem chi tiết
+                            </a>
                         </div>
                     </c:forEach>
 
@@ -97,3 +119,11 @@
     </section>
 
 </main>
+
+<jsp:include page="common/footer.jsp"/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/Main.js"></script>
+
+</body>
+</html>

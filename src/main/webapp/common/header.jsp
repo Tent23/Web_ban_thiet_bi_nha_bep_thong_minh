@@ -30,7 +30,7 @@
         <div class="container">
             <ul>
                 <li class="nav-item has-megamenu">
-                    <a href="products.jsp">Sản phẩm <i class="fa fa-chevron-down"></i></a>
+                    <a href="../products.jsp">Sản phẩm <i class="fa fa-chevron-down"></i></a>
                     <div class="mega-menu">
                         <a href="products?category=beptu">Bếp từ</a>
                         <a href="products?category=tulanh">Tủ lạnh</a>
