@@ -12,8 +12,9 @@
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Showroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Showroom.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/products.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +26,8 @@
       <list>
         <option value="JavaScript File" />
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="Jsp File" />
+        <option value="HTML File" />
         <option value="Servlet" />
         <option value="Class" />
       </list>
@@ -57,6 +58,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.BaseDao.executor": "Run",
+    "Application.BrandDao.executor": "Run",
     "Application.HomeServlet.executor": "Run",
     "Application.ProductDAO.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
@@ -89,6 +91,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.webthietbibep.dao" />
       <recent name="com.webthietbibep.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -127,6 +130,19 @@
   <component name="RunManager" selected="Tomcat Server.Tomcat 10">
     <configuration name="BaseDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.webthietbibep.dao.BaseDao" />
+      <module name="WebThietBiBep" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.webthietbibep.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BrandDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.webthietbibep.dao.BrandDao" />
       <module name="WebThietBiBep" />
       <extension name="coverage">
         <pattern>
@@ -352,6 +368,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.BrandDao" />
       <item itemvalue="Application.HomeServlet" />
       <item itemvalue="Application.ProductDAO" />
       <item itemvalue="Application.BaseDao" />
@@ -360,6 +377,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BrandDao" />
         <item itemvalue="Application.HomeServlet" />
         <item itemvalue="Application.ProductDAO" />
         <item itemvalue="Application.BaseDao" />
@@ -420,11 +438,27 @@
       <workItem from="1765714101234" duration="4173000" />
       <workItem from="1765725279067" duration="8268000" />
       <workItem from="1765791604135" duration="4655000" />
-      <workItem from="1766137133949" duration="5417000" />
+      <workItem from="1766137133949" duration="8146000" />
+      <workItem from="1766224524061" duration="3653000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/BrandDao.java</url>
+          <line>40</line>
+          <properties class="com.webthietbibep.dao.BrandDao" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

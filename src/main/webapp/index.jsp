@@ -235,31 +235,16 @@
             <h2 class="section-title">Các Thương hiệu Hàng đầu</h2>
             <div class="swiper" id="brand-slider">
                 <div class="swiper-wrapper">
+                    <c:forEach var ="b" items="${listB}">
                     <div class="swiper-slide brand-item">
                         <a href="pages/QuangToan/Brand.html">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/2048px-Xiaomi_logo_%282021-%29.svg.png" alt="Xiaomi" />
+                            <img src="${b.image}" alt="${p.name}" />
                         </a>
                     </div>
-                    <div class="swiper-slide brand-item">
-                        <a href="pages/QuangToan/Brand.html">
-                            <img src="https://www.sonicpost.net/template/sonic/css/images/oho.png" alt="SunHouse" />
-                        </a>
-                    </div>
-                    <div class="swiper-slide brand-item">
-                        <a href="pages/QuangToan/Brand.html">
-                            <img src="assets/images/products/LogoMitsubishi.jpg" alt="Mitsubishi" />
-                        </a>
-                    </div>
-                    <div class="swiper-slide brand-item">
-                        <a href="pages/QuangToan/Brand.html">
-                            <img src="assets/images/products/logoTesla.png" alt="Tesla" />
-                        </a>
-                    </div>
-                    <div class="swiper-slide brand-item">
-                        <a href="pages/QuangToan/Brand.html">
-                            <img src="assets/images/products/LogoPanasonic.jpg" alt="Panasonic" />
-                        </a>
-                    </div>
+
+                    </c:forEach>
+
+
                 </div>
             </div>
         </div>

@@ -16,6 +16,10 @@
 
 
 
+
+
+
+
 </head>
 
 <body>
@@ -135,7 +139,7 @@
                         <div class="product-card">
                             <img src="${p.image}" alt="SP">
                             <h3>${p.name}</h3>
-                            <div class="price">${p.price}</div>
+                            <div class="price">${p.priceFormat}</div>
                             <a href="#" class="btn btn-secondary">Xem chi tiết</a>
                         </div>
                        </c:forEach>
