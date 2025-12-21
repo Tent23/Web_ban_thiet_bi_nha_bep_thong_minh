@@ -132,22 +132,12 @@
         <div class="container">
             <h2 class="section-title">Mua theo Hệ sinh thái</h2>
             <div class="ecosystem-grid">
+                <c:forEach var = "e" items="${listE}">
                 <a href="#" class="ecosystem-item" style="background-color: #e5e5e5">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png" alt="" />
-                    <span>Google Home</span>
+                    <img src="${e.image}" alt="" />
+                    <span>${e.name}</span>
                 </a>
-                <a href="#" class="ecosystem-item" style="background-color: #E5E5E5FF">
-                    <img src="https://diendantructuyen.com/wp-content/uploads/2024/09/apple-logo-vector.jpg" alt="Apple" />
-                    <span>Apple HomeKit</span>
-                </a>
-                <a href="#" class="ecosystem-item" style="background-color: #E5E5E5FF">
-                    <img src="https://images.icon-icons.com/1195/PNG/512/1490889698-amazon_82521.png" alt="Amazon Alexa" />
-                    <span>Amazon Alexa</span>
-                </a>
-                <a href="#" class="ecosystem-item" style="background-color: #E5E5E5FF">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/2048px-Xiaomi_logo_%282021-%29.svg.png" alt="Xiaomi" />
-                    <span>Mi Home</span>
-                </a>
+                </c:forEach>
             </div>
         </div>
     </section>
