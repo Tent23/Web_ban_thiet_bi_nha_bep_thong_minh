@@ -12,11 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ProductDAO extends BaseDao {
-    static Map<Integer,Product> data= new HashMap<>();
-    static{
-        data.put(1,new Product(1,2,"","",2.500,2,"",LocalDateTime.now()));
 
-    }
     public void insert(List<Product>products){
         Jdbi jdbi= get();
         jdbi.useHandle(h->{
@@ -33,11 +29,6 @@ public class ProductDAO extends BaseDao {
         });
     }
 
-    public static void main(String[] args) {
-        ProductDAO dao = new ProductDAO();
-        List<Product> products= dao.getListProduct();
-        dao.insert(products);
-    }
 
     public List<Product> getListProduct() {
         return get().withHandle(h -> h.createQuery("select * from products").mapToBean(Product.class).list());

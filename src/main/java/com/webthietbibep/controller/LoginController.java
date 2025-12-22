@@ -15,7 +15,8 @@ import java.io.IOException;
 public class LoginController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        request.getRequestDispatcher("Login.jsp").forward(request,response);
+        request.getSession().invalidate();
+        request.getRequestDispatcher("/Login.jsp").forward(request,response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
@@ -23,11 +24,16 @@ public class LoginController extends HttpServlet {
         String password= request.getParameter("password");
         AuthService as= new AuthService();
         User u= as.login(username,password);
-        if (u!= null){
-           HttpSession sesion = request.getSession();
-           sesion.setAttribute("auth",u);
-            response.sendRedirect("index.jsp");
+        if (u!= null) {
+            HttpSession sesion = request.getSession();
+            sesion.setAttribute("auth",u);
+            if ("ADMIN".equals(u.getRole())) {
+                response.sendRedirect(request.getContextPath() + "/admin/admin_dashboard.jsp");
+            } else {
+                response.sendRedirect(request.getContextPath() + "/index.jsp");
+            }
         }
+
         else {
             request.setAttribute("errorMessage", "Invalid username or password");
             request.getRequestDispatcher("Login.jsp").forward(request,response);

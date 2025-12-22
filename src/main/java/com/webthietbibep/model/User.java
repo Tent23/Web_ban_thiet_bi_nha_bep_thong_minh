@@ -10,8 +10,9 @@ public class User {
     String phone;
     String password_hash;
     LocalDateTime create_at;
+    String role;
 
-    public User(int user_id,String username, String full_name, String email, String phone, String password_hash, LocalDateTime create_at) {
+    public User(int user_id,String username, String full_name, String email, String phone, String password_hash, LocalDateTime create_at, String role) {
         this.user_id = user_id;
         this.username = username;
         this.full_name = full_name;
@@ -19,6 +20,7 @@ public class User {
         this.phone = phone;
         this.password_hash = password_hash;
         this.create_at = create_at;
+        this.role = role;
     }
 
     public User() {
@@ -78,5 +80,13 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

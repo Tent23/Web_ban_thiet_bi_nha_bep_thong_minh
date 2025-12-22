@@ -1,17 +1,18 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="vi">
 
 <head>
     <meta charset="UTF-8" />
     <title>Tất cả sản phẩm - Bếp Thông Minh TTB</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Header.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/Header.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/products.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-
 </head>
 
 <body>
@@ -83,7 +84,7 @@
     <!-- Breadcrumb -->
     <div class="breadcrumb section-padding" style="padding-bottom: 0;">
         <div class="container">
-            <p><a href="../../index.html">Trang chủ</a> / <span style="color: var(--text-secondary);">Tất cả sản phẩm</span></p>
+            <p> <span style="color: var(--text-secondary);">Tất cả sản phẩm</span></p>
         </div>
     </div>
 
@@ -140,10 +141,10 @@
                     <div class="shop-product-grid">
                         <c:forEach var="p" items="${products}">
                             <div class="product-card">
-                                <img src="assets/images/products/${p.image}">
-                                <h3>${p.name}</h3>
+                                <img src="${pageContext.request.contextPath}/assets/images/products/${p.image}">
+                                <h3>${p.product_name}</h3>
                                 <div class="price">${p.priceFormat}</div>
-                                <a href="product-detail?id=${p.id}" class="btn btn-secondary">
+                                <a href="product-detail?id=${p.product_id}" class="btn btn-secondary">
                                     Xem chi tiết
                                 </a>
                             </div>
