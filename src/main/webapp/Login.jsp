@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Đăng Nhập</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesom e/6.5.2/css/all.min.css">
 
     <link rel="stylesheet" href="assets/css/Header.css">
     <link rel="stylesheet" href="assets/css/index.css">
@@ -19,7 +19,7 @@
 
 <main>
     <main class="main_container">
-        <form class="resigter" action="login-action" method="post">
+        <form class="login" action="login" method="post">
             <h1>Đăng Nhập</h1>
 
             <%
@@ -30,7 +30,6 @@
                 <i class="fa fa-circle-exclamation"></i> <%= error %>
             </div>
             <% } %>
-
             <div class="input_group main_group">
                 <div class="input_field">
                     <i class="fa fa-user"></i>

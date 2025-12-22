@@ -1,4 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" isELIgnored="false" %>
 <header class="header">
     <div class="header__top-bar">
         <div class="container">
@@ -7,7 +8,22 @@
             <span class="spacer"></span>
             <a href="showroom">Hệ thống Showroom</a>
             <a href="tra-cuu-bao-hanh">Tra cứu Bảo hành</a>
-            <a href="login.jsp">Đăng nhập</a>
+            <c:if test="${empty auth}">
+                <a href="login.jsp">
+                    <i class="fa fa-user"></i> Đăng nhập
+                </a>
+            </c:if>
+
+            <!-- ĐÃ LOGIN -->
+            <c:if test="${not empty auth}">
+                <span class="user-info">
+                    <i class="fa fa-user"></i>
+                    Xin chào, ${auth.username}
+                </span>
+                <a href="logout">
+                    <i class="fa fa-sign-out-alt"></i> Đăng xuất
+                </a>
+            </c:if>
         </div>
     </div>
     <div class="header__main">

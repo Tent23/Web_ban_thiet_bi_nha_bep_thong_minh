@@ -1,22 +1,40 @@
 package com.webthietbibep.dao;
 
 import com.webthietbibep.model.Product;
+import org.jdbi.v3.core.Jdbi;
+import org.jdbi.v3.core.statement.PreparedBatch;
+
+import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class ProductDAO {
+public class ProductDAO extends BaseDao {
 
-    public List<Product> getBestSellers() {
-        List<Product> list = new ArrayList<>();
+    public void insert(List<Product>products){
+        Jdbi jdbi= get();
+        jdbi.useHandle(h->{
+           PreparedBatch batch= h.prepareBatch("""
+            INSERT INTO products
+            ( category_id, product_name, description, price, stock_quantity, image)
+            VALUES
+            ( :category_id, :product_name, :description, :price, :stock_quantity, :image)
+        """);
+           products.forEach(product -> {
+               batch.bindBean(product).add();
+           });
+           batch.execute();
+        });
+    }
 
-        // Dữ liệu mô phỏng lấy từ giao diện cũ của bạn
-        list.add(new Product(1, "Bếp từ Thông minh Bosch", 15000000, "assets/images/products/beptu-1.jpg"));
-        list.add(new Product(2, "Robot Hút bụi Xiaomi", 8500000, "assets/images/products/robot-4.jpg"));
 
-        // Thêm vài sản phẩm nữa để slide chạy đẹp hơn
-        list.add(new Product(3, "Tủ Lạnh Hitachi Inverter", 32000000, "assets/images/products/Tulanh-1.jpg"));
-        list.add(new Product(4, "Máy Rửa Bát Bosch Series 6", 21500000, "assets/images/products/mayruabat-4.jpg"));
+    public List<Product> getListProduct() {
+        return get().withHandle(h -> h.createQuery("select * from products").mapToBean(Product.class).list());
+    }
+    public Product getProduct(int id){
+        return get().withHandle(h -> h.createQuery("select * from products where product_id=:product_id").bind("product_id",id).mapToBean(Product.class).stream().findFirst().orElse(null));
 
-        return list;
     }
 }
