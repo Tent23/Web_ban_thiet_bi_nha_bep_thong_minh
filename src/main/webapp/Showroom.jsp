@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +31,7 @@
     <div class="header__main">
         <div class="container">
             <a href="../../index.html" class="header__logo">
-                <img src="../../assets/images/banners/logo.png" alt="TTB" />
+                <img src="assets/images/banners/logo.png" alt="TTB" />
             </a>
             <div class="header__search">
                 <input type="text" placeholder="Tìm kiếm bếp từ, robot hút bụi..." />
@@ -64,26 +68,26 @@
     </nav>
 </header>
 <main >
-
-   <div class = "showroom-name"><h1>Showroom tại Hà Nội </h1> </div>
-    <div class = "introduce">Hà Nội là thủ đô của Việt Nam, đồng thời là thành phố đông dân thứ hai cả nước với hơn 8 triệu dân, chính vì vậy mà nhu cầu sử dụng thiết bị bếp ở nơi đây là không có gì để bàn cãi.</div>
+    <c:forEach var = "s" items="${listS}">
+   <div class = "showroom-name"><h1>${s.name}</h1> </div>
+    <div class = "introduce">${s.content}</div>
     <section class="hero-banner swiper" id="hero-slider">
         <div class="swiper-wrapper">
             <div class="swiper-slide hero-slide" style="background-image: url('https://placehold.co/1920x600/333/fff?text=Hero+Banner+1');">
                 <div class="hero-content">
-                    <img src="../../assets/images/banners/ShowroomHN1%20.png">
+                    <img src="${s.image1}">
 
                 </div>
             </div>
             <div class="swiper-slide hero-slide" style="background-image: url('https://placehold.co/1920x600/444/fff?text=Hero+Banner+2');">
                 <div class="hero-content">
-                    <img src="../../assets/images/banners/ShowroomHN2.png">
+                    <img src="${s.image2}">
 
                 </div>
             </div>
             <div class="swiper-slide hero-slide" style="background-image: url('https://placehold.co/1920x600/333/fff?text=Hero+Banner+3');">
                 <div class="hero-content">
-                    <img src="../../assets/images/banners/ShowroomHN3%20.png">
+                    <img src="${s.image3}">
 
                 </div>
             </div>
@@ -91,53 +95,18 @@
         <div class="swiper-pagination"></div>
     </section>
     <div class = "content">
-          <div class = "adress">Bếp Thông Minh TTB : 41 Thanh Nhàn - Q. Hai Bà Trưng - TP. Hà Nội (Đối diện BV Thanh Nhàn)</div>
+          <div class = "adress">Bếp Thông Minh TTB : ${s.street} - ${s.ward} - ${s.district}  ${s.city} </div>
           <ul>
-              <li><i class="fas fa-map-marker-alt"></i> 41 Thanh Nhàn - Q. Hai Bà Trưng - TP. Hà Nội (Đối diện BV Thanh Nhàn)</li>
-              <li><i class="fas fa-phone"></i> 1900.5679(Kinh doanh)</li>
-              <li><i class="fas fa-envelope"></i> 23130024@st.hcmuaf.edu.vn</li>
-              <li><i class="fas fa-clock"></i> Mở cửa: 09:00 - 21:00 (Tất cả các ngày)</li>
+              <li><i class="fas fa-map-marker-alt"></i> ${s.street} - ${s.ward} - ${s.district}  ${s.city}</li>
+              <li><i class="fas fa-phone"></i> ${s.phone}</li>
+              <li><i class="fas fa-envelope"></i> ${s.email}</li>
+              <li><i class="fas fa-clock"></i> ${s.time}</li>
           </ul>
     </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3724.7390780574183!2d105.85677627503074!3d21.003093780639905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zIDQxIFRoYW5oIE5ow6BuIC0gUS4gSGFpIELDoCBUcsawbmcgLSBUUC4gSMOgIE7hu5lpICjEkOG7kWkgZGnhu4duIEJWIFRoYW5oIE5ow6BuKQ!5e0!3m2!1svi!2s!4v1762965982993!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="${s.map_url}"></iframe>
 
 <hr>
-    <div class = "showroom-name"><h1>Showroom tại TP.HCM </h1> </div>
-    <div class = "introduce">Thành phố Hồ Chí minh là thành phố nhộn nhịp và đông đúc nhất cả nước hiện nay với hơn 9 triệu dân. Sống trong một thành phố hoa lệ và phát triển nhất cả nước, chắc chắn nhu cầu của người tiêu dùng là rất lớn. Vậy nên không quá khó để bạn có thể tìm được những showroom thiết bị nhà bếp tại TP Hồ Chí Minh.</div>
-    <section class="hero-banner swiper" id="hero-slider2">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide hero-slide" style="background-image: url('https://placehold.co/1920x600/333/fff?text=Hero+Banner+1');">
-                <div class="hero-content">
-                    <img src="../../assets/images/banners/showroomHCM1%20.png">
-
-                </div>
-            </div>
-            <div class="swiper-slide hero-slide" style="background-image: url('https://placehold.co/1920x600/444/fff?text=Hero+Banner+2');">
-                <div class="hero-content">
-                    <img src="../../assets/images/banners/showroomHCM2.png">
-
-                </div>
-            </div>
-            <div class="swiper-slide hero-slide" style="background-image: url('https://placehold.co/1920x600/333/fff?text=Hero+Banner+3');">
-                <div class="hero-content">
-                    <img src="../../assets/images/banners/showroomHCM3%20.png">
-
-                </div>
-            </div>
-        </div>
-        <div class="swiper-pagination"></div>
-    </section>
-    <div class = "content">
-        <div class = "adress">Bếp Thông Minh TTB : Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh</div>
-        <ul>
-            <li><i class="fas fa-map-marker-alt"></i> Khu phố 6, Phường Linh Trung, TP. Thủ Đức, TP. Hồ Chí Minh</li>
-            <li><i class="fas fa-phone"></i> 1900.5678 (Kinh doanh)</li>
-            <li><i class="fas fa-envelope"></i> 23130356@st.hcmuaf.edu.vn</li>
-            <li><i class="fas fa-clock"></i> Mở cửa: 08:00 - 21:00 (Tất cả các ngày)</li>
-        </ul>
-    </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.447171783424!2d106.697334!3d10.776991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f38f9ed8cb5%3A0x1c2250f14890501a!2zQ2jhu6MgQuG6v24gVGjDoG5o!5e0!3m2!1svi!2s!4v1678888888888!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+    </c:forEach>
 
 
 </main>

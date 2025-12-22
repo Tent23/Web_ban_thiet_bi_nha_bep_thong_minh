@@ -11,8 +11,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/BaoHanh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/BaoHanh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Dangky.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Dangky.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/DichVuLapDat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/DichVuLapDat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Showroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Showroom.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/chinhsachdoitra.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chinhsachdoitra.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/chinhsachvanchuyenvalapdat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chinhsachvanchuyenvalapdat.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/giaiphapvacombo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/giaiphapvacombo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/goctuvan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/goctuvan.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +66,7 @@
     "Application.EcoDao.executor": "Run",
     "Application.HomeServlet.executor": "Run",
     "Application.ProductDAO.executor": "Run",
+    "Application.ShowroomDao.executor": "Run",
     "Application.TesDao.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -103,15 +110,6 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\assets\images\banners" />
     </key>
-  </component>
-  <component name="RunAnythingCache">
-    <myKeys>
-      <visibility group="Gradle Tasks" flag="true" />
-      <visibility group="HTTP Requests" flag="true" />
-      <visibility group="Maven Goals" flag="true" />
-      <visibility group="Recent projects" flag="true" />
-      <visibility group="Run configurations" flag="true" />
-    </myKeys>
   </component>
   <component name="RunDashboard">
     <option name="configurationStatuses">
@@ -167,8 +165,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProductDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.webthietbibep.dao.ProductDAO" />
+    <configuration name="ShowroomDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.webthietbibep.dao.ShowroomDao" />
       <module name="WebThietBiBep" />
       <extension name="coverage">
         <pattern>
@@ -381,21 +379,21 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.ShowroomDao" />
       <item itemvalue="Application.TesDao" />
       <item itemvalue="Application.EcoDao" />
       <item itemvalue="Application.BrandDao" />
       <item itemvalue="Application.HomeServlet" />
-      <item itemvalue="Application.ProductDAO" />
       <item itemvalue="Tomcat Server.tomcat 9 " />
       <item itemvalue="Tomcat Server.Tomcat 10" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ShowroomDao" />
         <item itemvalue="Application.TesDao" />
         <item itemvalue="Application.EcoDao" />
         <item itemvalue="Application.BrandDao" />
         <item itemvalue="Application.HomeServlet" />
-        <item itemvalue="Application.ProductDAO" />
       </list>
     </recent_temporary>
   </component>
@@ -456,7 +454,8 @@
       <workItem from="1766137133949" duration="8146000" />
       <workItem from="1766224524061" duration="4850000" />
       <workItem from="1766325889553" duration="5693000" />
-      <workItem from="1766395921057" duration="1923000" />
+      <workItem from="1766395921057" duration="3416000" />
+      <workItem from="1766412150872" duration="10318000" />
     </task>
     <servers />
   </component>
@@ -474,6 +473,15 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ShowroomDao.java</url>
+          <line>33</line>
+          <properties class="com.webthietbibep.dao.ShowroomDao" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
