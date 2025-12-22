@@ -200,20 +200,15 @@
             <h2 class="section-title">Khách hàng Nói về Chúng tôi</h2>
             <div class="swiper" id="testimonial-slider">
                 <div class="swiper-wrapper">
+                    <c:forEach var ="t" items="${listT}">
                     <div class="swiper-slide testimonial-item">
                         <p>
-                            "Dịch vụ lắp đặt rất chuyên nghiệp, các bạn kỹ thuật viên hỗ
-                            trợ cài app rất nhiệt tình."
+                            "${t.content}"
                         </p>
-                        <h4>- Chị An (Quận 7)</h4>
+                        <h4>- ${t.author_name} (${t.author_location})</h4>
                     </div>
-                    <div class="swiper-slide testimonial-item">
-                        <p>
-                            "Sản phẩm chính hãng, dùng rất ưng ý. Sẽ tiếp tục ủng hộ
-                            shop."
-                        </p>
-                        <h4>- Anh Bách (Hà Nội)</h4>
-                    </div>
+                    </c:forEach>
+
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
