@@ -37,4 +37,41 @@ public class ProductDAO extends BaseDao {
         return get().withHandle(h -> h.createQuery("select * from products where product_id=:product_id").bind("product_id",id).mapToBean(Product.class).stream().findFirst().orElse(null));
 
     }
+    public void insertOne(Product product) {
+        get().useHandle(h ->
+                h.createUpdate("""
+                INSERT INTO products
+                (category_id, product_name, description, price, stock_quantity, image, create_at)
+                VALUES
+                (:category_id, :product_name, :description, :price, :stock_quantity, :image, :create_at)
+            """)
+                        .bindBean(product)
+                        .execute()
+        );
+    }
+
+    public void update(Product product) {
+        get().useHandle(h ->
+                h.createUpdate("""
+                UPDATE products SET
+                    category_id = :category_id,
+                    product_name = :product_name,
+                    description = :description,
+                    price = :price,
+                    stock_quantity = :stock_quantity,
+                    image = :image
+                WHERE product_id = :product_id
+            """)
+                        .bindBean(product)
+                        .execute()
+        );
+    }
+
+    public void delete(int productId) {
+        get().useHandle(h ->
+                h.createUpdate("DELETE FROM products WHERE product_id = :id")
+                        .bind("id", productId)
+                        .execute()
+        );
+    }
 }
