@@ -20,36 +20,25 @@
 }
 
 body {
-    body {
-        background-color: var(--admin-bg);
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden; /* Ngăn thanh cuộn ngang */
-    }
+    background-color: var(--admin-bg);
+    color: var(--admin-text);
 }
 
-/* --- BỐ CỤC MỚI (FLEXBOX WRAPPER) --- */
-/* Class này bao quanh cả Sidebar và Content để chia cột */
-.admin-wrapper {
+.admin-layout {
     display: flex;
-    min-height: 100vh;
-    width: 100%;
 }
 
 /* --- SIDEBAR --- */
 .admin-sidebar {
-    width: 250px;
-    height: 100vh;      /* Chiều cao full màn hình */
-    position: fixed;    /* QUAN TRỌNG: Ghim cứng sidebar */
+    width: 260px;
+    height: 100vh;
+    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;      /* Đảm bảo sidebar luôn nổi lên trên nếu cần */
     background-color: var(--admin-sidebar-bg);
     color: var(--admin-sidebar-text);
     display: flex;
     flex-direction: column;
-    overflow-y: auto;   /* Cho phép cuộn trong sidebar nếu menu dài */
-    transition: all 0.3s;
 }
 
 .sidebar-header {
@@ -106,18 +95,14 @@ body {
     margin-right: 10px;
 }
 
-/* --- MAIN CONTENT (NỘI DUNG BÊN PHẢI) --- */
-/* Dùng class .main-content cho đúng với JSP mới */
-.main-content, .admin-main {
-    margin-left: 250px;          /* QUAN TRỌNG: Đẩy nội dung ra khỏi vùng sidebar */
-    width: calc(100% - 250px);   /* Chiều rộng phần còn lại */
-    padding: 30px;
-    background-color: var(--admin-bg);
-    min-height: 100vh;
-    transition: all 0.3s;
+/* --- MAIN CONTENT --- */
+.admin-main {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    display: flex;
+    flex-direction: column;
 }
 
-/* Giữ lại các class cũ bên trong nội dung để không bị lỗi */
 .admin-header {
     height: 70px;
     background-color: var(--admin-white);
@@ -126,8 +111,6 @@ body {
     align-items: center;
     padding: 0 30px;
     border-bottom: 1px solid #e2e8f0;
-    margin-bottom: 30px; /* Thêm khoảng cách với nội dung dưới */
-    border-radius: 8px; /* Bo góc cho đẹp hơn */
 }
 
 .admin-header h2 {
@@ -144,6 +127,11 @@ body {
     margin-right: 10px;
 }
 
+.admin-content {
+    padding: 30px;
+    flex-grow: 1;
+}
+
 .admin-grid {
     display: grid;
     gap: 30px;
@@ -151,9 +139,7 @@ body {
 
 /* Thẻ thống kê */
 .stat-cards {
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
 }
 
 .stat-card {
@@ -190,9 +176,7 @@ body {
 
 /* Biểu đồ */
 .charts {
-    display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 30px;
     margin-top: 30px;
 }
 
@@ -269,35 +253,22 @@ body {
 }
 
 @media (max-width: 768px) {
-    .admin-wrapper {
-        flex-direction: column; /* Trên mobile thì xếp dọc */
-    }
-
     .stat-cards {
         grid-template-columns: 1fr;
     }
 
+    /* Ẩn sidebar, chỉ hiện nội dung (demo) */
     .admin-sidebar {
+        /* (Trong 1 app thật, đây sẽ là 'display: none' và được toggle bằng JS) */
+        position: static;
         width: 100%;
-        min-height: auto;
         height: auto;
-        position: relative;
     }
-
-    .sidebar-menu {
-        display: none; /* Mặc định ẩn menu trên mobile, cần nút toggle để hiện */
-    }
-
-    .admin-sidebar:hover .sidebar-menu {
-        display: block; /* Demo: hover vào thì hiện */
-    }
-
-    .main-content {
+    .admin-main {
+        margin-left: 0;
         width: 100%;
-        padding: 15px;
     }
 }
-
 /* --- CSS CHO BỘ LỌC --- */
 .admin-filters {
     display: flex;
@@ -316,7 +287,7 @@ body {
     color: var(--admin-text);
 }
 .admin-filters input[type="text"] {
-    flex-grow: 1;
+    flex-grow: 1; /* Cho thanh tìm kiếm dài nhất */
 }
 .btn-filter {
     padding: 10px 15px;
@@ -351,7 +322,6 @@ body {
     color: var(--admin-white);
     border-color: var(--admin-sidebar-active);
 }
-
 /* --- CSS CHO SIDEBAR ACCORDION --- */
 .sidebar-menu li.menu-item-has-children .sidebar-link {
     display: flex;
@@ -367,23 +337,18 @@ body {
 }
 .submenu {
     list-style: none;
-    background-color: #0f172a;
-    padding-left: 0;
+    background-color: #0f172a; /* Màu nền tối hơn 1 chút */
+    padding-left: 30px; /* Thụt vào */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-out;
 }
 .sidebar-menu li.menu-item-has-children.open .submenu {
-    max-height: 500px;
+    max-height: 500px; /* Chiều cao đủ lớn để chứa các mục con */
 }
 .submenu li a {
-    padding: 12px 20px 12px 50px; /* Thụt lề chữ */
-    font-size: 0.90rem;
-    color: #94a3b8;
-}
-.submenu li a:hover {
-    color: #fff;
-    background: transparent;
+    padding: 12px 20px;
+    font-size: 0.95rem;
 }
 .submenu li a.active-sub {
     color: var(--admin-white);
@@ -391,6 +356,11 @@ body {
 }
 
 /* --- CSS CHO HEADER (THÊM NÚT) --- */
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .admin-header-actions {
     display: flex;
     align-items: center;
@@ -406,8 +376,6 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    cursor: pointer;
-    border: none;
 }
 
 /* --- CSS CHO BẢNG SẢN PHẨM --- */
@@ -429,7 +397,6 @@ body {
     font-size: 0.9rem;
     margin-right: 5px;
     font-weight: 600;
-    display: inline-block;
 }
 .btn-action.edit {
     background-color: #e0f2fe;
@@ -438,4 +405,396 @@ body {
 .btn-action.delete {
     background-color: #fee2e2;
     color: #dc2626;
+}
+/* noi dung admin*/
+.status.status-published {
+    background-color: #dcfce7; /* Xanh lá nhạt */
+    color: #16a34a; /* Xanh lá đậm */
+}
+.status.status-draft {
+    background-color: #f1f5f9; /* Xám nhạt */
+    color: #64748b; /* Xám đậm */
+}
+/* --- CSS FORM THÊM SẢN PHẨM --- */
+
+.admin-form-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Cột trái lớn gấp đôi cột phải */
+    gap: 30px;
+}
+
+/* Style cho các Input */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--admin-text);
+    font-size: 0.9rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--admin-sidebar-active);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+/* Khu vực Upload Ảnh */
+.image-upload-area {
+    border: 2px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.image-upload-area:hover {
+    background-color: #f8fafc;
+    border-color: var(--admin-sidebar-active);
+}
+
+.upload-placeholder i {
+    font-size: 2.5rem;
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+.upload-placeholder p {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Preview Ảnh */
+.image-preview-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.preview-item {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Nút xóa ảnh preview */
+.btn-remove-img {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Checkbox list */
+.checkbox-list label {
+    display: block;
+    font-weight: normal;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.checkbox-list input {
+    margin-right: 8px;
+}
+
+/* Header Actions */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-back {
+    color: var(--admin-text-light);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.btn-secondary {
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #cbd5e1;
+    color: var(--admin-text);
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Toggle Switch (Nút gạt) */
+.toggle-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--admin-sidebar-active);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .admin-form-layout {
+        grid-template-columns: 1fr; /* Chuyển về 1 cột trên mobile */
+    }
+    .form-col-sidebar {
+        order: -1; /* Đẩy thông tin trạng thái lên trên nếu muốn */
+    }
+}
+/* --- CSS CHI TIẾT ĐƠN HÀNG --- */
+.order-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+
+.product-cell {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.product-cell img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.product-cell .p-name { font-weight: 600; font-size: 0.95rem; }
+.product-cell .p-sku { font-size: 0.8rem; color: var(--admin-text-light); }
+
+.order-table tfoot td {
+    padding: 15px;
+    border-bottom: none;
+}
+
+.text-right { text-align: right; }
+.text-bold { font-weight: 700; }
+.total-price { color: var(--red); font-size: 1.2rem; font-weight: 700; }
+
+/* Customer Info */
+.customer-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #e0f2fe;
+    color: #0284c7;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.customer-info .name { font-weight: 600; font-size: 1.1rem; }
+.customer-info .email, .customer-info .phone { color: var(--admin-text-light); font-size: 0.9rem; }
+
+.address-text { line-height: 1.6; }
+.text-green { color: var(--green); font-weight: 600; margin-top: 5px; }
+
+/* Timeline Đơn hàng */
+.timeline {
+    position: relative;
+    padding-left: 20px;
+    border-left: 2px solid #e2e8f0;
+    margin-left: 10px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -26px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #cbd5e1;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px #cbd5e1;
+}
+
+.timeline-dot.active {
+    background-color: var(--admin-sidebar-active);
+    box-shadow: 0 0 0 2px var(--admin-sidebar-active);
+}
+
+.timeline-content .time {
+    font-size: 0.85rem;
+    color: var(--admin-text-light);
+    margin-bottom: 2px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .detail-grid, .order-layout {
+        grid-template-columns: 1fr;
+    }
+}
+/* --- CSS CHI TIẾT SẢN PHẨM --- */
+.detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+.product-main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-gallery {
+    display: flex;
+    gap: 10px;
+}
+
+.product-gallery img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #e2e8f0;
+}
+
+.product-header-info {
+    margin-bottom: 20px;
+}
+
+.product-header-info h1 {
+    font-size: 1.8rem;
+    margin: 10px 0 5px 0;
+}
+
+.product-header-info .sku {
+    color: var(--admin-text-light);
+    font-size: 0.9rem;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.info-item .label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--admin-text-light);
+    margin-bottom: 3px;
+}
+
+.info-item .value {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.info-item .price { color: var(--admin-text); text-decoration: line-through; font-size: 1rem; }
+.info-item .price-sale { color: var(--red); font-size: 1.3rem; }
+
+.divider {
+    border: 0;
+    border-top: 1px solid #e2e8f0;
+    margin: 20px 0;
+}
+
+.product-description ul {
+    padding-left: 20px;
+    margin-top: 10px;
 }

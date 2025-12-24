@@ -18,6 +18,7 @@
 </head>
 <body>
 <jsp:include page="common/sidebar.jsp"></jsp:include>
+
 <main class="main-content">
 
     <div class="dashboard-header">
