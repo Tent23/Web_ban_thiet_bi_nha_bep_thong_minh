@@ -58,7 +58,7 @@
                         <a href="../QuangToan/Phache.html">Pha chế</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="giaiphapvacombo.html">Giải pháp & Combo</a></li>
+                <li class="nav-item"><a href="giaiphapvacombo.jsp">Giải pháp & Combo</a></li>
                 <li class="nav-item"><a href="goctuvan.html">Góc Tư vấn</a></li>
                 <li class="nav-item"><a href="DichVuLapDat.html">Dịch vụ Lắp đặt</a></li>
                 <li class="nav-item"><a href="../ThanhTruong/vechungtoi.html">Về chúng tôi</a></li>

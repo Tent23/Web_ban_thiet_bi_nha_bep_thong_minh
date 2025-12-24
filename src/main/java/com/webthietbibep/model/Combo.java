@@ -1,0 +1,129 @@
+package com.webthietbibep.model;
+
+import java.io.Serializable;
+import java.text.NumberFormat;
+import java.util.Locale;
+
+public class Combo implements Serializable {
+    private int id ;
+    private String name;
+    private String tag;
+    private String content;
+    private double baseprice;
+    private double discountprice;
+    private String image;
+    private String advance1;
+    private String advance2;
+    private String advance3;
+    private String gift;
+    private byte is_active;
+
+    public Combo() {
+    }
+
+    public Combo(int id, String name, String tag, String content, double baseprice, double discountprice, String image, String advance1, String advance2, String advance3, String gift) {
+        this.id = id;
+        this.name = name;
+        this.tag = tag;
+        this.content = content;
+        this.baseprice = baseprice;
+        this.discountprice = discountprice;
+        this.image = image;
+        this.advance1 = advance1;
+        this.advance2 = advance2;
+        this.advance3 = advance3;
+        this.gift = gift;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public double getBaseprice() {
+        return baseprice;
+    }
+
+    public void setBaseprice(double baseprice) {
+        this.baseprice = baseprice;
+    }
+
+    public double getDiscountprice() {
+        return discountprice;
+    }
+
+    public void setDiscountprice(double discountprice) {
+        this.discountprice = discountprice;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getAdvance1() {
+        return advance1;
+    }
+
+    public void setAdvance1(String advance1) {
+        this.advance1 = advance1;
+    }
+
+    public String getAdvance2() {
+        return advance2;
+    }
+
+    public void setAdvance2(String advance2) {
+        this.advance2 = advance2;
+    }
+
+    public String getAdvance3() {
+        return advance3;
+    }
+
+    public void setAdvance3(String advance3) {
+        this.advance3 = advance3;
+    }
+
+    public String getGift() {
+        return gift;
+    }
+
+    public void setGift(String gift) {
+        this.gift = gift;
+    }
+    public  String getPriceFormat(double price) {
+        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+        return nf.format(price);
+    }
+}

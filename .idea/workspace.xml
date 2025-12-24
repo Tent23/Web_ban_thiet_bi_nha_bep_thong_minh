@@ -11,13 +11,17 @@
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Product.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/BaoHanh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/BaoHanh.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Dangky.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Dangky.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/DichVuLapDat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/DichVuLapDat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Showroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Showroom.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Showroom.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Showroom.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/BaoHanh.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/BaoHanh.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/chinhsachbaohanh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chinhsachbaohanh.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/chinhsachdoitra.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chinhsachdoitra.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/chinhsachvanchuyenvalapdat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chinhsachvanchuyenvalapdat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/giaiphapvacombo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/giaiphapvacombo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/giaiphapvacombo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/giaiphapvacombo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/goctuvan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/goctuvan.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,6 +67,7 @@
   "keyToString": {
     "Application.BaseDao.executor": "Run",
     "Application.BrandDao.executor": "Run",
+    "Application.ComboDao.executor": "Run",
     "Application.EcoDao.executor": "Run",
     "Application.HomeServlet.executor": "Run",
     "Application.ProductDAO.executor": "Run",
@@ -139,8 +144,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EcoDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.webthietbibep.dao.EcoDao" />
+    <configuration name="ComboDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.webthietbibep.dao.ComboDao" />
       <module name="WebThietBiBep" />
       <extension name="coverage">
         <pattern>
@@ -152,12 +157,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HomeServlet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.webthietbibep.controller.HomeServlet" />
+    <configuration name="EcoDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.webthietbibep.dao.EcoDao" />
       <module name="WebThietBiBep" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.webthietbibep.controller.*" />
+          <option name="PATTERN" value="com.webthietbibep.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -379,21 +384,21 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.ComboDao" />
       <item itemvalue="Application.ShowroomDao" />
       <item itemvalue="Application.TesDao" />
       <item itemvalue="Application.EcoDao" />
       <item itemvalue="Application.BrandDao" />
-      <item itemvalue="Application.HomeServlet" />
       <item itemvalue="Tomcat Server.tomcat 9 " />
       <item itemvalue="Tomcat Server.Tomcat 10" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ComboDao" />
         <item itemvalue="Application.ShowroomDao" />
         <item itemvalue="Application.TesDao" />
         <item itemvalue="Application.EcoDao" />
         <item itemvalue="Application.BrandDao" />
-        <item itemvalue="Application.HomeServlet" />
       </list>
     </recent_temporary>
   </component>
@@ -455,7 +460,9 @@
       <workItem from="1766224524061" duration="4850000" />
       <workItem from="1766325889553" duration="5693000" />
       <workItem from="1766395921057" duration="3416000" />
-      <workItem from="1766412150872" duration="10318000" />
+      <workItem from="1766412150872" duration="10628000" />
+      <workItem from="1766497265863" duration="334000" />
+      <workItem from="1766574702198" duration="6502000" />
     </task>
     <servers />
   </component>

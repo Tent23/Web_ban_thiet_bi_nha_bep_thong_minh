@@ -12,12 +12,12 @@ public class Product implements Serializable {
     private String image;
     private int category_id;
     private int brand_id;
-    private String slug;
+
 
     public Product() {
     }
 
-    public Product(int id, String name, String description, double price, String image, int category_id, int brand_id, String slug) {
+    public Product(int id, String name, String description, double price, String image, int category_id, int brand_id) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -25,7 +25,7 @@ public class Product implements Serializable {
         this.image = image;
         this.category_id = category_id;
         this.brand_id = brand_id;
-        this.slug = slug;
+
     }
 
     // Getters and Setters
@@ -65,13 +65,7 @@ public class Product implements Serializable {
         this.brand_id = brand_id;
     }
 
-    public String getSlug() {
-        return slug;
-    }
 
-    public void setSlug(String slug) {
-        this.slug = slug;
-    }
 
     // Hàm định dạng tiền tệ (Ví dụ: 15.000.000 đ)
     public String getPriceFormat() {
