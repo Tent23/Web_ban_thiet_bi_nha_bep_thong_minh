@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
@@ -8,10 +8,11 @@
 <head>
     <meta charset="UTF-8" />
     <title>Tất cả sản phẩm - Bếp Thông Minh TTB</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/Header.css">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/Header.css" />
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/products.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
@@ -94,22 +95,24 @@
 
                 <!-- SIDEBAR: BỘ LỌC -->
                 <aside class="shop-sidebar">
-                    <form method="get" action="products">
+                    <form method="get" action="${pageContext.request.contextPath}/products">
+                    <div class="filter-group">
+                        <h3>Thương hiệu</h3>
 
-                        <div class="filter-group">
-                            <h3>Thương hiệu</h3>
+                        <c:forEach var="b" items="${brandList}">
                             <label>
-                                <input type="checkbox" name="brand" value="Bosch"
-                                       <c:if test="${brands != null && fn:contains(brands,'Bosch')}">checked</c:if>>
-                                Bosch
+                                <input type="checkbox"
+                                       name="brand"
+                                       value="${b.brand_id}"
+                                <c:if test="${brands != null && fn:contains(brands, b.brand_id)}">
+                                       checked
+                                </c:if>
+                                >
+                                    ${b.brand_name}
                             </label>
-                            <label>
-                                <input type="checkbox" name="brand" value="Xiaomi"
-                                       <c:if test="${brands != null && fn:contains(brands,'Xiaomi')}">checked</c:if>>
-                                Xiaomi
-                            </label>
+                        </c:forEach>
                         </div>
-
+                        <input type="hidden" name="sort" value="${sort}" />
                         <div class="filter-group">
                             <h3>Khoảng giá</h3>
                             <label><input type="radio" name="priceRange" value="1" ${priceRange=='1'?'checked':''}> Dưới 5 triệu</label>
@@ -127,24 +130,27 @@
                 <div class="shop-main">
                     <div class="shop-header">
                         <h1>Tất cả sản phẩm</h1>
+                        <form method="get" action="${pageContext.request.contextPath}/products">
+                            <input type="hidden" name="priceRange" value="${priceRange}" />
                         <div class="sort-box">
                             <label>Sắp xếp:</label>
-                            <select>
-                                <option>Mới nhất</option>
-                                <option>Bán chạy</option>
-                                <option>Giá tăng dần</option>
-                                <option>Giá giảm dần</option>
+                            <select name="sort" onchange="this.form.submit()">
+                                <option value="newest" ${sort=='newest' || sort==null?'selected':''}>Mới nhất</option>
+                                <option value="price_asc" ${sort=='price_asc'?'selected':''}>Giá tăng dần</option>
+                                <option value="price_desc" ${sort=='price_desc'?'selected':''}>Giá giảm dần</option>
                             </select>
                         </div>
+                        </form>
                     </div>
 
                     <div class="shop-product-grid">
                         <c:forEach var="p" items="${products}">
                             <div class="product-card">
-                                <img src="${pageContext.request.contextPath}/assets/images/products/${p.image}">
-                                <h3>${p.product_name}</h3>
+                                <img src="${p.image}">
+                                <h3>${p.productname}</h3>
+                                <h3>${p.description}</h3>
                                 <div class="price">${p.priceFormat}</div>
-                                <a href="product-detail?id=${p.product_id}" class="btn btn-secondary">
+                                <a href="${pageContext.request.contextPath}/product-detail?id=${p.productid}" class="btn btn-secondary">
                                     Xem chi tiết
                                 </a>
                             </div>
