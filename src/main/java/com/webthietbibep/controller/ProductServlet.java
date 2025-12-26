@@ -1,5 +1,6 @@
 package com.webthietbibep.controller;
 
+import com.webthietbibep.dao.BrandDao;
 import com.webthietbibep.dao.ProductDAO;
 import com.webthietbibep.model.Product;
 
@@ -16,14 +17,29 @@ import java.util.List;
 public class ProductServlet extends HttpServlet {
 
     private final ProductDAO productDAO = new ProductDAO();
+    private final BrandDao brandDAO = new BrandDao();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        String categoryIdStr = req.getParameter("categoryId");
+        String priceRange = req.getParameter("priceRange");
+        String sort = req.getParameter("sort");
+        String[] brands = req.getParameterValues("brand");
 
-        List<Product> products = productDAO.getListProduct();
+        Integer categoryId = null;
+        if (categoryIdStr != null && !categoryIdStr.isBlank()) {
+            categoryId = Integer.parseInt(categoryIdStr);
+        }
+        List<Product> products = productDAO.getProductsFilter(priceRange, sort,brands,categoryId);
+
+        req.setAttribute("categoryId", categoryId);
         req.setAttribute("products", products);
+        req.setAttribute("brands", brands);
+        req.setAttribute("priceRange", priceRange);
+        req.setAttribute("sort", sort);
+        req.setAttribute("brandList", brandDAO.getAllBrands());
 
-        req.getRequestDispatcher("/products.jsp").forward(req, resp);
+        req.getRequestDispatcher("products.jsp").forward(req, resp);
     }
 }
