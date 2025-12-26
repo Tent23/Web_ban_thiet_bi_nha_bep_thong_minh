@@ -10,9 +10,6 @@ import java.util.List;
 
 public abstract class BaseDao {
     private Jdbi jdbi;
-
-
-
     protected Jdbi get(){
         if(jdbi==null){
             makeConnect();
