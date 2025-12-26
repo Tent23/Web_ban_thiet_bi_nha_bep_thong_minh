@@ -22,15 +22,18 @@ public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-
+        String categoryIdStr = req.getParameter("categoryId");
         String priceRange = req.getParameter("priceRange");
         String sort = req.getParameter("sort");
         String[] brands = req.getParameterValues("brand");
 
-        // ==== DAO QUERY ====
-        List<Product> products = productDAO.getProductsFilter(priceRange, sort,brands);
+        Integer categoryId = null;
+        if (categoryIdStr != null && !categoryIdStr.isBlank()) {
+            categoryId = Integer.parseInt(categoryIdStr);
+        }
+        List<Product> products = productDAO.getProductsFilter(priceRange, sort,brands,categoryId);
 
-        // ==== SET ATTRIBUTE ====
+        req.setAttribute("categoryId", categoryId);
         req.setAttribute("products", products);
         req.setAttribute("brands", brands);
         req.setAttribute("priceRange", priceRange);

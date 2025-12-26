@@ -37,58 +37,70 @@ public class ProductDAO extends BaseDao {
         return get().withHandle(h -> h.createQuery("select * from products where product_id=:productid").bind("productid",id).mapToBean(Product.class).stream().findFirst().orElse(null));
 
     }
-    public List<Product> getProductsFilter(String priceRange, String sort,String[] brands) {
-        StringBuilder sql = new StringBuilder("SELECT p.* FROM products p " +
-                "LEFT JOIN brands b ON p.brand_id = b.brand_id " +
-                "WHERE 1=1");
+    public List<Product> getProductsFilter(
+            String priceRange,
+            String sort,
+            String[] brands,
+            Integer categoryId
+    ) {
 
-        // LỌC GIÁ
+        StringBuilder sql = new StringBuilder("""
+        SELECT
+            p.productid,
+            p.categoryid,
+            p.productname,
+            p.description,
+            p.price,
+            p.stockquantity,
+            p.brand_id,
+            p.image,
+            p.created_at
+        FROM products p
+        LEFT JOIN brands b ON p.brand_id = b.brand_id
+        WHERE 1=1
+    """);
+
+        // ===== CATEGORY =====
+        if (categoryId != null) {
+            sql.append(" AND p.categoryid = :categoryId");
+        }
+
+        // ===== PRICE =====
         if (priceRange != null) {
             switch (priceRange) {
-                case "1":
-                    sql.append(" AND price < 5000000");
-                    break;
-                case "2":
-                    sql.append(" AND price BETWEEN 5000000 AND 10000000");
-                    break;
-                case "3":
-                    sql.append(" AND price BETWEEN 10000000 AND 20000000");
-                    break;
-                case "4":
-                    sql.append(" AND price > 20000000");
-                    break;
+                case "1" -> sql.append(" AND p.price < 5000000");
+                case "2" -> sql.append(" AND p.price BETWEEN 5000000 AND 10000000");
+                case "3" -> sql.append(" AND p.price BETWEEN 10000000 AND 20000000");
+                case "4" -> sql.append(" AND p.price > 20000000");
             }
         }
+
+        // ===== BRAND =====
         if (brands != null && brands.length > 0) {
-            sql.append(" AND b.brand_id IN (");
-            for (int i = 0; i < brands.length; i++) {
-                sql.append("'").append(brands[i]).append("'");
-                if (i < brands.length - 1) sql.append(",");
-            }
-            sql.append(")");
+            sql.append(" AND p.brand_id IN (<brands>)");
         }
 
-        // SẮP XẾP
-        if (sort != null) {
-            switch (sort) {
-                case "price_asc":
-                    sql.append(" ORDER BY price ASC");
-                    break;
-                case "price_desc":
-                    sql.append(" ORDER BY price DESC");
-                    break;
-                default:
-                    sql.append(" ORDER BY created_at DESC");
-            }
+        // ===== SORT =====
+        if ("price_asc".equals(sort)) {
+            sql.append(" ORDER BY p.price ASC");
+        } else if ("price_desc".equals(sort)) {
+            sql.append(" ORDER BY p.price DESC");
         } else {
-            sql.append(" ORDER BY created_at DESC");
+            sql.append(" ORDER BY p.created_at DESC");
         }
 
-        return get().withHandle(h ->
-                h.createQuery(sql.toString())
-                        .mapToBean(Product.class)
-                        .list()
-        );
+        return get().withHandle(h -> {
+            var query = h.createQuery(sql.toString());
+
+            if (categoryId != null) {
+                query.bind("categoryId", categoryId);
+            }
+            if (brands != null && brands.length > 0) {
+                query.bindList("brands", brands);
+            }
+
+            return query.mapToBean(Product.class).list();
+        });
     }
 
 }

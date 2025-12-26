@@ -50,22 +50,22 @@
                 <li class="nav-item has-megamenu">
                     <a href="#">Sản phẩm <i class="fa fa-chevron-down"></i></a>
                     <div class="mega-menu">
-                        <a href="${pageContext.request.contextPath}/products?category=BepTu">
+                        <a href="${pageContext.request.contextPath}/products?categoryId=1">
                             Bếp từ
                         </a>
-                        <a href="${pageContext.request.contextPath}/products?category=TuLanh">
+                        <a href="${pageContext.request.contextPath}/products?category=2">
                             Tủ lạnh
                         </a>
-                        <a href="${pageContext.request.contextPath}/products?category=Robot">
+                        <a href="${pageContext.request.contextPath}/products?category=3">
                             Robot Hút bụi
                         </a>
-                        <a href="${pageContext.request.contextPath}/products?category=MayRuaBat">
+                        <a href="${pageContext.request.contextPath}/products?category=3">
                             Máy rửa bát
                         </a>
-                        <a href="${pageContext.request.contextPath}/products?category=Cambien">
+                        <a href="${pageContext.request.contextPath}/products?category=4">
                             Cảm biến & An ninh
                         </a>
-                        <a href="${pageContext.request.contextPath}/products?category=PhaChe">
+                        <a href="${pageContext.request.contextPath}/products?category=5">
                             Pha chế
                         </a>
                     </div>
@@ -98,7 +98,7 @@
                     <form method="get" action="${pageContext.request.contextPath}/products">
                     <div class="filter-group">
                         <h3>Thương hiệu</h3>
-
+                        <input type="hidden" name="categoryId" value="${categoryId}" />
                         <c:forEach var="b" items="${brandList}">
                             <label>
                                 <input type="checkbox"
@@ -115,6 +115,7 @@
                         <input type="hidden" name="sort" value="${sort}" />
                         <div class="filter-group">
                             <h3>Khoảng giá</h3>
+                            <input type="hidden" name="categoryId" value="${categoryId}" />
                             <label><input type="radio" name="priceRange" value="1" ${priceRange=='1'?'checked':''}> Dưới 5 triệu</label>
                             <label><input type="radio" name="priceRange" value="2" ${priceRange=='2'?'checked':''}> 5 - 10 triệu</label>
                             <label><input type="radio" name="priceRange" value="3" ${priceRange=='3'?'checked':''}> 10 - 20 triệu</label>
@@ -134,6 +135,7 @@
                             <input type="hidden" name="priceRange" value="${priceRange}" />
                         <div class="sort-box">
                             <label>Sắp xếp:</label>
+                            <input type="hidden" name="categoryId" value="${categoryId}" />
                             <select name="sort" onchange="this.form.submit()">
                                 <option value="newest" ${sort=='newest' || sort==null?'selected':''}>Mới nhất</option>
                                 <option value="price_asc" ${sort=='price_asc'?'selected':''}>Giá tăng dần</option>

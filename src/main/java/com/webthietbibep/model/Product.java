@@ -7,29 +7,30 @@ import java.util.Locale;
 
 public class Product implements Serializable {
     private int productid;
-    private int categoryid;
+    private int category_id;
     private String productname;
     private String description;
     private double price;
     private int stockquantity;
+    private int brand_id;
     private String image;
-    private LocalDateTime createat;
+    private LocalDateTime created_at;
 
     public Product() {
     }
 
-    public Product(int productid, int categoryid, String productname,
-                   String description, double price, int stockquantity,
+    public Product(int productid, int category_id, String productname,
+                   String description, double price, int stockquantity, int brand_id,
                    String image, LocalDateTime createat) {
 
         this.productid = productid;
-        this.categoryid = categoryid;
+        this.category_id = category_id;
         this.productname = productname;
         this.description = description;
         this.price = price;
         this.stockquantity = stockquantity;
         this.image = image;
-        this.createat = createat;
+        this.created_at = created_at;
     }
 
     // Getter & Setter
@@ -42,12 +43,12 @@ public class Product implements Serializable {
         this.productid = productid;
     }
 
-    public int getCategoryid() {
-        return categoryid;
+    public int getCategory_id() {
+        return category_id;
     }
 
-    public void setCategoryid(int category_id) {
-        this.categoryid = categoryid;
+    public void setCategory_id(int category_id) {
+        this.category_id = category_id;
     }
 
     public String getProductname() {
@@ -90,15 +91,21 @@ public class Product implements Serializable {
         this.image = image;
     }
 
-    public LocalDateTime getCreateat() {
-        return createat;
+    public LocalDateTime getCreated_at() {
+        return created_at;
     }
 
-    public void setCreateat(LocalDateTime create_at) {
-        this.createat = createat;
+    public void setCreated_at(LocalDateTime created_at) {
+        this.created_at = created_at;
     }
 
+    public int getBrand_id() {
+        return brand_id;
+    }
 
+    public void setBrand_id(int brand_id) {
+        this.brand_id = brand_id;
+    }
 
     // Hàm định dạng tiền tệ (Ví dụ: 15.000.000 đ)
     public String getPriceFormat() {
