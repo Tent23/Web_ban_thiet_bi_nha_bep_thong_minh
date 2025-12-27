@@ -23,27 +23,19 @@
 <main class="main-content">
     <section class="hero-banner swiper" id="hero-slider">
         <div class="swiper-wrapper">
+            <c:forEach var ="b" items="${listBN}">
             <div class="swiper-slide hero-slide" style="
-              background-image: url('./assets/images/banners/banner3.png');
+              background-image: url('${b.image}');
             ">
                 <div class="hero-content">
-                    <h1>Nâng Tầm Trải Nghiệm Bếp</h1>
+                    <h1>${b.title}</h1>
                     <p>
-                        Khám phá các giải pháp nhà bếp thông minh, tự động hóa toàn
-                        diện.
+                       ${b.description}
                     </p>
-                    <a href="./assets" class="btn btn-primary">Khám Phá Ngay</a>
+                    <a href="#" class="btn btn-primary">Khám Phá Ngay</a>
                 </div>
             </div>
-            <div class="swiper-slide hero-slide" style="
-              background-image: url('./assets/images/banners/banner4.jpg');
-            ">
-                <div class="hero-content">
-                    <h1>An Toàn & Tiện Lợi</h1>
-                    <p>Hệ thống cảm biến và điều khiển từ xa.</p>
-                    <a href="#" class="btn btn-primary">Xem Sản Phẩm</a>
-                </div>
-            </div>
+            </c:forEach>
         </div>
         <div class="swiper-pagination"></div>
     </section>
