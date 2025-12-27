@@ -59,66 +59,27 @@ h1{
 .main_container button:hover{
     cursor: pointer;
 }
-/* Styling cho phần kết quả */
-.result_container {
-    max-width: 900px;
-    margin: 20px auto;
-    background: #fff;
-    border: 1px solid #e1e1e1;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    overflow: hidden;
-    /* display: none; */ /* Dùng cái này khi bạn muốn ẩn kết quả lúc mới vào trang */
-}
 
-.result_header {
-    background: var(--primary-color);
-    color: white;
-    padding: 15px 20px;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.result_content {
-    padding: 20px;
-}
-
-.result_table {
+table{
+    margin-left: auto;
+    margin-right: auto;
     width: 100%;
-    border-collapse: collapse;
-}
 
-.result_table th, .result_table td {
-    padding: 12px 15px;
-    border-bottom: 1px solid #eee;
-    text-align: left;
 }
+table, th, td {
+    border: 1px solid #333;
 
-.result_table th {
-    width: 35%;
-    color: #777;
-    font-weight: 600;
 }
-
-.result_table td {
-    color: var(--dark-color);
-    font-weight: 500;
-}
-
-.expiry_date {
-    color: #e74c3c;
+th{
     font-weight: bold;
+    text-align: center;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+
+}
+td{
+    padding-left: 5px;
+    height: 35px;
 }
 
-.status_active {
-    background: #2ecc71;
-    color: white;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 14px;
-}
-
-/* Hiệu ứng khi hover vào bảng */
-.result_table tr:hover {
-    background-color: #f9f9f9;
-}

@@ -11,17 +11,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/BaoHanh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/BaoHanh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/BaoHanh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/BaoHanh.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Dangky.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Dangky.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/DichVuLapDat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/DichVuLapDat.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Showroom.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Showroom.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/BaoHanh.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/BaoHanh.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/chinhsachbaohanh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chinhsachbaohanh.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/chinhsachdoitra.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chinhsachdoitra.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/chinhsachvanchuyenvalapdat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chinhsachvanchuyenvalapdat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/giaiphapvacombo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/giaiphapvacombo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/giaiphapvacombo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/giaiphapvacombo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/goctuvan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/goctuvan.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,44 +60,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BaseDao.executor": "Run",
-    "Application.BrandDao.executor": "Run",
-    "Application.ComboDao.executor": "Run",
-    "Application.EcoDao.executor": "Run",
-    "Application.HomeServlet.executor": "Run",
-    "Application.ProductDAO.executor": "Run",
-    "Application.ShowroomDao.executor": "Run",
-    "Application.TesDao.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.Tomcat 10.executor": "Run",
-    "Tomcat Server.tomcat 9 .executor": "Run",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "Bao2",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Admin/Documents/LTW/Web_ban_thiet_bi_nha_bep_thong_minh/src/main",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BaseDao.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BrandDao.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ComboDao.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EcoDao.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HomeServlet.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ProductDAO.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ShowroomDao.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TesDao.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.executor&quot;: &quot;Run&quot;,
+    &quot;Tomcat Server.tomcat 9 .executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Bao2&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Admin/Documents/LTW/Web_ban_thiet_bi_nha_bep_thong_minh/src/main&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.webthietbibep.dao" />
@@ -384,13 +381,13 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.BrandDao" />
       <item itemvalue="Application.ComboDao" />
+      <item itemvalue="Application.EcoDao" />
       <item itemvalue="Application.ShowroomDao" />
       <item itemvalue="Application.TesDao" />
-      <item itemvalue="Application.EcoDao" />
-      <item itemvalue="Application.BrandDao" />
-      <item itemvalue="Tomcat Server.tomcat 9 " />
       <item itemvalue="Tomcat Server.Tomcat 10" />
+      <item itemvalue="Tomcat Server.tomcat 9 " />
     </list>
     <recent_temporary>
       <list>
@@ -462,7 +459,12 @@
       <workItem from="1766395921057" duration="3416000" />
       <workItem from="1766412150872" duration="10628000" />
       <workItem from="1766497265863" duration="334000" />
-      <workItem from="1766574702198" duration="6502000" />
+      <workItem from="1766574702198" duration="6638000" />
+      <workItem from="1766651003182" duration="2000" />
+      <workItem from="1766652367402" duration="2000" />
+      <workItem from="1766734182469" duration="9546000" />
+      <workItem from="1766762374590" duration="10262000" />
+      <workItem from="1766832266204" duration="799000" />
     </task>
     <servers />
   </component>
