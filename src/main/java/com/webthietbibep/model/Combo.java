@@ -2,6 +2,7 @@ package com.webthietbibep.model;
 
 import java.io.Serializable;
 import java.text.NumberFormat;
+import java.util.List;
 import java.util.Locale;
 
 public class Combo implements Serializable {
@@ -17,11 +18,12 @@ public class Combo implements Serializable {
     private String advance3;
     private String gift;
     private byte is_active;
+    private List<Product> products;
 
     public Combo() {
     }
 
-    public Combo(int id, String name, String tag, String content, double baseprice, double discountprice, String image, String advance1, String advance2, String advance3, String gift) {
+    public Combo(int id, String name, String tag, String content, double baseprice, double discountprice, String image, String advance1, String advance2, String advance3, String gift,List<Product> products) {
         this.id = id;
         this.name = name;
         this.tag = tag;
@@ -33,6 +35,7 @@ public class Combo implements Serializable {
         this.advance2 = advance2;
         this.advance3 = advance3;
         this.gift = gift;
+        this.products = products;
     }
 
     public int getId() {
@@ -126,4 +129,27 @@ public class Combo implements Serializable {
         NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
         return nf.format(price);
     }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
+    public byte getIs_active() {
+        return is_active;
+    }
+
+    public void setIs_active(byte is_active) {
+        this.is_active = is_active;
+    }
+    public static  int getPercent(double base , double discount){
+        if (base <= 0) return 0;
+        double result = ((base - discount) / base) * 100;
+        return (int) Math.round(result);
+    }
+
+
 }

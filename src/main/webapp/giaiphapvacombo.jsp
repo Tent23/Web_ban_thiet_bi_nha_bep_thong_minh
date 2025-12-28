@@ -87,7 +87,7 @@
                             <span class="old-price">${c.getPriceFormat(c.baseprice)}</span>
                             <span class="current-price">${c.getPriceFormat(c.discountprice)}</span>
                         </div>
-                        <a href="#" class="btn btn-primary btn-full-width">Mua Combo </a>
+                        <a href="combo?id=${c.id}" class="btn btn-primary btn-full-width">Mua Combo </a>
                     </div>
                 </div>
              </c:forEach>

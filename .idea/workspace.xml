@@ -11,8 +11,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ComboContronller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ListComboContronller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ComboDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ComboDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Combo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Combo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/service/ComboService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/service/ComboService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/giaiphapvacombo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/giaiphapvacombo.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +30,8 @@
         <option value="CSS File" />
         <option value="Jsp File" />
         <option value="HTML File" />
-        <option value="Servlet" />
         <option value="Class" />
+        <option value="Servlet" />
       </list>
     </option>
   </component>
@@ -58,6 +62,7 @@
     "Application.BannerDao.executor": "Run",
     "Application.BaseDao.executor": "Run",
     "Application.BrandDao.executor": "Run",
+    "Application.Combo.executor": "Run",
     "Application.ComboDao.executor": "Run",
     "Application.EcoDao.executor": "Run",
     "Application.HomeServlet.executor": "Run",
@@ -77,7 +82,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Admin/Documents/LTW/Web_ban_thiet_bi_nha_bep_thong_minh/src/main",
+    "last_opened_file_path": "C:/Users/Admin/Documents/LTW/Web_ban_thiet_bi_nha_bep_thong_minh/src/main/webapp",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -98,10 +103,11 @@
       <recent name="com.webthietbibep.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\LTW\Web_ban_thiet_bi_nha_bep_thong_minh\src\main\webapp" />
+      <recent name="C:\Users\Admin\Documents\LTW\Web_ban_thiet_bi_nha_bep_thong_minh\src\main\webapp\assets\css" />
+      <recent name="C:\Users\Admin\Documents\LTW\Web_ban_thiet_bi_nha_bep_thong_minh\src\main\webapp\assets\js" />
       <recent name="C:\Users\Admin\Documents\LTW\Web_ban_thiet_bi_nha_bep_thong_minh\src\main" />
       <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\shared" />
-      <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\assets\images\banners" />
-      <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\assets\images\products" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\assets\images\banners" />
@@ -135,12 +141,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ComboDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.webthietbibep.dao.ComboDao" />
+    <configuration name="Combo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.webthietbibep.model.Combo" />
       <module name="WebThietBiBep" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.webthietbibep.dao.*" />
+          <option name="PATTERN" value="com.webthietbibep.model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -148,8 +154,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EcoDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.webthietbibep.dao.EcoDao" />
+    <configuration name="ComboDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.webthietbibep.dao.ComboDao" />
       <module name="WebThietBiBep" />
       <extension name="coverage">
         <pattern>
@@ -375,9 +381,9 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Combo" />
       <item itemvalue="Application.BannerDao" />
       <item itemvalue="Application.ComboDao" />
-      <item itemvalue="Application.EcoDao" />
       <item itemvalue="Application.ShowroomDao" />
       <item itemvalue="Application.TesDao" />
       <item itemvalue="Tomcat Server.Tomcat 10" />
@@ -385,11 +391,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.BannerDao" />
         <item itemvalue="Application.ComboDao" />
+        <item itemvalue="Application.Combo" />
+        <item itemvalue="Application.BannerDao" />
         <item itemvalue="Application.ShowroomDao" />
         <item itemvalue="Application.TesDao" />
-        <item itemvalue="Application.EcoDao" />
       </list>
     </recent_temporary>
   </component>
@@ -458,7 +464,9 @@
       <workItem from="1766652367402" duration="2000" />
       <workItem from="1766734182469" duration="9546000" />
       <workItem from="1766762374590" duration="10262000" />
-      <workItem from="1766832266204" duration="7111000" />
+      <workItem from="1766832266204" duration="7494000" />
+      <workItem from="1766849415829" duration="9525000" />
+      <workItem from="1766937719912" duration="6765000" />
     </task>
     <servers />
   </component>

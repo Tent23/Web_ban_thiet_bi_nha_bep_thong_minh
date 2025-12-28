@@ -9,8 +9,8 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ComboContronller", value = "/combo")
-public class ComboContronller extends HttpServlet {
+@WebServlet(name = "ListComboContronller", value = "/listcombo")
+public class ListComboContronller extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ComboService cp = new ComboService();

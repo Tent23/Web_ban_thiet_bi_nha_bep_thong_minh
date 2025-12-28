@@ -72,4 +72,5 @@ public class Product implements Serializable {
         NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
         return nf.format(price);
     }
+
 }
