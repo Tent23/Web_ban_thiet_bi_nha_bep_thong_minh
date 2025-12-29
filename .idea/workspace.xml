@@ -10,12 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/products.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +66,7 @@
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;Tomcat Server.Tomcat10.executor&quot;: &quot;Run&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;QuangToan1&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Merging QuangToan1&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/THANH TRUONG/Web_ban_thiet_bi_nha_bep_thong_minh&quot;,
@@ -284,7 +279,8 @@
       <workItem from="1766390272441" duration="8205000" />
       <workItem from="1766653479837" duration="78000" />
       <workItem from="1766686385500" duration="11267000" />
-      <workItem from="1766733602493" duration="4997000" />
+      <workItem from="1766733602493" duration="5694000" />
+      <workItem from="1767006046722" duration="294000" />
     </task>
     <servers />
   </component>
