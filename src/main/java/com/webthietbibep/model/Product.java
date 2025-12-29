@@ -6,12 +6,12 @@ import java.time.LocalDateTime;
 import java.util.Locale;
 
 public class Product implements Serializable {
-    private int productid;
+    private int product_id;
     private int category_id;
-    private String productname;
+    private String product_name;
     private String description;
     private double price;
-    private int stockquantity;
+    private int stock_quantity;
     private int brand_id;
     private String image;
     private LocalDateTime created_at;
@@ -19,28 +19,28 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(int productid, int category_id, String productname,
-                   String description, double price, int stockquantity, int brand_id,
+    public Product(int product_id, int category_id, String product_name,
+                   String description, double price, int stock_quantity, int brand_id,
                    String image, LocalDateTime createat) {
 
-        this.productid = productid;
+        this.product_id = product_id;
         this.category_id = category_id;
-        this.productname = productname;
+        this.product_name = product_name;
         this.description = description;
         this.price = price;
-        this.stockquantity = stockquantity;
+        this.stock_quantity = stock_quantity;
         this.image = image;
         this.created_at = created_at;
     }
 
     // Getter & Setter
 
-    public int getProductid() {
-        return productid;
+    public int getProduct_id() {
+        return product_id;
     }
 
-    public void setProductid(int product_id) {
-        this.productid = productid;
+    public void setProduct_id(int product_id) {
+        this.product_id = product_id;
     }
 
     public int getCategory_id() {
@@ -51,12 +51,12 @@ public class Product implements Serializable {
         this.category_id = category_id;
     }
 
-    public String getProductname() {
-        return productname;
+    public String getProduct_name() {
+        return product_name;
     }
 
-    public void setProductname(String product_name) {
-        this.productname = productname;
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
     }
 
     public String getDescription() {
@@ -75,12 +75,12 @@ public class Product implements Serializable {
         this.price = price;
     }
 
-    public int getStockquantity() {
-        return stockquantity;
+    public int getStock_quantity() {
+        return stock_quantity;
     }
 
-    public void setStockquantity(int stockquantity) {
-        this.stockquantity = stockquantity;
+    public void setStock_quantity(int stock_quantity) {
+        this.stock_quantity = stock_quantity;
     }
 
     public String getImage() {
