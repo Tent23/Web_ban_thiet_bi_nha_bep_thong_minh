@@ -2,17 +2,24 @@ package com.webthietbibep.dao;
 
 import com.webthietbibep.db.JDBIConnector;
 import com.webthietbibep.model.Product;
-import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.statement.PreparedBatch;
 
-import java.sql.*;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 public class ProductDAO extends BaseDao {
+
+    public List<Product> getBestSellers() {
+
+        return get().withHandle(h ->{
+            return h.createQuery("SELECT p.*, SUM(o.quantity) AS TongSoLuongDaBan\n" +
+                            " FROM orderitems o JOIN products p ON p.id = o.product_id\n" +
+                            "GROUP BY p.id,p.name,p.description,p.price,p.image,p.category_id,p.brand_id\n" +
+                            "ORDER BY SUM(o.quantity) DESC\n" +
+                            "LIMIT 2 ")
+                    .mapToBean(Product.class).list();
+        });
+    }
     public void inserts(List<Product> products) {
         String sql = """
             INSERT INTO products (categoryid, productname, description, price, stockquantity, image, brand_id, created_at)
