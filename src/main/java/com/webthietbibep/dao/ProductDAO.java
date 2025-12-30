@@ -156,4 +156,15 @@ public class ProductDAO extends BaseDao {
             return query.mapToBean(Product.class).list();
         });
     }
+    public List<Product> getBestSellers() {
+
+        return get().withHandle(h ->{
+            return h.createQuery("           SELECT p.product_id, p.category_id as categoryid, p.name as productname,p.description,p.price,p.stock_quantity as stockquantity,p.brand_id,p.image,p.create_at, SUM(o.quantity) AS TongSoLuongDaBan\n" +
+                            "                            FROM order_items o JOIN products p ON p.product_id = o.product_id\n" +
+                            "                            GROUP BY p.product_id, p.category_id, p.name,p.description,p.price,p.stock_quantity,p.brand_id,p.image,p.create_at\n" +
+                            "                            ORDER BY SUM(o.quantity) DESC\n" +
+                            "                            LIMIT 2 ")
+                    .mapToBean(Product.class).list();
+        });
+    }
 }

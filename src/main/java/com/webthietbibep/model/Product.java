@@ -1,7 +1,9 @@
 package com.webthietbibep.model;
 
 import java.io.Serializable;
+import java.text.NumberFormat;
 import java.time.LocalDateTime;
+import java.util.Locale;
 
 public class Product implements Serializable {
     // Tên biến này dùng để map với :product_id
@@ -45,4 +47,10 @@ public class Product implements Serializable {
 
     public LocalDateTime getCreated_at() { return created_at; }
     public void setCreated_at(LocalDateTime created_at) { this.created_at = created_at; }
+
+    // Hàm định dạng tiền tệ (Ví dụ: 15.000.000 đ)
+    public String getPriceFormat() {
+        NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("vi", "VN"));
+        return nf.format(price);
+    }
 }
