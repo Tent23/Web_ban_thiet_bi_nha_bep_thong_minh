@@ -1,5 +1,6 @@
 package com.webthietbibep.dao;
 
+import com.webthietbibep.db.JDBIConnector;
 import com.webthietbibep.model.Product;
 import org.jdbi.v3.core.Jdbi;
 import org.jdbi.v3.core.statement.PreparedBatch;
@@ -12,31 +13,75 @@ import java.util.List;
 import java.util.Map;
 
 public class ProductDAO extends BaseDao {
+    public void inserts(List<Product> products) {
+        String sql = """
+            INSERT INTO products (categoryid, productname, description, price, stockquantity, image, brand_id, created_at)
+            VALUES (:categoryid, :productname, :description, :price, :stockquantity, :image, :brand_id, NOW())
+        """;
 
-    public void insert(List<Product>products){
-        Jdbi jdbi= get();
-        jdbi.useHandle(h->{
-           PreparedBatch batch= h.prepareBatch("""
-            INSERT INTO products
-            ( category_id, product_name, description, price, stock_quantity,brand_id, image)
-            VALUES
-            ( :category_id, :product_name, :description, :price, :stock_quantity, :brand_id, :image)
-        """);
-           products.forEach(product -> {
-               batch.bindBean(product).add();
-           });
-           batch.execute();
+        get().useHandle(h -> {
+            PreparedBatch batch = h.prepareBatch(sql);
+            for (Product p : products) {
+                batch.bindBean(p).add();
+            }
+            batch.execute();
         });
     }
 
 
     public List<Product> getListProduct() {
-        return get().withHandle(h -> h.createQuery("select * from products").mapToBean(Product.class).list());
+        return get().withHandle(h ->
+                h.createQuery("SELECT * FROM products ORDER BY product_id DESC")
+                        .mapToBean(Product.class)
+                        .list()
+        );
     }
     public Product getProduct(int id){
-        return get().withHandle(h -> h.createQuery("select * from products where product_id=:product_id").bind("product_id",id).mapToBean(Product.class).stream().findFirst().orElse(null));
+        return get().withHandle(h -> h.createQuery("select * from products where product_id = :id").bind("id",id).mapToBean(Product.class).stream().findFirst().orElse(null));
 
     }
+    public int insert(Product product) {
+        String sql = """
+            INSERT INTO products (category_id, product_name, description, price, stock_quantity, brand_id, image, created_at)
+            VALUES (:category_id, :product_name, :description, :price, :stock_quantity, :brand_id, :image, NOW())
+        """;
+
+        return get().withHandle(handle ->
+                handle.createUpdate(sql)
+                        .bindBean(product)
+                        .execute()
+        );
+    }
+
+    public int update(Product product) {
+        String sql = """
+            UPDATE products 
+            SET category_id = :category_id,
+                product_name = :product_name,
+                description = :description,
+                price = :price,
+                stock_quantity = :stock_quantity,
+                brand_id = :brand_id,
+                image = :image
+            WHERE product_id = :product_id
+        """;
+        // product_id (trái): tên cột DB
+        // :product_id (phải): tên getter trong Model (getProduct_id)
+
+        return get().withHandle(handle ->
+                handle.createUpdate(sql)
+                        .bindBean(product)
+                        .execute()
+        );
+    }
+    public void delete(int id) {
+        get().useHandle(handle ->
+                handle.createUpdate("DELETE FROM products WHERE product_id = :id")
+                        .bind("id", id)
+                        .execute()
+        );
+    }
+
     public List<Product> getProductsFilter(
             String priceRange,
             String sort,
@@ -144,5 +189,19 @@ public class ProductDAO extends BaseDao {
 
             return query.mapTo(Integer.class).one();
         });
+    }
+    public List<Product> getRelatedProducts(int categoryId, int excludeId) {
+        return JDBIConnector.get().withHandle(handle ->
+                handle.createQuery("""
+            SELECT * FROM products
+            WHERE category_id = :cid
+              AND product_id != :pid
+            LIMIT 4
+        """)
+                        .bind("cid", categoryId)
+                        .bind("pid", excludeId)
+                        .mapToBean(Product.class)
+                        .list()
+        );
     }
 }

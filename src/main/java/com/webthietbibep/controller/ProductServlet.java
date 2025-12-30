@@ -23,6 +23,7 @@ public class ProductServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+
         String categoryIdStr = req.getParameter("categoryId");
         String priceRange = req.getParameter("priceRange");
         String sort = req.getParameter("sort");

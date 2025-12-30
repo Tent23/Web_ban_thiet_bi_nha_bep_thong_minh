@@ -9,25 +9,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be169aa3-640a-4b22-9383-5fe4ec9b3b77" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/LogoutServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductDetailServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_add_product.jsp" afterDir="false" />
+    <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductFeatureDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/db/JDBIConnector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/ProductFeature.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/product-detail.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductDetailServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/DBProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/DBProperties.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_add_product.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_add_product.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_add_product.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_dashboard.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_dashboard.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_edit_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_edit_product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_order_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_order_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_products.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_static_pages.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_static_pages.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/admin_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/admin_style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/common/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +38,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Jsp File" />
+        <option value="CSS File" />
         <option value="Class" />
       </list>
     </option>
@@ -73,9 +75,29 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.BaseDao.executor": "Run",
+    "Application.ProductDAO.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Tomcat Server.Tomcat10.executor": "Run",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "Merging QuangToan1",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/THANH TRUONG/Web_ban_thiet_bi_nha_bep_thong_minh",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "File.Encoding",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -221,6 +243,14 @@
         <item itemvalue="Application.BaseDao" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-IU-253.28294.334" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

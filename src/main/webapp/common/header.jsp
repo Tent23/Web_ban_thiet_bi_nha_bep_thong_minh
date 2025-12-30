@@ -18,7 +18,7 @@
             <c:if test="${not empty auth}">
                 <span class="user-info">
                     <i class="fa fa-user"></i>
-                    Xin chào, ${auth.username}
+                     Xin chào, ${auth.username}
                 </span>
                 <a href="${pageContext.request.contextPath}/logout"
                    onclick="return confirmLogout();">
