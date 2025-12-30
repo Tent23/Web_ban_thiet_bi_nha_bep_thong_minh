@@ -55,14 +55,14 @@ public class AdminProductServlet extends HttpServlet {
             p.setProduct_id((idStr == null || idStr.isEmpty()) ? 0 : Integer.parseInt(idStr));
 
             // 2. Lấy các thông tin khác
-            p.setProductname(req.getParameter("productname"));
+            p.setProduct_name(req.getParameter("product_name"));
             p.setDescription(req.getParameter("description"));
             p.setImage(req.getParameter("image"));
 
             // Xử lý số (tránh lỗi null)
             p.setPrice(parseDouble(req.getParameter("price")));
-            p.setStockquantity(parseInt(req.getParameter("stockquantity")));
-            p.setCategoryid(parseInt(req.getParameter("categoryid")));
+            p.setStock_quantity(parseInt(req.getParameter("stock_quantity")));
+            p.setCategory_id(parseInt(req.getParameter("category_id")));
             p.setBrand_id(parseInt(req.getParameter("brand_id")));
 
             // 3. Gọi DAO

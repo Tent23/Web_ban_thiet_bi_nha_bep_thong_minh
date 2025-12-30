@@ -1,0 +1,60 @@
+package com.webthietbibep.controller;
+
+import com.webthietbibep.dao.ProductDAO;
+import com.webthietbibep.dao.ProductFeatureDAO;
+import com.webthietbibep.model.Product;
+import com.webthietbibep.model.ProductFeature;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+import java.util.List;
+
+@WebServlet("/product-detail")
+public class ProductDetailServlet extends HttpServlet {
+
+    private final ProductDAO productDAO = new ProductDAO();
+    private final ProductFeatureDAO featureDAO = new ProductFeatureDAO();
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String idStr = request.getParameter("id");
+
+        if (idStr == null || idStr.isBlank()) {
+            response.sendRedirect(request.getContextPath() + "/products");
+            return;
+        }
+
+        int productId;
+        try {
+            productId = Integer.parseInt(idStr);
+        } catch (NumberFormatException e) {
+            response.sendRedirect(request.getContextPath() + "/products");
+            return;
+        }
+
+        // 1. Lấy sản phẩm
+        Product product = productDAO.getProduct(productId);
+        if (product == null) {
+            response.sendRedirect(request.getContextPath() + "/products");
+            return;
+        }
+        List<ProductFeature> features = featureDAO.getByProductId(productId);
+
+        List<Product> relatedProducts =
+                productDAO.getRelatedProducts(product.getCategory_id(), productId);
+
+        // 4. Đẩy sang JSP
+        request.setAttribute("product", product);
+        request.setAttribute("features", features);
+        request.setAttribute("relatedProducts", relatedProducts);
+
+        request.getRequestDispatcher("/product-detail.jsp")
+                .forward(request, response);
+    }
+}

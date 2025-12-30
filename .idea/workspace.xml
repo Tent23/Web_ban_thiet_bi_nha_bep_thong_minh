@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="WebThietBiBep:war" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/BannerDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/EcoDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/TesDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Banner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Ecosystems.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Testimonial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/BannerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/BrandService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/EcoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/TesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Brand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Jsp File" />
+        <option value="CSS File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="QuangToan" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="35HnQVelTRAPTdY9mafjort4LMP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.BaseDao.executor": "Run",
+    "Application.ProductDAO.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Tomcat Server.Tomcat10.executor": "Run",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "Merging QuangToan1",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/THANH TRUONG/Web_ban_thiet_bi_nha_bep_thong_minh",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "File.Encoding",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\shared" />
+      <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\assets\images\banners" />
+      <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\assets\images\products" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\assets\images\banners" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationStatuses">
+      <map>
+        <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+          <value>
+            <map>
+              <entry key="Tomcat10" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat10">
+    <configuration name="BaseDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.webthietbibep.dao.BaseDao" />
+      <module name="WebThietBiBep" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.webthietbibep.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductDAO" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.webthietbibep.dao.ProductDAO" />
+      <module name="WebThietBiBep" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.webthietbibep.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.50" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="WebThietBiBep:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/WebThietBiBep" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="8279a011-b37c-420e-bac4-2f3a84fa0652" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50475" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="WebThietBiBep:war" />
+        </option>
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ProductDAO" />
+        <item itemvalue="Application.BaseDao" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-IU-253.28294.334" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="" />
+      <created>1762775850082</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762775850082</updated>
+      <workItem from="1762775852080" duration="20000" />
+      <workItem from="1762775873602" duration="940000" />
+      <workItem from="1762864688868" duration="9000" />
+      <workItem from="1762864699410" duration="3598000" />
+      <workItem from="1762939699852" duration="711000" />
+      <workItem from="1762941683610" duration="5217000" />
+      <workItem from="1762946975112" duration="4987000" />
+      <workItem from="1762952125423" duration="4000" />
+      <workItem from="1762952262396" duration="119000" />
+      <workItem from="1762955447548" duration="1777000" />
+      <workItem from="1762995183733" duration="2219000" />
+      <workItem from="1763009712221" duration="2325000" />
+      <workItem from="1763017890126" duration="67000" />
+      <workItem from="1763020220911" duration="5575000" />
+      <workItem from="1763047272542" duration="2826000" />
+      <workItem from="1763054439667" duration="769000" />
+      <workItem from="1763055575160" duration="3464000" />
+      <workItem from="1763097129845" duration="196000" />
+      <workItem from="1763097505048" duration="1875000" />
+      <workItem from="1763152783487" duration="20000" />
+      <workItem from="1763183492533" duration="2947000" />
+      <workItem from="1763372916452" duration="1893000" />
+      <workItem from="1763426373078" duration="300000" />
+      <workItem from="1763638789573" duration="130000" />
+      <workItem from="1763648807269" duration="1019000" />
+      <workItem from="1763991787681" duration="299000" />
+      <workItem from="1764073784170" duration="6944000" />
+      <workItem from="1764149457571" duration="9423000" />
+      <workItem from="1764333400184" duration="4330000" />
+      <workItem from="1764430539333" duration="4796000" />
+      <workItem from="1765761041815" duration="7186000" />
+      <workItem from="1765970430818" duration="1238000" />
+      <workItem from="1765993935213" duration="4988000" />
+      <workItem from="1766041579434" duration="86000" />
+      <workItem from="1766072770849" duration="6163000" />
+      <workItem from="1766166543824" duration="7462000" />
+      <workItem from="1766390272441" duration="7822000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

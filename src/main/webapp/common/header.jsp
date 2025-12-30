@@ -9,7 +9,7 @@
             <a href="showroom">Hệ thống Showroom</a>
             <a href="tra-cuu-bao-hanh">Tra cứu Bảo hành</a>
             <c:if test="${empty auth}">
-                <a href="../Login.jsp">
+                <a href="${pageContext.request.contextPath}/login">
                     <i class="fa fa-user"></i> Đăng nhập
                 </a>
             </c:if>
@@ -18,9 +18,10 @@
             <c:if test="${not empty auth}">
                 <span class="user-info">
                     <i class="fa fa-user"></i>
-                    Xin chào, ${auth.username}
+                     Xin chào, ${auth.username}
                 </span>
-                <a href="logout">
+                <a href="${pageContext.request.contextPath}/logout"
+                   onclick="return confirmLogout();">
                     <i class="fa fa-sign-out-alt"></i> Đăng xuất
                 </a>
             </c:if>
@@ -46,14 +47,26 @@
         <div class="container">
             <ul>
                 <li class="nav-item has-megamenu">
-                    <a href="products.jsp">Sản phẩm <i class="fa fa-chevron-down"></i></a>
+                    <a href="${pageContext.request.contextPath}/products">Sản phẩm <i class="fa fa-chevron-down"></i></a>
                     <div class="mega-menu">
-                        <a href="products?category=beptu">Bếp từ</a>
-                        <a href="products?category=tulanh">Tủ lạnh</a>
-                        <a href="products?category=robot">Robot Hút bụi</a>
-                        <a href="products?category=mayruabat">Máy rửa bát</a>
-                        <a href="products?category=cambien">Cảm biến & An ninh</a>
-                        <a href="products?category=phache">Pha chế</a>
+                        <a href="${pageContext.request.contextPath}/products?categoryId=1">
+                            Bếp từ
+                        </a>
+                        <a href="${pageContext.request.contextPath}/products?category=2">
+                            Tủ lạnh
+                        </a>
+                        <a href="${pageContext.request.contextPath}/products?category=3">
+                            Robot Hút bụi
+                        </a>
+                        <a href="${pageContext.request.contextPath}/products?category=3">
+                            Máy rửa bát
+                        </a>
+                        <a href="${pageContext.request.contextPath}/products?category=4">
+                            Cảm biến & An ninh
+                        </a>
+                        <a href="${pageContext.request.contextPath}/products?category=5">
+                            Pha chế
+                        </a>
                     </div>
                 </li>
                 <li class="nav-item"><a href="giai-phap-combo.jsp">Giải pháp & Combo</a></li>
@@ -65,3 +78,4 @@
         </div>
     </nav>
 </header>
+<script src="${pageContext.request.contextPath}/assets/js/Logout.js"></script>
