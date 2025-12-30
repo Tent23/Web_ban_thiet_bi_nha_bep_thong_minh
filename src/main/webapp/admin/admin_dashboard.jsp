@@ -85,20 +85,6 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>#ORD-8821</td>
-                        <td>Nguyễn Văn A</td>
-                        <td>28/12/2023</td>
-                        <td><span class="status processing">Đang xử lý</span></td>
-                        <td>1,200,000đ</td>
-                    </tr>
-                    <tr>
-                        <td>#ORD-8820</td>
-                        <td>Trần Thị B</td>
-                        <td>27/12/2023</td>
-                        <td><span class="status completed">Hoàn thành</span></td>
-                        <td>850,000đ</td>
-                    </tr>
                     </tbody>
                 </table>
             </div>
