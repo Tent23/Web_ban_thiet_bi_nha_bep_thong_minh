@@ -1,12 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Giải pháp và Combo</title>
-    <link rel="stylesheet" href="Header.css">
-    <link rel="stylesheet" href="../ThanhTruong/index.css">
+    <link rel="stylesheet" href="assets/css/Header.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="giaiphapvacombo.css">
+    <link rel="stylesheet" href="assets/css/giaiphapvacombo.css">
 </head>
 <body>
 <header class="header">
@@ -15,8 +18,8 @@
             <span><i class="fa fa-phone"></i> Hỗ trợ Kỹ thuật: 1900.1234</span>
             <span><i class="fa fa-phone"></i> Kinh doanh: 1900.5678</span>
             <span class="spacer"></span>
-            <a href="Showroom.html">Hệ thống Showroom</a>
-            <a href="BaoHanh.html">Tra cứu Bảo hành</a>
+            <a href="Showroom.jsp">Hệ thống Showroom</a>
+            <a href="BaoHanh.jsp">Tra cứu Bảo hành</a>
             <a href="../QuangToan/Login.html">Đăng nhập</a>
         </div>
     </div>
@@ -65,71 +68,31 @@
             <h1 class="section-title text-center">Các Combo Sản phẩm </h1>
             <p class="section-subtitle text-center">Giảm giá lên đến 20% khi mua trọn bộ thiết bị.</p>
             <div class="combo-grid">
-
+             <c:forEach var="c" items="${listC}">
                 <div class="combo-card">
                     <div class="combo-header">
-                        <span class="combo-label combo-basic">Combo Căn hộ</span>
-                        <img src="../../assets/images/banners/combocanho.png" alt="Combo Căn hộ" class="combo-image">
+                        <span class="combo-label combo-basic">${c.tag}</span>
+                        <img src="${c.image}" alt="Combo Căn hộ" class="combo-image">
                     </div>
                     <div class="combo-body">
-                        <h4>Combo Bếp Tiêu Chuẩn - 25 Triệu</h4>
-                        <p class="combo-desc">Giải pháp cơ bản cho căn hộ nhỏ, đủ các thiết bị cần thiết.</p>
+                        <h4>${c.name}</h4>
+                        <p class="combo-desc">${c.content}</p>
                         <ul>
-                            <li><i class="fa fa-check-circle"></i> Bếp từ 2 vùng nấu Bosch</li>
-                            <li><i class="fa fa-check-circle"></i> Máy hút mùi âm tủ TTB</li>
-                            <li><i class="fa fa-check-circle"></i> Robot hút bụi cơ bản</li>
-                            <li><i class="fa fa-gift"></i> Tặng Lắp đặt Miễn phí</li>
+                            <c:forEach var = "i" items="${c.listadvance}">
+                            <li><i class="fa fa-check-circle"></i> ${i.advance}</li>
+                            </c:forEach>
+                            <li><i class="fa fa-gift"></i> ${c.gift}</li>
                         </ul>
                         <div class="combo-price-block">
-                            <span class="old-price">30.000.000đ</span>
-                            <span class="current-price">25.000.000đ</span>
+                            <span class="old-price">${c.getPriceFormat(c.baseprice)}</span>
+                            <span class="current-price">${c.getPriceFormat(c.discountprice)}</span>
                         </div>
-                        <a href="#" class="btn btn-primary btn-full-width">Mua Combo (Tiết kiệm 5 Triệu)</a>
+                        <a href="combo?id=${c.id}" class="btn btn-primary btn-full-width">Mua Combo </a>
                     </div>
                 </div>
+             </c:forEach>
 
-                <div class="combo-card">
-                    <div class="combo-header">
-                        <span class="combo-label combo-premium">Combo Cao cấp</span>
-                        <img src="../../assets/images/banners/combocaocap.png" alt="Combo Cao cấp" class="combo-image">
-                    </div>
-                    <div class="combo-body">
-                        <h4>Combo Bếp Luxury - 55 Triệu</h4>
-                        <p class="combo-desc">Trọn bộ thiết bị thông minh, tích hợp hệ sinh thái HomeKit/Google Home.</p>
-                        <ul>
-                            <li><i class="fa fa-check-circle"></i> Bếp từ 4 vùng nấu Hafele (có FlexZone)</li>
-                            <li><i class="fa fa-check-circle"></i> Máy rửa bát âm tủ Electrolux</li>
-                            <li><i class="fa fa-check-circle"></i> Tủ lạnh thông minh Samsung</li>
-                            <li><i class="fa fa-gift"></i> Tặng Gói Bảo hành Vàng 2 năm</li>
-                        </ul>
-                        <div class="combo-price-block">
-                            <span class="old-price">70.000.000đ</span>
-                            <span class="current-price">55.000.000đ</span>
-                        </div>
-                        <a href="#" class="btn btn-primary btn-full-width">Mua Combo (Tiết kiệm 15 Triệu)</a>
-                    </div>
-                </div>
 
-                <div class="combo-card">
-                    <div class="combo-header">
-                        <span class="combo-label combo-security">Combo An ninh</span>
-                        <img src="../../assets/images/banners/comboanninh.png" alt="Combo An ninh" class="combo-image">
-                    </div>
-                    <div class="combo-body">
-                        <h4>Combo Cảm biến Bếp - 30 Triệu</h4>
-                        <p class="combo-desc">Đảm bảo an toàn tuyệt đối với hệ thống cảm biến thông minh.</p>
-                        <ul>
-                            <li><i class="fa fa-check-circle"></i> Cảm biến Rò rỉ Gas</li>
-                            <li><i class="fa fa-check-circle"></i> Cảm biến Báo khói/Nhiệt độ</li>
-                            <li><i class="fa fa-check-circle"></i> Camera giám sát Wifi (Chịu nhiệt)</li>
-                            <li><i class="fa fa-gift"></i> Tặng Ổ cắm thông minh Xiaomi</li>
-                        </ul>
-                        <div class="combo-price-block">
-                            <span class="old-price">35.500.000đ</span>
-                            <span class="current-price">30.000.000đ</span>
-                        </div>
-                        <a href="#" class="btn btn-primary btn-full-width">Mua Combo (Tiết kiệm 2.5 Triệu)</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -164,7 +127,7 @@
                 <h4>LIÊN KẾT NHANH</h4>
                 <ul>
                     <li><a href="../ThanhTruong/vechungtoi.html">Về chúng tôi</a></li>
-                    <li><a href="Showroom.html">Hệ thống Showroom</a></li>
+                    <li><a href="Showroom.jsp">Hệ thống Showroom</a></li>
                     <li><a href="../ThanhTruong/tuyendung.html">Tuyển dụng</a></li>
                     <li><a href="#">Dành cho Đối tác B2B</a></li>
                 </ul>

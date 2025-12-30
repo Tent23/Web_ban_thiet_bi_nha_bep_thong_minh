@@ -13,8 +13,8 @@ public class ProductDAO extends BaseDao {
 
         return get().withHandle(h ->{
             return h.createQuery("SELECT p.*, SUM(o.quantity) AS TongSoLuongDaBan\n" +
-                            " FROM orderitems o JOIN products p ON p.id = o.product_id\n" +
-                            "GROUP BY p.id,p.name,p.description,p.price,p.image,p.category_id,p.brand_id\n" +
+                            " FROM order_items o JOIN products p ON p.product_id = o.product_id\n" +
+                            "GROUP BY p.product_id,p.name,p.description,p.price,p.image,p.category_id,p.brand_id\n" +
                             "ORDER BY SUM(o.quantity) DESC\n" +
                             "LIMIT 2 ")
                     .mapToBean(Product.class).list();

@@ -10,22 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/BannerDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/EcoDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/TesDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Banner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Ecosystems.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Testimonial.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/BannerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/BrandService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/EcoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/TesService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/chitietCombo.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Brand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/giaiphapvacombo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/giaiphapvacombo.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,12 +68,14 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Tomcat Server.Tomcat 10..executor": "Run",
+    "Tomcat Server.Tomcat 10.executor": "Run",
     "Tomcat Server.Tomcat10.executor": "Run",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "Merging QuangToan1",
+    "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/THANH TRUONG/Web_ban_thiet_bi_nha_bep_thong_minh",
+    "last_opened_file_path": "C:/Users/Admin/Documents/LTW/DoAnLapTrinhWed/WebThietBiBep/src/main/webapp/assets/css",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -99,28 +89,23 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\LTW\DoAnLapTrinhWed\WebThietBiBep\src\main\webapp\assets\css" />
+      <recent name="C:\Users\Admin\Documents\LTW\DoAnLapTrinhWed\WebThietBiBep\src\main\webapp\assets\js" />
+      <recent name="C:\Users\Admin\Documents\LTW\DoAnLapTrinhWed\WebThietBiBep\src\main\webapp" />
       <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\shared" />
       <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\assets\images\banners" />
-      <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\assets\images\products" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\THANH TRUONG\Web_ban_thiet_bi_nha_bep_thong_minh\assets\images\banners" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.webthietbibep.model" />
+      <recent name="com.webthietbibep.controller" />
+      <recent name="com.webthietbibep.services" />
+      <recent name="com.webthietbibep.dao" />
+    </key>
   </component>
-  <component name="RunDashboard">
-    <option name="configurationStatuses">
-      <map>
-        <entry key="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
-          <value>
-            <map>
-              <entry key="Tomcat10" value="STOPPED" />
-            </map>
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat10">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.">
     <configuration name="BaseDao" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.webthietbibep.dao.BaseDao" />
       <module name="WebThietBiBep" />
@@ -147,17 +132,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tomcat10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.50" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="UPDATING_POLICY" value="restart-server" />
+    <configuration name="Tomcat 10." type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.50" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="HOT_SWAP_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
         <artifact name="WebThietBiBep:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/WebThietBiBep" />
+            <option name="CONTEXT_PATH" value="/WebThietBiBep_war" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="8279a011-b37c-420e-bac4-2f3a84fa0652" />
+        <option name="BASE_DIRECTORY_NAME" value="162522c3-c134-4f4a-a75e-a3fb5f357ca6" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -165,7 +152,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="50475" />
+        <option name="DEBUG_PORT" value="56727" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -234,6 +221,11 @@
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.BaseDao" />
+      <item itemvalue="Application.ProductDAO" />
+      <item itemvalue="Tomcat Server.Tomcat 10." />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ProductDAO" />
@@ -244,8 +236,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
-        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-IU-253.28294.334" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
       </set>
     </attachedChunks>
   </component>
@@ -293,6 +285,8 @@
       <workItem from="1766072770849" duration="6163000" />
       <workItem from="1766166543824" duration="7462000" />
       <workItem from="1766390272441" duration="7822000" />
+      <workItem from="1767094525016" duration="54000" />
+      <workItem from="1767107566541" duration="6637000" />
     </task>
     <servers />
   </component>
