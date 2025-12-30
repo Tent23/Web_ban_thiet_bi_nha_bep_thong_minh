@@ -7,61 +7,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard - Tổng quan</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="${pageContext.request.contextPath}../assets/css/admin_style.css">
     <link rel="stylesheet" href="../assets/css/admin_style.css" />
-
     <link rel="stylesheet" href="../assets/css/indexfont.css" />
-
 </head>
 <body>
-<jsp:include page="common/sidebar.jsp"></jsp:include>
 
-<main class="main-content">
+<div class="admin-layout">
 
-    <div class="dashboard-header">
-        <h2>Tổng quan</h2>
-        <div class="user-action">
-            <span>Xin chào, <strong>Admin</strong></span>
+    <jsp:include page="common/sidebar.jsp"></jsp:include>
+    <main class="admin-main">
+        <header class="admin-header">
+            <h2>Tổng quan</h2>
+            <div class="admin-profile">
+                <span>Xin chào, <strong>Admin</strong></span>
+            </div>
+        </header>
+
+        <div class="admin-content">
+            <p style="margin-bottom: 25px; color: var(--admin-text-light);">Chào mừng bạn đến với hệ thống quản trị nội dung.</p>
+
+            <div class="admin-grid stat-cards">
+
+                <div class="stat-card">
+                    <div class="card-icon blue">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-title">Đơn hàng mới</span>
+                        <span class="card-value">12</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="card-icon green">
+                        <i class="fas fa-box"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-title">Sản phẩm</span>
+                        <span class="card-value">340</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="card-icon yellow">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-title">Khách hàng</span>
+                        <span class="card-value">1,205</span>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="card-icon red">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="card-info">
+                        <span class="card-title">Doanh thu tháng</span>
+                        <span class="card-value">45.2M</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="admin-card">
+                <h3>Đơn hàng gần đây</h3>
+                <table class="admin-table">
+                    <thead>
+                    <tr>
+                        <th>Mã đơn</th>
+                        <th>Khách hàng</th>
+                        <th>Ngày đặt</th>
+                        <th>Trạng thái</th>
+                        <th>Tổng tiền</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>#ORD-8821</td>
+                        <td>Nguyễn Văn A</td>
+                        <td>28/12/2023</td>
+                        <td><span class="status processing">Đang xử lý</span></td>
+                        <td>1,200,000đ</td>
+                    </tr>
+                    <tr>
+                        <td>#ORD-8820</td>
+                        <td>Trần Thị B</td>
+                        <td>27/12/2023</td>
+                        <td><span class="status completed">Hoàn thành</span></td>
+                        <td>850,000đ</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </div>
-
-    <div class="dashboard-widgets">
-        <p>Chào mừng bạn đến với trang quản trị.</p>
-        <div style="display: flex; gap: 20px; margin-top: 20px;">
-            <div style="background: white; padding: 20px; border-radius: 8px; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                <h3>Đơn hàng mới</h3>
-                <p style="font-size: 24px; font-weight: bold; color: #2ecc71;">12</p>
-            </div>
-            <div style="background: white; padding: 20px; border-radius: 8px; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                <h3>Sản phẩm</h3>
-                <p style="font-size: 24px; font-weight: bold; color: #3498db;">340</p>
-            </div>
-            <div style="background: white; padding: 20px; border-radius: 8px; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                <h3>Khách hàng</h3>
-                <p style="font-size: 24px; font-weight: bold; color: #f1c40f;">1,205</p>
-            </div>
-        </div>
-    </div>
-
-</main>
+    </main>
+</div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // Lấy tất cả các menu có class 'menu-item-has-children'
         var dropdowns = document.querySelectorAll(".menu-item-has-children > .sidebar-link");
-
         dropdowns.forEach(function (link) {
             link.addEventListener("click", function (e) {
-                e.preventDefault(); // Chặn chuyển trang khi click vào menu cha
-
+                e.preventDefault();
                 var parent = this.parentElement;
-
-                // Toggle class active/open
                 parent.classList.toggle("open");
-                parent.classList.toggle("active");
             });
         });
     });

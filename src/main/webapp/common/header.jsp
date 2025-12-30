@@ -9,7 +9,7 @@
             <a href="showroom">Hệ thống Showroom</a>
             <a href="tra-cuu-bao-hanh">Tra cứu Bảo hành</a>
             <c:if test="${empty auth}">
-                <a href="login.jsp">
+                <a href="../Login.jsp">
                     <i class="fa fa-user"></i> Đăng nhập
                 </a>
             </c:if>
@@ -36,7 +36,7 @@
                 <button><i class="fa fa-search"></i></button>
             </div>
             <div class="header__actions">
-                <a href="account.jsp"><i class="fa fa-user"></i> Tài kho</a>
+                <a href="account.jsp"><i class="fa fa-user"></i> Tài khoản</a>
                 <a href="yeu-thich.jsp"><i class="fa fa-heart"></i> Yêu thích</a>
                 <a href="gio-hang.jsp"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
             </div>
