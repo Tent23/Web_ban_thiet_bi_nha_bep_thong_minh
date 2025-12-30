@@ -1,37 +1,18 @@
 package com.webthietbibep.dao;
 
-import java.io.IOException;
-import java.util.Properties;
-
 public class DBProperties {
-    private static Properties prop= new Properties();
-    static {
-        try {
-            prop.load(DBProperties.class.getClassLoader().getResourceAsStream("db.properties"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public static String host(){
-        return prop.get("db.host").toString();
-    }
-    public static int port(){
-        try {
-            return Integer.parseInt(prop.get("db.port").toString());
-        } catch (NumberFormatException e) {
-            return 3306;
-        }
-    }
-    public static String username(){
-        return prop.get("db.username").toString();
-    }
-    public static String password(){
-        return prop.get("db.password").toString();
-    }
-    public static String dbname(){
-        return prop.get("db.dbname").toString();
-    }
-    public static String option(){
-        return prop.get("db.option").toString();
-    }
+    // 1. Thử đổi localhost thành 127.0.0.1 (Windows đôi khi bị lỗi với localhost)
+    public static String host() { return "127.0.0.1"; }
+
+    // 2. Kiểm tra XAMPP xem Port là 3306 hay số khác (ví dụ 3307, 8889)
+    public static String port() { return "3306"; }
+
+    // 3. QUAN TRỌNG: Tên database phải khớp 100% với tên bạn tạo trong MySQL
+    public static String dbname() { return "web_nha_bep"; }
+
+    public static String username() { return "root"; }
+
+    public static String password() { return ""; }
+
+    public static String option() { return "useUnicode=true&characterEncoding=UTF-8"; }
 }
