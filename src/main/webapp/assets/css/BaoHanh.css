@@ -8,6 +8,7 @@
 main{
     max-width: 1200px;
     margin: auto;
+
 }
 .main_container{
 
@@ -59,3 +60,28 @@ h1{
 .main_container button:hover{
     cursor: pointer;
 }
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 100%;
+
+}
+table, th, td {
+    border: 1px solid #333;
+
+}
+th{
+    font-weight: bold;
+    text-align: center;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+
+}
+td{
+    padding-left: 5px;
+    height: 35px;
+}
+
