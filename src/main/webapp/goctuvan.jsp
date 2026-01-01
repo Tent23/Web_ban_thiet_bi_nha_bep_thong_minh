@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/Header.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="assets/css//goctuvan.css">
+    <link rel="stylesheet" href="assets/css/goctuvan.css">
     <link rel="stylesheet" href="assets/css/indexfont.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
             <span><i class="fa fa-phone"></i> Hỗ trợ Kỹ thuật: 1900.1234</span>
             <span><i class="fa fa-phone"></i> Kinh doanh: 1900.5678</span>
             <span class="spacer"></span>
-            <a href="Showroom.html">Hệ thống Showroom</a>
+            <a href="Showroom.jsp">Hệ thống Showroom</a>
             <a href="BaoHanh.html">Tra cứu Bảo hành</a>
             <a href="../QuangToan/Login.html">Đăng nhập</a>
         </div>
@@ -101,11 +101,9 @@
                 <div class = "list">
                 <h3><i class="fa fa-list"></i> Danh Mục Bài Viết</h3>
                 <ul>
-                    <li><a href="#">Bếp Từ & Bếp Điện (12)</a></li>
-                    <li><a href="#">Máy Rửa Bát (8)</a></li>
-                    <li><a href="#">Robot Hút Bụi (15)</a></li>
-                    <li><a href="#">Máy Hút Mùi (6)</a></li>
-                    <li><a href="#">Phụ Kiện Bếp (4)</a></li>
+                    <c:forEach var = "c" items="${listC}">
+                    <li ><a href="#" >${c.category_name} (${c.total})</a></li>
+                    </c:forEach>
                 </ul>
                 </div>
 
@@ -152,7 +150,7 @@
                 <h4>LIÊN KẾT NHANH</h4>
                 <ul>
                     <li><a href="../ThanhTruong/vechungtoi.html">Về chúng tôi</a></li>
-                    <li><a href="Showroom.html">Hệ thống Showroom</a></li>
+                    <li><a href="Showroom.jsp">Hệ thống Showroom</a></li>
                     <li><a href="../ThanhTruong/tuyendung.html">Tuyển dụng</a></li>
                     <li><a href="#">Dành cho Đối tác B2B</a></li>
                 </ul>

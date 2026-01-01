@@ -3,6 +3,7 @@ package com.webthietbibep.model;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class Article implements Serializable {
     private int id ;
@@ -96,4 +97,6 @@ public class Article implements Serializable {
         DateTimeFormatter dinhDang = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return ld.format(dinhDang);
     }
+
+
 }
