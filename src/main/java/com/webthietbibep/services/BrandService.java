@@ -1,14 +1,14 @@
 package com.webthietbibep.services;
 
-import com.webthietbibep.dao.BrandDao;
+import com.webthietbibep.dao.BrandDAO;
 import com.webthietbibep.model.Brand;
 
 import java.util.List;
 
 public class BrandService {
-    BrandDao bdao = new BrandDao();
+    BrandDAO bdao = new BrandDAO();
 
     public List<Brand> getListBrand() {
-        return bdao.getAllBrands();
+        return bdao.getAll();
     }
 }

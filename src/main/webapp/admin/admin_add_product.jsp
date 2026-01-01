@@ -113,19 +113,31 @@
 
                     <div class="admin-card">
                         <h3>Phân loại</h3>
+
                         <div class="form-group">
-                            <label>Category ID (Nhập số)</label>
-                            <input type="number" class="form-control" name="category_id"
-                                   value="${product != null ? product.category_id : ''}" placeholder="Ví dụ: 1">
-                            <small style="color: #666; font-size: 12px;">ID phải tồn tại trong bảng Categories</small>
+                            <label>Danh mục (*)</label>
+                            <select name="category_id" class="form-control" required>
+                                <option value="">-- Chọn danh mục --</option>
+                                <c:forEach items="${listCategories}" var="c">
+                                    <option value="${c.category_id}" ${product.category_id == c.category_id ? 'selected' : ''}>
+                                            ${c.category_name}
+                                    </option>
+                                </c:forEach>
+                            </select>
                         </div>
+
                         <div class="form-group">
-                            <label>Brand ID (Nhập số)</label>
-                            <input type="number" class="form-control" name="brand_id"
-                                   value="${product != null ? product.brand_id : ''}" placeholder="Ví dụ: 1">
+                            <label>Thương hiệu (*)</label>
+                            <select name="brand_id" class="form-control" required>
+                                <option value="">-- Chọn thương hiệu --</option>
+                                <c:forEach items="${listBrands}" var="b">
+                                    <option value="${b.brand_id}" ${product.brand_id == b.brand_id ? 'selected' : ''}>
+                                            ${b.brand_name}
+                                    </option>
+                                </c:forEach>
+                            </select>
                         </div>
                     </div>
-
                     <div class="admin-card">
                         <h3>Ảnh sản phẩm</h3>
                         <div class="form-group">
