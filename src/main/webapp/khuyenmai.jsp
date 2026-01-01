@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -6,11 +9,11 @@
     <title>Khuyến mãi - Bếp Thông Minh TTB</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="../../pages/ThanhTruong/index.css" />
-    <link rel="stylesheet" href="../../assets/fonts/indexfont.css" />
-    <link rel="stylesheet" href="../../pages/TrongBao/Header.css" />
-    <link rel="stylesheet" href="../../shared/main.css" />
-    <link rel="stylesheet" href="khuyenmai.css">
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/indexfont.css" />
+    <link rel="stylesheet" href="assets/css/Header.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/khuyenmai.css">
     <script src="../../js/jsBao/Main.js"></script>
 </head>
 
@@ -78,52 +81,23 @@
     <section class="promo-list section-padding">
         <div class="container">
             <div class="promo-grid">
-
+            <c:forEach var = "p" items="${listP}">
                 <article class="promo-card">
                     <div class="promo-image">
-                        <img src="https://placehold.co/600x400/C79F27/fff?text=Sale+50%" alt="Sale Black Friday">
+                        <img src="https://placehold.co/600x400/C79F27/fff?text=${p.name_promotion}" alt="">
                     </div>
                     <div class="promo-content">
-                        <span class="promo-tag">Ưu đãi Hot</span>
-                        <h3>Black Friday Sale - Giảm đến 50%</h3>
-                        <p>Cơ hội vàng để sở hữu các thiết bị bếp thông minh cao cấp với mức giá không tưởng. Áp dụng cho robot hút bụi và bếp từ.</p>
+                        <span class="promo-tag">${p.tag}</span>
+                        <h3>${p.title}</h3>
+                        <p>${p.content}</p>
                         <div class="promo-footer">
-                            <span>Hết hạn: 30/11/2025</span>
+                            <span>${p.formatDate(p.endTime)}</span>
                             <a href="#" class="btn btn-primary">Xem chi tiết</a>
                         </div>
                     </div>
                 </article>
 
-                <article class="promo-card">
-                    <div class="promo-image">
-                        <img src="https://placehold.co/600x400/0D2C4A/fff?text=Combo+Quà+Tặng" alt="Combo Mua 1 Tặng 1">
-                    </div>
-                    <div class="promo-content">
-                        <span class="promo-tag">Combo Tiết Kiệm</span>
-                        <h3>Mua Bếp từ - Tặng Máy hút mùi</h3>
-                        <p>Nâng cấp trọn bộ căn bếp với ưu đãi độc quyền: Mua bất kỳ Bếp từ Bosch (Series 8), nhận ngay 01 Máy hút mùi trị giá 5.000.000đ.</p>
-                        <div class="promo-footer">
-                            <span>Hết hạn: 31/12/2025</span>
-                            <a href="#" class="btn btn-primary">Xem chi tiết</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="promo-card">
-                    <div class="promo-image">
-                        <img src="https://placehold.co/600x400/6C757D/fff?text=Miễn+Phí" alt="Miễn Phí Lắp Đặt">
-                    </div>
-                    <div class="promo-content">
-                        <span class="promo-tag">Dịch vụ</span>
-                        <h3>Miễn Phí Lắp Đặt & Cài Đặt Smarthome</h3>
-                        <p>Chúng tôi miễn phí 100% công lắp đặt và cài đặt hệ sinh thái smarthome (Google Home, Alexa...) cho tất cả đơn hàng trên 10.000.000đ.</p>
-                        <div class="promo-footer">
-                            <span>Áp dụng vĩnh viễn</span>
-                            <a href="#" class="btn btn-primary">Xem chi tiết</a>
-                        </div>
-                    </div>
-                </article>
-
+                </c:forEach>
             </div>
         </div>
     </section>

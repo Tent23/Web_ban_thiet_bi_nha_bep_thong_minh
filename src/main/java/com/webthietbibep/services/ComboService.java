@@ -25,4 +25,8 @@ public class ComboService {
     public List<ComboAdvance> getListComboAdvance(int id) {
         return cdao.getAdvanceCombo(id);
     }
+
+    public List<Combo> getListBaseCombo() {
+        return cdao.getListBaseCombo();
+    }
 }
