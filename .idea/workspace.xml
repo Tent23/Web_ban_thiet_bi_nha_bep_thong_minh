@@ -9,20 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ShowroomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ArcticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ArcticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ArticleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ArticleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/ArcticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/ArcticleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Dangky.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Dangky.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/DichVuLapDat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/DichVuLapDat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Showroom.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Showroom.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/chinhsachdoitra.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chinhsachdoitra.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/chinhsachvanchuyenvalapdat.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chinhsachvanchuyenvalapdat.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/goctuvan.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/goctuvan.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
