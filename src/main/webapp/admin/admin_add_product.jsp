@@ -6,26 +6,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${product != null && product.productid > 0 ? 'Cập nhật sản phẩm' : 'Thêm sản phẩm mới'} | Admin</title>
+    <title>${product != null && product.product_id > 0 ? 'Cập nhật sản phẩm' : 'Thêm sản phẩm mới'} | Admin</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}../assets/css/admin_style.css">
-    <link rel="stylesheet" href="../assets/css/admin_style.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/admin_style.css">
     <link rel="stylesheet" href="../assets/css/indexfont.css" />
+
+    <style>
+        /* CSS bổ sung cho thông báo */
+        .alert { padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; }
+        .alert-success { color: #155724; background-color: #d4edda; border-color: #c3e6cb; }
+        .alert-danger { color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; }
+    </style>
 </head>
 <body>
+
 <jsp:include page="common/sidebar.jsp"></jsp:include>
 
 <div class="admin-layout">
 
     <aside class="admin-sidebar">
         <div class="sidebar-header">
-            <h3></h3>
         </div>
         <ul class="sidebar-menu">
             <li>
-                <a href="<%=request.getContextPath()%>/products">
-                    <i class="fa-solid fa-box"></i>
+                <a href="${pageContext.request.contextPath}/products">
+                    <i class="fa-solid fa-box"></i> Quản lý sản phẩm
                 </a>
             </li>
         </ul>
@@ -36,7 +42,7 @@
 
         <header class="admin-header">
             <div class="header-left">
-                <a href="<%=request.getContextPath()%>/products" class="btn-back">
+                <a href="${pageContext.request.contextPath}/products" class="btn-back">
                     <i class="fa-solid fa-arrow-left"></i> Quay lại danh sách
                 </a>
             </div>
@@ -47,9 +53,18 @@
 
         <div class="admin-content">
 
-            <form action="<%=request.getContextPath()%>/admin/product-save" method="post" class="admin-form-layout">
+            <c:if test="${not empty sessionScope.msg}">
+                <div class="alert alert-success">
+                        ${sessionScope.msg}
+                    <% session.removeAttribute("msg"); %> </div>
+            </c:if>
+            <c:if test="${not empty error}">
+                <div class="alert alert-danger">${error}</div>
+            </c:if>
 
-                <input type="hidden" name="productid" value="${product != null ? product.productid : 0}">
+            <form id="productForm" action="${pageContext.request.contextPath}/admin/product-save" method="post" class="admin-form-layout">
+
+                <input type="hidden" name="product_id" value="${product != null ? product.product_id : 0}">
 
                 <div class="col-main">
                     <div class="admin-card">
@@ -57,8 +72,8 @@
 
                         <div class="form-group">
                             <label>Tên sản phẩm</label>
-                            <input type="text" class="form-control" name="productname"
-                                   value="${product != null ? product.productname : ''}" required>
+                            <input type="text" class="form-control" name="product_name"
+                                   value="${product != null ? product.product_name : ''}" required>
                         </div>
 
                         <div class="form-group">
@@ -78,8 +93,8 @@
 
                             <div class="form-group">
                                 <label>Số lượng tồn kho</label>
-                                <input type="number" class="form-control" name="stockquantity"
-                                       value="${product != null ? product.stockquantity : 0}">
+                                <input type="number" class="form-control" name="stock_quantity"
+                                       value="${product != null ? product.stock_quantity : 0}">
                             </div>
                         </div>
                     </div>
@@ -89,9 +104,9 @@
                     <div class="admin-card">
                         <h3>Đăng sản phẩm</h3>
                         <div style="display: flex; flex-direction: column; gap: 10px;">
-                            <button type="submit" class="btn-primary" style="justify-content: center; width: 100%;">
+                            <button type="submit" id="btnSave" class="btn-primary" style="justify-content: center; width: 100%;">
                                 <i class="fa-solid fa-save"></i>
-                                ${product != null && product.productid > 0 ? 'Cập nhật' : 'Thêm mới'}
+                                ${product != null && product.product_id > 0 ? 'Cập nhật' : 'Thêm mới'}
                             </button>
                         </div>
                     </div>
@@ -99,14 +114,15 @@
                     <div class="admin-card">
                         <h3>Phân loại</h3>
                         <div class="form-group">
-                            <label>Category ID</label>
-                            <input type="number" class="form-control" name="categoryid"
-                                   value="${product != null ? product.categoryid : ''}">
+                            <label>Category ID (Nhập số)</label>
+                            <input type="number" class="form-control" name="category_id"
+                                   value="${product != null ? product.category_id : ''}" placeholder="Ví dụ: 1">
+                            <small style="color: #666; font-size: 12px;">ID phải tồn tại trong bảng Categories</small>
                         </div>
                         <div class="form-group">
-                            <label>Brand ID</label>
+                            <label>Brand ID (Nhập số)</label>
                             <input type="number" class="form-control" name="brand_id"
-                                   value="${product != null ? product.brand_id : ''}">
+                                   value="${product != null ? product.brand_id : ''}" placeholder="Ví dụ: 1">
                         </div>
                     </div>
 
@@ -115,7 +131,7 @@
                         <div class="form-group">
                             <label>Link ảnh (URL)</label>
                             <input type="text" class="form-control" name="image" id="imgInput"
-                                   value="${product != null ? product.image : ''}" onchange="previewImage()">
+                                   value="${product != null ? product.image : ''}" onchange="previewImage()" placeholder="https://...">
                         </div>
 
                         <div class="image-upload-area">
@@ -126,7 +142,9 @@
 
                             <div class="image-preview-container" id="previewContainer" style="${product != null && product.image != null && product.image != '' ? '' : 'display:none'}">
                                 <div class="preview-item" style="width: 100%; height: 200px;">
-                                    <img src="${product != null ? product.image : ''}" id="imgPreview" onerror="this.src='https://via.placeholder.com/300?text=No+Image'">
+                                    <img src="${product != null ? product.image : ''}" id="imgPreview"
+                                         style="width: 100%; height: 100%; object-fit: contain;"
+                                         onerror="this.src='https://via.placeholder.com/300?text=No+Image'">
                                 </div>
                             </div>
                         </div>
@@ -136,6 +154,7 @@
         </div>
     </main>
 </div>
+
 <script>
     function previewImage() {
         const url = document.getElementById('imgInput').value;
@@ -146,7 +165,20 @@
         }
     }
 </script>
+
 <script>
+    document.getElementById('productForm').addEventListener('submit', function() {
+        var btn = document.getElementById('btnSave');
+        // Vô hiệu hóa nút sau khi bấm
+        setTimeout(function() {
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang xử lý...';
+        }, 10);
+    });
+</script>
+
+<script>
+    // Script Sidebar cũ của bạn
     document.addEventListener("DOMContentLoaded", function () {
         var dropdowns = document.querySelectorAll(".menu-item-has-children > .sidebar-link");
         dropdowns.forEach(function (link) {

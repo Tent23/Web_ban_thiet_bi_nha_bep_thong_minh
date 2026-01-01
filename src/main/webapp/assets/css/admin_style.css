@@ -26,6 +26,7 @@ body {
 
 .admin-layout {
     display: flex;
+    justify-content: center;
 }
 
 /* --- SIDEBAR --- */
@@ -126,11 +127,14 @@ body {
     border-radius: 50%;
     margin-right: 10px;
 }
-
 .admin-content {
+    width: 1200px;
+    min-height: 900px;
     padding: 30px;
-    flex-grow: 1;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
+
 
 .admin-grid {
     display: grid;
