@@ -17,12 +17,12 @@ public class ListComboContronller extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ComboService cp = new ComboService();
 
-        List<Combo> lisrC = cp.getListCombo();
-        for (Combo c : lisrC) {
+        List<Combo> listC = cp.getListCombo();
+        for (Combo c : listC) {
             int curid = c.getId();
             c.setListadvance(cp.getListComboAdvance(curid));
         }
-        request.setAttribute("listC", lisrC);
+        request.setAttribute("listC", listC);
         request.getRequestDispatcher("giaiphapvacombo.jsp").forward(request, response);
     }
 

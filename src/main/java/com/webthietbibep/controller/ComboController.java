@@ -22,10 +22,6 @@ public class ComboController extends HttpServlet {
 
 
 
-
-
-
-
         request.setAttribute("c", cb);
 
         request.getRequestDispatcher("chitietCombo.jsp").forward(request, response);

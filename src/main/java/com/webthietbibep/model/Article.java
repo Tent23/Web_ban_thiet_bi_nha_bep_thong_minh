@@ -93,7 +93,7 @@ public class Article implements Serializable {
         this.create_date = create_date;
     }
 
-    public String formatDate(LocalDate ld){
+    public  String formatDate(LocalDate ld){
         DateTimeFormatter dinhDang = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return ld.format(dinhDang);
     }

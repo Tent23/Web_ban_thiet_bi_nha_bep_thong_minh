@@ -139,22 +139,16 @@
         <div class="container">
             <h2 class="section-title">Gợi ý Giải pháp</h2>
             <div class="solutions-grid">
-                <a href="pages/TrongBao/giaiphapvacombo.html" class="solution-item" style="
-                    background-image: url('assets/images/products/combosp1.png');
+                <c:forEach var ="c" items="${listC}">
+                <a href="combo?id=${c.id}" class="solution-item" style="
+                    background-image: url('${c.image}');
                 ">
                     <div class="solution-content">
-                        <h3>Combo Bếp Căn hộ 25 Triệu</h3>
-                        <p>Bếp từ + Hút mùi + Robot</p>
+                        <h3>${c.name}</h3>
+                        <p>${c.content}</p>
                     </div>
                 </a>
-                <a href="pages/TrongBao/giaiphapvacombo.html" class="solution-item" style="
-                    background-image: url('assets/images/products/combosp2.png');
-                ">
-                    <div class="solution-content">
-                        <h3>Giải pháp An ninh Bếp</h3>
-                        <p>Cảm biến gas, khói, camera...</p>
-                    </div>
-                </a>
+                </c:forEach>
             </div>
         </div>
     </section>

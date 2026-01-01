@@ -9,7 +9,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="" />
+    <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ComboController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ComboController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ListComboContronller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ListComboContronller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ComboDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ComboDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/ComboService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/ComboService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/chinhsachbaohanh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chinhsachbaohanh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/doitacB2B.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/doitacB2B.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/giohang.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/giohang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/khuyenmai.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/khuyenmai.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/phuongthucthanhtoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/phuongthucthanhtoan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tuyendung.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/tuyendung.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vechungtoi.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vechungtoi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/yeuthich.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/yeuthich.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -251,8 +268,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
       </set>
     </attachedChunks>
   </component>
@@ -304,6 +321,7 @@
       <workItem from="1767107566541" duration="11848000" />
       <workItem from="1767189467529" duration="2408000" />
       <workItem from="1767242634844" duration="3717000" />
+      <workItem from="1767282690514" duration="6465000" />
     </task>
     <servers />
   </component>
