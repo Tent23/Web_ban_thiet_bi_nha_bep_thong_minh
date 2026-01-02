@@ -8,17 +8,17 @@
             <span class="spacer"></span>
             <a href="showroom">Hệ thống Showroom</a>
             <a href="tra-cuu-bao-hanh">Tra cứu Bảo hành</a>
-            <c:if test="${empty auth}">
+            <c:if test="${empty sessionScope.user}">
                 <a href="${pageContext.request.contextPath}/login">
                     <i class="fa fa-user"></i> Đăng nhập
                 </a>
             </c:if>
 
             <!-- ĐÃ LOGIN -->
-            <c:if test="${not empty auth}">
+            <c:if test="${not empty sessionScope.user}">
                 <span class="user-info">
                     <i class="fa fa-user"></i>
-                     Xin chào, ${auth.username}
+                     Xin chào, ${sessionScope.user.username}
                 </span>
                 <a href="${pageContext.request.contextPath}/logout"
                    onclick="return confirmLogout();">
@@ -37,7 +37,18 @@
                 <button><i class="fa fa-search"></i></button>
             </div>
             <div class="header__actions">
-                <a href="account.jsp"><i class="fa fa-user"></i> Tài khoản</a>
+                <c:choose>
+                    <c:when test="${empty sessionScope.user}">
+                        <a href="${pageContext.request.contextPath}/login">
+                            <i class="fa fa-user"></i> Tài khoản
+                        </a>
+                    </c:when>
+                    <c:otherwise>
+                        <a href="${pageContext.request.contextPath}/profile">
+                            <i class="fa fa-user"></i> Tài khoản
+                        </a>
+                    </c:otherwise>
+                </c:choose>
                 <a href="yeu-thich.jsp"><i class="fa fa-heart"></i> Yêu thích</a>
                 <a href="gio-hang.jsp"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
             </div>
