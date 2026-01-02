@@ -8,17 +8,17 @@
             <span class="spacer"></span>
             <a href="showroom">Hệ thống Showroom</a>
             <a href="tra-cuu-bao-hanh">Tra cứu Bảo hành</a>
-            <c:if test="${empty auth}">
+            <c:if test="${empty sessionScope.user}">
                 <a href="${pageContext.request.contextPath}/login">
                     <i class="fa fa-user"></i> Đăng nhập
                 </a>
             </c:if>
 
             <!-- ĐÃ LOGIN -->
-            <c:if test="${not empty auth}">
+            <c:if test="${not empty sessionScope.user}">
                 <span class="user-info">
                     <i class="fa fa-user"></i>
-                     Xin chào, ${auth.username}
+                     Xin chào, ${sessionScope.user.username}
                 </span>
                 <a href="${pageContext.request.contextPath}/logout"
                    onclick="return confirmLogout();">
@@ -37,7 +37,18 @@
                 <button><i class="fa fa-search"></i></button>
             </div>
             <div class="header__actions">
-                <a href="account.jsp"><i class="fa fa-user"></i> Tài khoản</a>
+                <c:choose>
+                    <c:when test="${empty sessionScope.user}">
+                        <a href="${pageContext.request.contextPath}/login">
+                            <i class="fa fa-user"></i> Tài khoản
+                        </a>
+                    </c:when>
+                    <c:otherwise>
+                        <a href="${pageContext.request.contextPath}/profile">
+                            <i class="fa fa-user"></i> Tài khoản
+                        </a>
+                    </c:otherwise>
+                </c:choose>
                 <a href="yeu-thich.jsp"><i class="fa fa-heart"></i> Yêu thích</a>
                 <a href="gio-hang.jsp"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
             </div>
@@ -49,25 +60,16 @@
                 <li class="nav-item has-megamenu">
                     <a href="${pageContext.request.contextPath}/products">Sản phẩm <i class="fa fa-chevron-down"></i></a>
                     <div class="mega-menu">
-                        <a href="${pageContext.request.contextPath}/products?categoryId=1">
-                            Bếp từ
-                        </a>
-                        <a href="${pageContext.request.contextPath}/products?category=2">
-                            Tủ lạnh
-                        </a>
-                        <a href="${pageContext.request.contextPath}/products?category=3">
-                            Robot Hút bụi
-                        </a>
-                        <a href="${pageContext.request.contextPath}/products?category=3">
-                            Máy rửa bát
-                        </a>
-                        <a href="${pageContext.request.contextPath}/products?category=4">
-                            Cảm biến & An ninh
-                        </a>
-                        <a href="${pageContext.request.contextPath}/products?category=5">
-                            Pha chế
-                        </a>
+                        <c:forEach var="c" items="${applicationScope.categories}">
+                            <a href="${pageContext.request.contextPath}/products?categoryId=${c.category_id}">
+                                <c:if test="${not empty c.logo}">
+                                    <img src="${c.logo}" alt="${c.category_name}" style="width:18px;margin-right:6px;">
+                                </c:if>
+                                    ${c.category_name}
+                            </a>
+                        </c:forEach>
                     </div>
+
                 </li>
                 <li class="nav-item"><a href="giai-phap-combo.jsp">Giải pháp & Combo</a></li>
                 <li class="nav-item"><a href="goc-tu-van.jsp">Góc Tư vấn</a></li>
