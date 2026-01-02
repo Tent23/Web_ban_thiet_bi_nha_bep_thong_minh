@@ -31,12 +31,15 @@
                 </li>
 
                 <li>
-                    <a href="<%=request.getContextPath()%>/admin/product-save" class="active-sub">
+                    <a href="<%=request.getContextPath()%>/admin/product-save">
                         <i class="fa-solid fa-plus"></i> Thêm sản phẩm mới
                     </a>
                 </li>
 
-                <li><a href="<%=request.getContextPath()%>/TrongBao/admin_product_category.html">Danh mục</a></li>
+                <li>
+                    <a href="<%=request.getContextPath()%>/admin/categories" class="active-sub">Danh mục</a>
+                </li>
+
                 <li><a href="<%=request.getContextPath()%>/TrongBao/admin_product_brand.html">Thương hiệu</a></li>
                 <li><a href="<%=request.getContextPath()%>/TrongBao/admin_product_ecosystem.html">Hệ sinh thái</a></li>
                 <li><a href="<%=request.getContextPath()%>/TrongBao/admin_product_Combo.html">Combo / Giải pháp</a></li>

@@ -6,7 +6,8 @@ public class Category implements Serializable {
     private int category_id;
     private String category_name;
     private String logo; // 1. Thêm thuộc tính logo
-
+    public Category() {
+    }
     public Category(int category_id, String category_name, String logo) {
         this.category_id = category_id;
         this.category_name = category_name;

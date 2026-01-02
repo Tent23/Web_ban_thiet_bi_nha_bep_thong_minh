@@ -10,9 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_category_form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminCategoryServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminCategoryServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/CategoryDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_category.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_category_list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_category_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_category_list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/common/sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/common/sidebar.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +28,9 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
-        <option value="Jsp File" />
         <option value="CSS File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -71,7 +75,7 @@
     &quot;Tomcat Server.Tomcat 10.executor&quot;: &quot;Run&quot;,
     &quot;Tomcat Server.Tomcat10.executor&quot;: &quot;Run&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;category&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/THANH TRUONG/Web_ban_thiet_bi_nha_bep_thong_minh&quot;,
@@ -306,7 +310,8 @@
       <workItem from="1767242634844" duration="3717000" />
       <workItem from="1767252465875" duration="523000" />
       <workItem from="1767253004839" duration="3800000" />
-      <workItem from="1767333756131" duration="799000" />
+      <workItem from="1767333756131" duration="2918000" />
+      <workItem from="1767336740120" duration="820000" />
     </task>
     <servers />
   </component>
