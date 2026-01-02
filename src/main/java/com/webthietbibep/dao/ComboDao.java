@@ -39,4 +39,10 @@ public class ComboDao extends BaseDao {
     }
 
 
+    public List<Combo> getListBaseCombo() {
+        return get().withHandle(h->{
+            return h.createQuery("select * from combos where is_active = 1 and tag in ('Combo Căn hộ','Combo An ninh') limit 2 ").mapToBean(Combo.class).list();
+        });
+    }
+
 }

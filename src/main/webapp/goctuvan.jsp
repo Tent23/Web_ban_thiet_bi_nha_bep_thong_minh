@@ -1,13 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Góc tư vấn</title>
-    <link rel="stylesheet" href="Header.css">
-    <link rel="stylesheet" href="../ThanhTruong/index.css">
+    <link rel="stylesheet" href="assets/css/Header.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="goctuvan.css">
-    <link rel="stylesheet" href="../../assets/fonts/indexfont.css">
+    <link rel="stylesheet" href="assets/css//goctuvan.css">
+    <link rel="stylesheet" href="assets/css/indexfont.css">
 </head>
 <body>
 <header class="header">
@@ -60,44 +63,37 @@
         </div>
     </nav>
 </header>
+
 <main>
     <div class = "content".>
         <h1>Góc tư vấn Bếp thông minh TTB</h1>
         <div class = "bar" >
             <span><b>Bài Viết</b></span>
-            <select>
-                <option>Sắp xếp: Mới nhất</option>
-                <option>Sắp xếp: Phổ biến nhất</option>
-                <option>Sắp xếp: Theo A-Z</option>
+            <form action="arcticle" method="get">
+            <select name ="filter" onchange="this.form.submit()">
+                <option   value = "new" ${filter == 'new' ? 'selected' : ' '}>Sắp xếp: Mới nhất</option>
+                <option  value = "population" ${filter == 'population' ? 'selected' : ''}>Sắp xếp: Phổ biến nhất</option>
+                <option  value = "AZ" ${filter == 'AZ' ? 'selected' :' '}>Sắp xếp: Theo A-Z</option>
             </select>
+            </form>
         </div>
         <div class = "container_grid">
             <div class = "left">
+            <c:forEach var = "a" items="${listA}">
                 <div class ="item">
-                    <div class = "img_content"><img src="../../assets/images/products/beptu-2.jpg"></div>
+                    <div class = "img_content"><img src="${a.image}"></div>
                     <div class = "text_content">
-                     <h4>Hướng dẫn mua sắm</h4>
-                        <h2><a href="#">Bếp từ đôi loại nào tốt? Top 5 loại đáng mua nhất</a></h2>
-                        <div>So sánh chi tiết về công suất, tính năng an toàn và thiết kế của các dòng bếp từ đôi phổ biến, giúp bạn đưa ra lựa chọn phù hợp nhất.</div>
+                     <h4>${a.tip}</h4>
+                        <h2><a href="#">${a.title}</a></h2>
+                        <div>${a.content}</div>
                         <div class = "time">
-                            <span><i class="fa fa-calendar"></i> 05/11/2025</span>
-                            <span><i class="fa fa-clock"></i> 5 phút đọc</span>
+                            <span><i class="fa fa-calendar"></i> ${a.formatDate(a.create_date)}</span>
+                            <span style = "margin-left: 10px"><i class="fa fa-heart"></i> ${a.likecount}</span>
                         </div>
                     </div>
                 </div>
+            </c:forEach>
 
-                <div class ="item">
-                    <div class = "img_content"><img src="../../assets/images/products/robot-2.jpg"></div>
-                    <div class = "text_content">
-                        <h4>Mẹo và kinh nghiệm</h4>
-                        <h2><a href="#">Sai Lầm Khi Dùng Robot Hút Bụi: 7 Điều Bạn Cần Tránh</a></h2>
-                        <div>Khắc phục ngay những thói quen sai lầm có thể làm giảm tuổi thọ và hiệu suất làm việc của robot hút bụi nhà bạn.</div>
-                        <div class = "time">
-                            <span><i class="fa fa-calendar"></i> 01/11/2025</span>
-                            <span><i class="fa fa-clock"></i> 3 phút đọc</span>
-                        </div>
-                    </div>
-                </div>
 
 
             </div>
@@ -116,9 +112,9 @@
                 <div class = "popular">
                     <h3><i class="fa fa-fire"></i> Đang Hot</h3>
                     <ul>
-                        <li><a href="#">Cách vệ sinh máy hút mùi hiệu quả nhất</a></li>
-                        <li><a href="#">Tư vấn lắp đặt chậu rửa bát chuẩn phong thủy</a></li>
-                        <li><a href="#">So sánh các hãng máy rửa bát lớn: Bosch vs. Teka</a></li>
+                        <c:forEach var ="a" items="${listHA}">
+                        <li><a href="#">${a.title}</a></li>
+                        </c:forEach>
                     </ul>
                 </div>
             </div>
@@ -181,5 +177,6 @@
         <p>&copy; 2025 Bản quyền thuộc về Bếp Thông Minh TTB.</p>
     </div>
 </footer>
+
 </body>
 </html>
