@@ -1,12 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Tra cứu bảo hành </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="Header.css">
-    <link rel="stylesheet" href="../ThanhTruong/index.css">
-    <link rel="stylesheet" href="BaoHanh.css">
+    <link rel="stylesheet" href="assets/css/Header.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/BaoHanh.css">
+    <link rel="stylesheet" href="assets/css/indexfont.css.css">
 </head>
 <body>
 <header class="header">
@@ -15,7 +19,7 @@
             <span><i class="fa fa-phone"></i> Hỗ trợ Kỹ thuật: 1900.1234</span>
             <span><i class="fa fa-phone"></i> Kinh doanh: 1900.5678</span>
             <span class="spacer"></span>
-            <a href="Showroom.html">Hệ thống Showroom</a>
+            <a href="Showroom.jsp">Hệ thống Showroom</a>
             <a href="BaoHanh.html">Tra cứu Bảo hành</a>
             <a href="../QuangToan/Login.html">Đăng nhập</a>
         </div>
@@ -50,7 +54,7 @@
                         <a href="../QuangToan/Phache.html">Pha chế</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="giaiphapvacombo.html">Giải pháp & Combo</a></li>
+                <li class="nav-item"><a href="giaiphapvacombo.jsp">Giải pháp & Combo</a></li>
                 <li class="nav-item"><a href="goctuvan.html">Góc Tư vấn</a></li>
                 <li class="nav-item"><a href="DichVuLapDat.html">Dịch vụ Lắp đặt</a></li>
                 <li class="nav-item"><a href="../ThanhTruong/vechungtoi.html">Về chúng tôi</a></li>
@@ -60,20 +64,66 @@
     </nav>
 </header>
 <main>
+    <%
+        String error = (String) request.getAttribute("error");
+        if(error == null) error = "";
+        String pra = (String) request.getAttribute("pra");
+        if(pra == null) pra = "";
+    %>
+
     <div class = "main_container">
         <div ><h1>Tra Cứu Bảo Hành</h1></div>
+        <form action="BaoHanh" method="get">
         <div class ="check_bnt">
-           <div> <input type="radio" id="radio-1" name="Tra_Cuu_theo" checked > <label for = "radio-1" >Tra cứu theo Số Serie</label></div>
-            <div><input type="radio" id="radio-2" name="Tra_Cuu_theo"> <label for = "radio-2">Tra cứu theo Số điện thoại  </label></div>
+           <div> <input type="radio" id="radio-1" name="Tra_Cuu_theo" value ="series" ${type == "series" ? "checked" : "" } > <label for = "radio-1" >Tra cứu theo Số Serie</label></div>
+            <div><input type="radio" id="radio-2" name="Tra_Cuu_theo" value ="phone" ${type == "phone" ? "checked" : "" }> <label for = "radio-2">Tra cứu theo Số điện thoại  </label></div>
 
         </div>
         <div>
             <div class = "searh">
-            <input type="text" id = "field" placeholder="Nhập thông tin tra cứu">
-            <button><i class="fa fa-search"></i></button>
+
+            <input type="text" id = "field" name ="pra" value ="<%= pra %>"  placeholder="Nhập thông tin tra cứu">
+            <button type="submit"><i class="fa fa-search"></i></button>
             </div>
+            <span ></span>
         </div>
+        </form>
     </div>
+    <div style="color: red; text-align: center; width: 100%; margin: 10px 0;">
+        <%=error%>
+    </div>
+    <div class = "result" style = "    margin-bottom: 20px;">
+        <table > <thead>
+        <tr>
+            <th>Mã Series</th>
+            <th>Mã Sản Phẩm  </th>
+            <th>Tên Sản Phẩm</th>
+            <th>Mã Khách Hàng</th>
+            <th>Tên Khách Hàng</th>
+            <th>SDT</th>
+            <th>Mã Hóa Đơn</th>
+            <th>Ngày Mua</th>
+            <th>Thời Gian Bảo Hành (Tháng)</th>
+        </tr>
+        </thead>
+            <tbody>
+            <c:forEach var="w" items="${listWrranty}">
+            <tr>
+                <td>${w.series}</td>
+                <td>${w.productid}</td>
+                <td>${w.productName}</td>
+                <td>${w.customerid}</td>
+                <td>${w.customerName}</td>
+                <td>${w.phoneNumber}</td>
+                <td>${w.orderid}</td>
+                <td>${w.purchaseDate}</td>
+                <td style = "text-align: center">${w.warranty_time}</td>
+            </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+
 </main>
 
 <footer class="footer">
@@ -104,7 +154,7 @@
                 <h4>LIÊN KẾT NHANH</h4>
                 <ul>
                     <li><a href="../ThanhTruong/vechungtoi.html">Về chúng tôi</a></li>
-                    <li><a href="Showroom.html">Hệ thống Showroom</a></li>
+                    <li><a href="Showroom.jsp">Hệ thống Showroom</a></li>
                     <li><a href="../ThanhTruong/tuyendung.html">Tuyển dụng</a></li>
                     <li><a href="#">Dành cho Đối tác B2B</a></li>
                 </ul>

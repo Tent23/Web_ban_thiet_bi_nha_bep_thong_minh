@@ -1,8 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%-- Khai báo đường dẫn gốc để dùng cho mọi link, tránh lỗi khi include --%>
-<c:set var="context" value="${pageContext.request.contextPath}" />
-
-<link rel="stylesheet" href="${pageContext.request.contextPath}../assets/css/">
+<%@ page isELIgnored="false" %>
 
 <nav class="admin-sidebar">
     <div class="sidebar-header">
@@ -10,13 +7,13 @@
     </div>
     <ul class="sidebar-menu">
         <li>
-            <a href="${pageContext.request.contextPath}/admin/admin_dashboard.jsp">
+            <a href="<%=request.getContextPath()%>/admin/admin_dashboard.jsp">
                 <i class="fa-solid fa-chart-line"></i>
                 <span>Tổng quan</span>
             </a>
         </li>
         <li>
-            <a href="${pageContext.request.contextPath}/admin/admin_orders.html">
+            <a href="<%=request.getContextPath()%>/admin/admin_orders.html">
                 <i class="fa-solid fa-file-invoice-dollar"></i>
                 <span>Quản lý Đơn hàng</span>
             </a>
@@ -29,23 +26,34 @@
                 <i class="fa-solid fa-chevron-down toggle-icon"></i>
             </a>
             <ul class="submenu">
-                <li><a href="${pageContext.request.contextPath}/admin/admin_products.html" class="active-sub">Tất cả Sản phẩm</a></li>
+                <li>
+                    <a href="<%=request.getContextPath()%>/products">Tất cả Sản phẩm</a>
+                </li>
 
-                <li><a href="${pageContext.request.contextPath}/TrongBao/admin_product_category.html">Danh mục</a></li>
-                <li><a href="${pageContext.request.contextPath}/TrongBao/admin_product_brand.html">Thương hiệu</a></li>
-                <li><a href="${pageContext.request.contextPath}/TrongBao/admin_product_ecosystem.html">Hệ sinh thái</a></li>
-                <li><a href="${pageContext.request.contextPath}/TrongBao/admin_product_Combo.html">Combo / Giải pháp</a></li>
+                <li>
+                    <a href="<%=request.getContextPath()%>/admin/product-save">
+                        <i class="fa-solid fa-plus"></i> Thêm sản phẩm mới
+                    </a>
+                </li>
+
+                <li>
+                    <a href="<%=request.getContextPath()%>/admin/categories" class="active-sub">Danh mục</a>
+                </li>
+
+                <li><a href="<%=request.getContextPath()%>/TrongBao/admin_product_brand.html">Thương hiệu</a></li>
+                <li><a href="<%=request.getContextPath()%>/TrongBao/admin_product_ecosystem.html">Hệ sinh thái</a></li>
+                <li><a href="<%=request.getContextPath()%>/TrongBao/admin_product_Combo.html">Combo / Giải pháp</a></li>
             </ul>
         </li>
 
         <li>
-            <a href="${pageContext.request.contextPath}/QuangToan/QuanlyUser.html">
+            <a href="<%=request.getContextPath()%>/QuangToan/QuanlyUser.html">
                 <i class="fa-solid fa-users"></i>
                 <span>Quản lý Khách hàng</span>
             </a>
         </li>
         <li>
-            <a href="${pageContext.request.contextPath}/admin/admin_content.html">
+            <a href="<%=request.getContextPath()%>/admin/admin_content.html">
                 <i class="fa-solid fa-file-pen"></i>
                 <span>Quản lý Nội dung</span>
             </a>

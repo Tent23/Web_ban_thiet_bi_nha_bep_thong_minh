@@ -60,25 +60,16 @@
                 <li class="nav-item has-megamenu">
                     <a href="${pageContext.request.contextPath}/products">Sản phẩm <i class="fa fa-chevron-down"></i></a>
                     <div class="mega-menu">
-                        <a href="${pageContext.request.contextPath}/products?categoryId=1">
-                            Bếp từ
-                        </a>
-                        <a href="${pageContext.request.contextPath}/products?category=2">
-                            Tủ lạnh
-                        </a>
-                        <a href="${pageContext.request.contextPath}/products?category=3">
-                            Robot Hút bụi
-                        </a>
-                        <a href="${pageContext.request.contextPath}/products?category=3">
-                            Máy rửa bát
-                        </a>
-                        <a href="${pageContext.request.contextPath}/products?category=4">
-                            Cảm biến & An ninh
-                        </a>
-                        <a href="${pageContext.request.contextPath}/products?category=5">
-                            Pha chế
-                        </a>
+                        <c:forEach var="c" items="${applicationScope.categories}">
+                            <a href="${pageContext.request.contextPath}/products?categoryId=${c.category_id}">
+                                <c:if test="${not empty c.logo}">
+                                    <img src="${c.logo}" alt="${c.category_name}" style="width:18px;margin-right:6px;">
+                                </c:if>
+                                    ${c.category_name}
+                            </a>
+                        </c:forEach>
                     </div>
+
                 </li>
                 <li class="nav-item"><a href="giai-phap-combo.jsp">Giải pháp & Combo</a></li>
                 <li class="nav-item"><a href="goc-tu-van.jsp">Góc Tư vấn</a></li>

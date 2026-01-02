@@ -1,6 +1,6 @@
 package com.webthietbibep.controller;
 
-import com.webthietbibep.dao.BrandDao;
+import com.webthietbibep.dao.BrandDAO;
 import com.webthietbibep.dao.ProductDAO;
 import com.webthietbibep.model.Product;
 
@@ -17,7 +17,7 @@ import java.util.List;
 public class ProductServlet extends HttpServlet {
 
     private final ProductDAO productDAO = new ProductDAO();
-    private final BrandDao brandDAO = new BrandDao();
+    private final BrandDAO brandDAO = new BrandDAO();
     private static final int PAGE_SIZE = 7;
 
     @Override
@@ -48,7 +48,7 @@ public class ProductServlet extends HttpServlet {
         req.setAttribute("brands", brands);
         req.setAttribute("priceRange", priceRange);
         req.setAttribute("sort", sort);
-        req.setAttribute("brandList", brandDAO.getAllBrands());
+        req.setAttribute("brandList", brandDAO.getAll());
         req.setAttribute("currentPage", page);
         req.setAttribute("totalPages", totalPages);
 
