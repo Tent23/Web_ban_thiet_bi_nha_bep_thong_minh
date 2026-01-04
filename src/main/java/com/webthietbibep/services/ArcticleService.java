@@ -15,4 +15,7 @@ public class ArcticleService {
     public List<Article> getFilterArticle(String f){
         return adao.getFilterArticle(f);
     }
+    public List<Article> getNewArticle(){
+        return adao.getNewArticle();
+    }
 }
