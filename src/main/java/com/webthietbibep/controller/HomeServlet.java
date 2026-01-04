@@ -21,6 +21,8 @@ public class HomeServlet extends HttpServlet {
         TesService ts = new TesService();
         BannerService bns = new BannerService();
         ComboService cs = new ComboService();
+        CategoryService css = new CategoryService();
+        ArcticleService as = new ArcticleService();
 
         // 1. Gọi DAO lấy danh sách
         List<Product> listP = ps.getBestSeller();
@@ -29,6 +31,8 @@ public class HomeServlet extends HttpServlet {
         List<Testimonial> listT = ts.getListTes();
         List<Banner> listBN = bns.getListBanner();
         List<Combo> listC = cs.getListBaseCombo();
+        List<Category> listCate = css.getAll();
+        List<Article> listA = as.getNewArticle();
         // 2. Đẩy dữ liệu sang JSP
         request.setAttribute("listP", listP);
         request.setAttribute("listB", listB);
@@ -36,6 +40,8 @@ public class HomeServlet extends HttpServlet {
         request.setAttribute("listT", listT);
         request.setAttribute("listBN", listBN);
         request.setAttribute("listC", listC);
+        request.setAttribute("listCate", listCate);
+        request.setAttribute("listA", as.getNewArticle());
         // 3. Chuyển hướng về trang giao diện
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
