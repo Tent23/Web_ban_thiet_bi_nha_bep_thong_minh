@@ -14,6 +14,11 @@ public class ArticleDao extends  BaseDao{
             return h.createQuery("SELECT * FROM articles order by likecount DESC LIMIT 3;").mapToBean(Article.class).list();
         });
     }
+    public List<Article> getNewArticle(){
+        return  get().withHandle(h ->{
+            return h.createQuery("SELECT * FROM articles order by create_date DESC LIMIT 3;").mapToBean(Article.class).list();
+        });
+    }
     public List<Article> getFilterArticle(String f){
         return  get().withHandle(h ->{
 

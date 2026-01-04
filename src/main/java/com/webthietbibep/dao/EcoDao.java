@@ -13,7 +13,7 @@ public class EcoDao extends BaseDao {
 
     public List<Ecosystems> getListEco() {
         return get().withHandle(h->{
-            return h.createQuery("select ecosystem_id as id, name , logo_url as image from ecosystems").mapToBean(Ecosystems.class).list();
+            return h.createQuery("select * from ecosystems").mapToBean(Ecosystems.class).list();
         });
     }
 
