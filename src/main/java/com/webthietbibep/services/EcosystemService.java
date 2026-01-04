@@ -5,9 +5,10 @@ import com.webthietbibep.model.Ecosystems;
 
 import java.util.List;
 
-public class EcoService {
+public class EcosystemService {
     EcoDao edao =  new EcoDao();
     public List<Ecosystems> getListEco() {
         return edao.getListEco();
     }
+
 }

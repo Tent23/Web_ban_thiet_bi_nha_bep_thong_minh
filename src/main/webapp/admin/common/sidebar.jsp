@@ -40,7 +40,9 @@
                     <a href="<%=request.getContextPath()%>/admin/categories" class="active-sub">Danh mục</a>
                 </li>
 
-                <li><a href="<%=request.getContextPath()%>/TrongBao/admin_product_brand.html">Thương hiệu</a></li>
+                <li>
+                    <a href="<%=request.getContextPath()%>/admin/brands" class="active-sub">Thương hiệu</a>
+                </li>
                 <li><a href="<%=request.getContextPath()%>/TrongBao/admin_product_ecosystem.html">Hệ sinh thái</a></li>
                 <li><a href="<%=request.getContextPath()%>/TrongBao/admin_product_Combo.html">Combo / Giải pháp</a></li>
             </ul>

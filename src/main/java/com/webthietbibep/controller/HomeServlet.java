@@ -17,7 +17,7 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProductService ps = new ProductService();
         BrandService bs = new BrandService();
-        EcoService es = new EcoService();
+        EcosystemService es = new EcosystemService();
         TesService ts = new TesService();
         BannerService bns = new BannerService();
         ComboService cs = new ComboService();
