@@ -10,12 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminComboListServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminComboServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_combo_list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_Combo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_combo_form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/common/sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/common/sidebar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_combo_form.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,7 +304,7 @@
       <workItem from="1767546737912" duration="910000" />
       <workItem from="1767548512388" duration="3019000" />
       <workItem from="1767586911220" duration="313000" />
-      <workItem from="1767707551436" duration="4945000" />
+      <workItem from="1767707551436" duration="5233000" />
     </task>
     <servers />
   </component>
