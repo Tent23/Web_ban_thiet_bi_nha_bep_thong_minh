@@ -10,17 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/EcosystemController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductSearchApiServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/EcoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/ecosystem-form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Ecosystems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Ecosystems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/EcosystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/EcosystemService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_Combo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_Combo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_ecosystem.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/ecosystem-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ComboController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ComboController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ComboDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ComboDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/common/sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/common/sidebar.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -314,6 +306,8 @@
       <workItem from="1767242634844" duration="3717000" />
       <workItem from="1767546737912" duration="910000" />
       <workItem from="1767548512388" duration="3019000" />
+      <workItem from="1767586911220" duration="313000" />
+      <workItem from="1767707551436" duration="1813000" />
     </task>
     <servers />
   </component>

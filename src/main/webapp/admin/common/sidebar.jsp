@@ -75,4 +75,16 @@
             <span>Đăng xuất</span>
         </a>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var dropdowns = document.querySelectorAll(".menu-item-has-children > .sidebar-link");
+            dropdowns.forEach(function (link) {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    var parent = this.parentElement;
+                    parent.classList.toggle("open");
+                });
+            });
+        });
+    </script>
 </nav>
