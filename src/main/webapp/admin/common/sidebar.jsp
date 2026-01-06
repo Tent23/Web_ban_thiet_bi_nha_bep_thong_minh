@@ -44,9 +44,11 @@
                     <a href="<%=request.getContextPath()%>/admin/brands" class="active-sub">Thương hiệu</a>
                 </li>
                 <li>
-                    <a href="<%=request.getContextPath()%>//admin/ecosystems" class="active-sub">Hệ sinh thái</a>
+                    <a href="<%=request.getContextPath()%>/admin/ecosystems" class="active-sub">Hệ sinh thái</a>
                 </li>
-                <li><a href="<%=request.getContextPath()%>/TrongBao/admin_product_Combo.html">Combo / Giải pháp</a></li>
+                <li>
+                    <a href="<%=request.getContextPath()%>/admin/combo-list" class="active-sub">Combo/giải pháp</a>
+                </li>
             </ul>
         </li>
 
