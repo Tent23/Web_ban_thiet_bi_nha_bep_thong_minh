@@ -37,7 +37,7 @@ public class AdminProductListServlet extends HttpServlet {
         List<Product> list = productDAO.getListProduct();
         request.setAttribute("listProducts", list);
 
-        request.getRequestDispatcher("/admin_product_list.jsp").forward(request, response);
+        request.getRequestDispatcher("/admin/admin_product_list.jsp").forward(request, response);
     }
 
     @Override

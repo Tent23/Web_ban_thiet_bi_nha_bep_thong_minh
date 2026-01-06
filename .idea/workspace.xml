@@ -10,7 +10,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f51cae66-f151-46db-8611-c2645d4fffb9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_combo_list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminProductListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminProductListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_banners.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_banners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_category_form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_category_form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_category_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_category_list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_content.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_edit_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_edit_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_order_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_order_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_promotions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_promotions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_static_pages.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_static_pages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/brand-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/brand-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/common/sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/common/sidebar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/ecosystem-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/ecosystem-form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/ecosystem-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/ecosystem-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/admin_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/admin_style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +42,8 @@
         <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="CSS File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>

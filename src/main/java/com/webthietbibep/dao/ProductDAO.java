@@ -10,16 +10,32 @@ import java.util.List;
 public class ProductDAO extends BaseDao {
 
     public List<Product> getBestSellers() {
+        String sql = """
+        SELECT 
+            p.product_id,
+            p.category_id,
+            p.product_name,
+            p.description,
+            p.price,
+            p.stock_quantity,
+            p.brand_id,
+            p.image,
+            p.created_at,
+            SUM(oi.quantity) AS TongSoLuongDaBan
+        FROM order_items oi
+        JOIN products p ON p.product_id = oi.product_id
+        GROUP BY p.product_id
+        ORDER BY TongSoLuongDaBan DESC
+        LIMIT 2
+    """;
 
-        return get().withHandle(h ->{
-            return h.createQuery("SELECT p.*, SUM(o.quantity) AS TongSoLuongDaBan\n" +
-                            " FROM order_items o JOIN products p ON p.product_id = o.product_id\n" +
-                            "GROUP BY p.product_id,p.name,p.description,p.price,p.image,p.category_id,p.brand_id\n" +
-                            "ORDER BY SUM(o.quantity) DESC\n" +
-                            "LIMIT 2 ")
-                    .mapToBean(Product.class).list();
-        });
+        return get().withHandle(h ->
+                h.createQuery(sql)
+                        .mapToBean(Product.class)
+                        .list()
+        );
     }
+
     public void inserts(List<Product> products) {
         String sql = """
             INSERT INTO products (categoryid, productname, description, price, stockquantity, image, brand_id, created_at)
