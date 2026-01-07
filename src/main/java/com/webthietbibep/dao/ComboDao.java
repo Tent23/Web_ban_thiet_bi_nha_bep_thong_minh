@@ -36,7 +36,7 @@ public class ComboDao extends BaseDao {
 
     public List<Product> getListComboProduct(int id) {
         return get().withHandle(h -> {
-            return h.createQuery("select p.product_id, p.category_id, p.name as product_name, p.description, p.price, p.stock_quantity, p.brand_id, p.image, p.create_at from products p join comboitems c on p.product_id = c.product_id where c.combo_id = :id").bind("id", id).mapToBean(Product.class).list();
+            return h.createQuery("select p.product_id, p.category_id, p.name as product_name, p.description, p.price, p.stock_quantity, p.brand_id, p.image, p.created_at from products p join comboitems c on p.product_id = c.product_id where c.combo_id = :id").bind("id", id).mapToBean(Product.class).list();
         });
     }
 
