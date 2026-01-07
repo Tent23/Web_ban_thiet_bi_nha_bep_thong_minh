@@ -10,7 +10,7 @@ function updateCart() {
     let totalSub = 0;
 
     // Duyệt qua từng hàng sản phẩm
-    document.querySelectorAll('.cart-item-row').forEach(row => {
+    document.querySelectorAll('.com.webthietbibep.cart-item-row').forEach(row => {
         const price = parseFloat(row.getAttribute('data-price'));
         const quantityInput = row.querySelector('.quantity-input');
         const quantity = parseInt(quantityInput.value);
@@ -24,12 +24,12 @@ function updateCart() {
         totalSub += subtotal;
 
         // Cập nhật cột "Tạm tính" cho hàng đó
-        row.querySelector('.cart-item-subtotal').textContent = formatCurrency(subtotal);
+        row.querySelector('.com.webthietbibep.cart-item-subtotal').textContent = formatCurrency(subtotal);
     });
 
     // Cập nhật phần Tóm tắt đơn hàng
-    const subtotalEl = document.getElementById('cart-subtotal');
-    const totalEl = document.getElementById('cart-total');
+    const subtotalEl = document.getElementById('com.webthietbibep.cart-subtotal');
+    const totalEl = document.getElementById('com.webthietbibep.cart-total');
 
     if (subtotalEl && totalEl) {
         subtotalEl.textContent = formatCurrency(totalSub);
@@ -57,9 +57,9 @@ document.addEventListener('click', function(e) {
     }
 
     // Nếu click nút Xóa
-    if (e.target.closest('.cart-remove-btn')) {
+    if (e.target.closest('.com.webthietbibep.cart-remove-btn')) {
         e.preventDefault();
-        const row = e.target.closest('.cart-item-row');
+        const row = e.target.closest('.com.webthietbibep.cart-item-row');
         row.remove(); // Xóa hàng khỏi DOM
         updateCart(); // Tính lại giỏ hàng
     }
@@ -73,6 +73,6 @@ document.querySelectorAll('.quantity-input').forEach(input => {
 
 // Chạy updateCart() một lần khi tải trang để đảm bảo giá đúng
 // (chỉ chạy nếu chúng ta đang ở trang giỏ hàng)
-if (document.querySelector('.cart-section')) {
+if (document.querySelector('.com.webthietbibep.cart-section')) {
     updateCart();
 }

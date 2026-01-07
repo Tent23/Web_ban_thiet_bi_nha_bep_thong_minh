@@ -16,4 +16,7 @@ public class ProductService {
     public List<Product> getListProduct() {
         return pdao.getListProduct();
     }
+    public Product getProduct(int id) {
+        return pdao.getProduct(id);
+    }
 }
