@@ -53,7 +53,7 @@
         </li>
 
         <li>
-            <a href="<%=request.getContextPath()%>/QuangToan/QuanlyUser.html">
+            <a href="<%=request.getContextPath()%>/admin/users">
                 <i class="fa-solid fa-users"></i>
                 <span>Quản lý Khách hàng</span>
             </a>
