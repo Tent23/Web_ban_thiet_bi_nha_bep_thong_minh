@@ -14,7 +14,7 @@ public class AddCart extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        int quantity = Integer.parseInt(request.getParameter("q"));
         HttpSession session = request.getSession();
         ProductService ps = new ProductService();
         Product product = ps.getProduct(id);
@@ -28,7 +28,8 @@ public class AddCart extends HttpServlet {
             cart = new Cart();
         }
         cart.addItem(product,quantity);
-        response.sendRedirect("products");
+        session.setAttribute("cart",cart);
+        response.sendRedirect("product-detail?id=" + id);
     }
 
     @Override

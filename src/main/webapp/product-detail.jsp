@@ -41,7 +41,7 @@
         </p>
 
         <div class="actions">
-          <a href="#" class="btn btn-primary">
+            <a href="add-cart?id=${product.product_id}&q=1" class="btn btn-primary">
             <i class="fa fa-cart-plus"></i> Thêm vào giỏ
           </a>
           <a href="#" class="btn btn-danger">

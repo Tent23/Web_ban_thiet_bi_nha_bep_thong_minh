@@ -11,24 +11,24 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class Cart implements Serializable {
-    Map<Integer, CartItem> data;
+    Map<Integer, CartItem> data = new HashMap<Integer, CartItem>();
 
     public Cart() {
     }
 
     public Cart(Map<Integer, CartItem> data) {
-        data = new HashMap<Integer, CartItem>();
+        this.data = data;
     }
 
     public void addItem(Product product, int quantity) {
         if(quantity <= 0) {
             quantity = 1;
         }
-         if(!data.containsKey(product.getProduct_id())){
+        if(!data.containsKey(product.getProduct_id())){
             data.put(product.getProduct_id(),new CartItem(product,quantity,product.getPrice() ));
         }
         else {
-            data.get(product.getProduct_id()).setQuantity(quantity);
+            data.get(product.getProduct_id()).upQuantity(quantity);
         }
     }
 
@@ -55,5 +55,11 @@ public class Cart implements Serializable {
         return  sum.get();
     }
 
+    public Map<Integer, CartItem> getData() {
+        return data;
+    }
 
+    public void setData(Map<Integer, CartItem> data) {
+        this.data = data;
+    }
 }
