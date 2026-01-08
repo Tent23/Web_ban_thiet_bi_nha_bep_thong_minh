@@ -84,10 +84,12 @@
                 <div class="swiper-wrapper">
                     <c:forEach var = "pbs" items="${listP}">
                     <div class="swiper-slide product-card">
-                        <img src="${pbs.image}" alt="Sản phẩm 1" />
-                        <h3>${pbs.productname}</h3>
+                        <img src="${pbs.image}" alt="Sản phẩm" />
+                        <h3>${pbs.product_name}</h3>
                         <div class="price">${pbs.priceFormat}</div>
-                        <a href="pages/QuangToan/Chitietsp.html" class="btn btn-secondary">Xem chi tiết</a>
+                        <a href="${pageContext.request.contextPath}/product-detail?id=${p.product_id}" class="btn btn-secondary">
+                            Xem chi tiết
+                        </a>
                     </div>
                     </c:forEach>
 

@@ -29,7 +29,7 @@
     </div>
     <div class="header__main">
         <div class="container">
-            <a href="index.jsp" class="header__logo">
+            <a href="Home" class="header__logo">
                 <img src="assets/images/banners/logo.png" alt="TTB" />
             </a>
             <div class="header__search">
