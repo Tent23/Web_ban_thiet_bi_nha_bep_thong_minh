@@ -39,14 +39,15 @@
                         <input type="hidden" name="categoryId" value="${categoryId}" />
                         <c:forEach var="b" items="${brandList}">
                             <label>
-                                <input type="checkbox"
+                                <input type="radio"
                                        name="brand"
                                        value="${b.brand_id}"
-                                <c:if test="${brands != null && fn:contains(brands, b.brand_id)}">
+                                <c:if test="${brands != null && brands[0] == b.brand_id}">
                                        checked
                                 </c:if>
                                 >
                                     ${b.brand_name}
+
                             </label>
                         </c:forEach>
                         </div>
@@ -105,7 +106,9 @@
                                         &categoryId=${categoryId}
                                         &priceRange=${priceRange}
                                         &sort=${sort}
-                        <c:forEach var='b' items='${brands}'>&brand=${b}</c:forEach>"
+                            <c:if test='${brands != null}'>
+                                &brand=${brands[0]}
+                            </c:if>"
                                class="${i == currentPage ? 'active' : ''}">
                                     ${i}
                             </a>

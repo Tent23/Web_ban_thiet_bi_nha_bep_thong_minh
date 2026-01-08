@@ -27,7 +27,14 @@ public class ProductServlet extends HttpServlet {
         String categoryIdStr = req.getParameter("categoryId");
         String priceRange = req.getParameter("priceRange");
         String sort = req.getParameter("sort");
-        String[] brands = req.getParameterValues("brand");
+        String brandStr = req.getParameter("brand");
+        String[] brands = null;
+
+        if (brandStr != null && !brandStr.isBlank()) {
+            brands = new String[]{ brandStr };
+        }
+
+
         String pageStr = req.getParameter("page");
 
         Integer categoryId = null;
