@@ -40,9 +40,15 @@
                     <a href="<%=request.getContextPath()%>/admin/categories" class="active-sub">Danh mục</a>
                 </li>
 
-                <li><a href="<%=request.getContextPath()%>/TrongBao/admin_product_brand.html">Thương hiệu</a></li>
-                <li><a href="<%=request.getContextPath()%>/TrongBao/admin_product_ecosystem.html">Hệ sinh thái</a></li>
-                <li><a href="<%=request.getContextPath()%>/TrongBao/admin_product_Combo.html">Combo / Giải pháp</a></li>
+                <li>
+                    <a href="<%=request.getContextPath()%>/admin/brands" class="active-sub">Thương hiệu</a>
+                </li>
+                <li>
+                    <a href="<%=request.getContextPath()%>/admin/ecosystems" class="active-sub">Hệ sinh thái</a>
+                </li>
+                <li>
+                    <a href="<%=request.getContextPath()%>/admin/combo-list" class="active-sub">Combo/giải pháp</a>
+                </li>
             </ul>
         </li>
 
@@ -71,4 +77,16 @@
             <span>Đăng xuất</span>
         </a>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var dropdowns = document.querySelectorAll(".menu-item-has-children > .sidebar-link");
+            dropdowns.forEach(function (link) {
+                link.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    var parent = this.parentElement;
+                    parent.classList.toggle("open");
+                });
+            });
+        });
+    </script>
 </nav>

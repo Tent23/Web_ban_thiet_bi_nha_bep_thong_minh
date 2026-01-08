@@ -20,12 +20,6 @@ public class ComboController extends HttpServlet {
 
         cb.setProducts(cp.getListComboProduct(id));
 
-
-
-
-
-
-
         request.setAttribute("c", cb);
 
         request.getRequestDispatcher("chitietCombo.jsp").forward(request, response);

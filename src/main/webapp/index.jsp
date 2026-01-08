@@ -66,36 +66,13 @@
         <div class="container">
             <h2 class="section-title">Danh mục Nổi bật</h2>
             <div class="category-grid">
+                <c:forEach var="c" items="${listCate}">
                 <a href="pages/QuangToan/Beptu.html" class="category-item">
-                    <img src="assets/images/products/beptu-2.jpg" alt="Bếp từ" />
+                    <img src="${c.logo}" alt="Bếp từ" />
                     <br>
-                    <span>Bếp từ & Nấu nướng</span>
+                    <span>${c.category_name}</span>
                 </a>
-                <a href="pages/QuangToan/Robot.html" class="category-item">
-                    <img src="assets/images/products/robot-2.jpg" alt="Robot Hút Bụi" />
-                    <br>
-                    <span>Robot Hút Bụi</span>
-                </a>
-                <a href="pages/QuangToan/Tulanh.html" class="category-item">
-                    <img src="assets/images/products/Tulanh-1.jpg" alt="Tủ Lạnh" />
-                    <br>
-                    <span>Tủ lạnh Thông minh</span>
-                </a>
-                <a href="pages/QuangToan/Mayruabat.html" class="category-item">
-                    <img src="assets/images/products/mayruabat-4.jpg" alt="Máy Rửa Bát" />
-                    <br>
-                    <span>Máy rửa bát</span>
-                </a>
-                <a href="pages/QuangToan/Cambien.html" class="category-item">
-                    <img src="assets/images/products/cambieng-3.jpg" alt="Cảm Biến" />
-                    <br>
-                    <span>Cảm biến & An ninh</span>
-                </a>
-                <a href="pages/QuangToan/Phache.html" class="category-item">
-                    <img src="assets/images/products/phache-3.jpg" alt="Pha Chế" />
-                    <br>
-                    <span>Pha chế Thông minh</span>
-                </a>
+                </c:forEach>
             </div>
         </div>
     </section>
@@ -165,18 +142,12 @@
                             allowfullscreen></iframe>
                 </div>
                 <div class="hub-articles">
+                    <c:forEach var = "a" items="${listA}">
                     <a href="pages/TrongBao/goctuvan.html" class="article-item">
-                        <h4>So sánh Bếp từ thông minh Bosch và Hafele</h4>
-                        <p>Đâu là lựa chọn tối ưu cho căn bếp của bạn?</p>
+                        <h4>${a.title}</h4>
+                        <p>${a.content}</p>
                     </a>
-                    <a href="pages/TrongBao/goctuvan.html" class="article-item">
-                        <h4>5 Kịch bản tự động hóa bếp bạn PHẢI BIẾT</h4>
-                        <p>Tự động bật hút mùi, tắt đèn khi ra khỏi...</p>
-                    </a>
-                    <a href="pages/TrongBao/goctuvan.html" class="article-item">
-                        <h4>Hướng dẫn cài đặt App Mi Home cho người mới</h4>
-                        <p>Kết nối tất cả thiết bị Xiaomi trong 5 phút.</p>
-                    </a>
+                    </c:forEach>
                 </div>
             </div>
         </div>

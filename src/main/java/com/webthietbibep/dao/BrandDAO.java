@@ -1,12 +1,14 @@
 package com.webthietbibep.dao;
 
 import com.webthietbibep.model.Brand;
-
 import java.util.List;
+import java.util.Optional;
 
-public class BrandDAO extends BaseDao{
+public class BrandDAO extends BaseDao {
+
+    // Lấy danh sách tất cả thương hiệu
     public List<Brand> getAll() {
-        String sql = "SELECT * FROM brands";
+        String sql = "SELECT * FROM brands ORDER BY brand_id DESC";
         return get().withHandle(h ->
                 h.createQuery(sql)
                         .mapToBean(Brand.class)
@@ -14,4 +16,48 @@ public class BrandDAO extends BaseDao{
         );
     }
 
+    // Lấy 1 thương hiệu theo ID (Dùng cho chức năng Sửa)
+    public Brand getById(int id) {
+        String sql = "SELECT * FROM brands WHERE brand_id = :id";
+        return get().withHandle(h ->
+                h.createQuery(sql)
+                        .bind("id", id)
+                        .mapToBean(Brand.class)
+                        .findFirst()
+                        .orElse(null)
+        );
+    }
+
+    // Thêm mới thương hiệu
+    public void insert(Brand brand) {
+        String sql = "INSERT INTO brands (brand_name, logo_url) VALUES (:brand_name, :logo_url)";
+        get().useHandle(h ->
+                h.createUpdate(sql)
+                        .bind("brand_name", brand.getBrand_name())
+                        .bind("logo_url", brand.getLogo_url())
+                        .execute()
+        );
+    }
+
+    // Cập nhật thương hiệu
+    public void update(Brand brand) {
+        String sql = "UPDATE brands SET brand_name = :brand_name, logo_url = :logo_url WHERE brand_id = :brand_id";
+        get().useHandle(h ->
+                h.createUpdate(sql)
+                        .bind("brand_name", brand.getBrand_name())
+                        .bind("logo_url", brand.getLogo_url())
+                        .bind("brand_id", brand.getBrand_id())
+                        .execute()
+        );
+    }
+
+    // Xóa thương hiệu
+    public void delete(int id) {
+        String sql = "DELETE FROM brands WHERE brand_id = :id";
+        get().useHandle(h ->
+                h.createUpdate(sql)
+                        .bind("id", id)
+                        .execute()
+        );
+    }
 }

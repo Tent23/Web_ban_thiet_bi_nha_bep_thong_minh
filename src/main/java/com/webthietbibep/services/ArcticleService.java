@@ -5,7 +5,7 @@ import com.webthietbibep.model.Article;
 
 import java.util.List;
 
-public class ArcticleService {
+public class    ArcticleService {
     ArticleDao adao = new ArticleDao();
 
 
@@ -14,5 +14,8 @@ public class ArcticleService {
     }
     public List<Article> getFilterArticle(String f){
         return adao.getFilterArticle(f);
+    }
+    public List<Article> getNewArticle(){
+        return adao.getNewArticle();
     }
 }
