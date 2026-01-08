@@ -1,8 +1,9 @@
 package com.webthietbibep.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class User {
+public class User implements Serializable {
     int user_id;
     String username;
     String full_name;

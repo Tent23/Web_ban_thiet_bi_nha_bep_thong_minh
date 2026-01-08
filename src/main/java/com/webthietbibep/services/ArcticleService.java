@@ -5,7 +5,7 @@ import com.webthietbibep.model.Article;
 
 import java.util.List;
 
-public class ArcticleService {
+public class    ArcticleService {
     ArticleDao adao = new ArticleDao();
 
 

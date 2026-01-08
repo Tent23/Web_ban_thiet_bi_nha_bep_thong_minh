@@ -27,9 +27,8 @@
       <aside class="profile-sidebar">
         <h3>${user.username}</h3>
         <ul>
-          <li class="active">Hồ sơ</li>
-          <li>Ngân hàng</li>
-          <li>Địa chỉ</li>
+          <li class="active"><a href="profile">Hồ sơ</a></li>
+          <li><a href="addresses">Địa chỉ</a></li>
           <li>Đổi mật khẩu</li>
           <li>Đơn mua</li>
           <li>Kho voucher</li>
@@ -62,12 +61,6 @@
             <label>Số điện thoại</label>
             <input type="text" name="phone" value="${user.phone}">
           </div>
-
-          <div class="form-group">
-            <label>Vai trò</label>
-            <input type="text" value="${user.role}" disabled>
-          </div>
-
           <button type="submit" class="btn-primary">Lưu</button>
         </form>
 
