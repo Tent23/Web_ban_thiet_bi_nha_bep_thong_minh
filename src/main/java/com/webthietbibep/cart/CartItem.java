@@ -9,6 +9,7 @@ public class CartItem implements Serializable {
     private int quantity;
     private double price;
 
+
     public CartItem() {
     }
 
@@ -42,5 +43,8 @@ public class CartItem implements Serializable {
         this.price = price;
     }
 
+    public void upQuantity(int q){
+        this.quantity += q ;
+    }
 
 }

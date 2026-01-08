@@ -40,7 +40,7 @@
             <div class="header__actions">
                 <a href="../QuangToan/Account.html"><i class="fa fa-user"></i> Tài khoản</a>
                 <a href="./yeuthich.html"><i class="fa fa-heart"></i> Yêu thích</a>
-                <a href="./giohang.html"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
+                <a href="giohang.jsp"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
             </div>
         </div>
     </div>

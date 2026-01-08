@@ -50,7 +50,7 @@
                     </c:otherwise>
                 </c:choose>
                 <a href="yeu-thich.jsp"><i class="fa fa-heart"></i> Yêu thích</a>
-                <a href="gio-hang.jsp"><i class="fa fa-shopping-cart"></i> Giỏ hàng (0)</a>
+                <a href="cart"><i class="fa fa-shopping-cart"></i> Giỏ hàng (${sessionScope.cart.totalQuantity})</a>
             </div>
         </div>
     </div>
