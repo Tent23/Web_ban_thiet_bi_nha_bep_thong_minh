@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page isELIgnored="false" %>
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/admin_style.css">
 <nav class="admin-sidebar">
     <div class="sidebar-header">
         <h3>Admin Panel</h3>
@@ -27,9 +28,8 @@
             </a>
             <ul class="submenu">
                 <li>
-                    <a href="<%=request.getContextPath()%>/products">Tất cả Sản phẩm</a>
+                    <a href="<%=request.getContextPath()%>/admin/products" class="active-sub">Tất cả sản phảm</a>
                 </li>
-
                 <li>
                     <a href="<%=request.getContextPath()%>/admin/product-save">
                         <i class="fa-solid fa-plus"></i> Thêm sản phẩm mới

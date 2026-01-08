@@ -6,48 +6,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${product != null && product.product_id > 0 ? 'Cập nhật sản phẩm' : 'Thêm sản phẩm mới'} | Admin</title>
+    <title>${product.product_id > 0 ? 'Cập nhật sản phẩm' : 'Thêm sản phẩm mới'} | Admin</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/admin_style.css">
-    <link rel="stylesheet" href="../assets/css/indexfont.css" />
 
     <style>
-        /* CSS bổ sung cho thông báo */
-        .alert { padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px; }
-        .alert-success { color: #155724; background-color: #d4edda; border-color: #c3e6cb; }
-        .alert-danger { color: #721c24; background-color: #f8d7da; border-color: #f5c6cb; }
+        .alert { padding: 15px; margin-bottom: 20px; border-radius: 4px; font-weight: 500;}
+        .alert-success { color: #155724; background-color: #d4edda; border: 1px solid #c3e6cb; }
+        .alert-danger { color: #721c24; background-color: #f8d7da; border: 1px solid #f5c6cb; }
+
+        /* Ẩn input file mặc định nếu muốn dùng URL ảnh */
+        .image-preview-container { border: 1px solid #ddd; margin-top: 10px; border-radius: 5px; overflow: hidden;}
     </style>
 </head>
 <body>
 
-<jsp:include page="common/sidebar.jsp"></jsp:include>
-
 <div class="admin-layout">
-
-    <aside class="admin-sidebar">
-        <div class="sidebar-header">
-        </div>
-        <ul class="sidebar-menu">
-            <li>
-                <a href="${pageContext.request.contextPath}/products">
-                    <i class="fa-solid fa-box"></i> Quản lý sản phẩm
-                </a>
-            </li>
-        </ul>
-    </aside>
     <jsp:include page="common/sidebar.jsp"></jsp:include>
 
     <main class="admin-main">
 
         <header class="admin-header">
             <div class="header-left">
-                <a href="${pageContext.request.contextPath}/products" class="btn-back">
+                <a href="${pageContext.request.contextPath}/admin/products" class="btn-back">
                     <i class="fa-solid fa-arrow-left"></i> Quay lại danh sách
                 </a>
             </div>
             <div class="admin-profile">
-                <span style="font-weight: 600;">Administrator</span>
+                <h3 style="margin: 0;">${product.product_id > 0 ? 'Cập nhật sản phẩm' : 'Thêm sản phẩm mới'}</h3>
             </div>
         </header>
 
@@ -55,30 +42,33 @@
 
             <c:if test="${not empty sessionScope.msg}">
                 <div class="alert alert-success">
-                        ${sessionScope.msg}
-                    <% session.removeAttribute("msg"); %> </div>
+                    <i class="fa-solid fa-check-circle"></i> ${sessionScope.msg}
+                    <% session.removeAttribute("msg"); %>
+                </div>
             </c:if>
             <c:if test="${not empty error}">
-                <div class="alert alert-danger">${error}</div>
+                <div class="alert alert-danger">
+                    <i class="fa-solid fa-triangle-exclamation"></i> ${error}
+                </div>
             </c:if>
 
             <form id="productForm" action="${pageContext.request.contextPath}/admin/product-save" method="post" class="admin-form-layout">
 
-                <input type="hidden" name="product_id" value="${product != null ? product.product_id : 0}">
+                <input type="hidden" name="product_id" value="${product.product_id}">
 
                 <div class="col-main">
                     <div class="admin-card">
                         <h3>Thông tin chung</h3>
 
                         <div class="form-group">
-                            <label>Tên sản phẩm</label>
+                            <label>Tên sản phẩm (*)</label>
                             <input type="text" class="form-control" name="product_name"
-                                   value="${product != null ? product.product_name : ''}" required>
+                                   value="${product.product_name}" required placeholder="Nhập tên sản phẩm...">
                         </div>
 
                         <div class="form-group">
                             <label>Mô tả chi tiết</label>
-                            <textarea class="form-control" name="description" rows="6">${product != null ? product.description : ''}</textarea>
+                            <textarea class="form-control" name="description" rows="6" placeholder="Mô tả sản phẩm...">${product.description}</textarea>
                         </div>
                     </div>
 
@@ -86,15 +76,17 @@
                         <h3>Dữ liệu giá & Kho</h3>
                         <div class="admin-grid" style="grid-template-columns: 1fr 1fr; gap: 20px;">
                             <div class="form-group">
-                                <label>Giá bán (VNĐ)</label>
+                                <label>Giá bán (VNĐ) (*)</label>
                                 <input type="number" class="form-control" name="price"
-                                       value="${product != null && product.price > 0 ? String.format('%.0f', product.price) : ''}" required>
+                                       value="${product.price > 0 ? String.format('%.0f', product.price) : ''}"
+                                       required min="0" placeholder="0">
                             </div>
 
                             <div class="form-group">
                                 <label>Số lượng tồn kho</label>
                                 <input type="number" class="form-control" name="stock_quantity"
-                                       value="${product != null ? product.stock_quantity : 0}">
+                                       value="${product.stock_quantity > 0 ? product.stock_quantity : ''}"
+                                       min="0" placeholder="0">
                             </div>
                         </div>
                     </div>
@@ -102,11 +94,11 @@
 
                 <div class="col-sidebar">
                     <div class="admin-card">
-                        <h3>Đăng sản phẩm</h3>
+                        <h3>Hành động</h3>
                         <div style="display: flex; flex-direction: column; gap: 10px;">
                             <button type="submit" id="btnSave" class="btn-primary" style="justify-content: center; width: 100%;">
                                 <i class="fa-solid fa-save"></i>
-                                ${product != null && product.product_id > 0 ? 'Cập nhật' : 'Thêm mới'}
+                                ${product.product_id > 0 ? 'Cập nhật thay đổi' : 'Lưu sản phẩm'}
                             </button>
                         </div>
                     </div>
@@ -138,25 +130,26 @@
                             </select>
                         </div>
                     </div>
+
                     <div class="admin-card">
-                        <h3>Ảnh sản phẩm</h3>
+                        <h3>Ảnh đại diện</h3>
                         <div class="form-group">
                             <label>Link ảnh (URL)</label>
                             <input type="text" class="form-control" name="image" id="imgInput"
-                                   value="${product != null ? product.image : ''}" onchange="previewImage()" placeholder="https://...">
+                                   value="${product.image}" onchange="previewImage()" placeholder="https://example.com/image.jpg">
                         </div>
 
                         <div class="image-upload-area">
-                            <div class="upload-placeholder" id="placeholder" style="${product != null && product.image != null && product.image != '' ? 'display:none' : ''}">
-                                <i class="fa-regular fa-image"></i>
-                                <p>Nhập link để xem trước</p>
+                            <div class="upload-placeholder" id="placeholder" style="${not empty product.image ? 'display:none' : ''}">
+                                <i class="fa-regular fa-image" style="font-size: 2rem; color: #ccc;"></i>
+                                <p style="font-size: 0.8rem; color: #888;">Nhập link để xem trước</p>
                             </div>
 
-                            <div class="image-preview-container" id="previewContainer" style="${product != null && product.image != null && product.image != '' ? '' : 'display:none'}">
-                                <div class="preview-item" style="width: 100%; height: 200px;">
-                                    <img src="${product != null ? product.image : ''}" id="imgPreview"
-                                         style="width: 100%; height: 100%; object-fit: contain;"
-                                         onerror="this.src='https://via.placeholder.com/300?text=No+Image'">
+                            <div class="image-preview-container" id="previewContainer" style="${not empty product.image ? '' : 'display:none'}">
+                                <div class="preview-item" style="width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
+                                    <img src="${product.image}" id="imgPreview"
+                                         style="max-width: 100%; max-height: 100%; object-fit: contain;"
+                                         onerror="this.src='https://via.placeholder.com/300?text=Lỗi+Ảnh'">
                                 </div>
                             </div>
                         </div>
@@ -168,20 +161,26 @@
 </div>
 
 <script>
+    // Hàm xem trước ảnh
     function previewImage() {
-        const url = document.getElementById('imgInput').value;
+        const url = document.getElementById('imgInput').value.trim();
+        const placeholder = document.getElementById('placeholder');
+        const container = document.getElementById('previewContainer');
+        const img = document.getElementById('imgPreview');
+
         if(url) {
-            document.getElementById('imgPreview').src = url;
-            document.getElementById('placeholder').style.display = 'none';
-            document.getElementById('previewContainer').style.display = 'grid';
+            img.src = url;
+            placeholder.style.display = 'none';
+            container.style.display = 'block';
+        } else {
+            placeholder.style.display = 'flex'; // hoặc block tùy css của bạn
+            container.style.display = 'none';
         }
     }
-</script>
 
-<script>
+    // Chặn submit nhiều lần (Loading)
     document.getElementById('productForm').addEventListener('submit', function() {
         var btn = document.getElementById('btnSave');
-        // Vô hiệu hóa nút sau khi bấm
         setTimeout(function() {
             btn.disabled = true;
             btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Đang xử lý...';
@@ -189,18 +188,5 @@
     });
 </script>
 
-<script>
-    // Script Sidebar cũ của bạn
-    document.addEventListener("DOMContentLoaded", function () {
-        var dropdowns = document.querySelectorAll(".menu-item-has-children > .sidebar-link");
-        dropdowns.forEach(function (link) {
-            link.addEventListener("click", function (e) {
-                e.preventDefault();
-                var parent = this.parentElement;
-                parent.classList.toggle("open");
-            });
-        });
-    });
-</script>
 </body>
 </html>

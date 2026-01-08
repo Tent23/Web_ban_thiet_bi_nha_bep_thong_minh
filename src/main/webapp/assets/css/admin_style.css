@@ -802,3 +802,88 @@ input:checked + .slider:before {
     padding-left: 20px;
     margin-top: 10px;
 }
+.alert { padding: 15px; margin-bottom: 20px; border-radius: 8px; font-weight: 500; display: flex; align-items: center; gap: 10px; }
+.alert-success { background-color: #dcfce7; color: #16a34a; border: 1px solid #bbf7d0; }
+.alert-danger { background-color: #fee2e2; color: #dc2626; border: 1px solid #fecaca; }
+
+ .alert { padding: 15px; margin-bottom: 20px; border-radius: 8px; font-weight: 500; display: flex; align-items: center; gap: 10px; }
+.alert-success { background-color: #dcfce7; color: #16a34a; border: 1px solid #bbf7d0; }
+.alert-danger { background-color: #fee2e2; color: #dc2626; border: 1px solid #fecaca; }
+
+.brand-logo {
+    object-fit: contain !important;
+    background-color: #fff;
+    padding: 5px;
+}
+
+     /* CSS bổ sung cho thông báo alert */
+ .alert { padding: 15px; margin-bottom: 20px; border-radius: 8px; font-weight: 500; display: flex; align-items: center; gap: 10px; }
+.alert-success { background-color: #dcfce7; color: #16a34a; border: 1px solid #bbf7d0; }
+.alert-danger { background-color: #fee2e2; color: #dc2626; border: 1px solid #fecaca; }
+
+/* Ảnh hệ sinh thái thường là banner ngang, chỉnh lại 1 chút so với ảnh vuông sản phẩm */
+.ecosystem-img {
+    width: 80px !important;
+    height: 50px !important;
+    object-fit: cover;
+}
+
+
+ .search-box { position: relative; width: 100%; max-width: 400px; margin-bottom: 20px; }
+.search-input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+.suggestions {
+    position: absolute; top: 100%; left: 0; width: 100%; background: white;
+    border: 1px solid #ddd; z-index: 1000; max-height: 200px; overflow-y: auto; display: none;
+}
+.suggestion-item { padding: 10px; cursor: pointer; border-bottom: 1px solid #eee; }
+.suggestion-item:hover { background: #f0f0f0; }
+.product-list table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+.product-list th, .product-list td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+/* Thêm CSS mới này để sửa lỗi nút bấm */
+.form-actions {
+    display: flex;          /* Xếp hàng ngang */
+    align-items: center;    /* Canh giữa theo chiều dọc */
+    gap: 15px;             /* Khoảng cách giữa 2 nút */
+    margin-top: 25px;       /* Cách xa các ô input bên trên */
+}
+
+/* CSS cho nút Primary (Lưu) */
+.btn-primary {
+    background-color: #0f6cbd;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    height: 40px; /* Chiều cao cố định */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-primary:hover { background-color: #0c569b; }
+
+/* CSS cho nút Secondary (Hủy) */
+.btn-secondary {
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 10px 20px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none; /* Bỏ gạch chân */
+    height: 40px; /* Chiều cao cố định bằng nút Lưu */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box; /* Đảm bảo padding không làm vỡ khung */
+}
+.btn-secondary:hover {
+    background-color: #e2e8f0;
+    color: #1e293b;
+}
+
