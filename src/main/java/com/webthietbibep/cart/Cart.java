@@ -62,4 +62,8 @@ public class Cart implements Serializable {
     public void setData(Map<Integer, CartItem> data) {
         this.data = data;
     }
+
+    public String getFormatTotal(){
+        return CartItem.Format(getTotal());
+    }
 }
