@@ -3,6 +3,8 @@ package com.webthietbibep.cart;
 import com.webthietbibep.model.Product;
 
 import java.io.Serializable;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class CartItem implements Serializable {
     private Product product;
@@ -45,6 +47,17 @@ public class CartItem implements Serializable {
 
     public void upQuantity(int q){
         this.quantity += q ;
+    }
+
+
+    public static String Format(double price) {
+        NumberFormat vn = NumberFormat.getInstance(new Locale("vi", "VN"));
+        return vn.format(price) + " đ";
+    }
+
+
+    public String getFormattedTotal(){
+        return Format(this.price * this.quantity);
     }
 
 }

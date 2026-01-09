@@ -51,7 +51,7 @@
                                         <small>Thương hiệu: ${data[ci.product.product_id]}</small>
                                     </div>
                                 </td>
-                                <td class="cart-item-price" data-label="Giá">${ci.product.price}</td>
+                                <td class="cart-item-price" data-label="Giá">${ci.product.priceFormat}</td>
                                 <td class="cart-item-quantity" data-label="Số lượng">
                                     <div class="quantity-control">
                                         <button class="quantity-down">-</button>
@@ -59,9 +59,13 @@
                                         <button class="quantity-up">+</button>
                                     </div>
                                 </td>
-                                <td class="cart-item-subtotal" data-label="Tạm tính">${sessionScope.cart.total}</td>
+                                <td class="cart-item-subtotal" data-label="Tạm tính">${ci.formattedTotal}</td>
                                 <td class="cart-item-remove" data-label="Xóa">
-                                    <a href="#" class="cart-remove-btn"><i class="fa fa-trash"></i></a>
+                                    <form action="del-item" method="post">
+                                        <input type = "hidden" name = "id" value ="${ci.product.product_id}">
+
+                                        <button type = "submit" class="cart-remove-btn"><i class="fa fa-trash"></i></button>
+                                    </form>
                                 </td>
                             </tr>
                         </c:forEach>
@@ -74,7 +78,7 @@
                     <h3>Tổng quan Đơn hàng</h3>
                     <div class="summary-row">
                         <span>Tạm tính</span>
-                        <span id="cart-subtotal">23.500.000đ</span>
+                        <span id="cart-subtotal">${sessionScope.cart.formatTotal}</span>
                     </div>
                     <div class="summary-row">
                         <span>Phí vận chuyển</span>
@@ -82,7 +86,7 @@
                     </div>
                     <div class="summary-row total-row">
                         <span>Tổng cộng</span>
-                        <span id="cart-total">23.500.000đ</span>
+                        <span id="cart-total">${sessionScope.cart.formatTotal}</span>
                     </div>
                     <a href="../QuangToan/Thanhtoan.html" class="btn btn-primary checkout-btn">Tiến hành Thanh toán</a>
                     <a href="../../index.html" class="continue-shopping-link">
