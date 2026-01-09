@@ -1,0 +1,78 @@
+.order-tabs {
+    display: flex;
+    gap: 25px;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}
+.order-tabs span {
+    padding: 10px;
+    cursor: pointer;
+}
+.order-tabs .active {
+    color: #007aff;
+    border-bottom: 2px solid #007aff;
+}
+
+.order-card {
+    background: #fff;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 0 5px #ddd;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+}
+
+.order-status {
+    color: green;
+}
+
+.order-product {
+    display: flex;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+.order-product img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+.order-product .info {
+    flex: 1;
+}
+.order-product .name {
+    font-size: 16px;
+}
+.order-product .price {
+    color: #007aff;
+    margin-top: 5px;
+}
+
+.order-footer {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-footer .total span {
+    font-size: 18px;
+    color: #007aff;
+    font-weight: bold;
+}
+
+.order-footer button {
+    background: #007aff;
+    border: none;
+    padding: 8px 15px;
+    color: #fff;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}

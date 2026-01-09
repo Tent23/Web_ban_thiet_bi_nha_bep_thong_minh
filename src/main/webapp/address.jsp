@@ -29,7 +29,8 @@
                 <li><a href="profile">Hồ sơ</a></li>
                 <li class="active"><a href="addresses">Địa chỉ</a> </li>
                 <li>Đổi mật khẩu</li>
-                <li>Đơn mua</li>
+                <li><a href="my-orders">Đơn mua</a></li>
+
             </ul>
         </aside>
 

@@ -104,4 +104,15 @@ public class UserDAO extends BaseDao {
                         .one() > 0
         );
     }
-}
+        public User getById(int id) {
+            String sql = "SELECT * FROM users WHERE user_id = :id";
+
+            return get().withHandle(h ->
+                    h.createQuery(sql)
+                            .bind("id", id)
+                            .mapToBean(User.class)
+                            .findOne()
+                            .orElse(null)
+            );
+        }
+    }
