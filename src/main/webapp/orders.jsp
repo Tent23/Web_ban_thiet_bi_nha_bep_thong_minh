@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
@@ -9,8 +9,10 @@
     <title>Đơn mua</title>
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/profile.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/orders.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Header.css">
+
 </head>
 
 <body>
@@ -24,10 +26,10 @@
         <aside class="profile-sidebar">
             <h3>${sessionScope.user.username}</h3>
             <ul>
-                <li><a href="profile">Hồ sơ</a></li>
+                <li><a href="${pageContext.request.contextPath}/profile">Hồ sơ</a></li>
                 <li><a href="addresses">Địa chỉ</a></li>
                 <li><a href="change-password">Đổi mật khẩu</a></li>
-                <li class="active"><a href="orders">Đơn mua</a></li>
+                <li class="active"><a href="${pageContext.request.contextPath}/orders">Đơn mua</a></li>
             </ul>
         </aside>
 
@@ -48,7 +50,7 @@
                     <!-- Header -->
                     <div class="order-header">
                         <div>Mã đơn: #${o.order_id}</div>
-                        <div class="order-status">${o.status}</div>
+                        <div class="order-status">${o.statusText}</div>
                     </div>
 
                     <!-- Products -->
@@ -76,14 +78,23 @@
                         </div>
 
                         <div class="actions">
-                            <c:if test="${o.status eq 'COMPLETED'}">
+                            <c:if test="${o.status eq 'HOAN_THANH'}">
                                 <button>Mua lại</button>
                                 <button>Đánh giá</button>
                             </c:if>
 
-                            <c:if test="${o.status eq 'PENDING'}">
-                                <button>Huỷ đơn</button>
+                            <c:if test="${o.status eq 'CHO_XAC_NHAN'}">
+                                <form action="${pageContext.request.contextPath}/cancel-order" method="post" style="display:inline">
+                                    <input type="hidden" name="order_id" value="${o.order_id}">
+                                    <button class="btn-cancel">Huỷ đơn</button>
+                                </form>
                             </c:if>
+
+
+                            <c:if test="${o.status eq 'DA_HUY'}">
+                                <span class="cancel">Đã bị huỷ</span>
+                            </c:if>
+
                         </div>
                     </div>
 

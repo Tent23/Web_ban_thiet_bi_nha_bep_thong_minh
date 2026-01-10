@@ -10,13 +10,13 @@ public class Order {
     private String status;
     private String payment_method;
     private LocalDateTime created_at;
-    private String text;
+    private String note;
     private int voucher_id;
 
     public Order() {
     }
 
-    public Order(int order_id, int address_id, int user_id, double total_amount, String status, String payment_method, LocalDateTime created_at, String text, int voucher_id) {
+    public Order(int order_id, int address_id, int user_id, double total_amount, String status, String payment_method, LocalDateTime created_at, String note, int voucher_id) {
         this.order_id = order_id;
         this.address_id = address_id;
         this.user_id = user_id;
@@ -24,7 +24,7 @@ public class Order {
         this.status = status;
         this.payment_method = payment_method;
         this.created_at = created_at;
-        this.text = text;
+        this.note = note;
         this.voucher_id = voucher_id;
     }
 
@@ -44,12 +44,12 @@ public class Order {
         this.voucher_id = voucher_id;
     }
 
-    public String getText() {
-        return text;
+    public String getNote() {
+        return note;
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void setNote(String note) {
+        this.note = note;
     }
 
     public LocalDateTime getCreated_at() {
@@ -99,4 +99,15 @@ public class Order {
     public void setUser_id(int user_id) {
         this.user_id = user_id;
     }
+    public String getStatusText() {
+        return switch (status) {
+            case "CHO_XAC_NHAN" -> "Chờ xác nhận";
+            case "VAN_CHUYEN" -> "Vận chuyển";
+            case "CHO_GIAO_HANG" -> "Chờ giao hàng";
+            case "HOAN_THANH" -> "Hoàn thành";
+            case "DA_HUY" -> "Đã huỷ";
+            default -> status;
+        };
+    }
+
 }

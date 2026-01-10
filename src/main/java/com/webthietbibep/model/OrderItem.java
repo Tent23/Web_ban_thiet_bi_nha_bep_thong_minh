@@ -1,6 +1,7 @@
 package com.webthietbibep.model;
 
 public class OrderItem {
+    private int order_item_id;
     private int order_id;
     private int product_id;
     private int quantity;
@@ -9,11 +10,20 @@ public class OrderItem {
     public OrderItem() {
     }
 
-    public OrderItem(int order_id, double price_at_purchase, int quantity, int product_id) {
+    public OrderItem(int order_item_id,int order_id, double price_at_purchase, int quantity, int product_id) {
+        this.order_item_id = order_item_id;
         this.order_id = order_id;
         this.price_at_purchase = price_at_purchase;
         this.quantity = quantity;
         this.product_id = product_id;
+    }
+
+    public int getOrder_item_id() {
+        return order_item_id;
+    }
+
+    public void setOrder_item_id(int order_item_id) {
+        this.order_item_id = order_item_id;
     }
 
     public int getOrder_id() {

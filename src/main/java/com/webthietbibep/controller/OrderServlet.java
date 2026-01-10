@@ -3,6 +3,7 @@ package com.webthietbibep.controller;
 import com.webthietbibep.dao.OrderItemDAO;
 import com.webthietbibep.dao.OrdersDAO;
 import com.webthietbibep.dao.ProductDAO;
+import com.webthietbibep.model.Order;
 import com.webthietbibep.model.Product;
 import com.webthietbibep.model.User;
 import jakarta.servlet.ServletException;
@@ -34,7 +35,15 @@ public class OrderServlet extends HttpServlet {
             return;
         }
 
-        var orders = orderDAO.getOrdersByUser(user.getUser_id());
+        String status = req.getParameter("status");
+
+        List<Order> orders;
+        if (status == null || status.isBlank()) {
+            orders = orderDAO.getOrdersByUser(user.getUser_id());
+        } else {
+            orders = orderDAO.getOrdersByUserAndStatus(user.getUser_id(), status);
+        }
+
 
         Map<Integer, List<Product>> orderProducts = new LinkedHashMap<>();
 
@@ -52,7 +61,7 @@ public class OrderServlet extends HttpServlet {
 
         req.setAttribute("orders", orders);
         req.setAttribute("orderProducts", orderProducts);
-        req.getRequestDispatcher("my-orders.jsp").forward(req, resp);
+        req.getRequestDispatcher("/orders.jsp").forward(req, resp);
     }
 }
 
