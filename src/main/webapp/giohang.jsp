@@ -53,11 +53,14 @@
                                 </td>
                                 <td class="cart-item-price" data-label="Giá">${ci.product.priceFormat}</td>
                                 <td class="cart-item-quantity" data-label="Số lượng">
+                                    <form action="update-cart" method="post">
+                                        <input type="hidden" name="id" value="${ci.product.product_id}">
                                     <div class="quantity-control">
-                                        <button class="quantity-down">-</button>
+                                        <button type="submit" name="action" value="down" class="btn-qty">-</button>
                                         <input type="number" class="quantity-input" value="${ci.quantity}" min="1">
-                                        <button class="quantity-up">+</button>
+                                        <button type="submit" name="action" value="up" class="btn-qty">+</button>
                                     </div>
+                                    </form>
                                 </td>
                                 <td class="cart-item-subtotal" data-label="Tạm tính">${ci.formattedTotal}</td>
                                 <td class="cart-item-remove" data-label="Xóa">
