@@ -1,0 +1,66 @@
+package com.webthietbibep.controller;
+
+import com.webthietbibep.dao.UserDAO;
+import com.webthietbibep.model.User;
+import com.webthietbibep.utils.PasswordUtil;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+import java.time.LocalDateTime;
+
+@WebServlet("/register")
+public class RegisterServlet extends HttpServlet {
+
+    UserDAO userDAO = new UserDAO();
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        req.getRequestDispatcher("/register.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+
+        String username = req.getParameter("username");
+        String fullName = req.getParameter("fullName");
+        String email    = req.getParameter("email");
+        String phone    = req.getParameter("phone");
+        String password = req.getParameter("password");
+        String confirm  = req.getParameter("confirmPassword");
+
+        // 1. check password confirm
+        if (!password.equals(confirm)) {
+            req.setAttribute("error", "Mật khẩu xác nhận không khớp");
+            doGet(req, resp);
+            return;
+        }
+
+        // 2. check username tồn tại
+        if (userDAO.existsUsername(username)) {
+            req.setAttribute("error", "Tên đăng nhập đã tồn tại");
+            doGet(req, resp);
+            return;
+        }
+
+        // 3. tạo user
+        User user = new User();
+        user.setUsername(username);
+        user.setFull_name(fullName);
+        user.setEmail(email);
+        user.setPhone(phone);
+        user.setPassword_hash(PasswordUtil.hash(password));
+        user.setRole("USER");
+        user.setCreate_at(LocalDateTime.now());
+
+        userDAO.insert(user);
+
+        req.setAttribute("success", "Đăng ký thành công, vui lòng đăng nhập");
+        req.getRequestDispatcher("/Login.jsp").forward(req, resp);
+    }
+}
