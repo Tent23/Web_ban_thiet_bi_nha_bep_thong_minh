@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -26,19 +26,51 @@
         <aside class="profile-sidebar">
             <h3>${sessionScope.user.username}</h3>
             <ul>
-                <li><a href="${pageContext.request.contextPath}/profile">Hồ sơ</a></li>
+                <li><a href="profile">Hồ sơ</a></li>
                 <li><a href="addresses">Địa chỉ</a></li>
                 <li><a href="change-password">Đổi mật khẩu</a></li>
-                <li class="active"><a href="${pageContext.request.contextPath}/orders">Đơn mua</a></li>
+                <li class="active"><a href="orders">Đơn mua</a></li>
+                <li>Kho voucher</li>
             </ul>
         </aside>
 
         <!-- CONTENT -->
         <section class="profile-content">
 
+            <c:set var="currentStatus" value="${param.status}" />
+
             <div class="order-tabs">
-                <span class="active">Tất cả</span>
+                <a class="${empty currentStatus ? 'active' : ''}"
+                   href="${pageContext.request.contextPath}/orders">
+                    Tất cả
+                </a>
+
+                <a class="${currentStatus eq 'CHO_XAC_NHAN' ? 'active' : ''}"
+                   href="${pageContext.request.contextPath}/orders?status=CHO_XAC_NHAN">
+                    Chờ xác nhận
+                </a>
+
+                <a class="${currentStatus eq 'VAN_CHUYEN' ? 'active' : ''}"
+                   href="${pageContext.request.contextPath}/orders?status=VAN_CHUYEN">
+                    Vận chuyển
+                </a>
+
+                <a class="${currentStatus eq 'CHO_GIAO_HANG' ? 'active' : ''}"
+                   href="${pageContext.request.contextPath}/orders?status=CHO_GIAO_HANG">
+                    Chờ giao hàng
+                </a>
+
+                <a class="${currentStatus eq 'HOAN_THANH' ? 'active' : ''}"
+                   href="${pageContext.request.contextPath}/orders?status=HOAN_THANH">
+                    Hoàn thành
+                </a>
+
+                <a class="${currentStatus eq 'DA_HUY' ? 'active' : ''}"
+                   href="${pageContext.request.contextPath}/orders?status=DA_HUY">
+                    Đã huỷ
+                </a>
             </div>
+
 
             <c:if test="${empty orders}">
                 <p style="text-align:center;margin-top:40px">Bạn chưa có đơn hàng nào.</p>
