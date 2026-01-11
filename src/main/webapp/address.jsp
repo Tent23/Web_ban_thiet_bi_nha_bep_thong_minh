@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -28,8 +28,11 @@
             <ul>
                 <li><a href="profile">Hồ sơ</a></li>
                 <li class="active"><a href="addresses">Địa chỉ</a> </li>
-                <li>Đổi mật khẩu</li>
-                <li>Đơn mua</li>
+                <li><a href="">Đổi mật khẩu</a></li>
+                <li><a href="orders">Đơn mua</a></li>
+                <li><a href="">Kho voucher</a></li>
+
+
             </ul>
         </aside>
 

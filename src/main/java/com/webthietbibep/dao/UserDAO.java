@@ -104,4 +104,37 @@ public class UserDAO extends BaseDao {
                         .one() > 0
         );
     }
+        public User getById(int id) {
+            String sql = "SELECT * FROM users WHERE user_id = :id";
+
+            return get().withHandle(h ->
+                    h.createQuery(sql)
+                            .bind("id", id)
+                            .mapToBean(User.class)
+                            .findOne()
+                            .orElse(null)
+            );
+        }
+    public String getPasswordHashById(int userId) {
+        return get().withHandle(handle ->
+                handle.createQuery("SELECT password_hash FROM users WHERE user_id = :id")
+                        .bind("id", userId)
+                        .mapTo(String.class)
+                        .one()
+        );
+    }
+    public void updatePassword(int userId, String newPasswordHash) {
+        get().useHandle(handle ->
+                handle.createUpdate("""
+                UPDATE users 
+                SET password_hash = :pass 
+                WHERE user_id = :id
+            """)
+                        .bind("pass", newPasswordHash)
+                        .bind("id", userId)
+                        .execute()
+        );
+    }
+
+
 }

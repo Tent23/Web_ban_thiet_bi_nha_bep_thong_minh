@@ -222,4 +222,24 @@ public class ProductDAO extends BaseDao {
                         .list()
         );
     }
-}
+        public Product getById(int id) {
+            String sql = """
+            SELECT 
+                product_id,
+                product_name,
+                image,
+                price
+            FROM products
+            WHERE product_id = :id
+        """;
+
+            return get().withHandle(h ->
+                    h.createQuery(sql)
+                            .bind("id", id)
+                            .mapToBean(Product.class)
+                            .findOne()
+                            .orElse(null)
+            );
+        }
+    }
+

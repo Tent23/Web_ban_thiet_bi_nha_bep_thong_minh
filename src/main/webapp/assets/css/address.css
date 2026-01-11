@@ -1,21 +1,12 @@
-/* =========================
-   RESET NHẸ
-   ========================= */
+
 * {
     box-sizing: border-box;
 }
 
-/* =========================
-   PAGE WRAPPER
-   ========================= */
 .profile-page {
     background: #f5f5f5;
     padding: 30px 0;
 }
-
-/* =========================
-   LAYOUT
-   ========================= */
 .profile-layout {
     display: flex;
     gap: 24px;

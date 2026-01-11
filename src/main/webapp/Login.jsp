@@ -1,4 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,10 +9,10 @@
     <title>Đăng Nhập</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesom e/6.5.2/css/all.min.css">
 
-    <link rel="stylesheet" href="assets/css/Header.css">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/DangKy.css">
-    <link rel="stylesheet" href="assets/css/Login.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Header.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/DangKy.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Login.css">
 </head>
 
 <body>
@@ -47,7 +49,7 @@
                 <label class="check_deal">
                     <input type="checkbox"> Ghi nhớ đăng nhập
                 </label>
-                <a href="Dangky.html" class="no_account">Tôi chưa có tài khoản</a>
+                <a href="register" class="no_account">Tôi chưa có tài khoản</a>
             </div>
 
             <button type="submit" class="register_button">ĐĂNG NHẬP</button>
