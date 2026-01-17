@@ -51,7 +51,7 @@
                         </a>
                     </c:otherwise>
                 </c:choose>
-                <a href="yeu-thich.jsp"><i class="fa fa-heart"></i> Yêu thích</a>
+                <a href="/wishlist"><i class="fa fa-heart"></i> Yêu thích</a>
                 <a href="cart"><i class="fa fa-shopping-cart"></i> Giỏ hàng (${sessionScope.cart.totalQuantity})</a>
             </div>
         </div>

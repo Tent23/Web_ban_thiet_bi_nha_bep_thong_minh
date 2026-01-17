@@ -48,13 +48,17 @@
         </p>
 
         <div class="actions">
-            <a href="add-cart?id=${product.product_id}&q=1" class="btn btn-primary">
+          <a href="add-cart?id=${product.product_id}&q=1" class="btn btn-primary">
             <i class="fa fa-cart-plus"></i> Thêm vào giỏ
           </a>
+
           <a href="#" class="btn btn-danger">
             <i class="fa fa-bolt"></i> Mua ngay
           </a>
-          <a href="#" class="wishlist">
+
+          <a href="${pageContext.request.contextPath}/wishlist?action=add&product_id=${product.product_id}"
+             class="wishlist btn btn-outline"
+             title="Thêm vào yêu thích">
             <i class="fa fa-heart"></i> Yêu thích
           </a>
         </div>
