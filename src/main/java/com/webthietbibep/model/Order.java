@@ -12,7 +12,8 @@ public class Order {
     private LocalDateTime created_at;
     private String note;
     private int voucher_id;
-
+    private String userName;
+    private String addressDetail;
     public Order() {
     }
 
@@ -109,5 +110,9 @@ public class Order {
             default -> status;
         };
     }
+    public String getUserName() { return userName; }
+    public void setUserName(String userName) { this.userName = userName; }
 
+    public String getAddressDetail() { return addressDetail; }
+    public void setAddressDetail(String addressDetail) { this.addressDetail = addressDetail; }
 }

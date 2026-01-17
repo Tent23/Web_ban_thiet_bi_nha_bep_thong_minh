@@ -63,5 +63,6 @@ public class OrderServlet extends HttpServlet {
         req.setAttribute("orderProducts", orderProducts);
         req.getRequestDispatcher("/orders.jsp").forward(req, resp);
     }
+
 }
 
