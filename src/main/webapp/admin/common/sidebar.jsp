@@ -14,7 +14,7 @@
             </a>
         </li>
         <li>
-            <a href="<%=request.getContextPath()%>/admin/admin_orders.html">
+            <a href="<%=request.getContextPath()%>/admin/order">
                 <i class="fa-solid fa-file-invoice-dollar"></i>
                 <span>Quản lý Đơn hàng</span>
             </a>
