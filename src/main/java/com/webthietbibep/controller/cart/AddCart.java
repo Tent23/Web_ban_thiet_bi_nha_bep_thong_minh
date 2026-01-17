@@ -23,13 +23,34 @@ public class AddCart extends HttpServlet {
             return;
 
         }
+
+        else if(product.getStock_quantity()  < quantity){}
         Cart cart = (Cart) session.getAttribute("cart");
         if(cart==null){
             cart = new Cart();
         }
-        cart.addItem(product,quantity);
-        session.setAttribute("cart",cart);
-        response.sendRedirect("product-detail?id=" + id);
+        if(product.getStock_quantity() == 0 ){
+            session.setAttribute("message", "Sản phẩm đã hết hàng");
+            response.sendRedirect("product-detail?id=" + id);
+
+            return;
+        }
+        int currProductQuantity = 0;
+        if(cart.getData().containsKey(id)){
+            currProductQuantity = cart.getData().get(id).getQuantity();
+        }
+        if ((currProductQuantity + quantity ) > product.getStock_quantity()) {
+            session.setAttribute("message", "Vượt quá số lượng còn lại của sản phẩm để thêm vào giỏ hàng!");
+
+        }
+
+        else {
+            cart.addItem(product, quantity);
+            session.setAttribute("cart", cart);
+            session.removeAttribute("message");
+        }
+            response.sendRedirect("product-detail?id=" + id);
+
     }
 
     @Override

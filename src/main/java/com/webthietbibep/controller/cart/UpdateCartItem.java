@@ -1,6 +1,8 @@
 package com.webthietbibep.controller.cart;
 
 import com.webthietbibep.cart.Cart;
+import com.webthietbibep.model.Product;
+import com.webthietbibep.services.ProductService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -20,14 +22,24 @@ public class UpdateCartItem extends HttpServlet {
         String action = request.getParameter("action");
         HttpSession session = request.getSession();
         Cart cart = (Cart)session.getAttribute("cart");
+        ProductService ps = new ProductService();
+        Product product = ps.getProduct(id);
+        int productStock = product.getStock_quantity();
 
         if (cart != null && cart.getData().containsKey(id)) {
             int curQuantity = cart.getData().get(id).getQuantity();
-            if(action.equals("up")){
-                cart.getData().get(id).setQuantity(curQuantity+1);
+            if("up".equals(action)) {
+                    if((productStock == 0) || (curQuantity + 1 > productStock) ){
+                        session.setAttribute("message", "Sản phẩm đã vượt số lượng còn lại hoặc hết hàng không thể thêm");
+                    }
+                else {
+                    cart.getData().get(id).setQuantity(curQuantity + 1);
+                     session.removeAttribute("message");
+                }
             }
-            else  if(action.equals("down") && curQuantity>1){
+            else  if("down".equals(action) && curQuantity>1){
                 cart.getData().get(id).setQuantity(curQuantity-1);
+                session.removeAttribute("message");
             }
             session.setAttribute("cart",cart);
         }
