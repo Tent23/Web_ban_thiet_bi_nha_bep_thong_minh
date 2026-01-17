@@ -351,3 +351,21 @@
     width: 60px;
     text-align: center;
 }
+.cart-alert-error {
+    background-color: #fff2f0; /* Màu nền đỏ nhạt */
+    border: 1px solid #ffccc7; /* Viền đỏ */
+    color: #ff4d4f;            /* Màu chữ cảnh báo */
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -23,6 +23,12 @@
 <main class="main-content">
     <section class="cart-section section-padding">
         <div class="container">
+            <c:if test="${not empty sessionScope.message}">
+                <div class="cart-alert-error">
+                    <i class="fa fa-exclamation-triangle"></i> ${sessionScope.message}
+                    <c:remove var="message" scope="session" />
+                </div>
+            </c:if>
             <h1 class="section-title">Giỏ hàng của bạn</h1>
 
             <div class="cart-container">

@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -32,6 +33,12 @@
 
       <!-- INFO -->
       <div class="product-info">
+          <c:if test="${not empty sessionScope.message}">
+              <div class="cart-alert-error">
+                  <i class="fa fa-exclamation-circle"></i> ${sessionScope.message}
+                  <c:remove var="message" scope="session" />
+              </div>
+          </c:if>
         <h1>${product.product_name}</h1>
 
         <p class="price">${product.priceFormat}</p>
