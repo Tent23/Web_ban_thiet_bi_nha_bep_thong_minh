@@ -38,9 +38,21 @@ public class ArticleDao extends  BaseDao{
             if("new".equals(filter)){query += " " + " title like '%" +search+ "%' " +"ORDER BY create_date DESC ";}
             else if("old".equals(filter)) {query += " " + " title like '%" +search+ "%' " +"ORDER BY create_date ASC";}
             else if(filter.equals("type")){query += " " + "tip like '%" +search+ "%' " +"ORDER BY create_date DESC ";}
+            else if(filter.equals("published")){query += " " + "is_active = 1 ORDER BY create_date DESC ";}
+            else if(filter.equals("raw")){query += " " + "is_active = 0 ORDER BY create_date DESC ";}
             else {query += " " + "title like '%" +search+ "%' " + "ORDER BY title ASC";}
 
             return h.createQuery(query).mapToBean(Article.class).list();
         });
     }
+
+    public void addArticle(Article article){
+        get().useHandle(h->{
+            String sql = "INSERT INTO articles (title, tip, content, body, category_id, image, author, is_active, create_date, likecount) "
+                    + "VALUES (:title, :tip, :content, :body, :category_id, :image, :author, :is_active,:create_date, :likecount)";
+            h.createUpdate(sql).bindBean(article).execute();
+
+        });
+    }
+
 }
