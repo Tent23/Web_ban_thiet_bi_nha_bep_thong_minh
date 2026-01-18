@@ -13,11 +13,13 @@ public class Article implements Serializable {
     private int likecount ;
     private String image;
     private LocalDate create_date;
+    private String author;
+    private byte is_active;
 
     public Article() {
     }
 
-    public Article(int id, String tip, String title, String content, int category_id, int likecount, String image, LocalDate create_date) {
+    public Article(int id, String tip, String title, String content, int category_id, int likecount, String image, LocalDate create_date,String author,byte is_active) {
         this.id = id;
         this.tip = tip;
         this.title = title;
@@ -26,6 +28,8 @@ public class Article implements Serializable {
         this.likecount = likecount;
         this.image = image;
         this.create_date = create_date;
+        this.author = author;
+        this.is_active = is_active;
     }
 
     public int getId() {
@@ -90,6 +94,22 @@ public class Article implements Serializable {
 
     public void setCreate_date(LocalDate create_date) {
         this.create_date = create_date;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public byte getIs_active() {
+        return is_active;
+    }
+
+    public void setIs_active(byte is_active) {
+        this.is_active = is_active;
     }
 
     public String formatDate(LocalDate ld){
