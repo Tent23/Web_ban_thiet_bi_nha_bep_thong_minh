@@ -10,4 +10,7 @@ public class CategoryService {
     public List<Category> getAll() {
         return cDAO.getAll();
     }
+    public boolean checkExist(int id){
+        return cDAO.checkExist(id);
+    }
 }

@@ -101,7 +101,7 @@
         <header class="admin-header">
             <h2>Quản lý Bài viết (Góc tư vấn)</h2>
             <div class="admin-header-actions">
-                <a href="#" class="btn-primary">
+                <a href="${pageContext.request.contextPath}/admin/add-article" class="btn-primary">
                     <i class="fa-solid fa-plus"></i> Thêm Bài viết
                 </a>
                 <div class="admin-profile">
@@ -124,6 +124,8 @@
                     <option value="old" ${param.filter == 'old' ? 'selected' : ''}>Lọc theo ngày cũ nhất</option>
                     <option value="AZ" ${param.filter == 'AZ' ? 'selected' : ''}>Lọc từ A-Z</option>
                     <option value ="type" ${param.filter == 'type' ? 'selected' : ''}>Lọc theo thể loại</option>
+                    <option value="published" ${param.filter == 'published' ? 'selected' : ''}>Lọc đã xuất bản</option>
+                    <option value="raw" ${param.filter == 'raw' ? 'selected' : ''}>Lọc bản nháp</option>
 
                 </select>
 
@@ -137,12 +139,12 @@
                 <table class="admin-table">
                     <thead>
                     <tr>
-                        <th>Tiêu đề</th>
-                        <th>Tác giả</th>
-                        <th>Thể loại</th>
-                        <th>Trạng thái</th>
-                        <th>Ngày đăng</th>
-                        <th>Hành động</th>
+                        <th width="40%">Tiêu đề</th>
+                        <th width="10%">Tác giả</th>
+                        <th width="15%">Thể loại</th>
+                        <th width="12%">Trạng thái</th>
+                        <th width="12%">Ngày đăng</th>
+                        <th width="11%" >Hành động</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -154,8 +156,8 @@
                         <td><span class="status ${a.is_active != 0 ? 'status-published' : 'status-draft'}">${a.is_active != 0 ? 'Đã xuất bản' : 'Bản nháp'}</span></td>
                         <td>${a.create_date}</td>
                         <td>
-                            <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i> Sửa</a>
-                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> Xóa</a>
+                            <a href="#" class="btn-action edit"  ><i class="fa-solid fa-pencil"></i></a>
+                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> </a>
                         </td>
                     </tr>
                     </c:forEach>
