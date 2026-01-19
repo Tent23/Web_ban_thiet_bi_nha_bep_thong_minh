@@ -85,7 +85,12 @@ public class CheckoutServlet extends HttpServlet {
         order.setUser_id(user.getUser_id());
         order.setAddress_id(addressId);
         order.setPayment_method(payment);
-        order.setStatus("CHO_XAC_NHAN");
+        if ("BANK".equals(payment)) {
+            order.setStatus("CHO_THANH_TOAN");
+        } else {
+            order.setStatus("CHO_XAC_NHAN");
+        }
+
 
         int orderId;
 
@@ -136,7 +141,12 @@ public class CheckoutServlet extends HttpServlet {
             req.getSession().removeAttribute("cart");
         }
 
-        resp.sendRedirect("orders");
+        if ("BANK".equals(payment)) {
+            resp.sendRedirect("payment?orderId=" + orderId);
+        } else {
+            resp.sendRedirect("orders");
+        }
+
     }
 
 }

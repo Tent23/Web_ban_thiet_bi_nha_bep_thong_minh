@@ -104,6 +104,7 @@ public class Order {
     }
     public String getStatusText() {
         return switch (status) {
+            case "CHO_THANH_TOAN" -> "Chờ thanh toán";
             case "CHO_XAC_NHAN" -> "Chờ xác nhận";
             case "VAN_CHUYEN" -> "Vận chuyển";
             case "CHO_GIAO_HANG" -> "Chờ giao hàng";

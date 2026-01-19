@@ -10,56 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="443e01b7-81ea-40fa-acc8-3149ab981ea3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.ai/mcp/mcp.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminAddArticle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminArtticleServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminOrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/BuyNowServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/WishlistController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/WishlistDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Wishlist.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_content_form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/order-detail.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/order-list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/wishlist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/CheckoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/CheckoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/OrderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/cart/AddCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/cart/AddCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/cart/UpdateCartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/cart/UpdateCartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ArticleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ArticleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/CategoryDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/OrdersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/OrdersDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/OrderItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/ArcticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/ArcticleService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/CategoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_banners.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_banners.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_content.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_edit_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_edit_product.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_order_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_orders.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_promotions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_promotions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_static_pages.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_static_pages.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/common/sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/common/sidebar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/admin_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/admin_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/giohang.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/giohang.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/product-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/product-detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/chinhsachbaohanh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chinhsachbaohanh.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/doitacB2B.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/doitacB2B.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/giohang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/giohang.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/khuyenmai.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/khuyenmai.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/phuongthucthanhtoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/phuongthucthanhtoan.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/tuyendung.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/tuyendung.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/vechungtoi.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vechungtoi.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/yeuthich.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +66,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Tomcat Server.Tomcat 10.executor": "Run",
-    "git-widget-placeholder": "Merging QuangToan1",
+    "git-widget-placeholder": "QuangToan1",
     "kotlin-language-version-configured": "true",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",

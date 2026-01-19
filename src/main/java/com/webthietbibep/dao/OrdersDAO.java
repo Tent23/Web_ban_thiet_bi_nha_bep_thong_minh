@@ -11,7 +11,7 @@ public class OrdersDAO extends BaseDao {
         String sql = """
         INSERT INTO orders
         (user_id, address_id, total_amount, status, payment_method, note)
-        VALUES (:uid, :aid, :total, 'CHO_XAC_NHAN', :pm, :note)
+        VALUES (:uid, :aid, :total, :status, :pm, :note)
     """;
 
         return get().withHandle(h ->

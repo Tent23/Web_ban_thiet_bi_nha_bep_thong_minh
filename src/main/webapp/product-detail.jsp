@@ -87,7 +87,7 @@
             <img src="${p.image}">
             <h4>${p.product_name}</h4>
             <p>${p.priceFormat}</p>
-            <a href="${pageContext.request.contextPath}/product-detail?id=${p.product_id}">
+            <a href="${pageContext.request.contextPath}/product-detail?id=${p.product_id}" class="btn btn-secondary">
               Xem chi tiết
             </a>
           </div>
