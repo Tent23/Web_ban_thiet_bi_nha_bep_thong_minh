@@ -64,7 +64,6 @@ public class OrderItem {
     public String getProductImage() { return productImage; }
     public void setProductImage(String productImage) { this.productImage = productImage; }
 
-    // Hàm tính tổng tiền dòng này (để hiển thị JSP cho tiện)
     public double getTotalPrice() {
         return this.quantity * this.price_at_purchase;
     }

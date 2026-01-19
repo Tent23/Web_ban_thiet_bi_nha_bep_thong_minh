@@ -1,5 +1,7 @@
 package com.webthietbibep.model;
 
+import com.webthietbibep.cart.CartItem;
+
 import java.time.LocalDateTime;
 
 public class Order {
@@ -115,4 +117,9 @@ public class Order {
 
     public String getAddressDetail() { return addressDetail; }
     public void setAddressDetail(String addressDetail) { this.addressDetail = addressDetail; }
+
+    public String getFormattedTotal() {
+        return CartItem.Format(total_amount);
+    }
+
 }

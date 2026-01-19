@@ -7,6 +7,26 @@ import com.webthietbibep.model.OrderItem;
 import java.util.List;
 import java.util.Optional;
 public class OrdersDAO extends BaseDao {
+    public int insert(Order o) {
+        String sql = """
+        INSERT INTO orders
+        (user_id, address_id, total_amount, status, payment_method, note)
+        VALUES (:uid, :aid, :total, 'CHO_XAC_NHAN', :pm, :note)
+    """;
+
+        return get().withHandle(h ->
+                h.createUpdate(sql)
+                        .bind("uid", o.getUser_id())
+                        .bind("aid", o.getAddress_id())
+                        .bind("total", o.getTotal_amount())
+                        .bind("pm", o.getPayment_method())
+                        .bind("note", o.getNote())
+                        .executeAndReturnGeneratedKeys("order_id")
+                        .mapTo(int.class)
+                        .one()
+        );
+    }
+
 
     public List<Order> getOrdersByUser(int userId) {
         String sql = """

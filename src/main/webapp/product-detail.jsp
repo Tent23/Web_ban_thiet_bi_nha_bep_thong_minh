@@ -52,9 +52,11 @@
             <i class="fa fa-cart-plus"></i> Thêm vào giỏ
           </a>
 
-          <a href="#" class="btn btn-danger">
+          <a href="${pageContext.request.contextPath}/buy-now?id=${product.product_id}"
+             class="btn btn-danger">
             <i class="fa fa-bolt"></i> Mua ngay
           </a>
+
 
           <a href="${pageContext.request.contextPath}/wishlist?action=add&product_id=${product.product_id}"
              class="wishlist btn btn-outline"
