@@ -21,6 +21,8 @@ public class AdminAddArticle extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
+        String id = request.getParameter("id");
+        int articleId = (id != null && !id.isEmpty()) ? Integer.parseInt(id) : 0;
         String title = request.getParameter("title");
         String author = request.getParameter("author");
         String tip = request.getParameter("tip");
@@ -31,6 +33,7 @@ public class AdminAddArticle extends HttpServlet {
         String cateRaw = request.getParameter("cate");
 
         Article a = new Article();
+        a.setId(articleId);
         a.setTitle(title);
         a.setAuthor(author);
         a.setTip(tip);
@@ -47,13 +50,22 @@ public class AdminAddArticle extends HttpServlet {
         boolean check = cs.checkExist(cateId);
 
         if (check) {
-            // Nếu OK: Set ngày và Lưu
-            a.setCreate_date(new java.sql.Date(System.currentTimeMillis()).toLocalDate());
-            if (author != null) a.setAuthor(author.toUpperCase());
 
             ArcticleService as = new ArcticleService();
-            as.addArticle(a);
-            response.sendRedirect(request.getContextPath() + "/admin/content");
+
+            if (articleId > 0) {
+                as.updateArticle(a);
+
+            }
+
+
+            else {
+
+                a.setCreate_date(new java.sql.Date(System.currentTimeMillis()).toLocalDate());
+                as.addArticle(a);
+            }
+            response.sendRedirect(request.getContextPath() + "/admin/content?message=success");
+            return;
         } else {
 
             request.setAttribute("oldArticle", a);

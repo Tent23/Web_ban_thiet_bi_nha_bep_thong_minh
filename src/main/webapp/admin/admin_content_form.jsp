@@ -19,8 +19,15 @@
     <main class="admin-main">
         <header class="admin-header">
             <div class="header-left">
-                <h2>Quản lý nội dung / Bài viết mới</h2>
+                <a href="${pageContext.request.contextPath}/admin/content" class="btn-back">
+                    <i class="fa-solid fa-arrow-left"></i> Quay lại danh sách
+                </a>
+
             </div>
+            <div class ="header-right">
+                <h2>${oldArticle.id > 0 ? 'Chỉnh sửa bài viết' : 'Thêm bài viết mới'}</h2>
+            </div>
+
         </header>
 
         <div class="admin-content">
@@ -28,6 +35,7 @@
                 <div style="color: red; margin-bottom: 10px;">${errorMessage}</div>
             </c:if>
             <form action="${pageContext.request.contextPath}/admin/add-article" method="post">
+                <input type="hidden" name="id" value="${oldArticle.id}">
             <div class="card">
                 <div class="card-body">
 
@@ -62,7 +70,7 @@
                             <div class="col-md-6">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Danh mục</label>
-                                    <input type="text" name="cate" class="form-control" placeholder="Nhập ID danh mục ">
+                                    <input type="text" name="cate" class="form-control" value ="${oldArticle.category_id}" placeholder="Nhập ID danh mục ">
                                 </div>
                             </div>
 
@@ -77,15 +85,15 @@
                             <div class="col-md-6">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Hình ảnh đại diện (Thumbnail)</label>
-                                    <input type="text" name="image" placeholder="URL đến ảnh" class="form-control" >
+                                    <input type="text" name="image" value="${oldArticle.image}" placeholder="URL đến ảnh" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group mb-3">
                                     <label class="form-label">Trạng thái bài đăng</label>
                                     <select name="is_active" class="form-control">
-                                        <option value="1" ${param.is_active == 1 ? 'selected' : ''}>Đã xuất bản (Hiện trên web)</option>
-                                        <option value="0" ${param.is_active == 0 ? 'selected' : ''}>Bản nháp (Lưu tạm/Ẩn)</option>
+                                        <option value="1" ${oldArticle.is_active == 1 ? 'selected' : ''}>Đã xuất bản (Hiện trên web)</option>
+                                        <option value="0" ${oldArticle.is_active == 0 ? 'selected' : ''}>Bản nháp (Lưu tạm/Ẩn)</option>
                                     </select>
                                 </div>
                             </div>
@@ -96,7 +104,8 @@
                                 <i class="fa-solid fa-rotate-left"></i> Làm lại
                             </button>
                             <button type="submit" class="btn btn-primary">
-                                <i class="fa-solid fa-paper-plane"></i> Đăng bài viết
+                                <i class="fa-solid fa-paper-plane"></i>
+                                ${oldArticle.id > 0 ? 'Cập nhật bài viết' : 'Đăng bài viết'}
                             </button>
                         </div>
 
