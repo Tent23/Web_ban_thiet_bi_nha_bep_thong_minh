@@ -113,7 +113,13 @@
 
         <!-- VÙNG NỘI DUNG CHÍNH -->
         <main class="admin-content">
-
+            <div class="admin-content">
+                <c:if test="${not empty param.message}">
+                <div class="alert alert-success" style="padding: 15px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 4px; margin-bottom: 20px;">
+                    <i class="fa-solid fa-check-circle"></i>
+                        ${param.message == 'deleted' ? 'Đã xóa bài viết thành công!' : 'Đã lưu thông tin bài viết thành công!'}
+                </div>
+                </c:if>
             <!-- KHUNG BỘ LỌC -->
             <div class="admin-card admin-filters">
                 <form action="${pageContext.request.contextPath}/admin/content" method="get" >
@@ -156,8 +162,12 @@
                         <td><span class="status ${a.is_active != 0 ? 'status-published' : 'status-draft'}">${a.is_active != 0 ? 'Đã xuất bản' : 'Bản nháp'}</span></td>
                         <td>${a.create_date}</td>
                         <td>
-                            <a href="#" class="btn-action edit"  ><i class="fa-solid fa-pencil"></i></a>
-                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> </a>
+                            <a href="${pageContext.request.contextPath}/admin/action-article?action=edit&id=${a.id}" class="btn-action edit"  ><i class="fa-solid fa-pencil"></i></a>
+                            <a href="${pageContext.request.contextPath}/admin/action-article?action=delete&id=${a.id}"
+                               class="btn-action delete"
+                               onclick="return confirm('Chắc chắn muốn xóa ?')">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
                         </td>
                     </tr>
                     </c:forEach>

@@ -55,4 +55,26 @@ public class ArticleDao extends  BaseDao{
         });
     }
 
+    public boolean deleteArticle(int id){
+        String sql = "DELETE FROM articles WHERE id = :id";
+      return  get().withHandle(h->{
+         return   h.createUpdate(sql).bind("id",id).execute() > 0;
+        });
+    }
+
+    public Article getArticleById(int id){
+        String sql = "SELECT * FROM articles WHERE id = :id";
+        return get().withHandle(h->{
+            return  h.createQuery(sql).bind("id",id).mapToBean(Article.class).stream().findFirst().orElse(null);
+        });
+    }
+
+    public boolean updateArticle(Article article){
+        String sql = "UPDATE articles Set title = :title , author = :author, tip = :tip,category_id = :category_id,body = :body , image = :image , is_active = :is_active  WHERE id = :id ";
+        return get().withHandle(h->{
+            return  h.createUpdate(sql).bindBean(article)
+                    .execute() > 0;
+        });
+    }
+
 }

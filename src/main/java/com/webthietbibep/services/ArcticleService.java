@@ -24,4 +24,13 @@ public class    ArcticleService {
     public void addArticle(Article a){
         adao.addArticle(a);
     }
+    public boolean deleteArticle(int id){
+        return adao.deleteArticle(id);
+    }
+    public  Article getArticleById(int id){
+        return adao.getArticleById(id);
+    }
+    public boolean updateArticle(Article a){
+        return adao.updateArticle(a);
+    }
 }
