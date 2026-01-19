@@ -106,7 +106,8 @@
 
                         <div class="total">
                             Thành tiền:
-                            <span>${o.total_amount} đ</span>
+                            <span>${o.formattedTotal}</span>
+
                         </div>
 
                         <div class="actions">

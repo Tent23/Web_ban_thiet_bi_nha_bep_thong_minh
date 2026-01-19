@@ -1,9 +1,11 @@
 package com.webthietbibep.dao;
 
+import com.webthietbibep.db.JDBIConnector;
 import com.webthietbibep.model.Order;
+import com.webthietbibep.model.OrderItem;
 
 import java.util.List;
-
+import java.util.Optional;
 public class OrdersDAO extends BaseDao {
     public int insert(Order o) {
         String sql = """
@@ -81,5 +83,86 @@ public class OrdersDAO extends BaseDao {
                         .list()
         );
     }
+    public List<Order> getAllOrders() {
+        String sql = """
+            SELECT 
+                o.order_id, o.user_id, o.address_id, o.total_amount, 
+                o.status, o.payment_method, o.created_at, o.note, o.voucher_id,
+                
+                -- Lấy tên tài khoản đặt hàng
+                u.full_name AS userName,       
+                
+                -- Ghép địa chỉ từ bảng user_addresses thành 1 chuỗi duy nhất
+                CONCAT_WS(', ', ua.address_detail, ua.ward, ua.district, ua.province) AS addressDetail,
+                
+                -- (Tùy chọn) Lấy tên người nhận hàng thực tế nếu khác tên tài khoản
+                ua.receiver_name
+                
+            FROM orders o
+            JOIN users u ON o.user_id = u.user_id
+            LEFT JOIN user_addresses ua ON o.address_id = ua.address_id
+            ORDER BY o.created_at DESC
+        """;
 
+        return JDBIConnector.get().withHandle(handle ->
+                handle.createQuery(sql)
+                        .mapToBean(Order.class)
+                        .list()
+        );
+    }
+
+    public Order getOrderById(int orderId) {
+        String sql = """
+            SELECT 
+                o.order_id, o.user_id, o.address_id, o.total_amount, 
+                o.status, o.payment_method, o.created_at, o.note, o.voucher_id,
+                u.full_name AS userName,       
+                CONCAT_WS(', ', ua.address_detail, ua.ward, ua.district, ua.province) AS addressDetail
+            FROM orders o
+            JOIN users u ON o.user_id = u.user_id
+            LEFT JOIN user_addresses ua ON o.address_id = ua.address_id
+            WHERE o.order_id = :id
+        """;
+
+        return JDBIConnector.get().withHandle(handle ->
+                handle.createQuery(sql)
+                        .bind("id", orderId)
+                        .mapToBean(Order.class)
+                        .findOne()
+                        .orElse(null)
+        );
+    }
+
+
+    public List<OrderItem> getOrderItems(int orderId) {
+        String sql = """
+            SELECT 
+                oi.order_item_id, oi.order_id, oi.product_id, 
+                oi.quantity, oi.price_at_purchase,
+                p.product_name AS productName,  
+                p.image AS productImage
+            FROM order_items oi
+            JOIN products p ON oi.product_id = p.product_id
+            WHERE oi.order_id = :orderId
+        """;
+
+        return JDBIConnector.get().withHandle(handle ->
+                handle.createQuery(sql)
+                        .bind("orderId", orderId)
+                        .mapToBean(OrderItem.class)
+                        .list()
+        );
+    }
+
+
+    public int updateStatus(int orderId, String newStatus) {
+        String sql = "UPDATE orders SET status = :status WHERE order_id = :id";
+
+        return JDBIConnector.get().withHandle(handle ->
+                handle.createUpdate(sql)
+                        .bind("status", newStatus)
+                        .bind("id", orderId)
+                        .execute()
+        );
+    }
 }

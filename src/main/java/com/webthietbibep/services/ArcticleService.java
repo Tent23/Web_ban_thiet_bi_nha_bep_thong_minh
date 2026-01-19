@@ -18,4 +18,10 @@ public class    ArcticleService {
     public List<Article> getNewArticle(){
         return adao.getNewArticle();
     }
+    public List<Article> getFilterArticleAdmin (String filter,String search){
+        return adao.getFilterArticleAdmin(filter,search);
+    }
+    public void addArticle(Article a){
+        adao.addArticle(a);
+    }
 }

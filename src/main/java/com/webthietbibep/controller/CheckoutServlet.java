@@ -37,35 +37,34 @@ public class CheckoutServlet extends HttpServlet {
 
 
         String mode = req.getParameter("mode");
-        Cart cart;
 
-        if ("buy_now".equals(mode)) {
-            int productId = Integer.parseInt(req.getParameter("id"));
-            Product p = new ProductDAO().getById(productId);
+        Cart cart = null;
+        if ("buynow".equals(mode)) {
+            Product product = (Product) req.getSession().getAttribute("buyNowProduct");
+            Integer quantity = (Integer) req.getSession().getAttribute("buyNowQuantity");
 
-            if (p == null) {
+            if (product == null || quantity == null) {
                 resp.sendRedirect("products");
                 return;
             }
 
-            cart = new Cart();
-            cart.addItem(p, 1);
-
+            req.setAttribute("buyNowProduct", product);
+            req.setAttribute("buyNowQuantity", quantity);
+            req.setAttribute("mode", "buynow");
         } else {
             cart = (Cart) req.getSession().getAttribute("cart");
-
             if (cart == null || cart.getItems().isEmpty()) {
                 resp.sendRedirect("cart");
                 return;
             }
+            req.setAttribute("cart", cart);
+            req.setAttribute("mode", "cart");
         }
 
-        req.setAttribute("cart", cart);
-        req.setAttribute("mode", mode);
         req.setAttribute("addresses",
                 addressDAO.findByUserId(user.getUser_id()));
-
         req.getRequestDispatcher("/checkout.jsp").forward(req, resp);
+
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
@@ -78,18 +77,6 @@ public class CheckoutServlet extends HttpServlet {
         }
 
         String mode = req.getParameter("mode");
-        Cart cart;
-
-        if ("buy_now".equals(mode)) {
-            cart = (Cart) req.getAttribute("cart");
-        } else {
-            cart = (Cart) req.getSession().getAttribute("cart");
-        }
-
-        if (cart == null || cart.getItems().isEmpty()) {
-            resp.sendRedirect("cart");
-            return;
-        }
 
         int addressId = Integer.parseInt(req.getParameter("addressId"));
         String payment = req.getParameter("paymentMethod");
@@ -98,21 +85,54 @@ public class CheckoutServlet extends HttpServlet {
         order.setUser_id(user.getUser_id());
         order.setAddress_id(addressId);
         order.setPayment_method(payment);
-        order.setTotal_amount(cart.getTotal());
+        order.setStatus("CHO_XAC_NHAN");
 
-        int orderId = ordersDAO.insert(order);
+        int orderId;
 
-        for (CartItem ci : cart.getItems()) {
+        if ("buynow".equals(mode)) {
+
+            Product product = (Product) req.getSession().getAttribute("buyNowProduct");
+            Integer quantity = (Integer) req.getSession().getAttribute("buyNowQuantity");
+
+            if (product == null || quantity == null) {
+                resp.sendRedirect("products");
+                return;
+            }
+
+            order.setTotal_amount(product.getPrice() * quantity);
+            orderId = ordersDAO.insert(order);
+
             OrderItem oi = new OrderItem();
             oi.setOrder_id(orderId);
-            oi.setProduct_id(ci.getProduct().getProduct_id());
-            oi.setQuantity(ci.getQuantity());
-            oi.setPrice_at_purchase(ci.getPrice());
-
+            oi.setProduct_id(product.getProduct_id());
+            oi.setQuantity(quantity);
+            oi.setPrice_at_purchase(product.getPrice());
             itemDAO.insert(oi);
-        }
 
-        if ("cart".equals(mode)) {
+            req.getSession().removeAttribute("buyNowProduct");
+            req.getSession().removeAttribute("buyNowQuantity");
+
+        }
+        else {
+
+            Cart cart = (Cart) req.getSession().getAttribute("cart");
+            if (cart == null || cart.getItems().isEmpty()) {
+                resp.sendRedirect("cart");
+                return;
+            }
+
+            order.setTotal_amount(cart.getTotal());
+            orderId = ordersDAO.insert(order);
+
+            for (CartItem ci : cart.getItems()) {
+                OrderItem oi = new OrderItem();
+                oi.setOrder_id(orderId);
+                oi.setProduct_id(ci.getProduct().getProduct_id());
+                oi.setQuantity(ci.getQuantity());
+                oi.setPrice_at_purchase(ci.getPrice());
+                itemDAO.insert(oi);
+            }
+
             req.getSession().removeAttribute("cart");
         }
 

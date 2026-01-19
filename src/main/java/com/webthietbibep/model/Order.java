@@ -1,5 +1,7 @@
 package com.webthietbibep.model;
 
+import com.webthietbibep.cart.CartItem;
+
 import java.time.LocalDateTime;
 
 public class Order {
@@ -12,7 +14,8 @@ public class Order {
     private LocalDateTime created_at;
     private String note;
     private int voucher_id;
-
+    private String userName;
+    private String addressDetail;
     public Order() {
     }
 
@@ -108,6 +111,15 @@ public class Order {
             case "DA_HUY" -> "Đã huỷ";
             default -> status;
         };
+    }
+    public String getUserName() { return userName; }
+    public void setUserName(String userName) { this.userName = userName; }
+
+    public String getAddressDetail() { return addressDetail; }
+    public void setAddressDetail(String addressDetail) { this.addressDetail = addressDetail; }
+
+    public String getFormattedTotal() {
+        return CartItem.Format(total_amount);
     }
 
 }

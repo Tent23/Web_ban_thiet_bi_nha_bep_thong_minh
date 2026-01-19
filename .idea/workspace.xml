@@ -10,12 +10,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="443e01b7-81ea-40fa-acc8-3149ab981ea3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.ai/mcp/mcp.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminAddArticle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminArtticleServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/BuyNowServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/WishlistController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/WishlistDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Wishlist.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_content_form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/order-detail.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/admin/order-list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/wishlist.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/CheckoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/CheckoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/checkout.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/checkout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/OrderServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/cart/AddCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/cart/AddCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/cart/UpdateCartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/cart/UpdateCartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ArticleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ArticleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/CategoryDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/CategoryDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/OrdersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/OrdersDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/OrderItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/OrderItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/ArcticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/ArcticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/services/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_banners.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_banners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_content.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_content.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_edit_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_edit_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_order_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_orders.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_product_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_promotions.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_promotions.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/admin_static_pages.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/admin_static_pages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/admin/common/sidebar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin/common/sidebar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/admin_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/admin_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/giohang.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/giohang.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/product-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/product-detail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/chinhsachbaohanh.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/chinhsachbaohanh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/doitacB2B.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/doitacB2B.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/giohang.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/giohang.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/khuyenmai.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/khuyenmai.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/phuongthucthanhtoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/phuongthucthanhtoan.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/tuyendung.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/tuyendung.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/vechungtoi.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/vechungtoi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/yeuthich.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +70,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Servlet" />
-        <option value="Jsp File" />
         <option value="CSS File" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -35,12 +79,19 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/CheckoutServlet.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -51,27 +102,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.TestBCrypt.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;QuangToan1&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.TestBCrypt.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Tomcat Server.Tomcat 10.executor": "Run",
+    "git-widget-placeholder": "Merging QuangToan1",
+    "kotlin-language-version-configured": "true",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationStatuses">
       <map>
@@ -100,14 +152,14 @@
       </method>
     </configuration>
     <configuration name="Tomcat 10" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.50" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WebThietBiBep_war/Home" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/Home" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="HOT_SWAP_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATING_POLICY" value="hot-swap-classes" />
       <deployment>
         <artifact name="WebThietBiBep:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/WebThietBiBep_war" />
+            <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
@@ -266,6 +318,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.TestBCrypt" />
+      <item itemvalue="Tomcat Server.Tomcat 10" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.TestBCrypt" />
@@ -275,8 +331,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
-        <option value="bundled-js-predefined-d6986cc7102b-c7e53b3be11b-JavaScript-IU-253.28294.334" />
+        <option value="bundled-jdk-30f59d01ecdd-26cb7f24e5b0-intellij.indexing.shared.core-IU-253.29346.240" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.29346.240" />
       </set>
     </attachedChunks>
   </component>
@@ -290,13 +346,20 @@
       <workItem from="1767799590067" duration="75000" />
       <workItem from="1767799666221" duration="6405000" />
       <workItem from="1767986125600" duration="4524000" />
-      <workItem from="1768033283855" duration="21058000" />
-      <workItem from="1768602465027" duration="5924000" />
-      <workItem from="1768736914763" duration="1311000" />
+      <workItem from="1768033283855" duration="19124000" />
+      <workItem from="1768674413953" duration="3767000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>

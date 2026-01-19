@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -32,6 +33,12 @@
 
       <!-- INFO -->
       <div class="product-info">
+          <c:if test="${not empty sessionScope.message}">
+              <div class="cart-alert-error">
+                  <i class="fa fa-exclamation-circle"></i> ${sessionScope.message}
+                  <c:remove var="message" scope="session" />
+              </div>
+          </c:if>
         <h1>${product.product_name}</h1>
 
         <p class="price">${product.priceFormat}</p>
@@ -41,13 +48,19 @@
         </p>
 
         <div class="actions">
-            <a href="add-cart?id=${product.product_id}&q=1" class="btn btn-primary">
+          <a href="add-cart?id=${product.product_id}&q=1" class="btn btn-primary">
             <i class="fa fa-cart-plus"></i> Thêm vào giỏ
           </a>
-          <a href="${pageContext.request.contextPath}/checkout?mode=buy_now&id=${product.product_id}" class="btn btn-danger">
+
+          <a href="${pageContext.request.contextPath}/buy-now?id=${product.product_id}"
+             class="btn btn-danger">
             <i class="fa fa-bolt"></i> Mua ngay
           </a>
-          <a href="#" class="wishlist">
+
+
+          <a href="${pageContext.request.contextPath}/wishlist?action=add&product_id=${product.product_id}"
+             class="wishlist btn btn-outline"
+             title="Thêm vào yêu thích">
             <i class="fa fa-heart"></i> Yêu thích
           </a>
         </div>

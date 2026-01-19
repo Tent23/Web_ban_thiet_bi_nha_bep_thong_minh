@@ -1,3 +1,6 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -5,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin - Quản lý Nội dung</title>
 
-    <link rel="stylesheet" href="admin_style.css">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
@@ -14,7 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="../../assets/fonts/indexfont.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/admin_style.css">
 </head>
 <body>
 
@@ -97,7 +101,7 @@
         <header class="admin-header">
             <h2>Quản lý Bài viết (Góc tư vấn)</h2>
             <div class="admin-header-actions">
-                <a href="#" class="btn-primary">
+                <a href="${pageContext.request.contextPath}/admin/add-article" class="btn-primary">
                     <i class="fa-solid fa-plus"></i> Thêm Bài viết
                 </a>
                 <div class="admin-profile">
@@ -112,14 +116,21 @@
 
             <!-- KHUNG BỘ LỌC -->
             <div class="admin-card admin-filters">
-                <input type="text" placeholder="Tìm theo Tên bài viết...">
-                <select>
-                    <option value="">Lọc theo Thể loại</option>
-                    <option value="tu-van">Góc tư vấn</option>
-                    <option value="khuyen-mai">Khuyến mãi</option>
-                    <option value="trang-tinh">Trang tĩnh</option>
+                <form action="${pageContext.request.contextPath}/admin/content" method="get" >
+                <input name="search" type="text" placeholder="Tìm theo Tên bài viết..." value="${param.search}">
+
+                <select name ="filter">
+                    <option value="new" ${param.filter == 'new' ? 'selected' : ''}>Lọc theo ngày mới nhất</option>
+                    <option value="old" ${param.filter == 'old' ? 'selected' : ''}>Lọc theo ngày cũ nhất</option>
+                    <option value="AZ" ${param.filter == 'AZ' ? 'selected' : ''}>Lọc từ A-Z</option>
+                    <option value ="type" ${param.filter == 'type' ? 'selected' : ''}>Lọc theo thể loại</option>
+                    <option value="published" ${param.filter == 'published' ? 'selected' : ''}>Lọc đã xuất bản</option>
+                    <option value="raw" ${param.filter == 'raw' ? 'selected' : ''}>Lọc bản nháp</option>
+
                 </select>
-                <button class="btn-filter">Lọc</button>
+
+                <button type="submit" class="btn-filter">Lọc</button>
+                </form>
             </div>
 
             <!-- KHUNG DANH SÁCH BÀI VIẾT -->
@@ -128,59 +139,29 @@
                 <table class="admin-table">
                     <thead>
                     <tr>
-                        <th>Tiêu đề</th>
-                        <th>Tác giả</th>
-                        <th>Thể loại</th>
-                        <th>Trạng thái</th>
-                        <th>Ngày đăng</th>
-                        <th>Hành động</th>
+                        <th width="40%">Tiêu đề</th>
+                        <th width="10%">Tác giả</th>
+                        <th width="15%">Thể loại</th>
+                        <th width="12%">Trạng thái</th>
+                        <th width="12%">Ngày đăng</th>
+                        <th width="11%" >Hành động</th>
                     </tr>
                     </thead>
                     <tbody>
+                    <c:forEach var = "a" items="${filterA}">
                     <tr>
-                        <td>So sánh Bếp từ Bosch và Hafele</td>
-                        <td>Admin</td>
-                        <td>Góc tư vấn</td>
-                        <td><span class="status status-published">Đã xuất bản</span></td>
-                        <td>10/11/2025</td>
+                        <td>${a.title}</td>
+                        <td>${a.author}</td>
+                        <td>${a.tip}</td>
+                        <td><span class="status ${a.is_active != 0 ? 'status-published' : 'status-draft'}">${a.is_active != 0 ? 'Đã xuất bản' : 'Bản nháp'}</span></td>
+                        <td>${a.create_date}</td>
                         <td>
-                            <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i> Sửa</a>
-                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> Xóa</a>
+                            <a href="#" class="btn-action edit"  ><i class="fa-solid fa-pencil"></i></a>
+                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> </a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Chính sách Bảo hành</td>
-                        <td>Admin</td>
-                        <td>Trang tĩnh</td>
-                        <td><span class="status status-published">Đã xuất bản</span></td>
-                        <td>05/11/2025</td>
-                        <td>
-                            <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i> Sửa</a>
-                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> Xóa</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Black Friday Sale - Giảm đến 50%</td>
-                        <td>Admin</td>
-                        <td>Khuyến mãi</td>
-                        <td><span class="status status-published">Đã xuất bản</span></td>
-                        <td>01/11/2025</td>
-                        <td>
-                            <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i> Sửa</a>
-                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> Xóa</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>5 Kịch bản tự động hóa bếp (Bản nháp)</td>
-                        <td>Admin</td>
-                        <td>Góc tư vấn</td>
-                        <td><span class="status status-draft">Bản nháp</span></td>
-                        <td>-</td>
-                        <td>
-                            <a href="#" class="btn-action edit"><i class="fa-solid fa-pencil"></i> Sửa</a>
-                            <a href="#" class="btn-action delete"><i class="fa-solid fa-trash"></i> Xóa</a>
-                        </td>
-                    </tr>
+                    </c:forEach>
+
                     </tbody>
                 </table>
             </div>

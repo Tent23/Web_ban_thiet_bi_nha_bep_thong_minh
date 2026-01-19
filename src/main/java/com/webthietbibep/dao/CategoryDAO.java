@@ -49,4 +49,11 @@ public class CategoryDAO extends BaseDao {
                 h.createUpdate(sql).bind("id", id).execute()
         );
     }
+
+    public boolean checkExist(int id){
+        String sql = "SELECT COUNT(*) FROM categories WHERE category_id = :id";
+        return get().withHandle(h->{
+           return h.createQuery(sql).bind("id", id).mapTo(Integer.class).one() > 0;
+        });
+    }
 }

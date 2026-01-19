@@ -6,7 +6,8 @@ public class OrderItem {
     private int product_id;
     private int quantity;
     private double price_at_purchase;
-
+    private String productName;
+    private String productImage;
     public OrderItem() {
     }
 
@@ -56,5 +57,14 @@ public class OrderItem {
 
     public void setProduct_id(int product_id) {
         this.product_id = product_id;
+    }
+    public String getProductName() { return productName; }
+    public void setProductName(String productName) { this.productName = productName; }
+
+    public String getProductImage() { return productImage; }
+    public void setProductImage(String productImage) { this.productImage = productImage; }
+
+    public double getTotalPrice() {
+        return this.quantity * this.price_at_purchase;
     }
 }

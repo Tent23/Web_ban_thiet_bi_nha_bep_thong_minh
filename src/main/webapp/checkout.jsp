@@ -24,7 +24,6 @@
 
     <form action="checkout" method="post" class="checkout-content">
         <input type="hidden" name="mode" value="${mode}">
-        <!-- LEFT -->
         <div class="checkout-left">
 
             <h2>Thông tin giao hàng</h2>
@@ -40,7 +39,9 @@
             </c:forEach>
 
 
-            <a href="add-address" class="add-address">+ Thêm địa chỉ mới</a>
+            <a href="${pageContext.request.contextPath}/addresses" class="add-address">
+                + Thêm địa chỉ mới
+            </a>
 
             <h2>Phương thức thanh toán</h2>
 
@@ -56,15 +57,28 @@
 
         </div>
 
-        <!-- RIGHT -->
         <div class="checkout-right">
 
             <h2>Đơn hàng của bạn</h2>
 
             <c:choose>
 
-                <c:when test="${mode == 'cart'}">
-                    <c:forEach items="${sessionScope.cart.items}" var="ci">
+                <c:when test="${mode == 'buynow'}">
+                    <div class="order-item">
+                        <img src="${buyNowProduct.image}">
+                        <div>
+                            <p>${buyNowProduct.product_name}</p>
+                            <small>Số lượng: ${buyNowQuantity}</small><br>
+                            <strong>
+                                    ${buyNowProduct.price * buyNowQuantity} đ
+                            </strong>
+                        </div>
+                    </div>
+                </c:when>
+
+
+                <c:otherwise>
+                    <c:forEach items="${cart.items}" var="ci">
                         <div class="order-item">
                             <img src="${ci.product.image}">
                             <div>
@@ -74,33 +88,25 @@
                             </div>
                         </div>
                     </c:forEach>
-                </c:when>
-
-                <c:when test="${mode == 'buy_now'}">
-                    <div class="order-item">
-                        <img src="${product.image}">
-                        <div>
-                            <p>${product.product_name}</p>
-                            <small>Số lượng: 1</small><br>
-                            <strong>${product.priceFormat}</strong>
-                        </div>
-                    </div>
-                </c:when>
+                </c:otherwise>
 
             </c:choose>
+
 
 
             <div class="order-summary">
                 <div>
                     <span>Tạm tính</span>
                     <c:choose>
-                        <c:when test="${mode == 'cart'}">
-                            <span>${sessionScope.cart.formatTotal}</span>
+                        <c:when test="${mode == 'buynow'}">
+                            <span>${buyNowProduct.price * buyNowQuantity} đ</span>
                         </c:when>
-                        <c:when test="${mode == 'buy_now'}">
-                            <span>${product.priceFormat}</span>
-                        </c:when>
+                        <c:otherwise>
+                            <span>${cart.formatTotal}</span>
+                        </c:otherwise>
                     </c:choose>
+
+
 
                 </div>
                 <div>
@@ -109,8 +115,16 @@
                 </div>
                 <div class="total">
                     <span>Tổng cộng</span>
-                    <span>${sessionScope.cart.formatTotal}</span>
+                    <c:choose>
+                        <c:when test="${mode == 'buynow'}">
+                            <span>${buyNowProduct.price * buyNowQuantity} đ</span>
+                        </c:when>
+                        <c:otherwise>
+                            <span>${cart.formatTotal}</span>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
+
 
                 <button type="submit" class="btn-order">
                     Đặt hàng
