@@ -44,7 +44,7 @@
             <a href="add-cart?id=${product.product_id}&q=1" class="btn btn-primary">
             <i class="fa fa-cart-plus"></i> Thêm vào giỏ
           </a>
-          <a href="${pageContext.request.contextPath}/buy-now?id=${product.product_id} " class="btn btn-danger">
+          <a href="${pageContext.request.contextPath}/checkout?mode=buy_now&id=${product.product_id}" class="btn btn-danger">
             <i class="fa fa-bolt"></i> Mua ngay
           </a>
           <a href="#" class="wishlist">

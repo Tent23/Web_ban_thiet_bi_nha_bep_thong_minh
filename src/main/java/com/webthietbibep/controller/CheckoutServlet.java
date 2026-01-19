@@ -2,11 +2,13 @@ package com.webthietbibep.controller;
 
 import com.webthietbibep.cart.Cart;
 import com.webthietbibep.cart.CartItem;
+import com.webthietbibep.dao.ProductDAO;
 import com.webthietbibep.dao.UserAddressDAO;
 import com.webthietbibep.dao.OrdersDAO;
 import com.webthietbibep.dao.OrderItemDAO;
 import com.webthietbibep.model.Order;
 import com.webthietbibep.model.OrderItem;
+import com.webthietbibep.model.Product;
 import com.webthietbibep.model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -33,13 +35,33 @@ public class CheckoutServlet extends HttpServlet {
             return;
         }
 
-        Cart cart = (Cart) req.getSession().getAttribute("cart");
-        if (cart == null || cart.getItems().isEmpty()) {
-            resp.sendRedirect("giohang");
-            return;
+
+        String mode = req.getParameter("mode");
+        Cart cart;
+
+        if ("buy_now".equals(mode)) {
+            int productId = Integer.parseInt(req.getParameter("id"));
+            Product p = new ProductDAO().getById(productId);
+
+            if (p == null) {
+                resp.sendRedirect("products");
+                return;
+            }
+
+            cart = new Cart();
+            cart.addItem(p, 1);
+
+        } else {
+            cart = (Cart) req.getSession().getAttribute("cart");
+
+            if (cart == null || cart.getItems().isEmpty()) {
+                resp.sendRedirect("cart");
+                return;
+            }
         }
 
         req.setAttribute("cart", cart);
+        req.setAttribute("mode", mode);
         req.setAttribute("addresses",
                 addressDAO.findByUserId(user.getUser_id()));
 
@@ -50,23 +72,33 @@ public class CheckoutServlet extends HttpServlet {
             throws IOException {
 
         User user = (User) req.getSession().getAttribute("user");
-        Cart cart = (Cart) req.getSession().getAttribute("cart");
-
-        if (user == null || cart == null) {
+        if (user == null) {
             resp.sendRedirect("login");
             return;
         }
 
+        String mode = req.getParameter("mode");
+        Cart cart;
+
+        if ("buy_now".equals(mode)) {
+            cart = (Cart) req.getAttribute("cart");
+        } else {
+            cart = (Cart) req.getSession().getAttribute("cart");
+        }
+
+        if (cart == null || cart.getItems().isEmpty()) {
+            resp.sendRedirect("cart");
+            return;
+        }
+
         int addressId = Integer.parseInt(req.getParameter("addressId"));
-        String payment = req.getParameter("payment_method");
-        String note = req.getParameter("note");
+        String payment = req.getParameter("paymentMethod");
 
         Order order = new Order();
         order.setUser_id(user.getUser_id());
         order.setAddress_id(addressId);
         order.setPayment_method(payment);
         order.setTotal_amount(cart.getTotal());
-        order.setNote(note);
 
         int orderId = ordersDAO.insert(order);
 
@@ -75,12 +107,15 @@ public class CheckoutServlet extends HttpServlet {
             oi.setOrder_id(orderId);
             oi.setProduct_id(ci.getProduct().getProduct_id());
             oi.setQuantity(ci.getQuantity());
-            oi.setPrice_at_purchase(ci.getProduct().getPrice());
+            oi.setPrice_at_purchase(ci.getPrice());
 
             itemDAO.insert(oi);
         }
 
-        req.getSession().removeAttribute("cart");
+        if ("cart".equals(mode)) {
+            req.getSession().removeAttribute("cart");
+        }
+
         resp.sendRedirect("orders");
     }
 

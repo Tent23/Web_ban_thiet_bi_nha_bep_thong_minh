@@ -91,7 +91,7 @@
                         <span>Tổng cộng</span>
                         <span id="cart-total">${sessionScope.cart.formatTotal}</span>
                     </div>
-                    <a href="../QuangToan/Thanhtoan.html" class="btn btn-primary checkout-btn">Tiến hành Thanh toán</a>
+                    <a href="${pageContext.request.contextPath}/checkout?mode=cart" class="btn btn-primary checkout-btn">Tiến hành Thanh toán</a>
                     <a href="../../index.html" class="continue-shopping-link">
                         <i class="fa fa-arrow-left"></i> Tiếp tục mua sắm
                     </a>

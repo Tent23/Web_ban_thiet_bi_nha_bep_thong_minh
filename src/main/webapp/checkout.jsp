@@ -23,7 +23,7 @@
     <h1 class="checkout-title">Thanh toán</h1>
 
     <form action="checkout" method="post" class="checkout-content">
-
+        <input type="hidden" name="mode" value="${mode}">
         <!-- LEFT -->
         <div class="checkout-left">
 
@@ -61,21 +61,47 @@
 
             <h2>Đơn hàng của bạn</h2>
 
-            <c:forEach items="${sessionScope.cart.items}" var="ci">
-                <div class="order-item">
-                    <img src="${ci.product.image}">
-                    <div>
-                        <p>${ci.product.product_name}</p>
-                        <small>Số lượng: ${ci.quantity}</small><br>
-                        <strong>${ci.formattedTotal}</strong>
+            <c:choose>
+
+                <c:when test="${mode == 'cart'}">
+                    <c:forEach items="${sessionScope.cart.items}" var="ci">
+                        <div class="order-item">
+                            <img src="${ci.product.image}">
+                            <div>
+                                <p>${ci.product.product_name}</p>
+                                <small>Số lượng: ${ci.quantity}</small><br>
+                                <strong>${ci.formattedTotal}</strong>
+                            </div>
+                        </div>
+                    </c:forEach>
+                </c:when>
+
+                <c:when test="${mode == 'buy_now'}">
+                    <div class="order-item">
+                        <img src="${product.image}">
+                        <div>
+                            <p>${product.product_name}</p>
+                            <small>Số lượng: 1</small><br>
+                            <strong>${product.priceFormat}</strong>
+                        </div>
                     </div>
-                </div>
-            </c:forEach>
+                </c:when>
+
+            </c:choose>
+
 
             <div class="order-summary">
                 <div>
                     <span>Tạm tính</span>
-                    <span>${sessionScope.cart.formatTotal}</span>
+                    <c:choose>
+                        <c:when test="${mode == 'cart'}">
+                            <span>${sessionScope.cart.formatTotal}</span>
+                        </c:when>
+                        <c:when test="${mode == 'buy_now'}">
+                            <span>${product.priceFormat}</span>
+                        </c:when>
+                    </c:choose>
+
                 </div>
                 <div>
                     <span>Phí vận chuyển</span>
