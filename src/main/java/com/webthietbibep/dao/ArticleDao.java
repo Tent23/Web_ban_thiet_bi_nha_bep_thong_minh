@@ -31,7 +31,7 @@ public class ArticleDao extends  BaseDao{
         });
     }
 
-    public List<Article> getFilterArticleAdmin(String filter,String search){
+    public List<Article> getFilterArticleAdmin(String filter,String search,int page, int pageSize){
         return  get().withHandle(h ->{
 
             String query = "SELECT * FROM articles WHERE 1=1 AND ";
@@ -41,8 +41,25 @@ public class ArticleDao extends  BaseDao{
             else if(filter.equals("published")){query += " " + "is_active = 1 ORDER BY create_date DESC ";}
             else if(filter.equals("raw")){query += " " + "is_active = 0 ORDER BY create_date DESC ";}
             else {query += " " + "title like '%" +search+ "%' " + "ORDER BY title ASC";}
+            query += " LIMIT :limit OFFSET :offset ";
+            int offset = (page - 1) * pageSize;
+            return h.createQuery(query).bind("limit", pageSize).bind("offset", offset).mapToBean(Article.class).list();
+        });
+    }
 
-            return h.createQuery(query).mapToBean(Article.class).list();
+    public int getTotalArticles(String filter, String search) {
+        return get().withHandle(h -> {
+            StringBuilder query = new StringBuilder("SELECT COUNT(*) FROM articles WHERE 1=1 ");
+
+            if ("published".equals(filter)) query.append(" AND is_active = 1 ");
+            else if ("raw".equals(filter)) query.append(" AND is_active = 0 ");
+            else if ("type".equals(filter)) query.append(" AND tip LIKE :search ");
+            else query.append(" AND title LIKE :search ");
+
+            return h.createQuery(query.toString())
+                    .bind("search", "%" + search + "%")
+                    .mapTo(Integer.class)
+                    .one();
         });
     }
 
