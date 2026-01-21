@@ -48,8 +48,8 @@ public class UserDAO extends BaseDao {
     // 3. Thêm mới User (Admin tạo)
     public void insert(User user) {
         get().useHandle(handle ->
-                handle.createUpdate("INSERT INTO users (username, full_name, email, phone, password_hash, role, create_at) " +
-                                "VALUES (:username, :fullName, :email, :phone, :pass, :role, :createAt)")
+                handle.createUpdate("INSERT INTO users (username, full_name, email, phone, password_hash, role, create_at, verify_token, is_verified) " +
+                                "VALUES (:username, :fullName, :email, :phone, :pass, :role, :createAt,:token, :verified)")
                         .bind("username", user.getUsername())
                         .bind("fullName", user.getFull_name())
                         .bind("email", user.getEmail())
@@ -57,6 +57,8 @@ public class UserDAO extends BaseDao {
                         .bind("pass", user.getPassword_hash()) // Lưu ý: Nên mã hóa password trước khi truyền vào đây
                         .bind("role", user.getRole())
                         .bind("createAt", user.getCreate_at())
+                        .bind("token", user.getVerify_token())
+                        .bind("verified", user.isIs_verified())
                         .execute()
         );
     }
@@ -135,6 +137,42 @@ public class UserDAO extends BaseDao {
                         .execute()
         );
     }
+
+    public User findByToken(String token) {
+        return get().withHandle(handle ->
+                handle.createQuery("SELECT * FROM users WHERE verify_token = :token")
+                        .bind("token", token)
+                        .mapToBean(User.class)
+                        .findOne()
+                        .orElse(null)
+        );
+    }
+
+    public void verifyUser(int userId) {
+        get().useHandle(handle ->
+                handle.createUpdate("""
+                UPDATE users
+                SET is_verified = TRUE,
+                    verify_token = NULL
+                WHERE user_id = :id
+            """)
+                        .bind("id", userId)
+                        .execute()
+        );
+    }
+
+    public boolean verifyByToken(String token) {
+        return get().withHandle(handle ->
+                handle.createUpdate("""
+            UPDATE users 
+            SET is_verified = true, verify_token = NULL
+            WHERE verify_token = :token
+        """)
+                        .bind("token", token)
+                        .execute()
+        ) > 0;
+    }
+
 
 
 }
