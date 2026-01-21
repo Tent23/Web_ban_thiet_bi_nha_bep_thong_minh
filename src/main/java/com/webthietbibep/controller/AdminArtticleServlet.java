@@ -20,7 +20,15 @@ public class AdminArtticleServlet extends HttpServlet {
         if(filter == null) filter = "new";
         if(search == null) search = "";
         ArcticleService as = new ArcticleService();
-        List<Article> filterA = as.getFilterArticleAdmin(filter,search);
+
+        int page = 1;
+        String pageParam = request.getParameter("page");
+        if (pageParam != null) page = Integer.parseInt(pageParam);
+        int pageSize = 10;
+
+        List<Article> filterA = as.getFilterArticleAdmin(filter,search,page, pageSize);
+        int totalRecords = as.getTotalArticle(filter, search);
+        int totalPages = (int) Math.ceil((double) totalRecords / pageSize);
 
 
 
@@ -29,6 +37,8 @@ public class AdminArtticleServlet extends HttpServlet {
 
 
         request.setAttribute("filterA",filterA);
+        request.setAttribute("totalPages", totalPages);
+        request.setAttribute("currentPage", page);
         request.getRequestDispatcher("/admin/admin_content.jsp").forward(request, response);
     }
 
