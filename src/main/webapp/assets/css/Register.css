@@ -11,19 +11,18 @@
 }
 
 
-/* title */
+
 .login h1 {
     margin-bottom: 20px;
 }
 
-/* nhóm input */
 .login .input_group {
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
 
-/* input giống login */
+
 .login .input_group input {
     width: 100%;
     padding: 12px 14px;
@@ -38,7 +37,7 @@
     border-color: #1677ff;
 }
 
-/* button dùng chung */
+
 .login .register_button {
     margin-top: 16px;
     width: 100%;

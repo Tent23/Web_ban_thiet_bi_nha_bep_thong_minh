@@ -19,6 +19,7 @@ public class OrdersDAO extends BaseDao {
                         .bind("uid", o.getUser_id())
                         .bind("aid", o.getAddress_id())
                         .bind("total", o.getTotal_amount())
+                        .bind("status",o.getStatus())
                         .bind("pm", o.getPayment_method())
                         .bind("note", o.getNote())
                         .executeAndReturnGeneratedKeys("order_id")
@@ -26,6 +27,18 @@ public class OrdersDAO extends BaseDao {
                         .one()
         );
     }
+
+    public void cancelExpiredOrders() {
+        get().useHandle(h ->
+                h.createUpdate("""
+            UPDATE orders
+            SET status = 'DA_HUY'
+            WHERE status = 'CHO_THANH_TOAN'
+              AND created_at < NOW() - INTERVAL 30 MINUTE
+        """).execute()
+        );
+    }
+
 
 
     public List<Order> getOrdersByUser(int userId) {
