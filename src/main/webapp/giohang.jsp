@@ -81,6 +81,13 @@
 
                         </tbody>
                     </table>
+                    <div class="cart-actions-footer">
+                        <form action="delete-all" method="post" onsubmit="return confirm('Chắc chắn muốn xóa toàn bộ giỏ hàng?');">
+                            <button type="submit" class="btn-clear-all">
+                                <i class="fa fa-trash"></i> Xóa tất cả
+                            </button>
+                        </form>
+                    </div>
                 </div>
 
                 <div class="cart-summary">
