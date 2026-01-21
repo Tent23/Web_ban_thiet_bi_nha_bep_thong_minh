@@ -24,6 +24,13 @@ public class LoginController extends HttpServlet {
         AuthService as= new AuthService();
         User u= as.login(username,password);
         if (u!= null) {
+            if (!u.isIs_verified()) {
+                request.setAttribute("errorMessage",
+                        "Vui lòng xác nhận email trước khi đăng nhập");
+                request.getRequestDispatcher("Login.jsp").forward(request, response);
+                return;
+            }
+
             HttpSession sesion = request.getSession();
             sesion.setAttribute("user",u);
             if ("ADMIN".equals(u.getRole())) {

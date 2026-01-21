@@ -12,8 +12,11 @@ public class User implements Serializable {
     String password_hash;
     LocalDateTime create_at;
     String role;
+    String verify_token;
+    boolean is_verified;
 
-    public User(int user_id,String username, String full_name, String email, String phone, String password_hash, LocalDateTime create_at, String role) {
+
+    public User(int user_id,String username, String full_name, String email, String phone, String password_hash, LocalDateTime create_at, String role,String verify_token,boolean is_verified) {
         this.user_id = user_id;
         this.username = username;
         this.full_name = full_name;
@@ -22,6 +25,8 @@ public class User implements Serializable {
         this.password_hash = password_hash;
         this.create_at = create_at;
         this.role = role;
+        this.verify_token = verify_token;
+        this.is_verified = is_verified;
     }
 
     public User() {
@@ -89,5 +94,21 @@ public class User implements Serializable {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getVerify_token() {
+        return verify_token;
+    }
+
+    public void setVerify_token(String verify_token) {
+        this.verify_token = verify_token;
+    }
+
+    public boolean isIs_verified() {
+        return is_verified;
+    }
+
+    public void setIs_verified(boolean is_verified) {
+        this.is_verified = is_verified;
     }
 }

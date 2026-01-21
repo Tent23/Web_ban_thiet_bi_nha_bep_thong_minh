@@ -96,7 +96,7 @@ public class AdminUserServlet extends HttpServlet {
         // Validate cơ bản
         if (userDAO.existsUsername(username)) {
             request.setAttribute("error", "Tên đăng nhập đã tồn tại!");
-            request.setAttribute("user", new User(0, username, fullName, email, phone, "", null, role));
+            request.setAttribute("user", new User(0, username, fullName, email, phone, "", null, role,null,true));
             request.getRequestDispatcher("/admin/admin_user_form.jsp").forward(request, response);
             return;
         }

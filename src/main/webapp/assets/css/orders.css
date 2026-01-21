@@ -2,25 +2,16 @@
     box-sizing: border-box;
 }
 
-/* =========================
-   PAGE WRAPPER
-   ========================= */
 .profile-page {
     background: #f5f5f5;
     padding: 30px 0;
 }
 
-/* =========================
-   LAYOUT
-   ========================= */
 .profile-layout {
     display: flex;
     gap: 24px;
 }
 
-/* =========================
-   SIDEBAR
-   ========================= */
 .profile-sidebar {
     width: 240px;
     background: #fff;
@@ -163,26 +154,47 @@
     font-weight: 500;
     margin-left: 6px;
 }
-.order-footer button {
+
+
+/* =====================
+   ACTION BUTTONS
+===================== */
+
+.order-footer .actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.order-footer .btn-primary {
     background: #007aff;
-    border: none;
-    padding: 8px 16px;
     color: #fff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-footer .btn-primary:hover {
+    background: #0063cc;
+}
+
+.order-footer .btn-cancel {
+    background: #fff;
+    color: #555;
+    border: 1px solid #ccc;
+    padding: 8px 18px;
     border-radius: 4px;
     font-size: 14px;
     cursor: pointer;
 }
 
-.order-footer button:hover {
-    opacity: 0.9;
-}
-
-.btn-cancel {
-    background: #fff;
-    color: #555;
-    border: 1px solid #ccc;
-}
-
-.btn-cancel:hover {
+.order-footer .btn-cancel:hover {
     background: #f5f5f5;
+    color: #333;
 }

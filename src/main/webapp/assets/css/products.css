@@ -1,11 +1,10 @@
-/* ====== SHOP LAYOUT ====== */
+
 .shop-layout {
     display: grid;
     grid-template-columns: 260px 1fr;
     gap: 30px;
 }
 
-/* ====== SIDEBAR ====== */
 .shop-sidebar {
     background: #fff;
     padding: 20px;
