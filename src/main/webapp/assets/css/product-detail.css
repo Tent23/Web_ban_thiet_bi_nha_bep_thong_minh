@@ -130,3 +130,30 @@
 .cart-alert-error i {
     font-size: 1.1rem;
 }
+/* Thông báo thành công (Màu xanh + Dấu tích) */
+.cart-alert-success {
+    background-color: #f6ffed; /* Nền xanh nhạt */
+    border: 1px solid #b7eb8f; /* Viền xanh lá */
+    color: #52c41a;            /* Chữ xanh lá */
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 8px rgba(82, 196, 26, 0.1);
+    animation: slideDown 0.4s ease-out;
+}
+
+.cart-alert-success i {
+    font-size: 1.1rem;
+}
+
+/* Hiệu ứng trượt xuống cho thông báo */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+

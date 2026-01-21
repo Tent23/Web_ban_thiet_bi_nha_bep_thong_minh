@@ -369,3 +369,34 @@
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+.cart-actions-footer {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed #eee;
+    display: flex;
+    justify-content: flex-end; /* Đẩy nút sang bên phải */
+}
+
+.btn-clear-all {
+    background: none;
+    border: 1px solid #ff4d4f;
+    color: #ff4d4f;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-clear-all:hover {
+    background-color: #fff2f0;
+    box-shadow: 0 2px 8px rgba(255, 77, 79, 0.1);
+}
+
+.btn-clear-all i {
+    font-size: 0.9rem;
+}

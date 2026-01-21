@@ -34,9 +34,11 @@
       <!-- INFO -->
       <div class="product-info">
           <c:if test="${not empty sessionScope.message}">
-              <div class="cart-alert-error">
-                  <i class="fa fa-exclamation-circle"></i> ${sessionScope.message}
+              <div class="${sessionScope.messageType == 'success' ? 'cart-alert-success' : 'cart-alert-error'}">
+                  <i class="fa ${sessionScope.messageType == 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                      ${sessionScope.message}
                   <c:remove var="message" scope="session" />
+                  <c:remove var="messageType" scope="session" />
               </div>
           </c:if>
         <h1>${product.product_name}</h1>

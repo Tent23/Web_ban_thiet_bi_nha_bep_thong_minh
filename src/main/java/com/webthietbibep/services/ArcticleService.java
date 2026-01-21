@@ -18,8 +18,8 @@ public class    ArcticleService {
     public List<Article> getNewArticle(){
         return adao.getNewArticle();
     }
-    public List<Article> getFilterArticleAdmin (String filter,String search){
-        return adao.getFilterArticleAdmin(filter,search);
+    public List<Article> getFilterArticleAdmin (String filter,String search,int page, int pageSize){
+        return adao.getFilterArticleAdmin(filter,search,page,pageSize);
     }
     public void addArticle(Article a){
         adao.addArticle(a);
@@ -33,4 +33,8 @@ public class    ArcticleService {
     public boolean updateArticle(Article a){
         return adao.updateArticle(a);
     }
+    public int getTotalArticle(String filter, String search){
+        return adao.getTotalArticles(filter,search);
+    }
+
 }

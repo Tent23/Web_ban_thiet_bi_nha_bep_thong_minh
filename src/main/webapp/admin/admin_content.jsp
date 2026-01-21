@@ -25,89 +25,19 @@
 <div class="admin-layout">
 
     <!-- SIDEBAR (MENU BÊN TRÁI) - ĐÃ CẬP NHẬT -->
-    <nav class="admin-sidebar">
-        <div class="sidebar-header">
-            <h3>Admin Panel</h3>
-            </div>
-        <ul class="sidebar-menu">
-            <li>
-                <a href="admin_dashboard.jsp">
-                    <i class="fa-solid fa-chart-line"></i>
-                    <span>Tổng quan</span>
-                </a>
-            </li>
-            <li>
-                <a href="./admin_orders.html">
-                    <i class="fa-solid fa-file-invoice-dollar"></i>
-                    <span>Quản lý Đơn hàng</span>
-                </a>
-            </li>
-
-            <li class="menu-item-has-children">
-                <a href="admin_product_list.jsp" class="sidebar-link">
-                    <i class="fa-solid fa-box-archive"></i>
-                    <span>Quản lý Sản phẩm</span>
-                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                </a>
-                <ul class="submenu">
-                    <li><a href="admin_product_list.jsp">Tất cả Sản phẩm</a></li>
-                    <li><a href="#">Danh mục</a></li>
-                    <li><a href="#">Thương hiệu</a></li>
-                    <li><a href="#">Hệ sinh thái</a></li>
-                    <li><a href="#">Combo / Giải pháp</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="../QuangToan/QuanlyUser.html">
-                    <i class="fa-solid fa-users"></i>
-                    <span>Quản lý Khách hàng</span>
-                </a>
-            </li>
-
-            <li class="menu-item-has-children active open">
-                <a href="#" class="sidebar-link">
-                    <i class="fa-solid fa-file-pen"></i>
-                    <span>Quản lý Nội dung</span>
-                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                </a>
-                <ul class="submenu">
-                    <li><a href="./admin_content.html" class="active-sub">Bài viết (Blog)</a></li>
-                    <li><a href="./admin_static_pages.html">Trang tĩnh</a></li>
-                    <li><a href="./admin_promotions.html">Khuyến mãi</a></li>
-                    <li><a href="./admin_banners.html">Hero banner</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="#">
-                    <i class="fa-solid fa-gear"></i>
-                    <span>Cài đặt</span>
-                </a>
-            </li>
-        </ul>
-        <div class="sidebar-footer">
-            <a href="#">
-                <i class="fa-solid fa-right-from-bracket"></i>
-                <span>Đăng xuất</span>
-            </a>
-        </div>
-    </nav>
+    <jsp:include page="common/sidebar.jsp"></jsp:include>
 
     <!-- NỘI DUNG CHÍNH (BÊN PHẢI) -->
     <div class="admin-main">
 
         <!-- HEADER CỦA NỘI DUNG CHÍNH -->
         <header class="admin-header">
-            <h2>Quản lý Bài viết (Góc tư vấn)</h2>
+            <h2>Quản lý nội dung (Góc tư vấn/Bài viết)</h2>
             <div class="admin-header-actions">
                 <a href="${pageContext.request.contextPath}/admin/add-article" class="btn-primary">
                     <i class="fa-solid fa-plus"></i> Thêm Bài viết
                 </a>
-                <div class="admin-profile">
-                    <img src="https://placehold.co/40x40" alt="Admin">
-                    <span>Xin chào, Admin!</span>
-                </div>
+
             </div>
         </header>
 
@@ -121,11 +51,11 @@
                 </div>
                 </c:if>
             <!-- KHUNG BỘ LỌC -->
-            <div class="admin-card admin-filters">
+            <div class=" admin-filters">
                 <form action="${pageContext.request.contextPath}/admin/content" method="get" >
-                <input name="search" type="text" placeholder="Tìm theo Tên bài viết..." value="${param.search}">
+                <input  name="search" type="text" placeholder="Tìm theo Tên bài viết..." value="${param.search}">
 
-                <select name ="filter">
+                <select  name ="filter">
                     <option value="new" ${param.filter == 'new' ? 'selected' : ''}>Lọc theo ngày mới nhất</option>
                     <option value="old" ${param.filter == 'old' ? 'selected' : ''}>Lọc theo ngày cũ nhất</option>
                     <option value="AZ" ${param.filter == 'AZ' ? 'selected' : ''}>Lọc từ A-Z</option>
@@ -174,6 +104,29 @@
 
                     </tbody>
                 </table>
+                <div class="admin-pagination">
+                    <%-- Nút trang trước --%>
+                    <c:if test="${currentPage > 1}">
+                        <a href="?page=${currentPage - 1}&filter=${param.filter}&search=${param.search}" class="page-link">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </a>
+                    </c:if>
+
+                    <%-- Vòng lặp hiển thị số trang --%>
+                    <c:forEach begin="1" end="${totalPages}" var="i">
+                        <a href="?page=${i}&filter=${param.filter}&search=${param.search}"
+                           class="page-link ${i == currentPage ? 'active' : ''}">
+                                ${i}
+                        </a>
+                    </c:forEach>
+
+                    <%-- Nút trang sau --%>
+                    <c:if test="${currentPage < totalPages}">
+                        <a href="?page=${currentPage + 1}&filter=${param.filter}&search=${param.search}" class="page-link">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+                    </c:if>
+                </div>
             </div>
 
         </main>
