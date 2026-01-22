@@ -26,6 +26,8 @@ public class HomeServlet extends HttpServlet {
 
         // 1. Gọi DAO lấy danh sách
         List<Product> listP = ps.getBestSeller();
+        List<Category> topCategories = css.getTopCategories();
+        List<Brand> topBrands = bs.getTopBrands();
         List<Brand> listB = bs.getListBrand();
         List<Ecosystems> listE = es.getListEco();
         List<Testimonial> listT = ts.getListTes();
@@ -35,6 +37,8 @@ public class HomeServlet extends HttpServlet {
         List<Article> listA = as.getNewArticle();
         // 2. Đẩy dữ liệu sang JSP
         request.setAttribute("listP", listP);
+        request.setAttribute("topCategories", topCategories);
+        request.setAttribute("topBrands", topBrands);
         request.setAttribute("listB", listB);
         request.setAttribute("listE", listE);
         request.setAttribute("listT", listT);
