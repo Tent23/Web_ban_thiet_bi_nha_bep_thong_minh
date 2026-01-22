@@ -125,6 +125,13 @@
                     </c:choose>
                 </div>
 
+                <c:if test="${not empty error}">
+                    <div style="color:red; margin-bottom:15px; font-weight:bold;">
+                            ${error}
+                    </div>
+                </c:if>
+
+
 
                 <button type="submit" class="btn-order">
                     Đặt hàng

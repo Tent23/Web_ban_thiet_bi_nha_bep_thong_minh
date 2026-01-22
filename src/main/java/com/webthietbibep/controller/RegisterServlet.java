@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import com.webthietbibep.utils.ValidationUtil;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -40,6 +41,13 @@ public class RegisterServlet extends HttpServlet {
             doGet(req, resp);
             return;
         }
+        if (!ValidationUtil.isValidPassword(password)) {
+            req.setAttribute("error",
+                    "Mật khẩu phải tối thiểu 8 ký tự, gồm chữ hoa, chữ thường, số và ký tự đặc biệt");
+            doGet(req, resp);
+            return;
+        }
+
 
         if (userDAO.existsUsername(username)) {
             req.setAttribute("error", "Tên đăng nhập đã tồn tại");

@@ -68,7 +68,7 @@ public class CheckoutServlet extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException {
+            throws IOException, ServletException {
 
         User user = (User) req.getSession().getAttribute("user");
         if (user == null) {
@@ -78,7 +78,14 @@ public class CheckoutServlet extends HttpServlet {
 
         String mode = req.getParameter("mode");
 
-        int addressId = Integer.parseInt(req.getParameter("addressId"));
+        String addressIdStr = req.getParameter("addressId");
+
+        if (addressIdStr == null || addressIdStr.isEmpty()) {
+            req.setAttribute("error", "Vui lòng thêm và chọn địa chỉ nhận hàng trước khi đặt hàng");
+            doGet(req, resp);
+            return;
+        }
+        int addressId = Integer.parseInt(addressIdStr);
         String payment = req.getParameter("paymentMethod");
 
         Order order = new Order();
