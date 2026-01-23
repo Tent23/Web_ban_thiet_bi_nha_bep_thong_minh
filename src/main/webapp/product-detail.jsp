@@ -99,6 +99,40 @@
 
   </div>
 </main>
+
+<div class="product-comments">
+  <h2>Bình luận sản phẩm</h2>
+
+  <c:if test="${not empty sessionScope.user}">
+    <form action="${pageContext.request.contextPath}/product-comment" method="post">
+      <input type="hidden" name="product_id" value="${product.product_id}">
+      <textarea name="content" required
+                placeholder="Nhập bình luận của bạn..."></textarea>
+      <button type="submit" class="btn btn-primary">
+        Gửi bình luận
+      </button>
+    </form>
+  </c:if>
+
+  <c:if test="${empty sessionScope.user}">
+    <p>
+      <a href="${pageContext.request.contextPath}/login">
+        Đăng nhập
+      </a> để bình luận.
+    </p>
+  </c:if>
+
+  <div class="comment-list">
+    <c:forEach var="c" items="${comments}">
+      <div class="comment-item">
+        <strong>${c.username}</strong>
+        <span class="time">${c.createdAtFormat}</span>
+        <p>${c.content}</p>
+      </div>
+    </c:forEach>
+  </div>
+</div>
+
 <jsp:include page="common/footer.jsp"></jsp:include>
 
 </body>

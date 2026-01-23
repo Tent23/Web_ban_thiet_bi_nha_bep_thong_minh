@@ -150,10 +150,26 @@
     font-size: 1.1rem;
 }
 
-/* Hiệu ứng trượt xuống cho thông báo */
 @keyframes slideDown {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+.product-comments {
+    margin-top: 50px;
+    padding: 20px;
+    background: #f9f9f9;
+}
+
+.product-comments textarea {
+    width: 100%;
+    min-height: 80px;
+    margin-bottom: 10px;
+}
+
+.comment-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
 
 
