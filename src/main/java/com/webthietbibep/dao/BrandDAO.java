@@ -16,7 +16,22 @@ public class BrandDAO extends BaseDao {
         );
     }
 
-    // Lấy 1 thương hiệu theo ID (Dùng cho chức năng Sửa)
+    public List<Brand> getTopBrands() {
+        String sql = """
+        SELECT b.brand_id, b.brand_name, b.logo_url, SUM(o.quantity) total_sold
+        FROM order_items o
+        JOIN products p ON p.product_id = o.product_id
+        JOIN brands b ON b.brand_id = p.brand_id
+        GROUP BY b.brand_id
+        ORDER BY total_sold DESC
+        LIMIT 4
+    """;
+
+        return get().withHandle(h ->
+                h.createQuery(sql).mapToBean(Brand.class).list()
+        );
+    }
+
     public Brand getById(int id) {
         String sql = "SELECT * FROM brands WHERE brand_id = :id";
         return get().withHandle(h ->

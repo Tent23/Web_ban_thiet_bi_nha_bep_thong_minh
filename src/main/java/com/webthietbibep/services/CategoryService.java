@@ -13,4 +13,7 @@ public class CategoryService {
     public boolean checkExist(int id){
         return cDAO.checkExist(id);
     }
+    public List<Category> getTopCategories() {
+        return cDAO.getTopCategories();
+    }
 }

@@ -24,6 +24,7 @@ public class ProductDAO extends BaseDao {
         });
     }
 
+
     public void inserts(List<Product> products) {
         String sql = """
             INSERT INTO products (category_id, product_name, description, price, stock_quantity, image, brand_id, created_at)
