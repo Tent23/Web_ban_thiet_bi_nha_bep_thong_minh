@@ -55,6 +55,16 @@
     color: #1976d2;
     text-decoration: none;
 }
+.actions .wishlist {
+    background: #fff;
+    color: #1976d2;
+    border: 1px solid #1976d2;
+}
+
+.actions .wishlist i {
+    color: #e53935;
+}
+
 
 /* TÍNH NĂNG */
 .product-features {

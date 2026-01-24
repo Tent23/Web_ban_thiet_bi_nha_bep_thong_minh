@@ -95,21 +95,32 @@
                     </div>
 
 
-
                     <div class="pagination">
                         <c:forEach begin="1" end="${totalPages}" var="i">
-                            <a href="${pageContext.request.contextPath}/products?page=${i}
-                                        &categoryId=${categoryId}
-                                        &priceRange=${priceRange}
-                                        &sort=${sort}
-                            <c:if test='${brands != null}'>
-                                &brand=${brands[0]}
-                            </c:if>"
-                               class="${i == currentPage ? 'active' : ''}">
+
+                            <c:url var="pageUrl" value="/products">
+                                <c:param name="page" value="${i}" />
+                                <c:if test="${categoryId != null}">
+                                    <c:param name="categoryId" value="${categoryId}" />
+                                </c:if>
+                                <c:if test="${priceRange != null}">
+                                    <c:param name="priceRange" value="${priceRange}" />
+                                </c:if>
+                                <c:if test="${sort != null}">
+                                    <c:param name="sort" value="${sort}" />
+                                </c:if>
+                                <c:if test="${brands != null}">
+                                    <c:param name="brand" value="${brands[0]}" />
+                                </c:if>
+                            </c:url>
+
+                            <a href="${pageUrl}" class="${i == currentPage ? 'active' : ''}">
                                     ${i}
                             </a>
+
                         </c:forEach>
                     </div>
+
 
                 </div>
             </div>

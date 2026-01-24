@@ -121,7 +121,6 @@ public class ProductDAO extends BaseDao {
             WHERE 1=1
         """);
 
-        // ===== CATEGORY =====
         if (categoryId != null) {
             sql.append(" AND p.category_id = :categoryId");
         }
@@ -136,7 +135,7 @@ public class ProductDAO extends BaseDao {
         }
 
 
-        if (brands != null && brands.length > 0) {
+        if (brands != null && brands.length > 0 && !brands[0].isBlank() ) {
             sql.append(" AND p.brand_id IN (<brands>)");
         }
 
@@ -159,7 +158,7 @@ public class ProductDAO extends BaseDao {
             if (categoryId != null) {
                 query.bind("categoryId", categoryId);
             }
-            if (brands != null && brands.length > 0) {
+            if (brands != null && brands.length > 0 && !brands[0].isBlank()) {
                 query.bindList("brands", brands);
             }
 
@@ -189,7 +188,7 @@ public class ProductDAO extends BaseDao {
             }
         }
 
-        if (brands != null && brands.length > 0) {
+        if (brands != null && brands.length > 0 && !brands[0].isBlank()) {
             sql.append(" AND p.brand_id IN (<brands>)");
         }
 
@@ -199,7 +198,7 @@ public class ProductDAO extends BaseDao {
             if (categoryId != null) {
                 query.bind("categoryId", categoryId);
             }
-            if (brands != null && brands.length > 0) {
+            if (brands != null && brands.length > 0 && !brands[0].isBlank()) {
                 query.bindList("brands", brands);
             }
 
