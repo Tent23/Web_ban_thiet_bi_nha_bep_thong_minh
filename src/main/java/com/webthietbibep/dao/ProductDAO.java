@@ -239,5 +239,30 @@ public class ProductDAO extends BaseDao {
                             .orElse(null)
             );
         }
+    // 1. Đếm tổng số sản phẩm để chia trang
+    public int countAll() {
+        return get().withHandle(h ->
+                h.createQuery("SELECT COUNT(*) FROM products")
+                        .mapTo(Integer.class)
+                        .one()
+        );
+    }
+
+    // 2. Lấy sản phẩm theo giới hạn (Pagination)
+    public List<Product> findAll(int limit, int offset) {
+        String sql = """
+        SELECT * FROM products 
+        ORDER BY product_id DESC 
+        LIMIT :limit OFFSET :offset
+    """;
+
+        return get().withHandle(h ->
+                h.createQuery(sql)
+                        .bind("limit", limit)
+                        .bind("offset", offset)
+                        .mapToBean(Product.class)
+                        .list()
+        );
+    }
     }
 

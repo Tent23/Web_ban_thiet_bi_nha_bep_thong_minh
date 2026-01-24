@@ -94,10 +94,71 @@
                     </c:forEach>
                     </tbody>
                 </table>
-            </div>
+            </div> <div class="pagination-container">
+            <c:if test="${totalPages > 1}">
+                <div class="pagination">
+
+                    <c:if test="${currentPage > 1}">
+                        <a href="?page=${currentPage - 1}" class="page-link">&laquo;</a>
+                    </c:if>
+
+                    <c:forEach begin="1" end="${totalPages}" var="i">
+                        <c:choose>
+                            <c:when test="${currentPage == i}">
+                                <span class="page-link active">${i}</span>
+                            </c:when>
+                            <c:otherwise>
+                                <a href="?page=${i}" class="page-link">${i}</a>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
+
+                    <c:if test="${currentPage < totalPages}">
+                        <a href="?page=${currentPage + 1}" class="page-link">&raquo;</a>
+                    </c:if>
+                </div>
+            </c:if>
         </div>
+            </div>
     </main>
 </div>
+<style>
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        padding-bottom: 20px;
+    }
 
+    .pagination {
+        display: inline-flex;
+        background: #fff;
+        padding: 8px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .page-link {
+        color: #333;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color .3s;
+        border: 1px solid #ddd;
+        margin: 0 4px;
+        border-radius: 4px;
+        font-weight: 500;
+    }
+
+    .page-link.active {
+        background-color: var(--primary-color, #007bff); /* Hoặc màu chủ đạo của bạn */
+        color: white;
+        border: 1px solid var(--primary-color, #007bff);
+    }
+
+    .page-link:hover:not(.active) {
+        background-color: #f1f1f1;
+    }
+</style>
 </body>
 </html>
