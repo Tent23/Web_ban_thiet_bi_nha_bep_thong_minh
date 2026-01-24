@@ -9,7 +9,7 @@
     </div>
     <ul class="sidebar-menu">
         <li>
-            <a href="<%=request.getContextPath()%>/admin/admin_dashboard.jsp">
+            <a href="<%=request.getContextPath()%>/admin/dashboard">
                 <i class="fa-solid fa-chart-line"></i>
                 <span>Tổng quan</span>
             </a>

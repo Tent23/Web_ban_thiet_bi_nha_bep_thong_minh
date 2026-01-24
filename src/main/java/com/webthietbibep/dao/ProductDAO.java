@@ -239,11 +239,36 @@ public class ProductDAO extends BaseDao {
                             .orElse(null)
             );
         }
+
     public List<Product> getByBrandId(int brandId) {
         String sql = "SELECT * FROM products WHERE brand_id = :brandId";
         return get().withHandle(h ->
                 h.createQuery(sql)
                         .bind("brandId", brandId)
+                        .mapToBean(Product.class)
+                        .list()
+        );
+    }
+
+    public int countAll() {
+        return get().withHandle(h ->
+                h.createQuery("SELECT COUNT(*) FROM products")
+                        .mapTo(Integer.class)
+                        .one()
+        );
+    }
+
+    public List<Product> findAll(int limit, int offset) {
+        String sql = """
+        SELECT * FROM products
+        ORDER BY product_id DESC
+        LIMIT :limit OFFSET :offset
+    """;
+
+        return get().withHandle(h ->
+                h.createQuery(sql)
+                        .bind("limit", limit)
+                        .bind("offset", offset)
                         .mapToBean(Product.class)
                         .list()
         );

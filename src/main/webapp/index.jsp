@@ -65,7 +65,7 @@
             <h2 class="section-title">Danh mục Nổi bật</h2>
             <div class="category-grid">
                 <c:forEach var="c" items="${topCategories}">
-                    <a href="category?id=${c.category_id}" class="category-item">
+                    <a href="${pageContext.request.contextPath}/products?categoryId=${c.category_id}">
                         <img src="${c.logo}" alt="${c.category_name}" />
                     <br>
                     <span>${c.category_name}</span>

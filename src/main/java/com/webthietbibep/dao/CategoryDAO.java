@@ -13,15 +13,8 @@ public class CategoryDAO extends BaseDao {
     }
 
     public List<Category> getTopCategories() {
-        String sql = """
-        SELECT c.category_id, c.category_name, c.logo, SUM(o.quantity) total_sold
-        FROM order_items o
-        JOIN products p ON p.product_id = o.product_id
-        JOIN categories c ON c.category_id = p.category_id
-        GROUP BY c.category_id
-        ORDER BY total_sold DESC
-        LIMIT 4
-    """;
+        // Lấy 4 danh mục bất kỳ (hoặc theo id mới nhất)
+        String sql = "SELECT category_id, category_name, logo FROM categories LIMIT 6";
 
         return get().withHandle(h ->
                 h.createQuery(sql).mapToBean(Category.class).list()

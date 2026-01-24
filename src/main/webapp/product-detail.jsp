@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 <body>
@@ -62,7 +63,28 @@
           <a href="${pageContext.request.contextPath}/wishlist?action=add&product_id=${product.product_id}"
              class="wishlist btn btn-outline"
              title="Thêm vào yêu thích">
-            <i class="fa fa-heart"></i> Yêu thích
+            <a href="${pageContext.request.contextPath}/wishlist?action=add&product_id=${product.product_id}"
+               title="Thêm vào yêu thích"
+               style="
+     display: inline-flex;
+     align-items: center;
+     gap: 6px;
+     padding: 8px 14px;
+     border: 1px solid #e74c3c;
+     border-radius: 20px;
+     color: #e74c3c;
+     background-color: transparent;
+     font-size: 14px;
+     font-weight: 500;
+     text-decoration: none;
+     transition: all 0.3s ease;
+   "
+               onmouseover="this.style.backgroundColor='#e74c3c'; this.style.color='#fff';"
+               onmouseout="this.style.backgroundColor='transparent'; this.style.color='#e74c3c';"
+            >
+              <i class="fa fa-heart"></i> Yêu thích
+            </a>
+
           </a>
         </div>
       </div>
