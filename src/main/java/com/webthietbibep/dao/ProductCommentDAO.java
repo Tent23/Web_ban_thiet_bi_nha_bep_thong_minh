@@ -36,4 +36,21 @@ public class ProductCommentDAO extends BaseDao {
                         .execute()
         );
     }
+    public List<ProductComment> getLatestForHome(int limit) {
+        String sql = """
+        SELECT c.content, c.created_at, u.username
+        FROM product_comments c
+        JOIN users u ON c.user_id = u.user_id
+        ORDER BY c.created_at DESC
+        LIMIT :limit
+    """;
+
+        return get().withHandle(h ->
+                h.createQuery(sql)
+                        .bind("limit", limit)
+                        .mapToBean(ProductComment.class)
+                        .list()
+        );
+    }
+
 }

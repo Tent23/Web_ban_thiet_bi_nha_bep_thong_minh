@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/change-password.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Header.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 
 <body>
@@ -29,7 +31,6 @@
         <li><a href="addresses">Địa chỉ</a></li>
         <li class="active"><a href="change-password">Đổi mật khẩu</a></li>
         <li><a href="orders">Đơn mua</a></li>
-        <li><a href="#">Kho voucher</a></li>
       </ul>
     </aside>
 

@@ -1,6 +1,8 @@
     package com.webthietbibep.model;
 
-    public class OrderItem {
+    import java.io.Serializable;
+
+    public class OrderItem implements Serializable {
         private int order_item_id;
         private int order_id;
         private int product_id;

@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-<%@ page isELIgnored="false" %>
+<%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -10,10 +9,9 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/Header.css" />
-    <link rel="stylesheet" href="assets/css/index.css" />
-    <link rel="stylesheet" href="assets/css/indexfont.css" />
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Header.css">
 </head>
 
 <body>
@@ -160,12 +158,12 @@
             <h2 class="section-title">Khách hàng Nói về Chúng tôi</h2>
             <div class="swiper" id="testimonial-slider">
                 <div class="swiper-wrapper">
-                    <c:forEach var ="t" items="${listT}">
+                    <c:forEach var ="t" items="${homeComments}">
                     <div class="swiper-slide testimonial-item">
                         <p>
                             "${t.content}"
                         </p>
-                        <h4>- ${t.author_name} (${t.author_location})</h4>
+                        <h4>- ${t.username}</h4>
                     </div>
                     </c:forEach>
 
@@ -196,6 +194,7 @@
     </section>
 </main>
 
+<jsp:include page="common/footer.jsp"></jsp:include>
 
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

@@ -126,7 +126,6 @@ public class ProductDAO extends BaseDao {
             sql.append(" AND p.category_id = :categoryId");
         }
 
-        // ===== PRICE =====
         if (priceRange != null) {
             switch (priceRange) {
                 case "1" -> sql.append(" AND p.price < 5000000");
@@ -136,12 +135,11 @@ public class ProductDAO extends BaseDao {
             }
         }
 
-        // ===== BRAND =====
+
         if (brands != null && brands.length > 0) {
             sql.append(" AND p.brand_id IN (<brands>)");
         }
 
-        // ===== SORT =====
         if ("price_asc".equals(sort)) {
             sql.append(" ORDER BY p.price ASC");
         } else if ("price_desc".equals(sort)) {

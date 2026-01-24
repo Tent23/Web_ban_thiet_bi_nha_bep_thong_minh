@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/orders.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 
 </head>
 
@@ -22,7 +24,6 @@
 <main class="profile-page">
     <div class="container profile-layout">
 
-        <!-- SIDEBAR -->
         <aside class="profile-sidebar">
             <h3>${sessionScope.user.username}</h3>
             <ul>
@@ -30,11 +31,9 @@
                 <li><a href="addresses">Địa chỉ</a></li>
                 <li><a href="change-password">Đổi mật khẩu</a></li>
                 <li class="active"><a href="orders">Đơn mua</a></li>
-                <li>Kho voucher</li>
             </ul>
         </aside>
 
-        <!-- CONTENT -->
         <section class="profile-content">
 
             <c:set var="currentStatus" value="${param.status}" />

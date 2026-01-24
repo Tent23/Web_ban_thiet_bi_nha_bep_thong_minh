@@ -2,9 +2,10 @@ package com.webthietbibep.model;
 
 import com.webthietbibep.cart.CartItem;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Order {
+public class Order implements Serializable {
     private int order_id;
     private int user_id;
     private int address_id;
