@@ -239,5 +239,14 @@ public class ProductDAO extends BaseDao {
                             .orElse(null)
             );
         }
+    public List<Product> getByBrandId(int brandId) {
+        String sql = "SELECT * FROM products WHERE brand_id = :brandId";
+        return get().withHandle(h ->
+                h.createQuery(sql)
+                        .bind("brandId", brandId)
+                        .mapToBean(Product.class)
+                        .list()
+        );
+    }
     }
 

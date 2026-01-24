@@ -126,8 +126,10 @@ public class AdminBrandServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("brand_id"));
         String name = request.getParameter("brand_name");
         String logo = request.getParameter("logo_url");
+        String slo = request.getParameter("slogan");
+        String des  = request.getParameter("description");
 
-        Brand brand = new Brand(id, logo, name);
+        Brand brand = new Brand(id, logo, name,slo,des);
 
         brandDAO.update(brand); // Cập nhật thật vào DB
 
