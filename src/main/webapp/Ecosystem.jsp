@@ -40,7 +40,7 @@
                         <div class="eco-info">
                             <h3>${e.name}</h3>
                             <div class="eco-footer">
-                                <a href="#" class="btn-eco">Khám phá ngay</a>
+                                <a href="detail-ecosystem?id=${e.id}" class="btn-eco">Khám phá ngay</a>
                             </div>
                         </div>
                     </div> </c:forEach>

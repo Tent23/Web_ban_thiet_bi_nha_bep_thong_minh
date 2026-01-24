@@ -1,10 +1,12 @@
 package com.webthietbibep.model;
 
+import java.util.List;
+
 public class Ecosystems {
     private int id;
     private String name;
     private String image;
-
+    private List<Product> products;
     public Ecosystems() {
     }
 
@@ -23,4 +25,12 @@ public class Ecosystems {
 
     public String getImage() { return image; }
     public void setImage(String image) { this.image = image; }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
 }
