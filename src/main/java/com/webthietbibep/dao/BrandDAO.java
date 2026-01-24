@@ -6,7 +6,6 @@ import java.util.Optional;
 
 public class BrandDAO extends BaseDao {
 
-    // Lấy danh sách tất cả thương hiệu
     public List<Brand> getAll() {
         String sql = "SELECT * FROM brands ORDER BY brand_id DESC";
         return get().withHandle(h ->
@@ -43,30 +42,31 @@ public class BrandDAO extends BaseDao {
         );
     }
 
-    // Thêm mới thương hiệu
     public void insert(Brand brand) {
-        String sql = "INSERT INTO brands (brand_name, logo_url) VALUES (:brand_name, :logo_url)";
+        String sql = "INSERT INTO brands (brand_name, logo_url,slogan,description) VALUES (:brand_name, :logo_url, :slogan, :description)";
         get().useHandle(h ->
                 h.createUpdate(sql)
                         .bind("brand_name", brand.getBrand_name())
                         .bind("logo_url", brand.getLogo_url())
+                        .bind("slogan", brand.getSlogan())
+                        .bind("description",brand.getDescription())
                         .execute()
         );
     }
 
-    // Cập nhật thương hiệu
     public void update(Brand brand) {
-        String sql = "UPDATE brands SET brand_name = :brand_name, logo_url = :logo_url WHERE brand_id = :brand_id";
+        String sql = "UPDATE brands SET brand_name = :brand_name, logo_url = :logo_url, slogan =:slogan,description =:description WHERE brand_id = :brand_id";
         get().useHandle(h ->
                 h.createUpdate(sql)
                         .bind("brand_name", brand.getBrand_name())
                         .bind("logo_url", brand.getLogo_url())
                         .bind("brand_id", brand.getBrand_id())
+                        .bind("slogan", brand.getSlogan())
+                        .bind("description",brand.getDescription())
                         .execute()
         );
     }
 
-    // Xóa thương hiệu
     public void delete(int id) {
         String sql = "DELETE FROM brands WHERE brand_id = :id";
         get().useHandle(h ->

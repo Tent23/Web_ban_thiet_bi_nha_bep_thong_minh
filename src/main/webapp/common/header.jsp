@@ -64,9 +64,6 @@
                     <div class="mega-menu">
                         <c:forEach var="c" items="${applicationScope.categories}">
                             <a href="${pageContext.request.contextPath}/products?categoryId=${c.category_id}">
-                                <c:if test="${not empty c.logo}">
-                                    <img src="${c.logo}" alt="${c.category_name}" style="width:18px;margin-right:6px;">
-                                </c:if>
                                     ${c.category_name}
                             </a>
                         </c:forEach>
