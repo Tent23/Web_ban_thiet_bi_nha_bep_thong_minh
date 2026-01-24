@@ -1,4 +1,4 @@
-package com.webthietbibep.service;
+package com.webthietbibep.services;
 
 import com.webthietbibep.db.JDBIConnector;
 import com.webthietbibep.model.Ecosystems;
