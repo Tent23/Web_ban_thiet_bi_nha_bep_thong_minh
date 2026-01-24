@@ -1,6 +1,8 @@
 package com.webthietbibep.controller;
 
 import com.webthietbibep.dao.ProductDAO;
+import com.webthietbibep.dao.ProductCommentDAO;
+import com.webthietbibep.model.ProductComment;
 import com.webthietbibep.dao.ProductFeatureDAO;
 import com.webthietbibep.model.Product;
 import com.webthietbibep.model.ProductFeature;
@@ -18,6 +20,7 @@ public class ProductDetailServlet extends HttpServlet {
 
     private final ProductDAO productDAO = new ProductDAO();
     private final ProductFeatureDAO featureDAO = new ProductFeatureDAO();
+    private final ProductCommentDAO commentDAO =  new ProductCommentDAO();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -38,7 +41,6 @@ public class ProductDetailServlet extends HttpServlet {
             return;
         }
 
-        // 1. Lấy sản phẩm
         Product product = productDAO.getProduct(productId);
         if (product == null) {
             response.sendRedirect(request.getContextPath() + "/products");
@@ -46,10 +48,11 @@ public class ProductDetailServlet extends HttpServlet {
         }
         List<ProductFeature> features = featureDAO.getByProductId(productId);
 
-        List<Product> relatedProducts =
-                productDAO.getRelatedProducts(product.getCategory_id(), productId);
+        List<Product> relatedProducts = productDAO.getRelatedProducts(product.getCategory_id(), productId);
 
-        // 4. Đẩy sang JSP
+        List<ProductComment> comments = commentDAO.getByProductId(productId);
+
+        request.setAttribute("comments", comments);
         request.setAttribute("product", product);
         request.setAttribute("features", features);
         request.setAttribute("relatedProducts", relatedProducts);

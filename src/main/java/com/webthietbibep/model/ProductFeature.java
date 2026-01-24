@@ -1,6 +1,8 @@
 package com.webthietbibep.model;
 
-public class ProductFeature {
+import java.io.Serializable;
+
+public class ProductFeature implements Serializable {
     private int featureId;
     private int productId;
     private String featureText;

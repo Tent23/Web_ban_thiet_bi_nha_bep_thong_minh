@@ -7,18 +7,17 @@ import java.util.Locale;
 
 public class Product implements Serializable {
     private int product_id;
-    private int category_id;    // Đã sửa
-    private String product_name; // Đã sửa
+    private int category_id;
+    private String product_name;
     private String description;
     private double price;
-    private int stock_quantity; // Đã sửa
+    private int stock_quantity;
     private int brand_id;
     private String image;
     private LocalDateTime created_at;
 
     public Product() {}
 
-    // --- GETTER & SETTER (Tên phải khớp cột DB để JDBI tự map) ---
 
     public int getProduct_id() { return product_id; }
     public void setProduct_id(int product_id) { this.product_id = product_id; }
@@ -47,7 +46,6 @@ public class Product implements Serializable {
     public LocalDateTime getCreated_at() { return created_at; }
     public void setCreated_at(LocalDateTime created_at) { this.created_at = created_at; }
 
-    // Hàm định dạng tiền tệ (cho JSP dùng ${p.priceFormat})
     public String getPriceFormat() {
         NumberFormat vn = NumberFormat.getInstance(new Locale("vi", "VN"));
         return vn.format(this.price) + " đ";

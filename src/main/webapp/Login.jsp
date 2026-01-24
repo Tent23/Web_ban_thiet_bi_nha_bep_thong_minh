@@ -1,18 +1,19 @@
 <%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
-<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
     <title>Đăng Nhập</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesom e/6.5.2/css/all.min.css">
-
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Header.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/DangKy.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Login.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
 </head>
 
 <body>
@@ -54,17 +55,6 @@
 
             <button type="submit" class="register_button">ĐĂNG NHẬP</button>
 
-            <div class="social_login">
-                <p>Hoặc đăng nhập bằng</p>
-                <div class="social_buttons">
-                    <a class="google_btn" href="#">
-                        <i class="google_btn"></i> Google
-                    </a>
-                    <a class="facebook_btn" href="#">
-                        <i class="fab fa-facebook - f"></i> Facebook
-                    </a>
-                </div>
-            </div>
         </form>
     </main>
 </main>

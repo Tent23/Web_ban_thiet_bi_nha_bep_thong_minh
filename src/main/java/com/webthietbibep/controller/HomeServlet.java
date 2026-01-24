@@ -1,5 +1,6 @@
 package com.webthietbibep.controller;
 
+import com.webthietbibep.dao.ProductCommentDAO;
 import com.webthietbibep.model.*;
 
 import com.webthietbibep.services.*;
@@ -23,6 +24,7 @@ public class HomeServlet extends HttpServlet {
         ComboService cs = new ComboService();
         CategoryService css = new CategoryService();
         ArcticleService as = new ArcticleService();
+        ProductCommentDAO commentDAO = new ProductCommentDAO();
 
         // 1. Gọi DAO lấy danh sách
         List<Product> listP = ps.getBestSeller();
@@ -35,6 +37,7 @@ public class HomeServlet extends HttpServlet {
         List<Combo> listC = cs.getListBaseCombo();
         List<Category> listCate = css.getAll();
         List<Article> listA = as.getNewArticle();
+        List<ProductComment> homeComments = commentDAO.getLatestForHome(5);
         // 2. Đẩy dữ liệu sang JSP
         request.setAttribute("listP", listP);
         request.setAttribute("topCategories", topCategories);
@@ -46,6 +49,7 @@ public class HomeServlet extends HttpServlet {
         request.setAttribute("listC", listC);
         request.setAttribute("listCate", listCate);
         request.setAttribute("listA", as.getNewArticle());
+        request.setAttribute("homeComments", homeComments);
         // 3. Chuyển hướng về trang giao diện
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }

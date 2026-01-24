@@ -1,6 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" isELIgnored="false" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <!DOCTYPE html>
 <html lang="vi">
@@ -8,10 +7,10 @@
 <head>
     <meta charset="UTF-8" />
     <title>Tất cả sản phẩm - Bếp Thông Minh TTB</title>
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/Header.css" />
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/products.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/Header.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/index.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/products.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -20,7 +19,6 @@
 <jsp:include page="common/header.jsp"></jsp:include>
 
 <main class="main-content">
-    <!-- Breadcrumb -->
     <div class="breadcrumb section-padding" style="padding-bottom: 0;">
         <div class="container">
             <p> <span style="color: var(--text-secondary);">Tất cả sản phẩm</span></p>
@@ -65,8 +63,6 @@
                     </form>
                 </aside>
 
-
-                <!-- PRODUCT GRID -->
                 <div class="shop-main">
                     <div class="shop-header">
                         <h1>Tất cả sản phẩm</h1>
@@ -99,21 +95,32 @@
                     </div>
 
 
-
                     <div class="pagination">
                         <c:forEach begin="1" end="${totalPages}" var="i">
-                            <a href="${pageContext.request.contextPath}/products?page=${i}
-                                        &categoryId=${categoryId}
-                                        &priceRange=${priceRange}
-                                        &sort=${sort}
-                            <c:if test='${brands != null}'>
-                                &brand=${brands[0]}
-                            </c:if>"
-                               class="${i == currentPage ? 'active' : ''}">
+
+                            <c:url var="pageUrl" value="/products">
+                                <c:param name="page" value="${i}" />
+                                <c:if test="${categoryId != null}">
+                                    <c:param name="categoryId" value="${categoryId}" />
+                                </c:if>
+                                <c:if test="${priceRange != null}">
+                                    <c:param name="priceRange" value="${priceRange}" />
+                                </c:if>
+                                <c:if test="${sort != null}">
+                                    <c:param name="sort" value="${sort}" />
+                                </c:if>
+                                <c:if test="${brands != null}">
+                                    <c:param name="brand" value="${brands[0]}" />
+                                </c:if>
+                            </c:url>
+
+                            <a href="${pageUrl}" class="${i == currentPage ? 'active' : ''}">
                                     ${i}
                             </a>
+
                         </c:forEach>
                     </div>
+
 
                 </div>
             </div>

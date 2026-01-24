@@ -55,6 +55,16 @@
     color: #1976d2;
     text-decoration: none;
 }
+.actions .wishlist {
+    background: #fff;
+    color: #1976d2;
+    border: 1px solid #1976d2;
+}
+
+.actions .wishlist i {
+    color: #e53935;
+}
+
 
 /* TÍNH NĂNG */
 .product-features {
@@ -150,10 +160,26 @@
     font-size: 1.1rem;
 }
 
-/* Hiệu ứng trượt xuống cho thông báo */
 @keyframes slideDown {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+.product-comments {
+    margin-top: 50px;
+    padding: 20px;
+    background: #f9f9f9;
+}
+
+.product-comments textarea {
+    width: 100%;
+    min-height: 80px;
+    margin-bottom: 10px;
+}
+
+.comment-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
 
 
