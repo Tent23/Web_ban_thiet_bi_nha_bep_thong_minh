@@ -8,8 +8,8 @@
             <span><i class="fa fa-phone"></i> Hỗ trợ Kỹ thuật: 1900.1234</span>
             <span><i class="fa fa-phone"></i> Kinh doanh: 1900.5678</span>
             <span class="spacer"></span>
-            <a href="showroom">Hệ thống Showroom</a>
-            <a href="tra-cuu-bao-hanh">Tra cứu Bảo hành</a>
+            <a href="${pageContext.request.contextPath}/showroom">Hệ thống Showroom</a>
+            <a href="${pageContext.request.contextPath}/BaoHanh">Tra cứu Bảo hành</a>
             <c:if test="${empty sessionScope.user}">
                 <a href="${pageContext.request.contextPath}/login">
                     <i class="fa fa-user"></i> Đăng nhập
@@ -73,11 +73,12 @@
                     </div>
 
                 </li>
-                <li class="nav-item"><a href="giai-phap-combo.jsp">Giải pháp & Combo</a></li>
-                <li class="nav-item"><a href="goc-tu-van.jsp">Góc Tư vấn</a></li>
+                <li class="nav-item"><a href="${pageContext.request.contextPath}/listcombo">Giải pháp & Combo</a></li>
+                <li class="nav-item"><a href="${pageContext.request.contextPath}/arcticle">Góc Tư vấn</a></li>
                 <li class="nav-item"><a href="dich-vu-lap-dat.jsp">Dịch vụ Lắp đặt</a></li>
                 <li class="nav-item"><a href="ve-chung-toi.jsp">Về chúng tôi</a></li>
-                <li class="nav-item"><a href="khuyen-mai.jsp">Khuyến mãi</a></li>
+                <li class="nav-item"><a href="${pageContext.request.contextPath}/Promotion">Khuyến mãi</a></li>
+                <li class="nav-item"><a href="${pageContext.request.contextPath}/ecos-list">Hệ sinh thái</a></li>
             </ul>
         </div>
     </nav>

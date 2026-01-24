@@ -95,3 +95,123 @@
         font-size: 2rem;
     }
 }
+/* Chi tiết Hệ sinh thái */
+.eco-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.eco-detail-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.breadcrumb {
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.eco-detail-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+}
+
+.eco-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.eco-meta {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.eco-meta span {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.eco-meta i {
+    margin-right: 8px;
+}
+
+.btn-eco-contact {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.btn-eco-contact:hover {
+    background: #128c7e;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Grid sản phẩm mẫu */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-img {
+    height: 200px;
+    margin-bottom: 15px;
+}
+
+.product-img img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-info h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    height: 45px;
+    overflow: hidden;
+}
+
+.product-info .price {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-view {
+    display: block;
+    padding: 8px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+    .eco-detail-grid {
+        grid-template-columns: 1fr;
+    }
+}
