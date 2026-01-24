@@ -1,0 +1,97 @@
+/* Banner Hero */
+.eco-hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.eco-hero-box h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+/* Grid Hệ sinh thái */
+.eco-grid {
+    display: grid;
+    /* Tự động chia cột linh hoạt */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.eco-item {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column; /* Để nội dung trải dài theo chiều dọc */
+    height: 100%;
+}
+
+.eco-item:hover {
+    transform: translateY(-10px);
+}
+
+.eco-image {
+    height: 250px;
+    width: 100%;
+}
+
+.eco-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.eco-info {
+    padding: 25px;
+    flex-grow: 1; /* Đẩy footer xuống dưới cùng */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.eco-info h3 {
+    margin-bottom: 20px;
+    color: var(--dark-color);
+    font-size: 1.5rem;
+}
+
+.eco-footer {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.btn-eco {
+    display: block;
+    background: var(--dark-color);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: 0.3s;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-eco:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .eco-grid {
+        grid-template-columns: 1fr;
+    }
+    .eco-hero-box h1 {
+        font-size: 2rem;
+    }
+}

@@ -1,7 +1,7 @@
 package com.webthietbibep.controller;
 
 import com.webthietbibep.model.Product;
-import com.webthietbibep.service.EcosystemService;
+import com.webthietbibep.services.EcosystemService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
