@@ -1,5 +1,8 @@
 package com.webthietbibep.model;
 
+import java.text.NumberFormat;
+import java.util.Locale;
+
 public class TopProduct {
     private String productName;
     private String productImage;
@@ -17,4 +20,8 @@ public class TopProduct {
     public void setTotalSold(int totalSold) { this.totalSold = totalSold; }
     public double getTotalRevenue() { return totalRevenue; }
     public void setTotalRevenue(double totalRevenue) { this.totalRevenue = totalRevenue; }
+    public String getFormattedRevenue() {
+        NumberFormat vn = NumberFormat.getInstance(new Locale("vi", "VN"));
+        return vn.format(this.totalRevenue) + " đ";
+    }
 }

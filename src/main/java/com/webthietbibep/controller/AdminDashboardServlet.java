@@ -1,4 +1,4 @@
-package com.webthietbibep.controller.admin;
+package com.webthietbibep.controller;
 
 import com.webthietbibep.dao.StatsDAO;
 import com.webthietbibep.model.ChartData;
