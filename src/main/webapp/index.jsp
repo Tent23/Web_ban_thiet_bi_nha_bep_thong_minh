@@ -66,9 +66,9 @@
         <div class="container">
             <h2 class="section-title">Danh mục Nổi bật</h2>
             <div class="category-grid">
-                <c:forEach var="c" items="${listCate}">
-                <a href="pages/QuangToan/Beptu.html" class="category-item">
-                    <img src="${c.logo}" alt="Bếp từ" />
+                <c:forEach var="c" items="${topCategories}">
+                    <a href="category?id=${c.category_id}" class="category-item">
+                        <img src="${c.logo}" alt="${c.category_name}" />
                     <br>
                     <span>${c.category_name}</span>
                 </a>
@@ -87,7 +87,7 @@
                         <img src="${pbs.image}" alt="Sản phẩm" />
                         <h3>${pbs.product_name}</h3>
                         <div class="price">${pbs.priceFormat}</div>
-                        <a href="${pageContext.request.contextPath}/product-detail?id=${p.product_id}" class="btn btn-secondary">
+                        <a href="${pageContext.request.contextPath}/product-detail?id=${pbs.product_id}" class="btn btn-secondary">
                             Xem chi tiết
                         </a>
                     </div>
@@ -180,10 +180,10 @@
             <h2 class="section-title">Các Thương hiệu Hàng đầu</h2>
             <div class="swiper" id="brand-slider">
                 <div class="swiper-wrapper">
-                    <c:forEach var ="b" items="${listB}">
+                    <c:forEach var ="b" items="${topBrands}">
                     <div class="swiper-slide brand-item">
-                        <a href="pages/QuangToan/Brand.html">
-                            <img src="${b.logo_url}" alt="${p.brand_name}" />
+                        <a href="brand?id=${b.brand_id}">
+                            <img src="${b.logo_url}" alt="${b.brand_name}" />
                         </a>
                     </div>
 

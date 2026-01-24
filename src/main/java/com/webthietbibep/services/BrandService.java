@@ -14,4 +14,7 @@ public class BrandService {
     public  Brand getBrandById(int id) {
         return bdao.getById(id);
     }
+    public List<Brand> getTopBrands() {
+        return bdao.getTopBrands();
+    }
 }

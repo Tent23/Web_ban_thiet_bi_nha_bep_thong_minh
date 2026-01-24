@@ -34,9 +34,11 @@
       <!-- INFO -->
       <div class="product-info">
           <c:if test="${not empty sessionScope.message}">
-              <div class="cart-alert-error">
-                  <i class="fa fa-exclamation-circle"></i> ${sessionScope.message}
+              <div class="${sessionScope.messageType == 'success' ? 'cart-alert-success' : 'cart-alert-error'}">
+                  <i class="fa ${sessionScope.messageType == 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}"></i>
+                      ${sessionScope.message}
                   <c:remove var="message" scope="session" />
+                  <c:remove var="messageType" scope="session" />
               </div>
           </c:if>
         <h1>${product.product_name}</h1>
@@ -52,9 +54,11 @@
             <i class="fa fa-cart-plus"></i> Thêm vào giỏ
           </a>
 
-          <a href="#" class="btn btn-danger">
+          <a href="${pageContext.request.contextPath}/buy-now?id=${product.product_id}"
+             class="btn btn-danger">
             <i class="fa fa-bolt"></i> Mua ngay
           </a>
+
 
           <a href="${pageContext.request.contextPath}/wishlist?action=add&product_id=${product.product_id}"
              class="wishlist btn btn-outline"
@@ -85,7 +89,7 @@
             <img src="${p.image}">
             <h4>${p.product_name}</h4>
             <p>${p.priceFormat}</p>
-            <a href="${pageContext.request.contextPath}/product-detail?id=${p.product_id}">
+            <a href="${pageContext.request.contextPath}/product-detail?id=${p.product_id}" class="btn btn-secondary">
               Xem chi tiết
             </a>
           </div>

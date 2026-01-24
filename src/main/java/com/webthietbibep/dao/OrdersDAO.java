@@ -7,6 +7,39 @@ import com.webthietbibep.model.OrderItem;
 import java.util.List;
 import java.util.Optional;
 public class OrdersDAO extends BaseDao {
+    public int insert(Order o) {
+        String sql = """
+        INSERT INTO orders
+        (user_id, address_id, total_amount, status, payment_method, note)
+        VALUES (:uid, :aid, :total, :status, :pm, :note)
+    """;
+
+        return get().withHandle(h ->
+                h.createUpdate(sql)
+                        .bind("uid", o.getUser_id())
+                        .bind("aid", o.getAddress_id())
+                        .bind("total", o.getTotal_amount())
+                        .bind("status",o.getStatus())
+                        .bind("pm", o.getPayment_method())
+                        .bind("note", o.getNote())
+                        .executeAndReturnGeneratedKeys("order_id")
+                        .mapTo(int.class)
+                        .one()
+        );
+    }
+
+    public void cancelExpiredOrders() {
+        get().useHandle(h ->
+                h.createUpdate("""
+            UPDATE orders
+            SET status = 'DA_HUY'
+            WHERE status = 'CHO_THANH_TOAN'
+              AND created_at < NOW() - INTERVAL 30 MINUTE
+        """).execute()
+        );
+    }
+
+
 
     public List<Order> getOrdersByUser(int userId) {
         String sql = """

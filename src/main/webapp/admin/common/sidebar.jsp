@@ -59,7 +59,7 @@
             </a>
         </li>
         <li>
-            <a href="<%=request.getContextPath()%>/admin/admin_content.html">
+            <a href="<%=request.getContextPath()%>/admin/content">
                 <i class="fa-solid fa-file-pen"></i>
                 <span>Quản lý Nội dung</span>
             </a>

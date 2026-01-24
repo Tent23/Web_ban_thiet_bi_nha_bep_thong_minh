@@ -1,5 +1,7 @@
 package com.webthietbibep.model;
 
+import com.webthietbibep.cart.CartItem;
+
 import java.time.LocalDateTime;
 
 public class Order {
@@ -102,6 +104,7 @@ public class Order {
     }
     public String getStatusText() {
         return switch (status) {
+            case "CHO_THANH_TOAN" -> "Chờ thanh toán";
             case "CHO_XAC_NHAN" -> "Chờ xác nhận";
             case "VAN_CHUYEN" -> "Vận chuyển";
             case "CHO_GIAO_HANG" -> "Chờ giao hàng";
@@ -115,4 +118,9 @@ public class Order {
 
     public String getAddressDetail() { return addressDetail; }
     public void setAddressDetail(String addressDetail) { this.addressDetail = addressDetail; }
+
+    public String getFormattedTotal() {
+        return CartItem.Format(total_amount);
+    }
+
 }

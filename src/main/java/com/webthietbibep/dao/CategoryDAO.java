@@ -12,6 +12,22 @@ public class CategoryDAO extends BaseDao {
         );
     }
 
+    public List<Category> getTopCategories() {
+        String sql = """
+        SELECT c.category_id, c.category_name, c.logo, SUM(o.quantity) total_sold
+        FROM order_items o
+        JOIN products p ON p.product_id = o.product_id
+        JOIN categories c ON c.category_id = p.category_id
+        GROUP BY c.category_id
+        ORDER BY total_sold DESC
+        LIMIT 4
+    """;
+
+        return get().withHandle(h ->
+                h.createQuery(sql).mapToBean(Category.class).list()
+        );
+    }
+
     public Category getCategory(int id) {
         String sql = "SELECT category_id, category_name, logo FROM categories WHERE category_id = :id";
         return get().withHandle(h ->
@@ -48,5 +64,12 @@ public class CategoryDAO extends BaseDao {
         return get().withHandle(h ->
                 h.createUpdate(sql).bind("id", id).execute()
         );
+    }
+
+    public boolean checkExist(int id){
+        String sql = "SELECT COUNT(*) FROM categories WHERE category_id = :id";
+        return get().withHandle(h->{
+           return h.createQuery(sql).bind("id", id).mapTo(Integer.class).one() > 0;
+        });
     }
 }

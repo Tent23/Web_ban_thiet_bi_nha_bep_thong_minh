@@ -1,5 +1,5 @@
 package com.webthietbibep.controller;
-
+import com.webthietbibep.utils.EmailService;
 import com.webthietbibep.dao.UserDAO;
 import com.webthietbibep.model.User;
 import com.webthietbibep.utils.PasswordUtil;
@@ -8,6 +8,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import com.webthietbibep.utils.ValidationUtil;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -33,22 +34,27 @@ public class RegisterServlet extends HttpServlet {
         String phone    = req.getParameter("phone");
         String password = req.getParameter("password");
         String confirm  = req.getParameter("confirmPassword");
+        String token = java.util.UUID.randomUUID().toString();
 
-        // 1. check password confirm
         if (!password.equals(confirm)) {
             req.setAttribute("error", "Mật khẩu xác nhận không khớp");
             doGet(req, resp);
             return;
         }
+        if (!ValidationUtil.isValidPassword(password)) {
+            req.setAttribute("error",
+                    "Mật khẩu phải tối thiểu 8 ký tự, gồm chữ hoa, chữ thường, số và ký tự đặc biệt");
+            doGet(req, resp);
+            return;
+        }
 
-        // 2. check username tồn tại
+
         if (userDAO.existsUsername(username)) {
             req.setAttribute("error", "Tên đăng nhập đã tồn tại");
             doGet(req, resp);
             return;
         }
 
-        // 3. tạo user
         User user = new User();
         user.setUsername(username);
         user.setFull_name(fullName);
@@ -57,10 +63,16 @@ public class RegisterServlet extends HttpServlet {
         user.setPassword_hash(PasswordUtil.hash(password));
         user.setRole("USER");
         user.setCreate_at(LocalDateTime.now());
-
+        user.setVerify_token(token);
+        user.setIs_verified(false);
         userDAO.insert(user);
+        EmailService.sendVerifyEmail(email, token);
 
-        req.setAttribute("success", "Đăng ký thành công, vui lòng đăng nhập");
+
+        req.setAttribute("success", "Đăng ký thành công, Vui lòng kiểm tra email để xác thực tài khoản.");
         req.getRequestDispatcher("/Login.jsp").forward(req, resp);
+        System.out.println(req.getContextPath());
+
     }
+
 }

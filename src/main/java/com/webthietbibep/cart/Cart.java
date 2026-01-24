@@ -36,9 +36,10 @@ public class Cart implements Serializable {
         data.remove(id);
     }
     public List<CartItem>  delAllItems() {
-        List<CartItem> list = new ArrayList<CartItem>(data.values());
-        list.clear();
-        return list;
+        if(this.data != null ) {
+            this.data.clear();
+        }
+        return new ArrayList<>();
     }
     public List<CartItem> getItems(){
         return new ArrayList<>(data.values());

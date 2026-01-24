@@ -58,7 +58,7 @@
                 <p>Hoặc đăng nhập bằng</p>
                 <div class="social_buttons">
                     <a class="google_btn" href="#">
-                        <i class="fab fa-instagram"></i> Instagram
+                        <i class="google_btn"></i> Google
                     </a>
                     <a class="facebook_btn" href="#">
                         <i class="fab fa-facebook - f"></i> Facebook

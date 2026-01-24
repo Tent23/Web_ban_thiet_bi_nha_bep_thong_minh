@@ -79,13 +79,13 @@
             <c:forEach var="o" items="${orders}">
                 <div class="order-card">
 
-                    <!-- Header -->
+
                     <div class="order-header">
                         <div>Mã đơn: #${o.order_id}</div>
                         <div class="order-status">${o.statusText}</div>
                     </div>
 
-                    <!-- Products -->
+
                     <c:forEach var="p" items="${orderProducts[o.order_id]}">
                         <div class="order-product">
                             <img src="${p.image}" alt="">
@@ -106,10 +106,24 @@
 
                         <div class="total">
                             Thành tiền:
-                            <span>${o.total_amount} đ</span>
+                            <span>${o.formattedTotal}</span>
+
                         </div>
 
                         <div class="actions">
+                            <c:if test="${o.status eq 'CHO_THANH_TOAN'}">
+                                <a href="payment?orderId=${o.order_id}" class="btn-primary">
+                                    Thanh toán ngay
+                                </a>
+
+                                <form action="cancel-order" method="post" style="display:inline">
+                                    <input type="hidden" name="order_id" value="${o.order_id}">
+                                    <button class="btn-cancel">Huỷ đơn</button>
+                                </form>
+                            </c:if>
+
+
+
                             <c:if test="${o.status eq 'HOAN_THANH'}">
                                 <button>Mua lại</button>
                                 <button>Đánh giá</button>
