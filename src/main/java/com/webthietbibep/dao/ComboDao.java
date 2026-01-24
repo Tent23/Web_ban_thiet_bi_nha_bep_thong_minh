@@ -36,13 +36,13 @@ public class ComboDao extends BaseDao {
 
     public List<Product> getListComboProduct(int id) {
         return get().withHandle(h -> {
-            return h.createQuery("select p.product_id, p.category_id, p.name as product_name, p.description, p.price, p.stock_quantity, p.brand_id, p.image, p.created_at from products p join comboitems c on p.product_id = c.product_id where c.combo_id = :id").bind("id", id).mapToBean(Product.class).list();
+            return h.createQuery("select p.product_id, p.category_id, p.product_name as product_name, p.description, p.price, p.stock_quantity, p.brand_id, p.image, p.created_at from products p join comboitems c on p.product_id = c.product_id where c.combo_id = :id").bind("id", id).mapToBean(Product.class).list();
         });
     }
 
     public List<Combo> getListBaseCombo() {
         return get().withHandle(h -> {
-            return h.createQuery("select * from combos where is_active = 1 and tag in ('Combo Căn hộ','Combo An ninh') limit 2").mapToBean(Combo.class).list();
+            return h.createQuery("select * from combos where is_active = 1 order by  discountprice asc limit 2").mapToBean(Combo.class).list();
         });
     }
 
