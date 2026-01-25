@@ -5,10 +5,9 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Thêm bài viết mới | Admin</title>
+    <title>${oldArticle.id > 0 ? 'Cập nhật bài viết' : 'Thêm bài viết mới'} | Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/admin_style.css">
-
     <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
 </head>
 <body>
@@ -20,14 +19,10 @@
         <header class="admin-header">
             <div class="header-left">
                 <a href="${pageContext.request.contextPath}/admin/content" class="btn-back">
-                    <i class="fa-solid fa-arrow-left"></i> Quay lại danh sách
+                    <i class="fa-solid fa-arrow-left"></i> Quay lại
                 </a>
-
+                <h2>${oldArticle.id > 0 ? 'Cập nhật bài viết' : 'Thêm bài viết mới'}</h2>
             </div>
-            <div class ="header-right">
-                <h2>${oldArticle.id > 0 ? 'Chỉnh sửa bài viết' : 'Thêm bài viết mới'}</h2>
-            </div>
-
         </header>
 
         <div class="admin-content">
@@ -35,95 +30,137 @@
                 <div style="color: red; margin-bottom: 10px;">${errorMessage}</div>
             </c:if>
             <form action="${pageContext.request.contextPath}/admin/add-article" method="post">
-                <input type="hidden" name="id" value="${oldArticle.id}">
-            <div class="card">
-                <div class="card-body">
 
-                        <input type="hidden" name="action" value="create">
+                <c:if test="${oldArticle.id > 0}">
+                    <input type="hidden" name="id" value="${oldArticle.id}">
+                </c:if>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group mb-3">
-                                    <label class="form-label">Tiêu đề bài viết</label>
-                                    <input type="text" name="title" class="form-control" value="${oldArticle.title}" placeholder="Ví dụ: Cách chọn thiết bị bếp công nghiệp..." required>
-                                </div>
+                <div class="admin-form-layout">
+
+                    <div class="form-col-main">
+                        <div class="admin-card">
+                            <h3>Nội dung bài viết</h3>
+
+                            <div class="form-group">
+                                <label>Tiêu đề bài viết </label>
+                                <input type="text" name="title" class="form-control" required
+                                       value="${oldArticle.title}" placeholder="Nhập tiêu đề...">
                             </div>
 
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label class="form-label">Tác giả</label>
-                                    <input type="text" name="author" class="form-control" value="${oldArticle.author}" placeholder="Tên tác giả hoặc Admin">
+                            <div class="form-grid-mini" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <div class="form-group">
+                                    <label>Thể loại</label>
+                                    <input type="text" name="tip" class="form-control" required
+                                           value="${oldArticle.tip}" placeholder="Nhập thể loại...">
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label class="form-label">Thể loại (Tip)</label>
-                                    <input type="text" name="tip" class="form-control" value="${oldArticle.tip}" placeholder="Mẹo vặt / Tư vấn / Xu hướng">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label class="form-label">Tóm tắt nội dung</label>
-                                    <textarea name="summary" class="form-control" rows="12" placeholder="Tóm tắt">${oldArticle.content}</textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label class="form-label">Danh mục</label>
-                                    <input type="text" name="cate" class="form-control" value ="${oldArticle.category_id}" placeholder="Nhập ID danh mục ">
+                                <div class="form-group">
+                                    <label>ID danh mục </label>
+                                    <input type="text" name="cate" class="form-control" required
+                                           value="${oldArticle.category_id}" placeholder="Nhập ID danh mục...">
                                 </div>
                             </div>
 
-                            <div class="col-md-12">
-                                <div class="form-group mb-3">
-                                    <label class="form-label">Nội dung bài viết</label>
-                                    <textarea name="body" id="content-editor" class="form-control" rows="12" placeholder="Nhập nội dung bài viết chi tiết tại đây...">${oldArticle.body}</textarea>
-                                </div>
+                            <div class="form-group">
+                                <label>Mô tả ngắn</label>
+                                <textarea name="summary" class="form-control" rows="3"
+                                          placeholder="Tóm tắt bài viết...">${oldArticle.content}</textarea>
                             </div>
 
-
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label class="form-label">Hình ảnh đại diện (Thumbnail)</label>
-                                    <input type="text" name="image" value="${oldArticle.image}" placeholder="URL đến ảnh" class="form-control">
-                                </div>
+                            <div class="form-group">
+                                <label>Nội dung chi tiết</label>
+                                <textarea name="body" id="content-editor">${oldArticle.body}</textarea>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-group mb-3">
-                                    <label class="form-label">Trạng thái bài đăng</label>
-                                    <select name="is_active" class="form-control">
-                                        <option value="1" ${oldArticle.is_active == 1 ? 'selected' : ''}>Đã xuất bản (Hiện trên web)</option>
-                                        <option value="0" ${oldArticle.is_active == 0 ? 'selected' : ''}>Bản nháp (Lưu tạm/Ẩn)</option>
-                                    </select>
-                                </div>
+                        </div>
+                    </div>
+
+                    <div class="form-col-sidebar">
+                        <div class="admin-card">
+                            <h3>Hình ảnh đại diện</h3>
+                            <div class="form-group">
+                                <label>Đường dẫn ảnh (Link online)</label>
+                                <input type="text" name="image" id="urlInput" class="form-control"
+                                       value="${oldArticle.image}"
+                                       placeholder="Dán link ảnh tại đây..." oninput="previewUrl(this)">
+
+                            </div>
+
+                            <div class="image-preview-container" id="previewContainer" style="margin-top: 15px;">
+                                <c:if test="${not empty oldArticle.image}">
+                                    <div class="preview-item" style="height: 150px; width: 100%;">
+                                        <img src="${oldArticle.image}" id="imgPreview" alt="Preview" style="object-fit: contain; border: 2px solid var(--green);">
+                                    </div>
+                                </c:if>
                             </div>
                         </div>
 
-                        <div class="text-end mt-4">
-                            <button type="reset" class="btn btn-secondary">
-                                <i class="fa-solid fa-rotate-left"></i> Làm lại
-                            </button>
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fa-solid fa-paper-plane"></i>
-                                ${oldArticle.id > 0 ? 'Cập nhật bài viết' : 'Đăng bài viết'}
-                            </button>
-                        </div>
+                        <div class="admin-card">
+                            <h3>Cài đặt</h3>
+                            <div class="form-group">
+                                <label>Tác giả</label>
+                                <input type="text" name="author" class="form-control" value="${oldArticle.author}" placeholder="Tên tác giả">
+                            </div>
 
+                            <div class="form-group">
+                                <label>Trạng thái</label>
+                                <div class="toggle-group">
+                                    <label class="switch">
+                                        <input type="checkbox" id="activeSwitch"
+                                        ${oldArticle.is_active == 1 ? 'checked' : ''} onchange="updateActiveValue()">
+                                        <span class="slider round"></span>
+                                    </label>
+                                    <span id="statusLabel">
+                                        ${oldArticle.is_active == 1 ? 'Đang hiển thị' : 'Đang ẩn'}
+                                    </span>
+                                </div>
+                                <input type="hidden" name="is_active" id="isActiveInput" value="${oldArticle.is_active > 0 ? oldArticle.is_active : '0'}">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">
+                        <i class="fa-solid fa-save"></i>
+                        ${oldArticle.id > 0 ? 'Lưu bài viết' : 'Đăng bài viết'}
+                    </button>
+                    <a href="${pageContext.request.contextPath}/admin/content" class="btn-secondary">Hủy bỏ</a>
+                </div>
             </form>
         </div>
     </main>
 </div>
 
 <script>
-    CKEDITOR.replace('content-editor', {
-        height: 400,
+    CKEDITOR.replace('content-editor', { height: 350, language: 'vi', versionCheck: false });
 
-        language: 'vi',
-        versionCheck: false
-    });
+    function previewUrl(input) {
+        const url = input.value.trim();
+        const container = document.getElementById('previewContainer');
+        if (url.length > 5) {
+            container.innerHTML = `
+                <div class="preview-item" style="height: 150px; width: 100%;">
+                    <img src="${'${url}'}" onerror="this.src='https://via.placeholder.com/150?text=Lỗi+Link'"
+                         style="object-fit: contain; border: 2px solid var(--green);">
+                </div>`;
+        } else {
+            container.innerHTML = '';
+        }
+    }
+
+    function updateActiveValue() {
+        const checkbox = document.getElementById('activeSwitch');
+        const hiddenInput = document.getElementById('isActiveInput');
+        const label = document.getElementById('statusLabel');
+        if (checkbox.checked) {
+            hiddenInput.value = "1";
+            label.innerText = "Đang hiển thị";
+            label.style.color = "var(--green)";
+        } else {
+            hiddenInput.value = "0";
+            label.innerText = "Đang ẩn";
+            label.style.color = "var(--admin-text-light)";
+        }
+    }
 </script>
-
 </body>
 </html>

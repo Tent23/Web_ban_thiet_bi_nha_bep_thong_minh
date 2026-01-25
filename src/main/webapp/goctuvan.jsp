@@ -35,7 +35,7 @@
                     <div class = "img_content"><img src="${a.image}"></div>
                     <div class = "text_content">
                      <h4>${a.tip}</h4>
-                        <h2><a href="#">${a.title}</a></h2>
+                        <h2><a href="detail-article?id=${a.id}">${a.title}</a></h2>
                         <div>${a.content}</div>
                         <div class = "time">
                             <span><i class="fa fa-calendar"></i> ${a.formatDate(a.create_date)}</span>
@@ -64,7 +64,7 @@
                     <h3><i class="fa fa-fire"></i> Đang Hot</h3>
                     <ul>
                         <c:forEach var ="a" items="${listHA}">
-                        <li><a href="#">${a.title}</a></li>
+                        <li><a href="detail-article?id=${a.id}">${a.title}</a></li>
                         </c:forEach>
                     </ul>
                 </div>

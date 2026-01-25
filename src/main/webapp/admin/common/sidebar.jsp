@@ -72,12 +72,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="<%=request.getContextPath()%>/admin/posts" class="active-sub">
+                    <a href="<%=request.getContextPath()%>/admin/content" class="active-sub">
                         <i class="fa-solid fa-newspaper"></i> Danh sách Bài viết
                     </a>
                 </li>
                 <li>
-                    <a href="<%=request.getContextPath()%>/admin/posts?action=add" class="active-sub">
+                    <a href="<%=request.getContextPath()%>/admin/add-article" class="active-sub">
                         <i class="fa-solid fa-plus"></i> Viết bài mới
                     </a>
                 </li>
