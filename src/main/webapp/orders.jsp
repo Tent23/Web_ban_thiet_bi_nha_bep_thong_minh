@@ -91,7 +91,7 @@
                             <div class="info">
                                 <div class="name">${p.product_name}</div>
                                 <div class="price">
-                                        ${p.price} đ
+                                        ${p.priceFormat}
                                 </div>
                             </div>
                         </div>

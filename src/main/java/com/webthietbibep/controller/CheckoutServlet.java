@@ -17,6 +17,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 @WebServlet("/checkout")
 public class CheckoutServlet extends HttpServlet {
@@ -48,6 +50,11 @@ public class CheckoutServlet extends HttpServlet {
                 return;
             }
 
+            double total = product.getPrice() * quantity;
+            NumberFormat vn = NumberFormat.getInstance(new Locale("vi", "VN"));
+            String buyNowTotalFormatted = vn.format(total) + " đ";
+
+            req.setAttribute("buyNowTotalFormatted", buyNowTotalFormatted);
             req.setAttribute("buyNowProduct", product);
             req.setAttribute("buyNowQuantity", quantity);
             req.setAttribute("mode", "buynow");
