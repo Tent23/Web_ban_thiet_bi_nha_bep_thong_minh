@@ -15,20 +15,20 @@
             <div class="footer-col">
                 <h4>HỖ TRỢ KHÁCH HÀNG</h4>
                 <ul>
-                    <li><a href="chinh-sach-bao-hanh.jsp">Chính sách Bảo hành</a></li>
-                    <li><a href="chinh-sach-van-chuyen.jsp">Chính sách Vận chuyển & Lắp đặt</a></li>
-                    <li><a href="chinh-sach-doi-tra.jsp">Chính sách Đổi trả</a></li>
-                    <li><a href="phuong-thuc-thanh-toan.jsp">Phương thức Thanh toán</a></li>
+                    <li><a href="chinhsachbaohanh.jsp">Chính sách Bảo hành</a></li>
+                    <li><a href="chinhsachvanchuyenvalapdat.jsp">Chính sách Vận chuyển & Lắp đặt</a></li>
+                    <li><a href="chinhsachdoitra.jsp">Chính sách Đổi trả</a></li>
+                    <li><a href="phuongthucthanhtoan.jsp">Phương thức Thanh toán</a></li>
                     <li><a href="#">Câu hỏi Thường gặp (FAQs)</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>LIÊN KẾT NHANH</h4>
                 <ul>
-                    <li><a href="ve-chung-toi.jsp">Về chúng tôi</a></li>
-                    <li><a href="showroom.jsp">Hệ thống Showroom</a></li>
-                    <li><a href="tuyen-dung.jsp">Tuyển dụng</a></li>
-                    <li><a href="doi-tac-b2b.jsp">Dành cho Đối tác B2B</a></li>
+                    <li><a href="vechungtoi.jsp">Về chúng tôi</a></li>
+                    <li><a href="showroom">Hệ thống Showroom</a></li>
+                    <li><a href="tuyendung.jsp">Tuyển dụng</a></li>
+                    <li><a href="doitacB2B.jsp">Dành cho Đối tác B2B</a></li>
                 </ul>
             </div>
             <div class="footer-col">

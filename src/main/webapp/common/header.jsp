@@ -72,8 +72,8 @@
                 </li>
                 <li class="nav-item"><a href="${pageContext.request.contextPath}/listcombo">Giải pháp & Combo</a></li>
                 <li class="nav-item"><a href="${pageContext.request.contextPath}/arcticle">Góc Tư vấn</a></li>
-                <li class="nav-item"><a href="dich-vu-lap-dat.jsp">Dịch vụ Lắp đặt</a></li>
-                <li class="nav-item"><a href="ve-chung-toi.jsp">Về chúng tôi</a></li>
+                <li class="nav-item"><a href="DichVuLapDat.jsp">Dịch vụ Lắp đặt</a></li>
+                <li class="nav-item"><a href="vechungtoi.jsp">Về chúng tôi</a></li>
                 <li class="nav-item"><a href="${pageContext.request.contextPath}/Promotion">Khuyến mãi</a></li>
                 <li class="nav-item"><a href="${pageContext.request.contextPath}/ecos-list">Hệ sinh thái</a></li>
             </ul>

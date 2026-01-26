@@ -17,7 +17,7 @@
     <div class="combo-section section-padding bg-light">
         <div class="container">
             <h1 class="section-title text-center">Các Combo Sản phẩm </h1>
-            <p class="section-subtitle text-center">Giảm giá lên đến 20% khi mua trọn bộ thiết bị.</p>
+            <p class="section-subtitle text-center">Giảm giá khi mua trọn bộ thiết bị.</p>
             <div class="combo-grid">
              <c:forEach var="c" items="${listC}">
                 <div class="combo-card">

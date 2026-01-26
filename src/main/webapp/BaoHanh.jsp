@@ -28,12 +28,12 @@
         <div class ="check_bnt">
            <div> <input type="radio" id="radio-1" name="Tra_Cuu_theo" value ="series" ${type == "series" ? "checked" : "" } > <label for = "radio-1" >Tra cứu theo Số Serie</label></div>
             <div><input type="radio" id="radio-2" name="Tra_Cuu_theo" value ="phone" ${type == "phone" ? "checked" : "" }> <label for = "radio-2">Tra cứu theo Số điện thoại  </label></div>
-
+            <div><input type="radio" id="radio-2" name="Tra_Cuu_theo" value ="phone" ${type == "customer" ? "checked" : "" }> <label for = "radio-2">Tra cứu theo mã khách hàng  </label></div>
         </div>
         <div>
-            <div class = "searh">
+            <div class = "searh" >
 
-            <input type="text" id = "field" name ="pra" value ="<%= pra %>"  placeholder="Nhập thông tin tra cứu">
+            <input  type="text" id = "field" name ="pra" value ="<%= pra %>"  placeholder="Nhập thông tin tra cứu">
             <button type="submit"><i class="fa fa-search"></i></button>
             </div>
             <span ></span>
