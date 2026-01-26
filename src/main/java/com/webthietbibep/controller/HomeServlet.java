@@ -26,6 +26,7 @@ public class HomeServlet extends HttpServlet {
         ArcticleService as = new ArcticleService();
         ProductCommentDAO commentDAO = new ProductCommentDAO();
 
+
         // 1. Gọi DAO lấy danh sách
         List<Product> listP = ps.getBestSeller();
         List<Category> topCategories = css.getTopCategories();
@@ -36,7 +37,7 @@ public class HomeServlet extends HttpServlet {
         List<Banner> listBN = bns.getListBanner();
         List<Combo> listC = cs.getListBaseCombo();
         List<Category> listCate = css.getAll();
-        List<Article> listA = as.getNewArticle();
+        List<Article> listA = as.getListHotArticle();
         List<ProductComment> homeComments = commentDAO.getLatestForHome(5);
         // 2. Đẩy dữ liệu sang JSP
         request.setAttribute("listP", listP);

@@ -11,26 +11,31 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ArcticleController", value = "/arcticle")
-public class ArcticleController extends HttpServlet {
+@WebServlet(name = "ArticleByCategory", value = "/article-category")
+public class ArticleByCategory extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String filter = request.getParameter("filter");
-
+        if(filter == null) filter = "new";
+        int cateId =  Integer.parseInt(request.getParameter("cateId"));
         ArcticleService as = new ArcticleService();
+        CategoryService cs =  new CategoryService();
         CategoryService asc = new CategoryService();
-   if(filter == null) filter = "new";
-        List<Category> listCate =  asc.getAll();
-        List<Article> listA = as.getFilterArticle(filter);
+
+
         List<Article> listHA = as.getListHotArticle();
+        List<Article> listC = as.getArticleByCategory(cateId,filter);
+        List<Category> listCate =  asc.getAll();
+        String name = cs.getCategoryById(cateId).getCategory_name();
 
 
-        request.setAttribute("listA", listA);
+
         request.setAttribute("listHA", listHA);
         request.setAttribute("filter", filter);
+        request.setAttribute("listC", listC);
+        request.setAttribute("name", name);
         request.setAttribute("listCate", listCate);
-
-        request.getRequestDispatcher("/goctuvan.jsp").forward(request, response);
+        request.getRequestDispatcher("/articleCategory.jsp").forward(request, response);
     }
 
     @Override
