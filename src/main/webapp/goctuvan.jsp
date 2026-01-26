@@ -52,11 +52,9 @@
                 <div class = "list">
                 <h3><i class="fa fa-list"></i> Danh Mục Bài Viết</h3>
                 <ul>
-                    <li><a href="#">Bếp Từ & Bếp Điện (12)</a></li>
-                    <li><a href="#">Máy Rửa Bát (8)</a></li>
-                    <li><a href="#">Robot Hút Bụi (15)</a></li>
-                    <li><a href="#">Máy Hút Mùi (6)</a></li>
-                    <li><a href="#">Phụ Kiện Bếp (4)</a></li>
+                    <c:forEach var = "c" items="${listCate}">
+                    <li><a href="article-category?cateId=${c.category_id}">${c.category_name}</a></li>
+                    </c:forEach>
                 </ul>
                 </div>
 

@@ -36,5 +36,7 @@ public class    ArcticleService {
     public int getTotalArticle(String filter, String search){
         return adao.getTotalArticles(filter,search);
     }
-
+    public List<Article> getArticleByCategory(int id,String f){
+        return adao.ArticleByCategory(id,f);
+    }
 }

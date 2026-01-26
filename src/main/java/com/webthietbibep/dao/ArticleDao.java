@@ -94,4 +94,16 @@ public class ArticleDao extends  BaseDao{
         });
     }
 
+    public List<Article> ArticleByCategory(int id,String f){
+        return  get().withHandle(h ->{
+
+            String query = "SELECT * FROM articles WHERE is_active = 1 AND category_id = :id ";
+            if("new".equals(f)){query += " " + "ORDER BY create_date DESC ";}
+            else if("population".equals(f)) {query += " " + "ORDER BY likecount DESC";}
+            else {query += " " + "ORDER BY title ASC";}
+
+            return h.createQuery(query).bind("id",id).mapToBean(Article.class).list();
+        });
+
+}
 }

@@ -2,6 +2,7 @@ package com.webthietbibep.controller.cart;
 
 import com.webthietbibep.cart.Cart;
 import com.webthietbibep.cart.CartItem;
+import com.webthietbibep.model.User;
 import com.webthietbibep.services.BrandService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -15,8 +16,23 @@ import java.util.Map;
 public class CartController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         BrandService bs = new BrandService();
         HttpSession session = request.getSession();
+
+        User user = (User) session.getAttribute("user");
+
+        // 1. NẾU CHƯA ĐĂNG NHẬP
+        if (user == null) {
+
+            String queryString = request.getQueryString();
+            String redirectUrl = "cart" + (queryString != null ? "?" + queryString : "");
+
+            session.setAttribute("redirectUrl", redirectUrl);
+            response.sendRedirect("login");
+            return;
+        }
+
         Cart cart = (Cart) session.getAttribute("cart");
         Map<Integer,String> data = new HashMap<>();
         if(cart != null && cart.getData() != null){

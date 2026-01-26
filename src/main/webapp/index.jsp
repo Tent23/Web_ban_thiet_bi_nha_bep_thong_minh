@@ -143,7 +143,7 @@
                 </div>
                 <div class="hub-articles">
                     <c:forEach var = "a" items="${listA}">
-                    <a href="pages/TrongBao/goctuvan.html" class="article-item">
+                    <a href="detail-article?id=${a.id}" class="article-item">
                         <h4>${a.title}</h4>
                         <p>${a.content}</p>
                     </a>

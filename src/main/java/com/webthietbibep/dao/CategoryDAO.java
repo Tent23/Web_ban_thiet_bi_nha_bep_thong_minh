@@ -65,4 +65,10 @@ public class CategoryDAO extends BaseDao {
            return h.createQuery(sql).bind("id", id).mapTo(Integer.class).one() > 0;
         });
     }
+    public Category getCategoryById(int id){
+        String sql = "SELECT * FROM categories WHERE category_id = :id";
+        return get().withHandle(h->{
+          return h.createQuery(sql).bind("id", id).mapToBean(Category.class).stream().findFirst().orElse(null);
+        });
+    }
 }

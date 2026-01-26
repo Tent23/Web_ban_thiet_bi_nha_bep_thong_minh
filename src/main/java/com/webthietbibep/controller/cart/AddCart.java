@@ -2,6 +2,7 @@ package com.webthietbibep.controller.cart;
 
 import com.webthietbibep.cart.Cart;
 import com.webthietbibep.model.Product;
+import com.webthietbibep.model.User;
 import com.webthietbibep.services.ProductService;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
@@ -13,6 +14,18 @@ import java.io.IOException;
 public class AddCart extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("user");
+        // 1. NẾU CHƯA ĐĂNG NHẬP
+        if (user == null) {
+
+            String queryString = request.getQueryString();
+            String redirectUrl = "cart" + (queryString != null ? "?" + queryString : "");
+
+            session.setAttribute("redirectUrl", redirectUrl);
+            response.sendRedirect("login");
+            return;
+        }
 
         String idParam = request.getParameter("id");
         if (idParam == null) {
@@ -32,7 +45,7 @@ public class AddCart extends HttpServlet {
             }
         }
 
-        HttpSession session = request.getSession();
+
         ProductService ps = new ProductService();
         Product product = ps.getProduct(id);
 
