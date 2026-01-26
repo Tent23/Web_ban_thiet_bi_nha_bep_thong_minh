@@ -39,36 +39,26 @@
 
     <section class="brand-products">
         <div class="container">
-            <h2>Sản phẩm của ${brand.brand_name}</h2>
+            <h2>Sản phẩm thuộc: ${brand.brand_name}</h2>
 
-            <c:choose>
-                <c:when test="${empty products}">
-                    <p class="empty-text">Hiện chưa có sản phẩm cho thương hiệu này.</p>
-                </c:when>
+            <div class="product-list">
+                <c:forEach var="p" items="${products}">
+                    <div class="product-card">
+                        <img src="${p.image}" alt="${p.product_name}">
+                        <h3>${p.product_name}</h3>
 
-                <c:otherwise>
-                    <div class="product-list">
-                        <c:forEach var="p" items="${products}">
-                            <div class="product">
-                                <a href="${pageContext.request.contextPath}/product?id=${p.product_id}">
-                                    <img src="${p.image}" alt="${p.product_name}">
-                                </a>
+                        <div class="price">${p.priceFormat}</div>
 
-                                <h3 class="product-name">${p.product_name}</h3>
-
-                                <p class="product-price">
-                                    <fmt:formatNumber value="${p.price}" type="currency" currencySymbol="₫"/>
-                                </p>
-
-                                <a class="btn-buy"
-                                   href="${pageContext.request.contextPath}/product?id=${p.product_id}">
-                                    Xem chi tiết
-                                </a>
-                            </div>
-                        </c:forEach>
+                        <a href="${pageContext.request.contextPath}/product-detail?id=${p.product_id}" class="btn btn-secondary">
+                            Xem chi tiết
+                        </a>
                     </div>
-                </c:otherwise>
-            </c:choose>
+                </c:forEach>
+
+                <c:if test="${empty products}">
+                    <p>Chưa có sản phẩm nào thuộc thương hiệu này.</p>
+                </c:if>
+            </div>
         </div>
     </section>
 

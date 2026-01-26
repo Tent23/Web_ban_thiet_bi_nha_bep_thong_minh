@@ -60,9 +60,7 @@
           </a>
 
 
-          <a href="${pageContext.request.contextPath}/wishlist?action=add&product_id=${product.product_id}"
-             class="wishlist btn btn-outline"
-             title="Thêm vào yêu thích">
+
             <a href="${pageContext.request.contextPath}/wishlist?action=add&product_id=${product.product_id}"
                title="Thêm vào yêu thích"
                style="

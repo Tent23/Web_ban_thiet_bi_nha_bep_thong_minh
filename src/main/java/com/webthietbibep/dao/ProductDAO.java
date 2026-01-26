@@ -212,7 +212,7 @@ public class ProductDAO extends BaseDao {
                     SELECT * FROM products
                     WHERE category_id = :cid
                       AND product_id != :pid
-                    LIMIT 4
+                    LIMIT 6
                 """)
                         .bind("cid", categoryId)
                         .bind("pid", excludeId)
@@ -273,5 +273,32 @@ public class ProductDAO extends BaseDao {
                         .list()
         );
     }
+    // Thêm đoạn code này vào trong class ProductDAO
+    public List<Product> searchByNameLimit(String keyword, int limit) {
+        String sql = """
+        SELECT * FROM products 
+        WHERE product_name LIKE :keyword 
+        ORDER BY product_id DESC 
+        LIMIT :limit
+    """;
+
+        return get().withHandle(h ->
+                h.createQuery(sql)
+                        .bind("keyword", "%" + keyword + "%") // Tìm kiếm chứa từ khóa
+                        .bind("limit", limit)
+                        .mapToBean(Product.class)
+                        .list()
+        );
     }
+
+    public List<Product> searchByName(String keyword) {
+        String sql = "SELECT * FROM products WHERE product_name LIKE :keyword";
+        return get().withHandle(h ->
+                h.createQuery(sql)
+                        .bind("keyword", "%" + keyword + "%")
+                        .mapToBean(Product.class)
+                        .list()
+        );
+    }
+}
 
