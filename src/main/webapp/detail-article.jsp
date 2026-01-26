@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="assets/css/detailarticle.css">
 
 </head>
-<body style="background-color: #f4f4f4;"> <jsp:include page="common/header.jsp"/>
+<body style="background-color: #f4f4f4;">
+<jsp:include page="common/header.jsp"/>
 
 <main>
     <div class="content">
