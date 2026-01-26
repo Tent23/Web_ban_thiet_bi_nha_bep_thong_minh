@@ -65,6 +65,19 @@
 
                 <div class="shop-main">
                     <div class="shop-header">
+                        <c:if test="${not empty searchKeyword}">
+                            <div class="search-result-alert" style="margin-bottom: 20px;">
+                                <h3>Kết quả tìm kiếm cho: "<span>${searchKeyword}</span>"</h3>
+                                <p>Tìm thấy ${totalProducts} sản phẩm.</p>
+                            </div>
+                        </c:if>
+
+                        <c:if test="${empty products}">
+                            <div class="no-products">
+                                <p>Không tìm thấy sản phẩm nào phù hợp.</p>
+                                <a href="products" class="btn btn-primary">Xem tất cả sản phẩm</a>
+                            </div>
+                        </c:if>
                         <h1>Tất cả sản phẩm</h1>
                         <form method="get" action="${pageContext.request.contextPath}/products">
                             <input type="hidden" name="priceRange" value="${priceRange}" />
