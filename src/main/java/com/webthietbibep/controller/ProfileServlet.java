@@ -44,4 +44,5 @@ public class ProfileServlet extends HttpServlet {
 
         resp.sendRedirect("profile");
     }
+
 }
