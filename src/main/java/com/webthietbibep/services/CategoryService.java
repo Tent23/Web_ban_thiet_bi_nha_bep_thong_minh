@@ -16,4 +16,7 @@ public class CategoryService {
     public List<Category> getTopCategories() {
         return cDAO.getTopCategories();
     }
+    public Category getCategoryById(int id){
+        return cDAO.getCategoryById(id);
+    }
 }
