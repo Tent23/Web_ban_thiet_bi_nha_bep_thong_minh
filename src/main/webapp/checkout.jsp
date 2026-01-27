@@ -70,7 +70,7 @@
                             <p>${buyNowProduct.product_name}</p>
                             <small>Số lượng: ${buyNowQuantity}</small><br>
                             <strong>
-                                    ${buyNowProduct.price * buyNowQuantity} đ
+                                    ${buyNowTotalFormatted}
                             </strong>
                         </div>
                     </div>
@@ -99,7 +99,7 @@
                     <span>Tạm tính</span>
                     <c:choose>
                         <c:when test="${mode == 'buynow'}">
-                            <span>${buyNowProduct.price * buyNowQuantity} đ</span>
+                            <span>${buyNowTotalFormatted}</span>
                         </c:when>
                         <c:otherwise>
                             <span>${cart.formatTotal}</span>

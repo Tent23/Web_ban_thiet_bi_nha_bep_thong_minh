@@ -26,12 +26,22 @@
     <!-- THÔNG TIN CHÍNH -->
     <div class="product-main">
 
-      <!-- ẢNH -->
-      <div class="product-image">
-        <img src="${product.image}" alt="${product.product_name}">
+      <div class="product-gallery">
+        <div class="product-image">
+          <img id="mainImage"
+               src="${images[0].image_url}"
+               alt="${product.product_name}">
+        </div>
+
+        <div class="product-thumbnails">
+          <c:forEach var="img" items="${images}" varStatus="status">
+            <img src="${img.image_url}"
+                 class="${status.index == 0 ? 'active' : ''}"
+                 onclick="changeImage(this)">
+          </c:forEach>
+        </div>
       </div>
 
-      <!-- INFO -->
       <div class="product-info">
           <c:if test="${not empty sessionScope.message}">
               <div class="${sessionScope.messageType == 'success' ? 'cart-alert-success' : 'cart-alert-error'}">
@@ -155,6 +165,6 @@
 </div>
 
 <jsp:include page="common/footer.jsp"></jsp:include>
-
+<script src="assets/js/product-detail.js"></script>
 </body>
 </html>

@@ -94,33 +94,71 @@
                         </c:forEach>
                     </div>
 
+                    <c:set var="startPage" value="${currentPage - 2}" />
+                    <c:set var="endPage" value="${currentPage + 2}" />
+
+                    <c:if test="${startPage < 1}">
+                        <c:set var="startPage" value="1" />
+                    </c:if>
+
+                    <c:if test="${endPage > totalPages}">
+                        <c:set var="endPage" value="${totalPages}" />
+                    </c:if>
+
 
                     <div class="pagination">
-                        <c:forEach begin="1" end="${totalPages}" var="i">
 
-                            <c:url var="pageUrl" value="/products">
-                                <c:param name="page" value="${i}" />
-                                <c:if test="${categoryId != null}">
-                                    <c:param name="categoryId" value="${categoryId}" />
-                                </c:if>
-                                <c:if test="${priceRange != null}">
-                                    <c:param name="priceRange" value="${priceRange}" />
-                                </c:if>
-                                <c:if test="${sort != null}">
-                                    <c:param name="sort" value="${sort}" />
-                                </c:if>
-                                <c:if test="${brands != null}">
-                                    <c:param name="brand" value="${brands[0]}" />
-                                </c:if>
-                            </c:url>
-
-                            <a href="${pageUrl}" class="${i == currentPage ? 'active' : ''}">
-                                    ${i}
+                        <!-- VỀ TRANG ĐẦU -->
+                        <c:if test="${currentPage > 1}">
+                            <a href="${pageContext.request.contextPath}/products?page=1
+                                <c:if test='${categoryId != null}'>&categoryId=${categoryId}</c:if>
+                                <c:if test='${priceRange != null}'>&priceRange=${priceRange}</c:if>
+                                <c:if test='${sort != null}'>&sort=${sort}</c:if>
+                                <c:if test='${brands != null}'>&brand=${brands[0]}</c:if>">
+                                                                &laquo;
                             </a>
 
-                        </c:forEach>
-                    </div>
+                            <a href="${pageContext.request.contextPath}/products?page=${currentPage - 1}
+                                <c:if test='${categoryId != null}'>&categoryId=${categoryId}</c:if>
+                                <c:if test='${priceRange != null}'>&priceRange=${priceRange}</c:if>
+                                <c:if test='${sort != null}'>&sort=${sort}</c:if>
+                                <c:if test='${brands != null}'>&brand=${brands[0]}</c:if>">
+                                                                &lsaquo;
+                            </a>
+                        </c:if>
 
+                        <!-- CÁC TRANG GIỮA -->
+                        <c:forEach begin="${startPage}" end="${endPage}" var="i">
+                            <a class="${i == currentPage ? 'active' : ''}"
+                               href="${pageContext.request.contextPath}/products?page=${i}
+                                <c:if test='${categoryId != null}'>&categoryId=${categoryId}</c:if>
+                                <c:if test='${priceRange != null}'>&priceRange=${priceRange}</c:if>
+                                <c:if test='${sort != null}'>&sort=${sort}</c:if>
+                                <c:if test='${brands != null}'>&brand=${brands[0]}</c:if>">
+                                                                    ${i}
+                            </a>
+                        </c:forEach>
+
+                        <!-- VỀ TRANG CUỐI -->
+                        <c:if test="${currentPage < totalPages}">
+                            <a href="${pageContext.request.contextPath}/products?page=${currentPage + 1}
+                                <c:if test='${categoryId != null}'>&categoryId=${categoryId}</c:if>
+                                <c:if test='${priceRange != null}'>&priceRange=${priceRange}</c:if>
+                                <c:if test='${sort != null}'>&sort=${sort}</c:if>
+                                <c:if test='${brands != null}'>&brand=${brands[0]}</c:if>">
+                                                                &rsaquo;
+                            </a>
+
+                            <a href="${pageContext.request.contextPath}/products?page=${totalPages}
+                                <c:if test='${categoryId != null}'>&categoryId=${categoryId}</c:if>
+                                <c:if test='${priceRange != null}'>&priceRange=${priceRange}</c:if>
+                                <c:if test='${sort != null}'>&sort=${sort}</c:if>
+                                <c:if test='${brands != null}'>&brand=${brands[0]}</c:if>">
+                                &raquo;
+                            </a>
+                        </c:if>
+
+                    </div>
 
                 </div>
             </div>
