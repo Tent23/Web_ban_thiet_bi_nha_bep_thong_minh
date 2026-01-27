@@ -20,8 +20,6 @@ public class AdminComboServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
 
-        // Luôn load danh sách sản phẩm để hiển thị checkbox
-        // Lưu ý: Hàm này trong ProductDao phải trả về List<Product>
         List<Product> listProducts = productDAO.getListProduct();
         request.setAttribute("listProducts", listProducts);
 
@@ -29,10 +27,7 @@ public class AdminComboServlet extends HttpServlet {
             try {
                 int id = Integer.parseInt(request.getParameter("id"));
                 Combo combo = comboDao.getCombo(id);
-
-                // Lấy danh sách ID các sản phẩm đã có trong combo này
                 List<Integer> selectedProductIds = comboDao.getProductIdsByComboId(id);
-
                 request.setAttribute("combo", combo);
                 request.setAttribute("selectedProductIds", selectedProductIds);
             } catch (Exception e) {
@@ -40,7 +35,6 @@ public class AdminComboServlet extends HttpServlet {
             }
         }
 
-        // Forward về JSP
         request.getRequestDispatcher("/admin/admin_combo_form.jsp").forward(request, response);
     }
 
@@ -51,7 +45,6 @@ public class AdminComboServlet extends HttpServlet {
 
         if ("save".equals(action)) {
             try {
-                // 1. Nhận dữ liệu từ form
                 String idStr = request.getParameter("id");
                 String name = request.getParameter("name");
                 String tag = request.getParameter("tag");
@@ -63,13 +56,10 @@ public class AdminComboServlet extends HttpServlet {
                 double discountPrice = Double.parseDouble(request.getParameter("discountprice"));
                 int stock = Integer.parseInt(request.getParameter("stock_quantity"));
 
-                // Checkbox active trả về "1" hoặc null
                 byte isActive = (byte) (request.getParameter("is_active") != null ? 1 : 0);
 
-                // Lấy mảng ID sản phẩm được chọn
                 String[] productIds = request.getParameterValues("product_ids");
 
-                // 2. Tạo đối tượng Combo
                 Combo combo = new Combo();
                 combo.setName(name);
                 combo.setTag(tag);
@@ -81,25 +71,20 @@ public class AdminComboServlet extends HttpServlet {
                 combo.setStock_quantity(stock);
                 combo.setIs_active(isActive);
 
-                // 3. Gọi DAO xử lý
                 if (idStr == null || idStr.equals("0") || idStr.isEmpty()) {
-                    // Thêm mới
                     comboDao.insert(combo, productIds);
                     request.getSession().setAttribute("msg", "Thêm Combo thành công!");
                 } else {
-                    // Cập nhật
                     combo.setId(Integer.parseInt(idStr));
                     comboDao.update(combo, productIds);
                     request.getSession().setAttribute("msg", "Cập nhật Combo thành công!");
                 }
 
-                // Redirect về trang danh sách (Bạn cần tạo trang list hoặc servlet list)
                 response.sendRedirect(request.getContextPath() + "/admin/combo-list");
 
             } catch (Exception e) {
                 e.printStackTrace();
                 request.setAttribute("error", "Lỗi: " + e.getMessage());
-                // Nếu lỗi thì giữ lại form để user sửa
                 doGet(request, response);
             }
         }

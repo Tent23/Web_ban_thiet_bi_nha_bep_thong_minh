@@ -11,11 +11,17 @@
   <component name="ChangeListManager">
     <list default="true" id="443e01b7-81ea-40fa-acc8-3149ab981ea3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProfileServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProfileServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/Header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/common/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/common/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminBannerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminBannerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminBrandServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminBrandServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminComboListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminComboListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminComboServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminComboServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminDashboardServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminDashboardServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminProductListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminProductListServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/AdminUserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/HomeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductSearchApiServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductSearchApiServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,33 +64,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.TestBCrypt.executor": "Run",
-    "Maven.WebThietBiBep [verify].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Tomcat Server.Tomcat 10.executor": "Run",
-    "git-widget-placeholder": "searchproduct",
-    "kotlin-language-version-configured": "true",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.TestBCrypt.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.WebThietBiBep [verify].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 10.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;searchproduct&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.Mappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationStatuses">
       <map>
@@ -313,6 +319,11 @@
       <workItem from="1769092310827" duration="5745000" />
       <workItem from="1769401459574" duration="608000" />
       <workItem from="1769402147264" duration="9376000" />
+      <workItem from="1769411801506" duration="48000" />
+      <workItem from="1769429051833" duration="895000" />
+      <workItem from="1769435266081" duration="10000" />
+      <workItem from="1769485454899" duration="1210000" />
+      <workItem from="1769492819658" duration="5000" />
     </task>
     <servers />
   </component>

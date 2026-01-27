@@ -14,7 +14,6 @@ import java.util.List;
 @WebServlet(name = "AdminBrandServlet", urlPatterns = {"/admin/brands"})
 public class AdminBrandServlet extends HttpServlet {
 
-    // Khởi tạo DAO để làm việc với Database
     private final BrandDAO brandDAO = new BrandDAO();
 
     @Override
@@ -40,16 +39,13 @@ public class AdminBrandServlet extends HttpServlet {
                     break;
             }
         } catch (Exception e) {
-            // Log lỗi ra console server để debug nếu có sự cố
             e.printStackTrace();
-            // Chuyển hướng về trang danh sách nếu lỗi (hoặc trang 404 tùy ý)
             response.sendRedirect(request.getContextPath() + "/admin/brands?message=error");
         }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Đảm bảo xử lý tiếng Việt đúng khi nhận từ form
         request.setCharacterEncoding("UTF-8");
 
         String action = request.getParameter("action");
@@ -75,21 +71,16 @@ public class AdminBrandServlet extends HttpServlet {
         }
     }
 
-    // --- CÁC HÀM XỬ LÝ LOGIC ---
-
-    // 1. Hiển thị danh sách (Lấy từ DB)
     private void listBrands(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Brand> list = brandDAO.getAll(); // Gọi DAO lấy dữ liệu thật
+        List<Brand> list = brandDAO.getAll();
         request.setAttribute("brands", list);
         request.getRequestDispatcher("/admin/brand-list.jsp").forward(request, response);
     }
 
-    // 2. Hiển thị form thêm mới
     private void showNewForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/admin/brand-form.jsp").forward(request, response);
     }
 
-    // 3. Hiển thị form sửa (Lấy thông tin cũ từ DB đổ vào form)
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             int id = Integer.parseInt(request.getParameter("id"));
@@ -99,7 +90,6 @@ public class AdminBrandServlet extends HttpServlet {
                 request.setAttribute("brand", existingBrand);
                 request.getRequestDispatcher("/admin/brand-form.jsp").forward(request, response);
             } else {
-                // Nếu không tìm thấy ID thì quay về danh sách
                 response.sendRedirect(request.getContextPath() + "/admin/brands");
             }
         } catch (NumberFormatException e) {
@@ -107,7 +97,6 @@ public class AdminBrandServlet extends HttpServlet {
         }
     }
 
-    // 4. Xử lý thêm mới vào DB
     private void insertBrand(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String name = request.getParameter("brand_name");
         String logo = request.getParameter("logo_url");
@@ -116,12 +105,11 @@ public class AdminBrandServlet extends HttpServlet {
         newBrand.setBrand_name(name);
         newBrand.setLogo_url(logo);
 
-        brandDAO.insert(newBrand); // Lưu thật vào DB
+        brandDAO.insert(newBrand);
 
         response.sendRedirect(request.getContextPath() + "/admin/brands?message=saved");
     }
 
-    // 5. Xử lý cập nhật vào DB
     private void updateBrand(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("brand_id"));
         String name = request.getParameter("brand_name");
@@ -129,18 +117,17 @@ public class AdminBrandServlet extends HttpServlet {
         String slo = request.getParameter("slogan");
         String des  = request.getParameter("description");
 
-        Brand brand = new Brand(id, logo, name,slo,des);
+        Brand brand = new Brand(id, logo, name, slo, des);
 
-        brandDAO.update(brand); // Cập nhật thật vào DB
+        brandDAO.update(brand);
 
         response.sendRedirect(request.getContextPath() + "/admin/brands?message=saved");
     }
 
-    // 6. Xử lý xóa khỏi DB
     private void deleteBrand(HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             int id = Integer.parseInt(request.getParameter("id"));
-            brandDAO.delete(id); // Xóa thật khỏi DB
+            brandDAO.delete(id);
             response.sendRedirect(request.getContextPath() + "/admin/brands?message=deleted");
         } catch (NumberFormatException e) {
             response.sendRedirect(request.getContextPath() + "/admin/brands");

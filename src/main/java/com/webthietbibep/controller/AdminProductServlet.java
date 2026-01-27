@@ -27,7 +27,6 @@ public class AdminProductServlet extends HttpServlet {
         this.brandDAO = new BrandDAO();       // Khởi tạo DAO
     }
 
-    // --- DO GET: HIỂN THỊ FORM VÀ DANH SÁCH DROPDOWN ---
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
@@ -35,7 +34,6 @@ public class AdminProductServlet extends HttpServlet {
 
         Product p = new Product();
 
-        // 1. Nếu là sửa (edit) thì load thông tin sản phẩm cũ
         if ("edit".equals(action) && idStr != null) {
             try {
                 int id = Integer.parseInt(idStr);
@@ -48,13 +46,10 @@ public class AdminProductServlet extends HttpServlet {
             }
         }
 
-        // 2. Gửi object product sang JSP
         req.setAttribute("product", p);
 
-        // 3. --- QUAN TRỌNG: LẤY LIST DANH MỤC & THƯƠNG HIỆU GỬI SANG JSP ---
         req.setAttribute("listCategories", categoryDAO.getAll());
         req.setAttribute("listBrands", brandDAO.getAll());
-        // --------------------------------------------------------------------
 
         req.getRequestDispatcher("/admin/admin_add_product.jsp").forward(req, resp);
     }
@@ -75,7 +70,6 @@ public class AdminProductServlet extends HttpServlet {
             p.setPrice(parseDouble(req.getParameter("price")));
             p.setStock_quantity(parseInt(req.getParameter("stock_quantity")));
 
-            // Lấy giá trị ID từ Dropdown
             p.setCategory_id(parseInt(req.getParameter("category_id")));
             p.setBrand_id(parseInt(req.getParameter("brand_id")));
 
@@ -90,7 +84,6 @@ public class AdminProductServlet extends HttpServlet {
 
         } catch (Exception e) {
             e.printStackTrace();
-            // Nếu lỗi, phải load lại list để hiển thị lại form
             req.setAttribute("listCategories", categoryDAO.getAll());
             req.setAttribute("listBrands", brandDAO.getAll());
             req.setAttribute("error", "Lỗi: " + e.getMessage());

@@ -56,21 +56,17 @@ public class AdminUserServlet extends HttpServlet {
         }
     }
 
-    // 1. Hiển thị danh sách
     private void listUsers(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<User> list = userDAO.findAll();
         request.setAttribute("users", list);
         request.getRequestDispatcher("/admin/admin_user_list.jsp").forward(request, response);
     }
 
-    // 2. Hiển thị form thêm mới
     private void showNewForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Gửi một user rỗng sang để form không bị lỗi null
         request.setAttribute("user", new User());
         request.getRequestDispatcher("/admin/admin_user_form.jsp").forward(request, response);
     }
 
-    // 3. Hiển thị form sửa
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         User existingUser = userDAO.findById(id);
@@ -84,7 +80,6 @@ public class AdminUserServlet extends HttpServlet {
         request.getRequestDispatcher("/admin/admin_user_form.jsp").forward(request, response);
     }
 
-    // 4. Xử lý thêm mới (INSERT)
     private void insertUser(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String username = request.getParameter("username");
         String fullName = request.getParameter("full_name");
@@ -93,7 +88,6 @@ public class AdminUserServlet extends HttpServlet {
         String password = request.getParameter("password");
         String role = request.getParameter("role");
 
-        // Validate cơ bản
         if (userDAO.existsUsername(username)) {
             request.setAttribute("error", "Tên đăng nhập đã tồn tại!");
             request.setAttribute("user", new User(0, username, fullName, email, phone, "", null, role,null,true));
@@ -109,22 +103,20 @@ public class AdminUserServlet extends HttpServlet {
         newUser.setRole(role);
         newUser.setCreate_at(LocalDateTime.now());
 
-        // TODO: Thực tế bạn CẦN mã hóa mật khẩu ở đây (ví dụ dùng BCrypt)
-        // newUser.setPassword_hash(BCrypt.hashpw(password, BCrypt.gensalt()));
-        newUser.setPassword_hash(password); // Tạm thời lưu plain text (không khuyến khích)
+
+        newUser.setPassword_hash(password);
 
         userDAO.insert(newUser);
         response.sendRedirect(request.getContextPath() + "/admin/users?message=saved");
     }
 
-    // 5. Xử lý cập nhật (UPDATE)
     private void updateUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         String fullName = request.getParameter("full_name");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
         String role = request.getParameter("role");
-        String password = request.getParameter("password"); // Có thể rỗng nếu không đổi pass
+        String password = request.getParameter("password");
 
         User user = new User();
         user.setUser_id(id);

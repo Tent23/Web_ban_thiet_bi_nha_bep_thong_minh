@@ -27,7 +27,6 @@ public class HomeServlet extends HttpServlet {
         ProductCommentDAO commentDAO = new ProductCommentDAO();
 
 
-        // 1. Gọi DAO lấy danh sách
         List<Product> listP = ps.getBestSeller();
         List<Category> topCategories = css.getTopCategories();
         List<Brand> topBrands = bs.getTopBrands();
@@ -39,7 +38,7 @@ public class HomeServlet extends HttpServlet {
         List<Category> listCate = css.getAll();
         List<Article> listA = as.getListHotArticle();
         List<ProductComment> homeComments = commentDAO.getLatestForHome(5);
-        // 2. Đẩy dữ liệu sang JSP
+
         request.setAttribute("listP", listP);
         request.setAttribute("topCategories", topCategories);
         request.setAttribute("topBrands", topBrands);
@@ -51,7 +50,6 @@ public class HomeServlet extends HttpServlet {
         request.setAttribute("listCate", listCate);
         request.setAttribute("listA", as.getNewArticle());
         request.setAttribute("homeComments", homeComments);
-        // 3. Chuyển hướng về trang giao diện
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 

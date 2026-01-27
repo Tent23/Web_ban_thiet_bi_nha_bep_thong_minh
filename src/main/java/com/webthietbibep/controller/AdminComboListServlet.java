@@ -14,7 +14,6 @@ public class AdminComboListServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ComboDao dao = new ComboDao();
 
-        // Gọi hàm lấy tất cả combo (nhớ đảm bảo DAO đã có hàm này như code trước tôi gửi)
         List<Combo> list = dao.getAllCombosForAdmin();
 
         request.setAttribute("listCombos", list);
