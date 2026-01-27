@@ -94,23 +94,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // 3. Logic cho Popup Đăng ký nhận tin (nếu có)
 
 });
-const categorySwiper = new Swiper('#category-slider', {
-    /* ĐÂY LÀ CHỖ SỬA LỖI: Hiển thị 4 hoặc 5 mục cùng lúc */
-    slidesPerView: 5,
-    spaceBetween: 20,
-    slidesPerGroup: 1,
-    loop: true,
-
-    /* Cấu hình dấu chấm tròn */
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-
-    /* Tự động điều chỉnh theo màn hình */
-    breakpoints: {
-        320: { slidesPerView: 2, spaceBetween: 10 },
-        768: { slidesPerView: 3, spaceBetween: 15 },
-        1024: { slidesPerView: 5, spaceBetween: 20 }
-    }
-});
