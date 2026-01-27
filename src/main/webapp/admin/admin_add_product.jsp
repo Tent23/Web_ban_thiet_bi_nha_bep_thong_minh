@@ -18,6 +18,85 @@
 
         /* Ẩn input file mặc định nếu muốn dùng URL ảnh */
         .image-preview-container { border: 1px solid #ddd; margin-top: 10px; border-radius: 5px; overflow: hidden;}
+        /* --- Khung ảnh đại diện chính --- */
+        .image-upload-area {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        #previewContainer {
+            width: 100%;
+            height: 250px; /* Cố định chiều cao ảnh chính */
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        #imgPreview {
+            width: 100%;
+            height: 100%;
+            /* 'contain' giúp thấy toàn bộ ảnh, 'cover' giúp ảnh lấp đầy khung */
+            object-fit: contain;
+            background-color: #fff;
+        }
+
+        /* --- Thư viện ảnh phụ (Gallery) --- */
+        .existing-images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            border-radius: 5px;
+        }
+
+        .image-item {
+            position: relative;
+            width: 85px;  /* Cố định chiều rộng thumbnail */
+            height: 85px; /* Cố định chiều cao thumbnail */
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background: #fff;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ảnh phụ thường dùng cover để đều và đẹp */
+            border-radius: 5px;
+        }
+
+        /* Nút xóa ảnh phụ */
+        .btn-delete-img {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ff4757;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            font-size: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        .btn-delete-img:hover {
+            background: #ff6b81;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -131,29 +210,63 @@
                         </div>
                     </div>
 
-                    <div class="admin-card">
-                        <h3>Ảnh đại diện</h3>
-                        <div class="form-group">
-                            <label>Link ảnh (URL)</label>
-                            <input type="text" class="form-control" name="image" id="imgInput"
-                                   value="${product.image}" onchange="previewImage()" placeholder="https://example.com/image.jpg">
-                        </div>
+                    <form id="productForm" action="${pageContext.request.contextPath}/admin/product-save"
+                          method="post" enctype="multipart/form-data" class="admin-form-layout">
 
-                        <div class="image-upload-area">
-                            <div class="upload-placeholder" id="placeholder" style="${not empty product.image ? 'display:none' : ''}">
-                                <i class="fa-regular fa-image" style="font-size: 2rem; color: #ccc;"></i>
-                                <p style="font-size: 0.8rem; color: #888;">Nhập link để xem trước</p>
+                        <div class="col-sidebar">
+                            <div class="admin-card">
+                                <h3>Ảnh đại diện (Chính)</h3>
+                                <div class="form-group">
+                                    <label>Cách 1: Upload từ máy</label>
+                                    <input type="file" name="imageFile" class="form-control" accept="image/*" onchange="previewMainFile(this)">
+                                </div>
+                                <div class="form-group">
+                                    <label>Cách 2: Hoặc nhập Link URL</label>
+                                    <input type="text" class="form-control" name="image" id="imgInput"
+                                           value="${product.image}" onchange="previewImage()" placeholder="https://example.com/image.jpg">
+                                </div>
+
+                                <div class="image-upload-area">
+                                    <div id="previewContainer" style="${not empty product.image ? '' : 'display:none'}">
+                                        <img src="${product.image}" id="imgPreview">
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="image-preview-container" id="previewContainer" style="${not empty product.image ? '' : 'display:none'}">
-                                <div class="preview-item" style="width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; background: #f9f9f9;">
-                                    <img src="${product.image}" id="imgPreview"
-                                         style="max-width: 100%; max-height: 100%; object-fit: contain;"
-                                         onerror="this.src='https://via.placeholder.com/300?text=Lỗi+Ảnh'">
+                            <div class="admin-card">
+                                <h3>Thư viện ảnh (Product Images)</h3>
+
+                                <div class="existing-images" style="display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px;">
+                                    <c:forEach items="${extraImages}" var="img">
+                                    </c:forEach>
+                                    <div class="existing-images">
+                                        <c:forEach items="${extraImages}" var="img">
+                                            <div class="image-item" id="img-container-${img.image_id}">
+                                                <img src="${img.image_url.startsWith('http') ? img.image_url : pageContext.request.contextPath.concat('/').concat(img.image_url)}">
+                                                <button type="button" class="btn-delete-img" onclick="deleteExtraImage(${img.image_id})">
+                                                    <i class="fa-solid fa-xmark"></i>
+                                                </button>
+                                            </div>
+                                        </c:forEach>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Upload nhiều ảnh (Giữ Ctrl để chọn)</label>
+                                    <input type="file" name="extraImageFiles" class="form-control" multiple accept="image/*">
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Hoặc thêm Link ảnh thủ công</label>
+                                    <div id="urlContainer">
+                                    </div>
+                                    <button type="button" onclick="addUrlInput()" class="btn-secondary" style="margin-top: 5px; font-size: 0.8rem;">
+                                        <i class="fa-solid fa-plus"></i> Thêm ô nhập Link
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </form>
         </div>
@@ -161,6 +274,63 @@
 </div>
 
 <script>
+    function deleteExtraImage(imageId) {
+        if (confirm('Bạn có chắc chắn muốn xóa ảnh này?')) {
+            // Sử dụng Fetch API để gửi yêu cầu xóa tới Servlet
+            const params = new URLSearchParams();
+            params.append('image_id', imageId);
+
+            fetch('${pageContext.request.contextPath}/admin/delete-product-image', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: params
+            })
+                .then(response => response.text())
+                .then(result => {
+                    if (result === 'success') {
+                        // Xóa phần tử trên giao diện mà không cần load lại trang
+                        const element = document.getElementById('img-container-' + imageId);
+                        if (element) {
+                            element.style.opacity = '0';
+                            setTimeout(() => element.remove(), 300);
+                        }
+                    } else {
+                        alert('Có lỗi xảy ra khi xóa ảnh.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Không thể kết nối đến máy chủ.');
+                });
+        }
+    }
+    function previewMainFile(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('imgPreview').src = e.target.result;
+                document.getElementById('previewContainer').style.display = 'block';
+                document.getElementById('placeholder').style.display = 'none';
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    // Script thêm ô nhập URL cho ảnh phụ
+    function addUrlInput() {
+        var container = document.getElementById("urlContainer");
+        var div = document.createElement("div");
+        div.style.marginBottom = "5px";
+        div.style.display = "flex";
+        div.style.gap = "5px";
+        div.innerHTML = `
+            <input type="text" name="extraImageUrls" class="form-control" placeholder="Link ảnh phụ..." style="font-size: 0.9rem;">
+            <button type="button" onclick="this.parentElement.remove()" style="background: #f8d7da; border: 1px solid #f5c6cb; color: #721c24; cursor: pointer;">X</button>
+        `;
+        container.appendChild(div);
+    }
     // Hàm xem trước ảnh
     function previewImage() {
         const url = document.getElementById('imgInput').value.trim();
