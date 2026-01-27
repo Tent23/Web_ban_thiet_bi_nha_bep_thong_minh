@@ -66,7 +66,7 @@ public class RegisterServlet extends HttpServlet {
         user.setVerify_token(token);
         user.setIs_verified(false);
         userDAO.insert(user);
-        EmailService.sendVerifyEmail(email, token);
+        EmailService.sendVerifyEmail(email, token,username);
 
 
         req.setAttribute("success", "Đăng ký thành công, Vui lòng kiểm tra email để xác thực tài khoản.");
