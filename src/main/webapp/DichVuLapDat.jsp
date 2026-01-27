@@ -26,7 +26,7 @@
     <div class = "content_block">
         Mong muốn được mang đến cho Quý khách hàng sự thuận tiện nhất trước khi sử dụng sản phẩm,<b> Công ty TNHH Bếp Thông Minh TTB cung cấp dịch vụ lắp đặt thiết bị nhà bếp</b> cho tất cả các dòng sản phẩm thiết bị nhà bếp với phương châm “an toàn - chất lượng - giá hợp lý” đến với mọi khách hàng.
     </div>
-    <div class = "img"><img src="../../assets/images/banners/Dichvulapdat.png"></div>
+    <div class = "img"><img src="assets/images/banners/Dichvulapdat.png"></div>
     <div class = "content_block"><h1>Các dịch vụ bao gồm : </h1></div>
     <div class = "fast_trans">
        <ul>
@@ -47,7 +47,7 @@
         <li>Sau khi đặt bếp vào vị trí lỗ khoét, sẽ bắt đai giữ bếp với mặt bàn đá để chống xê dịch thiết bị bếp.</li>
 
     </ul>
-    <div class = "img"><img src="../../assets/images/banners/Lapdatbep.png"></div>
+    <div class = "img"><img src="assets/images/banners/Lapdatbep.png"></div>
     <h3>Lưu ý dành cho người sử dụng bếp:</h3>
     <div class = "content_block">- Trên bề mặt bếp và khay bếp: Dùng khăn ẩm mềm hoặc miếng bọt biển để vệ sinh mặt bếp, tránh tình trạng làm xước mặt bếp hoặc làm mất mặt sơn của bếp. </div>
     <div class ="content_block">- Với những vết bẩn từ thức ăn trào ra ngoài có thể gây hiện tượng chập và cháy các vi mạch của bếp từ, người tiêu dùng nên tắt bếp ngay để giảm sự cố sảy ra, sau đó lau sạch lại bằng khăn khô. Mỗi khi nấu ăn xong người tiêu dùng nên vệ sinh lau chùi để tránh hiện tượng chập điện khi bị bám nhiều vết bẩn.</div>
@@ -61,7 +61,7 @@
     <div class = "content_block">- Đấu dây điện vào bảng điện</div>
     <div class = "content_block">- Chọn chế độ hút xả hoặc hút khử nằm trong công tắc máy.</div>
     <div class = "content_block">- Hoàn tất quá trình lắp đặt và bàn giao thiết bị cho người sử dụng.</div>
-    <div class = "img"><img src="../../assets/images/banners/Lapdatmaykhumui.png"></div>
+    <div class = "img"><img src="assets/images/banners/Lapdatmaykhumui.png"></div>
     <h3>Lưu ý dành cho người sử dụng máy hút mùi:</h3>
     <div class = "content_block">- Luôn lau chùi máy bằng khăn mềm, có chất tẩy rửa</div>
     <div class = "content_block">- Không để nước, vật cứng lọt vào trong máy</div>
@@ -77,7 +77,7 @@
     <div class ="content_block"><b>Yêu cầu về nguồn điện:</b> Xem nhẫn định mức để biết về điện áp định mức và nối nguồn điện thích hợp cho máy rửa bát. Nên dùng cầu dao hoặc cầu chì làm trễ thời gian và cung cấp mạch riêng cho máy.</div>
     <div class ="content_block"><b>Tiến hành lắp máy:</b> Đặt máy vào vị trí mong muốn. Lưng máy nên dựa vào tường phía sau máy và các cạnh dọc theo tủ hoặc tường gần kề. Máy được trang bị ống cấp nước và ống xả có thể đặt vào bên phải hoặc trái cho việc lắp đặt được thuận tiện hơn.</div>
     <div class ="content_block"><b>Kết nối ống mềm xả nước:</b> Lắp ống mềm xả nước của thiết bị vào đường ống xả đảm bảo quá trình vận hành của sản phẩm.</div>
-    <div class = "img"><img src="../../assets/images/banners/Lapdtamayruabat.png"></div>
+    <div class = "img"><img src="assets/images/banners/Lapdtamayruabat.png"></div>
     <h3 >Lưu ý khi sử dụng máy rửa bát:</h3>
     <div class = "content_block">- Gạt hết tất cả những thức ăn thừa trên bát, đĩa trước khi cho chúng vào máy</div>
     <div class = "content_block">- Đường ống cấp nước và dẫn nước phải phù hợp, đúng tiêu chuẩn, kích thước đề ra</div>
@@ -86,7 +86,7 @@
     <div class = "content_block">- Cho bột rửa bát đúng tiêu chuẩn theo máy, cho nước làm bóng sau cùng. Nếu xuất hiện nhiều bọt trong máy rửa bát tức là người tiêu dùng đã dùng sai chất tẩy rửa, hoặc chất tẩy rửa dùng tay. Người tiêu dùng nên chọn chấy tẩy rửa chuyên dụng dành cho máy rửa bát.</div>
     <h2 id="Crb">4. Lắp đặt vòi chậu rửa bát</h2>
     <div class = "content_block">- Đảm bảo sẽ khoét đúng theo kích thước mặt dưới của từng loại chậu để đảm bảo độ chắc chắn và kín khít khi bơm keo.</div>
-    <div class = "img"><img src="../../assets/images/banners/LapdatChauruabat.png"></div>
+    <div class = "img"><img src="assets/images/banners/LapdatChauruabat.png"></div>
     <h3>Lưu ý sử dụng vòi, chậu rửa bát:</h3>
     <div class = "content_block">Trong quá trình sử dụng không nên đổ bã chè, nước rửa bồn, dùng hoá chất có lượng axit, chúng sẽ làm ảnh hưởng đến bề mặt chậu. Hệ thống xiphông rất nhiều đường gấp khúc và ngoằn nghèo thực chất là để tránh hiện tượng mùi thoát lên từ miệng ga. Để tránh hiện tượng bị tắc nghẽn người sử dụng nên thường xuyên tháo cốc hứng rác kiểm tra và vệ sinh.</div>
     <div class = "content_block">Đối với vòi rửa thực chất rất ít khi gặp sự cố. Điều người sử dụng nên lưu ý vòi rửa chỉ được quay ngang từ trái qua phải và ngược lại trong khẩu độ cho phép, không xoay tròn, bẻ vòi lên trên hoặt ấn xuống dưới vòi sẽ bị gẫy trục xoay và rò rỉ nước.</div>

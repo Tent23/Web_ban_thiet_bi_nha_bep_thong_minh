@@ -21,7 +21,7 @@
         <div class="container">
             <div class="eco-detail-grid">
                 <div class="eco-detail-image">
-                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1000" alt="Hệ sinh thái Bosch">
+                    <img src="${eco.image}" alt="Hệ sinh thái Bosch">
                 </div>
                 <div class="eco-detail-info">
                     <nav class="breadcrumb">
