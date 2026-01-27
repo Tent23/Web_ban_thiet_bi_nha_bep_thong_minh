@@ -35,7 +35,8 @@
             <input type="text" name="fullName" placeholder="Họ và tên" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="text" name="phone" placeholder="Số điện thoại" required>
-            <input type="password" name="password" placeholder="Mật khẩu" required>
+            <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
+            <small id="passwordMessage" class="password-message"></small>
             <input type="password" name="confirmPassword" placeholder="Xác nhận mật khẩu" required>
         </div>
 
@@ -50,6 +51,6 @@
 </main>
 
 <jsp:include page="common/footer.jsp"/>
-
+<script src="assets/js/Register.js"></script>
 </body>
 </html>
