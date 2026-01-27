@@ -63,18 +63,13 @@
     <section class="featured-categories section-padding">
         <div class="container">
             <h2 class="section-title">Danh mục Nổi bật</h2>
-            <div class="swiper" id="category-slider">
-                <div class="swiper-wrapper">
-                    <c:forEach var="c" items="${topCategories}">
-                        <div class="swiper-slide">
-                            <a href="${pageContext.request.contextPath}/products?categoryId=${c.category_id}" class="category-item">
-                                <img src="${c.logo}" alt="${c.category_name}" />
-                                <span>${c.category_name}</span>
-                            </a>
-                        </div>
-                    </c:forEach>
-                </div>
-                <div class="swiper-pagination"></div>
+            <div class="category-grid">
+                <c:forEach var="c" items="${topCategories}">
+                    <a href="${pageContext.request.contextPath}/products?categoryId=${c.category_id}" class="category-item">
+                        <img src="${c.logo}" alt="${c.category_name}" />
+                        <span>${c.category_name}</span>
+                    </a>
+                </c:forEach>
             </div>
         </div>
     </section>

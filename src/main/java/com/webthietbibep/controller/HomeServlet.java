@@ -35,8 +35,8 @@ public class HomeServlet extends HttpServlet {
         List<Testimonial> listT = ts.getListTes();
         List<Banner> listBN = bns.getListBanner();
         List<Combo> listC = cs.getListBaseCombo();
-        List<Category> listCate = css.getAll();
-        List<Article> listA = as.getListHotArticle();
+        List<Category> listCate = css.getTopCategories();
+
         List<ProductComment> homeComments = commentDAO.getLatestForHome(5);
 
         request.setAttribute("listP", listP);
@@ -47,7 +47,7 @@ public class HomeServlet extends HttpServlet {
         request.setAttribute("listT", listT);
         request.setAttribute("listBN", listBN);
         request.setAttribute("listC", listC);
-        request.setAttribute("listCate", listCate);
+
         request.setAttribute("listA", as.getNewArticle());
         request.setAttribute("homeComments", homeComments);
         request.getRequestDispatcher("index.jsp").forward(request, response);
