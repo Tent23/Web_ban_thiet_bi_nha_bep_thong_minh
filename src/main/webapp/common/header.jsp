@@ -126,7 +126,7 @@
                     </c:otherwise>
                 </c:choose>
                 <a href="/wishlist"><i class="fa fa-heart"></i> Yêu thích</a>
-                <a href="cart"><i class="fa fa-shopping-cart"></i> Giỏ hàng (${sessionScope.cart.totalQuantity})</a>
+                <a href="cart"><i class="fa fa-shopping-cart"></i> Giỏ hàng (${sessionScope.cart != null ? sessionScope.cart.totalQuantity : 0})</a>
             </div>
         </div>
     </div>

@@ -100,27 +100,38 @@ img {
 }
 
 /* ===== BLOCK 3: FEATURED CATEGORIES ===== */
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 cột */
-    gap: 20px;
+#category-slider {
+    padding-bottom: 40px; /* Chừa chỗ cho dấu chấm tròn */
 }
+
 .category-item {
-    text-align: center;
-    color: var(--dark-color);
-    border: 1px solid #eee;
-    padding: 20px;
-    border-radius: 8px;
-    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
 }
+
 .category-item img {
-    width: 100px;
-    height: 100px;
+    /* Chỉnh ảnh bự lên 180px - 200px tùy ý */
+    width: 180px;
+    height: 180px;
     object-fit: contain;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    transition: 0.3s;
 }
-.category-item:hover {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+
+.category-item span {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.1rem;
+}
+
+/* Làm cho dấu chấm tròn đẹp hơn */
+#category-slider .swiper-pagination-bullet-active {
+    width: 8px !important;    /* Bằng với hạt thường để tạo hình tròn */
+    height: 8px !important;
+    background: var(--primary-color) !important; /* Sử dụng màu xanh [cite: 1] */
+    transform: scale(1.2);    /* Phóng lớn nhẹ để nhận diện */
 }
 
 /* ===== BLOCK 4: BEST SELLERS (Product Card) ===== */

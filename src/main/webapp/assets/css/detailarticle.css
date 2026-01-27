@@ -21,12 +21,11 @@
 }
 
 .featured-image-container img {
-    /* Dùng width: 92% để nó dài ra gần hết khối trắng,
-       chừa lại 4% mỗi bên cho thoáng */
+
     width: 92% !important;
 
 
-    height: 300px;
+    height: 400px;
 
     border-radius: 4px;
     object-fit: cover;
