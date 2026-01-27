@@ -12,9 +12,7 @@ import jakarta.servlet.http.Part;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+
 import java.util.UUID;
 
 @WebServlet(name = "AdminBannerServlet", urlPatterns = {"/admin/banners"})
@@ -27,10 +25,8 @@ public class AdminBannerServlet extends HttpServlet {
 
     private final BannerService bannerService = new BannerService();
 
-    // Thư mục lưu ảnh trong dự án (Sẽ tạo trong thư mục build/webapp)
     private static final String UPLOAD_DIR = "assets/uploads/banners";
 
-    // ... (Giữ nguyên doGet) ...
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String action = req.getParameter("action");
@@ -72,38 +68,31 @@ public class AdminBannerServlet extends HttpServlet {
         }
     }
 
-    // --- LOGIC XỬ LÝ ẢNH ---
     private String handleImageUpload(HttpServletRequest req) throws IOException, ServletException {
-        // 1. Kiểm tra xem có file upload không
         Part filePart = req.getPart("image_file");
         if (filePart != null && filePart.getSize() > 0) {
-            // Lấy đường dẫn thực tế trên server
             String applicationPath = req.getServletContext().getRealPath("");
             String uploadFilePath = applicationPath + File.separator + UPLOAD_DIR;
 
-            // Tạo thư mục nếu chưa tồn tại
             File uploadDir = new File(uploadFilePath);
             if (!uploadDir.exists()) {
                 uploadDir.mkdirs();
             }
 
-            // Tạo tên file ngẫu nhiên để tránh trùng lặp (dùng UUID)
             String fileName = UUID.randomUUID().toString() + "_" + getFileName(filePart);
 
             // Lưu file
             filePart.write(uploadFilePath + File.separator + fileName);
 
-            // Trả về đường dẫn tương đối để lưu vào DB
-            return UPLOAD_DIR + "/" + fileName; // VD: assets/uploads/banners/abc.jpg
+            return UPLOAD_DIR + "/" + fileName;
         }
 
-        // 2. Nếu không upload file, kiểm tra xem có nhập Link URL không
         String imageUrl = req.getParameter("image_url");
         if (imageUrl != null && !imageUrl.trim().isEmpty()) {
             return imageUrl.trim(); // VD: https://example.com/anh.jpg
         }
 
-        return null; // Không có ảnh mới
+        return null;
     }
 
     private String getFileName(Part part) {
@@ -125,9 +114,8 @@ public class AdminBannerServlet extends HttpServlet {
             int sortOrder = Integer.parseInt(req.getParameter("sort_order"));
             byte isActive = Byte.parseByte(req.getParameter("is_active"));
 
-            // Xử lý ảnh
             String imagePath = handleImageUpload(req);
-            if (imagePath == null) imagePath = ""; // Nếu không có ảnh thì để rỗng
+            if (imagePath == null) imagePath = "";
 
             Banner newBanner = new Banner(0, title, description, imagePath, linkUrl, sortOrder, isActive);
             bannerService.insertBanner(newBanner);
@@ -138,7 +126,6 @@ public class AdminBannerServlet extends HttpServlet {
         }
     }
 
-    // --- UPDATE ---
     private void updateBanner(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         try {
             int id = Integer.parseInt(req.getParameter("id"));
@@ -150,10 +137,8 @@ public class AdminBannerServlet extends HttpServlet {
 
             String oldImage = req.getParameter("old_image");
 
-            // Xử lý ảnh mới
             String newImage = handleImageUpload(req);
 
-            // Nếu newImage null (nghĩa là user không up file mới, không nhập link mới) -> Dùng lại ảnh cũ
             if (newImage == null) {
                 newImage = oldImage;
             }
@@ -167,7 +152,6 @@ public class AdminBannerServlet extends HttpServlet {
         }
     }
 
-    // ... (Giữ nguyên listBanners, deleteBanner) ...
     private void listBanners(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("listBanners", bannerService.getAllBannersAdmin());
         req.getRequestDispatcher("/admin/admin_banners.jsp").forward(req, resp);

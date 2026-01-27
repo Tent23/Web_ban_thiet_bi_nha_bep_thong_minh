@@ -31,10 +31,8 @@ public class ProductSearchApiServlet extends HttpServlet {
                 return;
             }
 
-            // Lấy tối đa 5 sản phẩm gợi ý
             List<Product> products = productDAO.searchByNameLimit(query.trim(), 5);
 
-            // Xây dựng chuỗi JSON thủ công
             StringBuilder json = new StringBuilder();
             json.append("[");
 
@@ -45,7 +43,6 @@ public class ProductSearchApiServlet extends HttpServlet {
                 json.append("{");
                 json.append("\"product_id\":").append(p.getProduct_id()).append(",");
 
-                // Xử lý ký tự đặc biệt trong chuỗi JSON
                 String safeName = p.getProduct_name().replace("\"", "\\\"");
                 String safeImage = (p.getImage() != null) ? p.getImage().replace("\\", "/") : "no-image.png";
                 String priceFmt = vn.format(p.getPrice());

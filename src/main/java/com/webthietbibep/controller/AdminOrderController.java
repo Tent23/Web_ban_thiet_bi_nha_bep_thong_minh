@@ -23,7 +23,6 @@ public class AdminOrderController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Set encoding UTF-8
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
@@ -54,12 +53,9 @@ public class AdminOrderController extends HttpServlet {
         }
     }
 
-    // --- CÁC HÀM LOGIC RIÊNG BIỆT ---
-
     private void listOrders(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Order> list = orderDAO.getAllOrders();
         request.setAttribute("orders", list);
-        // Lưu ý: Đường dẫn JSP không thay đổi
         request.getRequestDispatcher("/admin/order-list.jsp").forward(request, response);
     }
 
@@ -95,13 +91,11 @@ public class AdminOrderController extends HttpServlet {
             int orderId = Integer.parseInt(request.getParameter("order_id"));
             String newStatus = request.getParameter("status");
 
-            // Gọi DAO update
             int result = orderDAO.updateStatus(orderId, newStatus);
 
             String message = (result > 0) ? "Cập nhật thành công!" : "Cập nhật thất bại!";
             String encodedMsg = URLEncoder.encode(message, StandardCharsets.UTF_8);
 
-            // Redirect về trang chi tiết để xem kết quả
             response.sendRedirect(request.getContextPath() + "/admin/order?action=detail&id=" + orderId + "&msg=" + encodedMsg);
 
         } catch (Exception e) {
