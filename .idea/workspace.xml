@@ -10,13 +10,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="443e01b7-81ea-40fa-acc8-3149ab981ea3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/dao/ProductImageDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/model/ProductImage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/product-detail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductDetailServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/product-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/product-detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/product-detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/webthietbibep/controller/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/products.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,7 +306,8 @@
       <workItem from="1769017754971" duration="1176000" />
       <workItem from="1769092310827" duration="5745000" />
       <workItem from="1769402665471" duration="6373000" />
-      <workItem from="1769444076545" duration="5379000" />
+      <workItem from="1769444076545" duration="6644000" />
+      <workItem from="1769489093347" duration="2363000" />
     </task>
     <servers />
   </component>

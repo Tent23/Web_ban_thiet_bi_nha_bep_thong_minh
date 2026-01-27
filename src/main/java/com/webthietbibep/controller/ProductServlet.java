@@ -39,11 +39,11 @@
 
             Integer categoryId = null;
             if (categoryIdStr != null && !categoryIdStr.isBlank()) {
-                categoryId = Integer.parseInt(categoryIdStr);
+                categoryId = Integer.parseInt(categoryIdStr.trim());
             }
             int page =1;
-            if(pageStr!=null){
-                page = Integer.parseInt(pageStr);
+            if(pageStr!=null&& !pageStr.isBlank()){
+                page = Integer.parseInt(pageStr.trim());
             }
 
             List<Product> products = productDAO.getProductsFilter(priceRange, sort,brands,categoryId,page,PAGE_SIZE);
