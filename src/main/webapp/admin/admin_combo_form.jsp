@@ -106,11 +106,15 @@
                         <h3>Thiết lập giá & Kho</h3>
                         <div class="form-group">
                             <label>Giá gốc (đ) (*)</label>
-                            <input type="number" class="form-control" name="baseprice" value="${combo != null ? combo.baseprice : 0}" required min="0">
+                            <input type="number" class="form-control" name="baseprice"
+                                   value="<fmt:formatNumber value='${combo.baseprice}' maxFractionDigits='0' groupingUsed='false'/>"
+                                   required min="0">
                         </div>
                         <div class="form-group">
                             <label>Giá khuyến mãi (đ) (*)</label>
-                            <input type="number" class="form-control" name="discountprice" value="${combo != null ? combo.discountprice : 0}" required min="0">
+                            <input type="number" class="form-control" name="discountprice"
+                                   value="<fmt:formatNumber value='${combo.discountprice}' maxFractionDigits='0' groupingUsed='false'/>"
+                                   required min="0">
                         </div>
                         <div class="form-group">
                             <label>Số lượng tồn kho (*)</label>

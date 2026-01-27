@@ -9,12 +9,17 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
+import java.math.BigDecimal;
 
 @WebServlet(name = "AdminComboServlet", urlPatterns = {"/admin/combos"})
 public class AdminComboServlet extends HttpServlet {
 
     private ComboDao comboDao = new ComboDao();
     private ProductDAO productDAO = new ProductDAO();
+    private double parseMoney(String input) {
+        if (input == null || input.trim().isEmpty()) return 0;
+        return new BigDecimal(input.replace(",", "").trim()).doubleValue();
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,8 +57,9 @@ public class AdminComboServlet extends HttpServlet {
                 String image = request.getParameter("image");
                 String gift = request.getParameter("gift");
 
-                double basePrice = Double.parseDouble(request.getParameter("baseprice"));
-                double discountPrice = Double.parseDouble(request.getParameter("discountprice"));
+                double basePrice = parseMoney(request.getParameter("baseprice"));
+                double discountPrice = parseMoney(request.getParameter("discountprice"));
+
                 int stock = Integer.parseInt(request.getParameter("stock_quantity"));
 
                 byte isActive = (byte) (request.getParameter("is_active") != null ? 1 : 0);
@@ -89,4 +95,5 @@ public class AdminComboServlet extends HttpServlet {
             }
         }
     }
+
 }

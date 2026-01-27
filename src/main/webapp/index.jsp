@@ -67,7 +67,9 @@
                 <c:forEach var="c" items="${topCategories}">
                     <a href="${pageContext.request.contextPath}/products?categoryId=${c.category_id}" class="category-item">
                         <img src="${c.logo}" alt="${c.category_name}" />
+                        <br>
                         <span>${c.category_name}</span>
+
                     </a>
                 </c:forEach>
             </div>
@@ -102,7 +104,7 @@
             <h2 class="section-title">Mua theo Hệ sinh thái</h2>
             <div class="ecosystem-grid">
                 <c:forEach var = "e" items="${listE}">
-                <a href="#" class="ecosystem-item" style="background-color: #e5e5e5">
+                <a href="detail-ecosystem?id=${e.id}" class="ecosystem-item" style="background-color: #e5e5e5">
                     <img src="${e.image}" alt="" />
                     <span>${e.name}</span>
                 </a>
