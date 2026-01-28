@@ -13,7 +13,6 @@ public class CategoryDAO extends BaseDao {
     }
 
     public List<Category> getTopCategories() {
-        // Lấy 6 danh mục bất kỳ (hoặc theo id mới nhất)
         String sql = "SELECT category_id, category_name, logo FROM categories LIMIT 6";
 
         return get().withHandle(h ->

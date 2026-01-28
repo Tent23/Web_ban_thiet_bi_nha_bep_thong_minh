@@ -15,10 +15,8 @@ public class CategoryServlet extends HttpServlet {
 
     @Override
     public void init() throws ServletException {
-        // Load category ngay khi server start
         List<Category> categories = categoryDAO.getAll();
 
-        // Lưu vào application scope
         getServletContext().setAttribute("categories", categories);
 
         System.out.println("✔ Categories loaded: " + categories.size());

@@ -273,7 +273,6 @@ public class ProductDAO extends BaseDao {
                         .list()
         );
     }
-    // Thêm đoạn code này vào trong class ProductDAO
     public List<Product> searchByNameLimit(String keyword, int limit) {
         String sql = """
         SELECT * FROM products 

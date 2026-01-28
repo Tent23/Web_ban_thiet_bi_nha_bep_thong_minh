@@ -131,7 +131,7 @@
                 </div>
             </c:if>
 
-            <form id="productForm" action="${pageContext.request.contextPath}/admin/product-save" method="post" class="admin-form-layout">
+            <form id="productForm" action="${pageContext.request.contextPath}/admin/product-save" method="post" enctype="multipart/form-data" class="admin-form-layout">
 
                 <input type="hidden" name="product_id" value="${product.product_id}">
 
@@ -210,9 +210,11 @@
                         </div>
                     </div>
 
-                    <form id="productForm" action="${pageContext.request.contextPath}/admin/product-save"
-                          method="post" enctype="multipart/form-data" class="admin-form-layout">
-
+                    <form id="productForm"
+                          action="${pageContext.request.contextPath}/admin/product-save"
+                          method="post"
+                          enctype="multipart/form-data"
+                          class="admin-form-layout">
                         <div class="col-sidebar">
                             <div class="admin-card">
                                 <h3>Ảnh đại diện (Chính)</h3>

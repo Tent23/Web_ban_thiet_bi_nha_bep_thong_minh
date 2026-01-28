@@ -35,14 +35,12 @@ public class ChangePasswordServlet extends HttpServlet {
         String newPass = req.getParameter("newPassword");
         String confirm = req.getParameter("confirmPassword");
 
-        // 1. check new password confirm
         if (!newPass.equals(confirm)) {
             req.setAttribute("error", "Mật khẩu xác nhận không khớp");
             doGet(req, resp);
             return;
         }
 
-        // 2. check old password
         String currentHash = userDAO.getPasswordHashById(user.getUser_id());
 
         if (!PasswordUtil.check(oldPass, currentHash)) {
@@ -51,7 +49,6 @@ public class ChangePasswordServlet extends HttpServlet {
             return;
         }
 
-        // 3. update new password
         String newHash = PasswordUtil.hash(newPass);
         userDAO.updatePassword(user.getUser_id(), newHash);
 

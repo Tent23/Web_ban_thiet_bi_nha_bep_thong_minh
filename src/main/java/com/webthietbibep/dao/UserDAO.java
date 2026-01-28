@@ -8,7 +8,6 @@ import java.util.List;
 
 public class UserDAO extends BaseDao {
 
-    // Update profile (KHÔNG update username)
     public void updateProfile(User user) {
         get().useHandle(handle ->
                 handle.createUpdate("""

@@ -9,7 +9,6 @@ public class ChartData {
         this.date = date;
         this.value = value;
     }
-    // Getters Setters
     public String getDate() { return date; }
     public void setDate(String date) { this.date = date; }
     public double getValue() { return value; }

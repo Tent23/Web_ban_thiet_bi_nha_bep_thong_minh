@@ -14,7 +14,6 @@ public class BannerDao extends BaseDao {
         });
     }
 
-    // --- ADMIN METHODS ---
 
     public List<Banner> getAllBannersAdmin() {
         return get().withHandle(h -> {

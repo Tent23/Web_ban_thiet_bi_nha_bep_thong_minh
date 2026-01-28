@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Category implements Serializable {
     private int category_id;
     private String category_name;
-    private String logo; // 1. Thêm thuộc tính logo
+    private String logo;
     public Category() {
     }
     public Category(int category_id, String category_name, String logo) {

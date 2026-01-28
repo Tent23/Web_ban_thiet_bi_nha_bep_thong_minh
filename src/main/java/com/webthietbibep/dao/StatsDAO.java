@@ -6,23 +6,19 @@ import java.util.List;
 
 public class StatsDAO extends BaseDao {
 
-    // 1. Tổng doanh thu (Chỉ tính đơn HOAN_THANH)
     public double getTotalRevenue() {
         String sql = "SELECT COALESCE(SUM(total_amount), 0) FROM orders WHERE status = 'HOAN_THANH'";
         return get().withHandle(h -> h.createQuery(sql).mapTo(Double.class).one());
     }
 
-    // 2. Đếm tổng số đơn hàng (Tất cả trạng thái)
     public int countAllOrders() {
         return get().withHandle(h -> h.createQuery("SELECT COUNT(*) FROM orders").mapTo(Integer.class).one());
     }
 
-    // 3. Đếm tổng User
     public int countUsers() {
         return get().withHandle(h -> h.createQuery("SELECT COUNT(*) FROM users").mapTo(Integer.class).one());
     }
 
-    // 4. Lấy doanh thu 7 ngày gần nhất (Để vẽ biểu đồ)
     public List<ChartData> getRevenueLast7Days() {
         String sql = """
             SELECT 
@@ -37,7 +33,6 @@ public class StatsDAO extends BaseDao {
         return get().withHandle(h -> h.createQuery(sql).mapToBean(ChartData.class).list());
     }
 
-    // 5. Top 5 sản phẩm bán chạy nhất (Tính theo số lượng đã bán trong đơn HOAN_THANH)
     public List<TopProduct> getTopSellingProducts() {
         String sql = """
             SELECT 

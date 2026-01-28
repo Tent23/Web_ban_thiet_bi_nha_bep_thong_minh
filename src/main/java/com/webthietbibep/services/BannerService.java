@@ -11,7 +11,7 @@ public class BannerService {
     public List<Banner> getListBanner() {
         return bdao.getListBanner();
     }
-    // Cho Admin
+    //admin set banner
     public List<Banner> getAllBannersAdmin() {
         return bdao.getAllBannersAdmin();
     }

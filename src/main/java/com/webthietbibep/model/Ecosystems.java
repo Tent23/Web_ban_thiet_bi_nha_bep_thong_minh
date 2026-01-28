@@ -16,7 +16,6 @@ public class Ecosystems {
         this.image = image;
     }
 
-    // Getter & Setter
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 

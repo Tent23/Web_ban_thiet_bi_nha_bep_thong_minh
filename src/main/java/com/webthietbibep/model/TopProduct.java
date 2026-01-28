@@ -9,7 +9,6 @@ public class TopProduct {
     private int totalSold;
     private double totalRevenue;
 
-    // JDBI cần Constructor rỗng hoặc Getter/Setter
     public TopProduct() {}
 
     public String getProductName() { return productName; }
