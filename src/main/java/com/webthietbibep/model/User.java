@@ -14,6 +14,11 @@ public class User implements Serializable {
     String role;
     String verify_token;
     boolean is_verified;
+    // New fields for public key management
+    String publicKey;
+    String publicKeyId;
+    LocalDateTime publicKeyCreationDate;
+    LocalDateTime publicKeyRevocationDate;
 
 
     public User(int user_id,String username, String full_name, String email, String phone, String password_hash, LocalDateTime create_at, String role,String verify_token,boolean is_verified) {
@@ -27,6 +32,24 @@ public class User implements Serializable {
         this.role = role;
         this.verify_token = verify_token;
         this.is_verified = is_verified;
+    }
+
+    // Updated constructor to include new fields
+    public User(int user_id, String username, String full_name, String email, String phone, String password_hash, LocalDateTime create_at, String role, String verify_token, boolean is_verified, String publicKey, String publicKeyId, LocalDateTime publicKeyCreationDate, LocalDateTime publicKeyRevocationDate) {
+        this.user_id = user_id;
+        this.username = username;
+        this.full_name = full_name;
+        this.email = email;
+        this.phone = phone;
+        this.password_hash = password_hash;
+        this.create_at = create_at;
+        this.role = role;
+        this.verify_token = verify_token;
+        this.is_verified = is_verified;
+        this.publicKey = publicKey;
+        this.publicKeyId = publicKeyId;
+        this.publicKeyCreationDate = publicKeyCreationDate;
+        this.publicKeyRevocationDate = publicKeyRevocationDate;
     }
 
     public User() {
@@ -110,5 +133,37 @@ public class User implements Serializable {
 
     public void setIs_verified(boolean is_verified) {
         this.is_verified = is_verified;
+    }
+
+    public String getPublicKey() {
+        return publicKey;
+    }
+
+    public void setPublicKey(String publicKey) {
+        this.publicKey = publicKey;
+    }
+
+    public String getPublicKeyId() {
+        return publicKeyId;
+    }
+
+    public void setPublicKeyId(String publicKeyId) {
+        this.publicKeyId = publicKeyId;
+    }
+
+    public LocalDateTime getPublicKeyCreationDate() {
+        return publicKeyCreationDate;
+    }
+
+    public void setPublicKeyCreationDate(LocalDateTime publicKeyCreationDate) {
+        this.publicKeyCreationDate = publicKeyCreationDate;
+    }
+
+    public LocalDateTime getPublicKeyRevocationDate() {
+        return publicKeyRevocationDate;
+    }
+
+    public void setPublicKeyRevocationDate(LocalDateTime publicKeyRevocationDate) {
+        this.publicKeyRevocationDate = publicKeyRevocationDate;
     }
 }

@@ -67,6 +67,7 @@
                 <c:forEach var="c" items="${topCategories}">
                     <a href="${pageContext.request.contextPath}/products?categoryId=${c.category_id}" class="category-item">
                         <img src="${c.logo}" alt="${c.category_name}" />
+                        <br>
                         <span>${c.category_name}</span>
                     </a>
                 </c:forEach>

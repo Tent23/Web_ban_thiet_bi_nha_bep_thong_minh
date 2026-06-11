@@ -4,6 +4,7 @@ import com.webthietbibep.model.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class UserDAO extends BaseDao {
@@ -45,34 +46,49 @@ public class UserDAO extends BaseDao {
         );
     }
 
-    // 3. Thêm mới User (Admin tạo)
+    // 3. Thêm mới User (Admin tạo) - Cập nhật để thêm các trường khóa công khai
     public void insert(User user) {
         get().useHandle(handle ->
-                handle.createUpdate("INSERT INTO users (username, full_name, email, phone, password_hash, role, create_at, verify_token, is_verified) " +
-                                "VALUES (:username, :fullName, :email, :phone, :pass, :role, :createAt,:token, :verified)")
+                handle.createUpdate("INSERT INTO users (username, full_name, email, phone, password_hash, role, create_at, verify_token, is_verified, publicKey, publicKeyId, publicKeyCreationDate, publicKeyRevocationDate) " +
+                                "VALUES (:username, :fullName, :email, :phone, :pass, :role, :createAt, :token, :verified, :publicKey, :publicKeyId, :publicKeyCreationDate, :publicKeyRevocationDate)")
                         .bind("username", user.getUsername())
                         .bind("fullName", user.getFull_name())
                         .bind("email", user.getEmail())
                         .bind("phone", user.getPhone())
-                        .bind("pass", user.getPassword_hash()) // Lưu ý: Nên mã hóa password trước khi truyền vào đây
+                        .bind("pass", user.getPassword_hash())
                         .bind("role", user.getRole())
                         .bind("createAt", user.getCreate_at())
                         .bind("token", user.getVerify_token())
                         .bind("verified", user.isIs_verified())
+                        .bind("publicKey", user.getPublicKey())
+                        .bind("publicKeyId", user.getPublicKeyId())
+                        .bind("publicKeyCreationDate", user.getPublicKeyCreationDate())
+                        .bind("publicKeyRevocationDate", user.getPublicKeyRevocationDate())
                         .execute()
         );
     }
 
-    // 4. Update User (Admin cập nhật - bao gồm cả Role và Password nếu có)
+    // 4. Update User (Admin cập nhật - bao gồm cả Role và Password nếu có) - Cập nhật để thêm các trường khóa công khai
     public void update(User user) {
-        // Logic: Nếu password rỗng thì không update cột password
-        String sql = "UPDATE users SET full_name = :fullName, email = :email, phone = :phone, role = :role ";
+        StringBuilder sqlBuilder = new StringBuilder("UPDATE users SET full_name = :fullName, email = :email, phone = :phone, role = :role ");
         if (user.getPassword_hash() != null && !user.getPassword_hash().isEmpty()) {
-            sql += ", password_hash = :pass ";
+            sqlBuilder.append(", password_hash = :pass ");
         }
-        sql += "WHERE user_id = :id";
+        if (user.getPublicKey() != null && !user.getPublicKey().isEmpty()) {
+            sqlBuilder.append(", publicKey = :publicKey ");
+        }
+        if (user.getPublicKeyId() != null && !user.getPublicKeyId().isEmpty()) {
+            sqlBuilder.append(", publicKeyId = :publicKeyId ");
+        }
+        if (user.getPublicKeyCreationDate() != null) {
+            sqlBuilder.append(", publicKeyCreationDate = :publicKeyCreationDate ");
+        }
+        // publicKeyRevocationDate can be explicitly set to null or a date
+        sqlBuilder.append(", publicKeyRevocationDate = :publicKeyRevocationDate ");
 
-        String finalSql = sql;
+        sqlBuilder.append("WHERE user_id = :id");
+
+        String finalSql = sqlBuilder.toString();
         get().useHandle(handle -> {
             var update = handle.createUpdate(finalSql)
                     .bind("fullName", user.getFull_name())
@@ -84,6 +100,17 @@ public class UserDAO extends BaseDao {
             if (user.getPassword_hash() != null && !user.getPassword_hash().isEmpty()) {
                 update.bind("pass", user.getPassword_hash());
             }
+            if (user.getPublicKey() != null && !user.getPublicKey().isEmpty()) {
+                update.bind("publicKey", user.getPublicKey());
+            }
+            if (user.getPublicKeyId() != null && !user.getPublicKeyId().isEmpty()) {
+                update.bind("publicKeyId", user.getPublicKeyId());
+            }
+            if (user.getPublicKeyCreationDate() != null) {
+                update.bind("publicKeyCreationDate", user.getPublicKeyCreationDate());
+            }
+            update.bind("publicKeyRevocationDate", user.getPublicKeyRevocationDate()); // Bind even if null
+
             update.execute();
         });
     }
@@ -128,8 +155,8 @@ public class UserDAO extends BaseDao {
     public void updatePassword(int userId, String newPasswordHash) {
         get().useHandle(handle ->
                 handle.createUpdate("""
-                UPDATE users 
-                SET password_hash = :pass 
+                UPDATE users
+                SET password_hash = :pass
                 WHERE user_id = :id
             """)
                         .bind("pass", newPasswordHash)
@@ -164,7 +191,7 @@ public class UserDAO extends BaseDao {
     public boolean verifyByToken(String token) {
         return get().withHandle(handle ->
                 handle.createUpdate("""
-            UPDATE users 
+            UPDATE users
             SET is_verified = true, verify_token = NULL
             WHERE verify_token = :token
         """)
@@ -173,6 +200,35 @@ public class UserDAO extends BaseDao {
         ) > 0;
     }
 
+    public void updatePublicKeyInfo(int userId, String publicKey, String publicKeyId, LocalDateTime publicKeyCreationDate, LocalDateTime publicKeyRevocationDate) {
+        get().useHandle(handle ->
+                handle.createUpdate("""
+                    UPDATE users
+                    SET publicKey = :publicKey,
+                        publicKeyId = :publicKeyId,
+                        publicKeyCreationDate = :publicKeyCreationDate,
+                        publicKeyRevocationDate = :publicKeyRevocationDate
+                    WHERE user_id = :id
+                """)
+                        .bind("publicKey", publicKey)
+                        .bind("publicKeyId", publicKeyId)
+                        .bind("publicKeyCreationDate", publicKeyCreationDate)
+                        .bind("publicKeyRevocationDate", publicKeyRevocationDate)
+                        .bind("id", userId)
+                        .execute()
+        );
+    }
 
-
+    public void revokePublicKey(int userId, LocalDateTime revocationDate) {
+        get().useHandle(handle ->
+                handle.createUpdate("""
+                    UPDATE users
+                    SET publicKeyRevocationDate = :revocationDate
+                    WHERE user_id = :id
+                """)
+                        .bind("revocationDate", revocationDate)
+                        .bind("id", userId)
+                        .execute()
+        );
+    }
 }
