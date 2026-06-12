@@ -17,6 +17,8 @@ public class Order implements Serializable {
     private int voucher_id;
     private String userName;
     private String addressDetail;
+    private String signature;
+    private int keyId;
     public Order() {
     }
 
@@ -30,6 +32,22 @@ public class Order implements Serializable {
         this.created_at = created_at;
         this.note = note;
         this.voucher_id = voucher_id;
+    }
+
+    public String getSignature() {
+        return signature;
+    }
+
+    public void setSignature(String signature) {
+        this.signature = signature;
+    }
+
+    public int getKeyId() {
+        return keyId;
+    }
+
+    public void setKeyId(int keyId) {
+        this.keyId = keyId;
     }
 
     public int getOrder_id() {
