@@ -39,4 +39,25 @@ public class KeyUtil {
         KeyFactory kf = KeyFactory.getInstance(ALGORITHM);
         return kf.generatePrivate(spec);
     }
+
+    public static boolean verifySign(String data, String signature, String publicKey){
+try{
+       byte [] keyBytes = Base64.getDecoder().decode(publicKey);
+       X509EncodedKeySpec spec = new X509EncodedKeySpec(keyBytes);
+       KeyFactory kf = KeyFactory.getInstance(ALGORITHM);
+        PublicKey pubKey = kf.generatePublic(spec);
+        Signature sig = Signature.getInstance("SHA256withRSA");
+        sig.initVerify(pubKey);
+
+    byte[] dataBytes = data.getBytes("UTF-8");
+    sig.update(dataBytes);
+       byte[] sigVerify = Base64.getDecoder().decode(signature);
+      boolean verify = sig.verify(sigVerify);
+      return verify;
+
+}catch (Exception e){
+    System.err.println("Caught exception: " + e.toString());
+    return false;
+}
+    }
 }
