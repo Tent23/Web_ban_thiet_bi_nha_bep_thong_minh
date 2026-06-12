@@ -18,6 +18,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.text.NumberFormat;
+import java.time.LocalDateTime;
 import java.util.Locale;
 
 @WebServlet("/checkout")
@@ -82,7 +83,24 @@ public class CheckoutServlet extends HttpServlet {
             resp.sendRedirect("login");
             return;
         }
+        String cilentSign =req.getParameter("cilentSign");
+        if(cilentSign==null || cilentSign.isBlank()){
+            resp.sendRedirect("cart");
+            return;
+        }
 
+        if (user.getPublicKey() == null || user.getPublicKey().isBlank()) {
+            resp.sendRedirect("cart");
+            return;
+        }
+
+        LocalDateTime tgTaoDon = LocalDateTime.now();
+        LocalDateTime tgBaoMatKey = user.getPublicKeyRevocationDate();
+        if(tgBaoMatKey != null && (tgTaoDon.isAfter(tgBaoMatKey) || tgTaoDon.isEqual(tgBaoMatKey))){
+            req.getSession().setAttribute("error", "Đơn hàng không được duyệt do khóa bảo mật này đã bị báo mất trước khi tạo đơn!");
+            resp.sendRedirect("cart");
+            return;
+        }
         String mode = req.getParameter("mode");
 
         String addressIdStr = req.getParameter("addressId");
@@ -105,7 +123,11 @@ public class CheckoutServlet extends HttpServlet {
             order.setStatus("CHO_XAC_NHAN");
         }
 
+order.setSignature(cilentSign);
+        if(user.getPublicKeyId() != null){
+            order.setKeyId(Integer.parseInt(user.getPublicKeyId()));
 
+        }
         int orderId;
 
         if ("buynow".equals(mode)) {
