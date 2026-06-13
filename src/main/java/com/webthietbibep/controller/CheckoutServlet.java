@@ -147,7 +147,7 @@ public class CheckoutServlet extends HttpServlet {
 
         order.setSignature(cilentSign);
         if(user.getPublicKeyId() != null){
-            order.setKeyId(Integer.parseInt(user.getPublicKeyId()));
+            order.setKeyId(user.getPublicKeyId()); // Corrected: Assign String directly
         }
         int orderId;
 

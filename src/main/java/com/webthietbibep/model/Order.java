@@ -18,7 +18,8 @@ public class Order implements Serializable {
     private String userName;
     private String addressDetail;
     private String signature;
-    private int keyId;
+    private String keyId;
+
     public Order() {
     }
 
@@ -42,11 +43,11 @@ public class Order implements Serializable {
         this.signature = signature;
     }
 
-    public int getKeyId() {
+    public String getKeyId() { // Changed return type to String
         return keyId;
     }
 
-    public void setKeyId(int keyId) {
+    public  void setKeyId(String keyId) { // Changed parameter type to String
         this.keyId = keyId;
     }
 

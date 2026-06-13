@@ -23,7 +23,7 @@ public class OrdersDAO extends BaseDao {
                         .bind("pm", o.getPayment_method())
                         .bind("note", o.getNote())
                         .bind("sig", o.getSignature())
-                        .bind("kid", o.getKeyId())
+                        .bind("kid", o.getKeyId()) // keyId is now String
                         .executeAndReturnGeneratedKeys("order_id")
                         .mapTo(int.class)
                         .one()
@@ -45,7 +45,7 @@ public class OrdersDAO extends BaseDao {
 
     public List<Order> getOrdersByUser(int userId) {
         String sql = """
-            SELECT 
+            SELECT
                 order_id,
                 user_id,
                 address_id,
@@ -54,7 +54,9 @@ public class OrdersDAO extends BaseDao {
                 payment_method,
                 created_at,
                 note,
-                voucher_id
+                voucher_id,
+                signature,
+                key_id
             FROM orders
             WHERE user_id = :uid
             ORDER BY created_at DESC
@@ -83,7 +85,18 @@ public class OrdersDAO extends BaseDao {
     }
     public List<Order> getOrdersByUserAndStatus(int userId, String status) {
         String sql = """
-        SELECT *
+        SELECT
+            order_id,
+            user_id,
+            address_id,
+            total_amount,
+            status,
+            payment_method,
+            created_at,
+            note,
+            voucher_id,
+            signature,
+            key_id
         FROM orders
         WHERE user_id = :uid
           AND status = :status
@@ -100,19 +113,20 @@ public class OrdersDAO extends BaseDao {
     }
     public List<Order> getAllOrders() {
         String sql = """
-            SELECT 
-                o.order_id, o.user_id, o.address_id, o.total_amount, 
+            SELECT
+                o.order_id, o.user_id, o.address_id, o.total_amount,
                 o.status, o.payment_method, o.created_at, o.note, o.voucher_id,
-                
+                o.signature,
+                o.key_id,
                 -- Lấy tên tài khoản đặt hàng
-                u.full_name AS userName,       
-                
+                u.full_name AS userName,
+
                 -- Ghép địa chỉ từ bảng user_addresses thành 1 chuỗi duy nhất
                 CONCAT_WS(', ', ua.address_detail, ua.ward, ua.district, ua.province) AS addressDetail,
-                
+
                 -- (Tùy chọn) Lấy tên người nhận hàng thực tế nếu khác tên tài khoản
                 ua.receiver_name
-                
+
             FROM orders o
             JOIN users u ON o.user_id = u.user_id
             LEFT JOIN user_addresses ua ON o.address_id = ua.address_id
@@ -128,10 +142,12 @@ public class OrdersDAO extends BaseDao {
 
     public Order getOrderById(int orderId) {
         String sql = """
-            SELECT 
-                o.order_id, o.user_id, o.address_id, o.total_amount, 
+            SELECT
+                o.order_id, o.user_id, o.address_id, o.total_amount,
                 o.status, o.payment_method, o.created_at, o.note, o.voucher_id,
-                u.full_name AS userName,       
+                o.signature,
+                o.key_id,
+                u.full_name AS userName,
                 CONCAT_WS(', ', ua.address_detail, ua.ward, ua.district, ua.province) AS addressDetail
             FROM orders o
             JOIN users u ON o.user_id = u.user_id
@@ -151,10 +167,10 @@ public class OrdersDAO extends BaseDao {
 
     public List<OrderItem> getOrderItems(int orderId) {
         String sql = """
-            SELECT 
-                oi.order_item_id, oi.order_id, oi.product_id, 
+            SELECT
+                oi.order_item_id, oi.order_id, oi.product_id,
                 oi.quantity, oi.price_at_purchase,
-                p.product_name AS productName,  
+                p.product_name AS productName,
                 p.image AS productImage
             FROM order_items oi
             JOIN products p ON oi.product_id = p.product_id
