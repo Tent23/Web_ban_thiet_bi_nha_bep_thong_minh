@@ -62,11 +62,9 @@ public class OrderServlet extends HttpServlet {
                 String data = o.getUser_id()+  "|" + o.getTotal_amount() +  "|" + o.getPayment_method() + "|" + listProduct.toString();
                 boolean avlai = KeyUtil.verifySign(data, sign, publicKey64);
                 if(avlai == false){
-                    o.setStatus("CANH_BAO_BI_SUA");
-                         verifiOrder.put(o.getOrder_id(),"CẢNH BÁO: Đơn hàng này có dấu hiệu bị chỉnh sửa dữ liệu trái phép!");
-                }
-                else{
-                    verifiOrder.put(o.getOrder_id(),"HỢP LỆ");
+                    verifiOrder.put(o.getOrder_id(), "KHONG_HOP_LE");
+                } else {
+                    verifiOrder.put(o.getOrder_id(), "HOP_LE");
                 }
             }
 

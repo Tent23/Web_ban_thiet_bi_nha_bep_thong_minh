@@ -76,8 +76,20 @@
             </c:if>
 
             <c:forEach var="o" items="${orders}">
+                <c:set var="orderCheck" value="${verifiOrder[o.order_id]}" />
                 <div class="order-card">
 
+                    <c:choose>
+                        <c:when test="${orderCheck eq 'HOP_LE'}">
+                            <span class="badge-secure"><i class="fa-solid fa-check"></i> Đã xác thực</span>
+                        </c:when>
+                        <c:when test="${orderCheck eq 'CHUA_KY_SO'}">
+                            <span style="color: gray; font-size: 0.85rem;">Chưa ký số</span>
+                        </c:when>
+                        <c:otherwise>
+                            <span class="badge-warning-tamper"><i class="fa-solid fa-triangle-exclamation"></i> Chữ ký số không khớp</span>
+                        </c:otherwise>
+                    </c:choose>
 
                     <div class="order-header">
                         <div>Mã đơn: #${o.order_id}</div>
@@ -97,7 +109,6 @@
                         </div>
                     </c:forEach>
 
-                    <!-- Footer -->
                     <div class="order-footer">
                         <div>
                             Phương thức: <b>${o.payment_method}</b>
@@ -108,6 +119,12 @@
                             <span>${o.formattedTotal}</span>
 
                         </div>
+
+                        <c:if test="${orderCheck eq 'KHONG_HOP_LE'}">
+                            <div class="alert-tamper-box">
+                                <i class="fa-solid fa-shield-halved"></i> <b>HỆ THỐNG PHÁT HIỆN SỬA ĐỔI TRÁI PHÉP:</b> Đơn hàng này đã bị chỉnh sửa dữ liệu (Số tiền hoặc số lượng sản phẩm) trái phép !
+                            </div>
+                        </c:if>
 
                         <div class="actions">
                             <c:if test="${o.status eq 'CHO_THANH_TOAN'}">
