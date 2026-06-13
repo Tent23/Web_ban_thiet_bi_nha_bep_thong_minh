@@ -198,3 +198,40 @@
     background: #f5f5f5;
     color: #333;
 }
+.badge-secure {
+    background-color: #e6f7ed;
+    color: #2e7d32;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 1px solid #a5d6a7;
+}
+
+.badge-warning-tamper {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 1px solid #ef9a9a;
+    animation: pulseRSA 1.5s infinite;
+}
+
+.alert-tamper-box {
+    background-color: #fdf2f2;
+    border-left: 5px solid #ec4899;
+    padding: 10px;
+    margin-top: 10px;
+    color: #991b1b;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    text-align: left;
+}
+
+@keyframes pulseRSA {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
