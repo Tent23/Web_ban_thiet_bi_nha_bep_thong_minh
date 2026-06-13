@@ -1,41 +1,12 @@
 package com.webthietbibep.dao;
 
-import com.mysql.cj.jdbc.MysqlDataSource;
-import com.webthietbibep.model.Product;
-import com.webthietbibep.model.User;
+import com.webthietbibep.db.JDBIConnector; // Import connector của bạn vào
 import org.jdbi.v3.core.Jdbi;
 
-import java.sql.SQLException;
-import java.util.List;
-
 public abstract class BaseDao {
-    private Jdbi jdbi;
 
-
-
+    // Đổi hàm get() để lấy trực tiếp từ JDBIConnector
     protected Jdbi get(){
-        if(jdbi==null){
-            makeConnect();
-        }
-        return jdbi;
+        return JDBIConnector.get();
     }
-
-    private void makeConnect() {
-        MysqlDataSource src = new MysqlDataSource();
-        String url= "jdbc:mysql://"+ DBProperties.host() +":" + DBProperties.port() + "/" + DBProperties.dbname() + "?" + DBProperties.option();
-        src.setURL(url);
-        src.setUser(DBProperties.username());
-        src.setPassword(DBProperties.password());
-
-
-        try {
-            src.setUseCompression(true);
-            src.setAutoReconnect(true);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        jdbi = Jdbi.create(src);
-    }
-
-
 }
