@@ -4,8 +4,10 @@ import com.webthietbibep.dao.OrderItemDAO;
 import com.webthietbibep.dao.OrdersDAO;
 import com.webthietbibep.dao.ProductDAO;
 import com.webthietbibep.model.Order;
+import com.webthietbibep.model.OrderItem;
 import com.webthietbibep.model.Product;
 import com.webthietbibep.model.User;
+import com.webthietbibep.utils.KeyUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -47,19 +49,41 @@ public class OrderServlet extends HttpServlet {
 
 
         Map<Integer, List<Product>> orderProducts = new LinkedHashMap<>();
+        Map<Integer, String> verifiOrder = new LinkedHashMap<>();
+        for (Order o : orders) {
+            String sign = o.getSignature();
+            String publicKey64 = user.getPublicKey();
+            if (sign   !=  null  && publicKey64  != null &&   !publicKey64.isBlank()){
+                StringBuilder listProduct = new StringBuilder();
+                List<OrderItem> items = itemDAO.getByOrder(o.getOrder_id());
+                for (OrderItem i : items) {
+                    listProduct.append(i.getProduct_id()).append("-").append(i.getQuantity()).append("_");
+                }
+                String data = o.getUser_id()+  "|" + o.getTotal_amount() +  "|" + o.getPayment_method() + "|" + listProduct.toString();
+                boolean avlai = KeyUtil.verifySign(data, sign, publicKey64);
+                if(avlai == false){
+                    o.setStatus("CANH_BAO_BI_SUA");
+                         verifiOrder.put(o.getOrder_id(),"CẢNH BÁO: Đơn hàng này có dấu hiệu bị chỉnh sửa dữ liệu trái phép!");
+                }
+                else{
+                    verifiOrder.put(o.getOrder_id(),"HỢP LỆ");
+                }
+            }
 
-        for (var o : orders) {
-            var items = itemDAO.getByOrder(o.getOrder_id());
+            else{
+                verifiOrder.put(o.getOrder_id(),"CHƯA KÝ SỐ");
+            }
+            List<OrderItem > items = itemDAO.getByOrder(o.getOrder_id());
             List<Product> products = new ArrayList<>();
 
-            for (var i : items) {
+            for (OrderItem  i : items) {
                 Product p = productDAO.getById(i.getProduct_id());
                 p.setPrice(i.getPrice_at_purchase()); // giá lúc mua
                 products.add(p);
             }
             orderProducts.put(o.getOrder_id(), products);
         }
-
+req.setAttribute("verifiOrder", verifiOrder);
         req.setAttribute("orders", orders);
         req.setAttribute("orderProducts", orderProducts);
         req.getRequestDispatcher("/orders.jsp").forward(req, resp);
