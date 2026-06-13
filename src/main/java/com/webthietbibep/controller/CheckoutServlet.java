@@ -10,11 +10,13 @@ import com.webthietbibep.model.Order;
 import com.webthietbibep.model.OrderItem;
 import com.webthietbibep.model.Product;
 import com.webthietbibep.model.User;
+import com.webthietbibep.utils.KeyUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.text.NumberFormat;
@@ -37,7 +39,6 @@ public class CheckoutServlet extends HttpServlet {
             resp.sendRedirect("login");
             return;
         }
-
 
         String mode = req.getParameter("mode");
 
@@ -84,12 +85,32 @@ public class CheckoutServlet extends HttpServlet {
             return;
         }
         String cilentSign =req.getParameter("cilentSign");
+        String signedDataHash = req.getParameter("signedDataHash");
+
         if(cilentSign==null || cilentSign.isBlank()){
+            req.getSession().setAttribute("error", "Vui lòng ký đơn hàng bằng Private Key của bạn.");
             resp.sendRedirect("cart");
             return;
         }
 
         if (user.getPublicKey() == null || user.getPublicKey().isBlank()) {
+            req.getSession().setAttribute("error", "Bạn chưa có khóa công khai. Vui lòng tạo khóa tại trang quản lý khóa.");
+            resp.sendRedirect("cart");
+            return;
+        }
+
+        try {
+            String publicKeyPem = user.getPublicKey();
+            boolean isSignatureValid = KeyUtil.verifySign(signedDataHash, cilentSign, publicKeyPem);
+
+            if (!isSignatureValid) {
+                req.getSession().setAttribute("error", "Chữ ký đơn hàng không hợp lệ. Vui lòng thử lại hoặc kiểm tra Private Key của bạn.");
+                resp.sendRedirect("cart");
+                return;
+            }
+        } catch (Exception e) {
+            System.err.println("Lỗi khi xác minh chữ ký: " + e.getMessage());
+            req.getSession().setAttribute("error", "Lỗi hệ thống khi xác minh chữ ký. Vui lòng thử lại.");
             resp.sendRedirect("cart");
             return;
         }
@@ -101,6 +122,7 @@ public class CheckoutServlet extends HttpServlet {
             resp.sendRedirect("cart");
             return;
         }
+
         String mode = req.getParameter("mode");
 
         String addressIdStr = req.getParameter("addressId");
@@ -123,10 +145,9 @@ public class CheckoutServlet extends HttpServlet {
             order.setStatus("CHO_XAC_NHAN");
         }
 
-order.setSignature(cilentSign);
+        order.setSignature(cilentSign);
         if(user.getPublicKeyId() != null){
             order.setKeyId(Integer.parseInt(user.getPublicKeyId()));
-
         }
         int orderId;
 
