@@ -40,7 +40,6 @@
             </c:when>
             <c:otherwise>
                 <input type="hidden" id="cartData" value='<c:out value="${cart.toJson()}" escapeXml="false"/>'>
-
             </c:otherwise>
         </c:choose>
         <input type="hidden" id="userId" value="${sessionScope.user.user_id}">
@@ -77,7 +76,6 @@
                 <input type="radio" name="paymentMethod" value="BANK">
                 Chuyển khoản ngân hàng
             </label>
-
 
             <div style="margin-top: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 5px;">
                 <h2>Ký đơn hàng bằng Private Key</h2>
@@ -196,11 +194,17 @@
         reader.onload = async function(e) {
             try {
                 const privateKeyPem = e.target.result;
+                console.log("1. Private Key PEM loaded:", privateKeyPem.substring(0, 100) + "...");
+                console.log("Full Private Key PEM content:", privateKeyPem);
 
-
+                const selectedAddressRadio = document.querySelector('input[name="addressId"]:checked');
+                if (!selectedAddressRadio) {
+                    keyStatus.textContent = "Vui lòng chọn địa chỉ giao hàng.";
+                    return;
+                }
+                const addressId = selectedAddressRadio.value;
                 const userId = document.getElementById('userId').value;
                 const publicKeyId = document.getElementById('publicKeyId').value;
-                const addressId = document.querySelector('input[name="addressId"]:checked').value;
                 const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
                 const mode = document.querySelector('input[name="mode"]').value;
 
@@ -217,7 +221,6 @@
                     });
                     totalAmount = parseFloat(productData.price) * parseInt(productData.quantity);
                 } else {
-
                     const cartJsonString = document.getElementById('cartData').value;
                     const cartData = JSON.parse(cartJsonString);
 
@@ -225,10 +228,10 @@
                         orderItemsData.push({
                             productId: parseInt(item.product.product_id),
                             productName: item.product.product_name,
-                            price: parseFloat(item.product.price), // Assuming product.price is available
+                            price: parseFloat(item.price),
                             quantity: parseInt(item.quantity)
                         });
-                        totalAmount += parseFloat(item.product.price) * parseInt(item.quantity);
+                        totalAmount += parseFloat(item.price) * parseInt(item.quantity); // Use item.price
                     });
                 }
 
@@ -243,19 +246,38 @@
                     timestamp: new Date().toISOString()
                 };
 
-
                 const jsonString = JSON.stringify(dataToSign);
+                console.log("2. JSON String to sign:", jsonString);
+
+
+                if (typeof KJUR === 'undefined' || typeof KJUR.crypto === 'undefined' || typeof KJUR.crypto.MessageDigest === 'undefined') {
+                    throw new Error("Thư viện jsrsasign (KJUR.crypto.MessageDigest) chưa được tải hoặc không khả dụng.");
+                }
 
 
                 const md = new KJUR.crypto.MessageDigest({"alg": "sha256", "prov": "jsrsa"});
                 md.updateString(jsonString);
                 const dataHash = md.digest();
+                console.log("3. Data Hash:", dataHash);
+
+                if (typeof KJUR.crypto.Signature === 'undefined') {
+                    throw new Error("Thư viện jsrsasign (KJUR.crypto.Signature) chưa được tải hoặc không khả dụng.");
+                }
 
 
-                const sig = new KJUR.crypto.Signature({"alg": "SHA256withRSA"});
-                sig.init({prvkey: privateKeyPem});
-                sig.updateHex(dataHash);
-                const signature = sig.sign();
+                console.log("Attempting to initialize signature with privateKeyPem:", privateKeyPem.substring(0, 100) + "..."); // Log for debugging
+                const prvKeyObj = KEYUTIL.getKey(privateKeyPem);
+
+                const sig = new KJUR.crypto.Signature({
+                    alg: "SHA256withRSA"
+                });
+
+                sig.init(prvKeyObj);
+                sig.updateString(dataHash);
+
+                const signature = hextob64(sig.sign());
+
+                console.log("4. Signature:", signature.substring(0, 100) + "...");
 
 
                 document.getElementById('cilentSign').value = signature;
@@ -264,7 +286,7 @@
 
             } catch (error) {
                 console.error("Lỗi khi ký đơn hàng:", error);
-                keyStatus.textContent = "Lỗi khi ký đơn hàng. Vui lòng kiểm tra lại Private Key của bạn hoặc thử lại. Chi tiết lỗi: " + error.message;
+                keyStatus.textContent = "Lỗi khi ký đơn hàng. Vui lòng kiểm tra lại Private Key của bạn hoặc thử lại. Chi tiết lỗi: " + (error.message || error);
             }
         };
         reader.readAsText(privateKeyFile);
