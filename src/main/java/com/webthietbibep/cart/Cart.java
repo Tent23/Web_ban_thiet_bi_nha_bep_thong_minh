@@ -67,4 +67,35 @@ public class Cart implements Serializable {
     public String getFormatTotal(){
         return CartItem.Format(getTotal());
     }
+
+    public String toJson() {
+        StringBuilder json = new StringBuilder();
+        json.append("{\"items\":[");
+        boolean firstItem = true;
+        for (CartItem item : data.values()) {
+            if (!firstItem) {
+                json.append(",");
+            }
+            json.append("{");
+            json.append("\"productId\":").append(item.getProduct().getProduct_id()).append(",");
+            json.append("\"productName\":\"").append(escapeJson(item.getProduct().getProduct_name())).append("\",");
+            json.append("\"price\":").append(item.getPrice()).append(","); // Use price from CartItem (price_at_purchase)
+            json.append("\"quantity\":").append(item.getQuantity());
+            json.append("}");
+            firstItem = false;
+        }
+        json.append("]}");
+        return json.toString();
+    }
+
+    private String escapeJson(String text) {
+        if (text == null) {
+            return "";
+        }
+        return text.replace("\\", "\\\\")
+                   .replace("\"", "\\\"")
+                   .replace("\n", "\\n")
+                   .replace("\r", "\\r")
+                   .replace("\t", "\\t");
+    }
 }

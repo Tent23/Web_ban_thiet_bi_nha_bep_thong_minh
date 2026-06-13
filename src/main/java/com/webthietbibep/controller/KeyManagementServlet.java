@@ -41,7 +41,7 @@ public class KeyManagementServlet extends HttpServlet {
         currentUser = userDAO.findById(currentUser.getUser_id());
         session.setAttribute("user", currentUser);
 
-        req.getRequestDispatcher("/user/key_management.jsp").forward(req, resp);
+        req.getRequestDispatcher("/key-management.jsp").forward(req, resp);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class KeyManagementServlet extends HttpServlet {
             try {
                 KeyPair keyPair = KeyUtil.generateKeyPair();
                 String publicKeyBase64 = KeyUtil.encodePublicKey(keyPair.getPublic());
-                String privateKeyBase64 = KeyUtil.encodePrivateKey(keyPair.getPrivate());
+                String privateKeyPem = KeyUtil.encodePrivateKeyToPem(keyPair.getPrivate()); // Use new method
 
                 String publicKeyId = UUID.randomUUID().toString();
                 LocalDateTime creationDate = LocalDateTime.now();
@@ -77,15 +77,15 @@ public class KeyManagementServlet extends HttpServlet {
                 resp.setContentType("application/octet-stream");
                 resp.setHeader("Content-Disposition", "attachment; filename=\"private_key_" + currentUser.getUsername() + ".pem\"");
                 PrintWriter out = resp.getWriter();
-                out.print(privateKeyBase64);
+                out.print(privateKeyPem); // Send PEM formatted key
                 out.flush();
 
             } catch (NoSuchAlgorithmException e) {
                 req.setAttribute("errorMessage", "Lỗi: Thuật toán mã hóa không khả dụng. " + e.getMessage());
-                req.getRequestDispatcher("/user/key_management.jsp").forward(req, resp);
+                req.getRequestDispatcher("/key-management.jsp").forward(req, resp);
             } catch (Exception e) {
                 req.setAttribute("errorMessage", "Lỗi khi tạo khóa: " + e.getMessage());
-                req.getRequestDispatcher("/user/key_management.jsp").forward(req, resp);
+                req.getRequestDispatcher("/key-management.jsp").forward(req, resp);
             }
         } else if ("revokeKey".equals(action)) {
             try {
@@ -97,15 +97,15 @@ public class KeyManagementServlet extends HttpServlet {
                 session.setAttribute("user", currentUser);
 
                 req.setAttribute("successMessage", "Khóa công khai đã được thu hồi thành công.");
-                req.getRequestDispatcher("/user/key_management.jsp").forward(req, resp);
+                req.getRequestDispatcher("/key-management.jsp").forward(req, resp);
 
             } catch (Exception e) {
                 req.setAttribute("errorMessage", "Lỗi khi thu hồi khóa: " + e.getMessage());
-                req.getRequestDispatcher("/user/key_management.jsp").forward(req, resp);
+                req.getRequestDispatcher("/key-management.jsp").forward(req, resp);
             }
         } else {
             req.setAttribute("errorMessage", "Hành động không hợp lệ.");
-            req.getRequestDispatcher("/user/key_management.jsp").forward(req, resp);
+            req.getRequestDispatcher("/key-management.jsp").forward(req, resp);
         }
     }
 }

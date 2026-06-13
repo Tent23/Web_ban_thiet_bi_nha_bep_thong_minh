@@ -11,9 +11,9 @@ public class JDBIConnector {
     private static void makeConnect() {
         MysqlDataSource dataSource = new MysqlDataSource();
         // SỬA: Tên database, user, password của bạn
-        dataSource.setURL("jdbc:mysql://localhost:3306/web_nha_bep?useUnicode=true&characterEncoding=UTF-8");
+        dataSource.setURL("jdbc:mysql://localhost:3306/web_nha_bep1?useUnicode=true&characterEncoding=UTF-8");
         dataSource.setUser("root");
-        dataSource.setPassword("");
+        dataSource.setPassword("Root@123456");
 
         try {
             dataSource.setAutoReconnect(true);
