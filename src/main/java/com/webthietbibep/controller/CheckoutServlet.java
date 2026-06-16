@@ -86,6 +86,13 @@ public class CheckoutServlet extends HttpServlet {
         }
         String cilentSign =req.getParameter("cilentSign");
         String signedDataHash = req.getParameter("signedDataHash");
+        String signedData = req.getParameter("signedData");
+
+        System.out.println("========== TEST SIGN ==========");
+        System.out.println("signedData = " + signedData);
+        System.out.println("signature = " + cilentSign);
+        System.out.println("publicKey = " + user.getPublicKey());
+        System.out.println("===============================");
 
         if(cilentSign==null || cilentSign.isBlank()){
             req.getSession().setAttribute("error", "Vui lòng ký đơn hàng bằng Private Key của bạn.");
@@ -101,7 +108,7 @@ public class CheckoutServlet extends HttpServlet {
 
         try {
             String publicKeyPem = user.getPublicKey();
-            boolean isSignatureValid = KeyUtil.verifySign(signedDataHash, cilentSign, publicKeyPem);
+            boolean isSignatureValid = KeyUtil.verifySign(signedData, cilentSign, publicKeyPem);
 
             if (!isSignatureValid) {
                 req.getSession().setAttribute("error", "Chữ ký đơn hàng không hợp lệ. Vui lòng thử lại hoặc kiểm tra Private Key của bạn.");
@@ -146,8 +153,9 @@ public class CheckoutServlet extends HttpServlet {
         }
 
         order.setSignature(cilentSign);
+        order.setSignedData(signedData);
         if(user.getPublicKeyId() != null){
-            order.setKeyId(user.getPublicKeyId()); // Corrected: Assign String directly
+            order.setKeyId(user.getPublicKeyId());
         }
         int orderId;
 

@@ -19,6 +19,9 @@ public class Order implements Serializable {
     private String addressDetail;
     private String signature;
     private String keyId;
+    private boolean signatureVerified;
+    private String signedData;
+    private String verifyStatus;
 
     public Order() {
     }
@@ -142,5 +145,25 @@ public class Order implements Serializable {
     public String getFormattedTotal() {
         return CartItem.Format(total_amount);
     }
+    public boolean isSignatureVerified() {
+        return signatureVerified;
+    }
 
+    public void setSignatureVerified(boolean signatureVerified) {
+        this.signatureVerified = signatureVerified;
+    }
+    public String getSignedData() {
+        return signedData;
+    }
+
+    public void setSignedData(String signedData) {
+        this.signedData = signedData;
+    }
+    public String getVerifyStatus() {
+        return verifyStatus;
+    }
+
+    public void setVerifyStatus(String verifyStatus) {
+        this.verifyStatus = verifyStatus;
+    }
 }

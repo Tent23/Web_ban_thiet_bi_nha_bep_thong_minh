@@ -69,6 +69,9 @@
                         <th width="15%">Ngày đặt</th>
                         <th width="15%">Tổng tiền</th>
                         <th width="15%">Trạng thái</th>
+
+                        <th width="10%">Xác thực</th>
+
                         <th width="10%">Thanh toán</th>
                         <th width="15%" class="text-right">Hành động</th>
                     </tr>
@@ -123,6 +126,30 @@
                             </td>
 
                             <td>
+                                <c:choose>
+
+                                    <c:when test="${o.verifyStatus eq 'HOP_LE'}">
+            <span style="color:green;font-weight:bold">
+                ✓ Đã xác thực
+            </span>
+                                    </c:when>
+
+                                    <c:when test="${o.verifyStatus eq 'CHUA_KY_SO'}">
+            <span style="color:gray">
+                Chưa ký số
+            </span>
+                                    </c:when>
+
+                                    <c:otherwise>
+            <span style="color:red;font-weight:bold">
+                ✗ Không hợp lệ
+            </span>
+                                    </c:otherwise>
+
+                                </c:choose>
+                            </td>
+
+                            <td>
                                 <span style="font-size: 0.85rem; color: var(--admin-text-light);">
                                         ${o.payment_method == 'COD' ? 'Tiền mặt' : 'Chuyển khoản'}
                                 </span>
@@ -139,7 +166,7 @@
 
                     <c:if test="${empty orders}">
                         <tr>
-                            <td colspan="7" style="text-align: center; padding: 30px; color: var(--admin-text-light);">
+                            <td colspan="8" style="text-align: center; padding: 30px; color: var(--admin-text-light);">
                                 Không tìm thấy đơn hàng nào.
                             </td>
                         </tr>

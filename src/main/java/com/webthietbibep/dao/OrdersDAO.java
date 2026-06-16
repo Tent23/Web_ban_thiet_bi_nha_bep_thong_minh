@@ -3,6 +3,7 @@ package com.webthietbibep.dao;
 import com.webthietbibep.db.JDBIConnector;
 import com.webthietbibep.model.Order;
 import com.webthietbibep.model.OrderItem;
+import com.webthietbibep.utils.OrderVerifyUtil;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,8 +11,8 @@ public class OrdersDAO extends BaseDao {
     public int insert(Order o) {
         String sql = """
         INSERT INTO orders
-        (user_id, address_id, total_amount, status, payment_method, note,signature, key_id)
-        VALUES (:uid, :aid, :total, :status, :pm, :note,:sig, :kid)
+        (user_id, address_id, total_amount, status, payment_method, note,signature, key_id, signed_data)
+        VALUES (:uid, :aid, :total, :status, :pm, :note,:sig, :kid, :sdata)
     """;
 
         return get().withHandle(h ->
@@ -23,7 +24,8 @@ public class OrdersDAO extends BaseDao {
                         .bind("pm", o.getPayment_method())
                         .bind("note", o.getNote())
                         .bind("sig", o.getSignature())
-                        .bind("kid", o.getKeyId()) // keyId is now String
+                        .bind("kid", o.getKeyId())
+                        .bind("sdata", o.getSignedData())
                         .executeAndReturnGeneratedKeys("order_id")
                         .mapTo(int.class)
                         .one()
@@ -45,29 +47,39 @@ public class OrdersDAO extends BaseDao {
 
     public List<Order> getOrdersByUser(int userId) {
         String sql = """
-            SELECT
-                order_id,
-                user_id,
-                address_id,
-                total_amount,
-                status,
-                payment_method,
-                created_at,
-                note,
-                voucher_id,
-                signature,
-                key_id
-            FROM orders
-            WHERE user_id = :uid
-            ORDER BY created_at DESC
-        """;
+    SELECT
+        order_id,
+        user_id,
+        address_id,
+        total_amount,
+        status,
+        payment_method,
+        created_at,
+        note,
+        voucher_id,
+        signature,
+        key_id,
+        signed_data
+    FROM orders
+    WHERE user_id = :uid
+    ORDER BY created_at DESC
+""";
 
-        return get().withHandle(h ->
-                h.createQuery(sql)
-                        .bind("uid", userId)
-                        .mapToBean(Order.class)
-                        .list()
-        );
+        return get().withHandle(h -> {
+
+            List<Order> orders = h.createQuery(sql)
+                    .bind("uid", userId)
+                    .mapToBean(Order.class)
+                    .list();
+
+            for (Order o : orders) {
+                o.setVerifyStatus(
+                        OrderVerifyUtil.verifyOrder(o)
+                );
+            }
+
+            return orders;
+        });
     }
     public void cancelOrder(int orderId, int userId) {
         get().useHandle(h ->
@@ -85,31 +97,41 @@ public class OrdersDAO extends BaseDao {
     }
     public List<Order> getOrdersByUserAndStatus(int userId, String status) {
         String sql = """
-        SELECT
-            order_id,
-            user_id,
-            address_id,
-            total_amount,
-            status,
-            payment_method,
-            created_at,
-            note,
-            voucher_id,
-            signature,
-            key_id
-        FROM orders
-        WHERE user_id = :uid
-          AND status = :status
-        ORDER BY created_at DESC
-    """;
+    SELECT
+        order_id,
+        user_id,
+        address_id,
+        total_amount,
+        status,
+        payment_method,
+        created_at,
+        note,
+        voucher_id,
+        signature,
+        key_id,
+        signed_data
+    FROM orders
+    WHERE user_id = :uid
+      AND status = :status
+    ORDER BY created_at DESC
+""";
 
-        return get().withHandle(h ->
-                h.createQuery(sql)
-                        .bind("uid", userId)
-                        .bind("status", status)
-                        .mapToBean(Order.class)
-                        .list()
-        );
+        return get().withHandle(h -> {
+
+            List<Order> orders = h.createQuery(sql)
+                    .bind("uid", userId)
+                    .bind("status", status)
+                    .mapToBean(Order.class)
+                    .list();
+
+            for (Order o : orders) {
+                o.setVerifyStatus(
+                        OrderVerifyUtil.verifyOrder(o)
+                );
+            }
+
+            return orders;
+        });
     }
     public List<Order> getAllOrders() {
         String sql = """
@@ -118,8 +140,9 @@ public class OrdersDAO extends BaseDao {
                 o.status, o.payment_method, o.created_at, o.note, o.voucher_id,
                 o.signature,
                 o.key_id,
-                -- Lấy tên tài khoản đặt hàng
+                o.signed_data,
                 u.full_name AS userName,
+              
 
                 -- Ghép địa chỉ từ bảng user_addresses thành 1 chuỗi duy nhất
                 CONCAT_WS(', ', ua.address_detail, ua.ward, ua.district, ua.province) AS addressDetail,
@@ -133,11 +156,20 @@ public class OrdersDAO extends BaseDao {
             ORDER BY o.created_at DESC
         """;
 
-        return JDBIConnector.get().withHandle(handle ->
-                handle.createQuery(sql)
-                        .mapToBean(Order.class)
-                        .list()
-        );
+        return JDBIConnector.get().withHandle(handle -> {
+
+            List<Order> orders = handle.createQuery(sql)
+                    .mapToBean(Order.class)
+                    .list();
+
+            for (Order o : orders) {
+                o.setVerifyStatus(
+                        OrderVerifyUtil.verifyOrder(o)
+                );
+            }
+
+            return orders;
+        });
     }
 
     public Order getOrderById(int orderId) {
@@ -147,6 +179,7 @@ public class OrdersDAO extends BaseDao {
                 o.status, o.payment_method, o.created_at, o.note, o.voucher_id,
                 o.signature,
                 o.key_id,
+                o.signed_data,
                 u.full_name AS userName,
                 CONCAT_WS(', ', ua.address_detail, ua.ward, ua.district, ua.province) AS addressDetail
             FROM orders o
@@ -155,13 +188,22 @@ public class OrdersDAO extends BaseDao {
             WHERE o.order_id = :id
         """;
 
-        return JDBIConnector.get().withHandle(handle ->
-                handle.createQuery(sql)
-                        .bind("id", orderId)
-                        .mapToBean(Order.class)
-                        .findOne()
-                        .orElse(null)
-        );
+        return JDBIConnector.get().withHandle(handle -> {
+
+            Order order = handle.createQuery(sql)
+                    .bind("id", orderId)
+                    .mapToBean(Order.class)
+                    .findOne()
+                    .orElse(null);
+
+            if (order != null) {
+                order.setVerifyStatus(
+                        OrderVerifyUtil.verifyOrder(order)
+                );
+            }
+
+            return order;
+        });
     }
 
 
