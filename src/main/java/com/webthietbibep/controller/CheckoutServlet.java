@@ -88,6 +88,12 @@ public class CheckoutServlet extends HttpServlet {
         String signedDataHash = req.getParameter("signedDataHash");
         String signedData = req.getParameter("signedData");
 
+        System.out.println("========== TEST SIGN ==========");
+        System.out.println("signedData = " + signedData);
+        System.out.println("signature = " + cilentSign);
+        System.out.println("publicKey = " + user.getPublicKey());
+        System.out.println("===============================");
+
         if(cilentSign==null || cilentSign.isBlank()){
             req.getSession().setAttribute("error", "Vui lòng ký đơn hàng bằng Private Key của bạn.");
             resp.sendRedirect("cart");

@@ -76,18 +76,29 @@
             </c:if>
 
             <c:forEach var="o" items="${orders}">
-                <c:set var="orderCheck" value="${verifiOrder[o.order_id]}" />
+                <c:set var="orderCheck" value="${o.verifyStatus}" />
                 <div class="order-card">
 
                     <c:choose>
                         <c:when test="${orderCheck eq 'HOP_LE'}">
-                            <span class="badge-secure"><i class="fa-solid fa-check"></i> Đã xác thực</span>
+                            <span class="badge-secure">
+                              <i class="fa-solid fa-check"></i>
+                                 Đã xác thực
+                            </span>
                         </c:when>
+
                         <c:when test="${orderCheck eq 'CHUA_KY_SO'}">
-                            <span style="color: gray; font-size: 0.85rem;">Chưa ký số</span>
+                            <span style="color: gray;">
+                            Chưa ký số
+                            </span>
                         </c:when>
+
                         <c:otherwise>
-                            <span class="badge-warning-tamper"><i class="fa-solid fa-triangle-exclamation"></i> Chữ ký số không khớp</span>
+                            <span class="badge-warning-tamper">
+                         <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        Chữ ký không hợp lệ
+                             </span>
                         </c:otherwise>
                     </c:choose>
 
