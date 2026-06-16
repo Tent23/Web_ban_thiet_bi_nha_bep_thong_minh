@@ -45,4 +45,17 @@ public class UserKeyDAO extends BaseDao {
                         .execute()
         );
     }
+    public String getPublicKeyByKeyId(String keyId){
+        return get().withHandle(h ->
+                h.createQuery("""
+            SELECT public_key
+            FROM user_keys
+            WHERE key_id = :kid
+        """)
+                        .bind("kid", keyId)
+                        .mapTo(String.class)
+                        .findOne()
+                        .orElse(null)
+        );
+    }
 }

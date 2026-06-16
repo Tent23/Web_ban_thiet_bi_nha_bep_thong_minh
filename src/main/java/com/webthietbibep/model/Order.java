@@ -19,6 +19,7 @@ public class Order implements Serializable {
     private String addressDetail;
     private String signature;
     private String keyId;
+    private boolean signatureVerified;
 
     public Order() {
     }
@@ -141,6 +142,13 @@ public class Order implements Serializable {
 
     public String getFormattedTotal() {
         return CartItem.Format(total_amount);
+    }
+    public boolean isSignatureVerified() {
+        return signatureVerified;
+    }
+
+    public void setSignatureVerified(boolean signatureVerified) {
+        this.signatureVerified = signatureVerified;
     }
 
 }
