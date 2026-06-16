@@ -1,7 +1,9 @@
 package com.webthietbibep.controller;
 
 import com.webthietbibep.dao.UserDAO;
+import com.webthietbibep.dao.UserKeyDAO;
 import com.webthietbibep.model.User;
+import com.webthietbibep.model.UserKey;
 import com.webthietbibep.utils.KeyUtil;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -21,11 +23,13 @@ import java.util.UUID;
 public class KeyManagementServlet extends HttpServlet {
 
     private UserDAO userDAO;
+    private UserKeyDAO userKeyDAO;
 
     @Override
     public void init() throws ServletException {
         super.init();
         userDAO = new UserDAO();
+        userKeyDAO = new UserKeyDAO();
     }
 
     @Override
@@ -63,6 +67,13 @@ public class KeyManagementServlet extends HttpServlet {
 
                 String publicKeyId = UUID.randomUUID().toString();
                 LocalDateTime creationDate = LocalDateTime.now();
+                UserKey key = new UserKey();
+                key.setKeyId(publicKeyId);
+                key.setUserId(currentUser.getUser_id());
+                key.setPublicKey(publicKeyBase64);
+                key.setCreatedAt(creationDate);
+
+                userKeyDAO.insert(key);
 
 
                 userDAO.updatePublicKeyInfo(currentUser.getUser_id(), publicKeyBase64, publicKeyId, creationDate, null);
@@ -91,6 +102,10 @@ public class KeyManagementServlet extends HttpServlet {
             try {
 
                 userDAO.revokePublicKey(currentUser.getUser_id(), LocalDateTime.now());
+                userKeyDAO.revokeKey(
+                        currentUser.getPublicKeyId(),
+                        LocalDateTime.now()
+                );
 
 
                 currentUser.setPublicKeyRevocationDate(LocalDateTime.now());
