@@ -10,8 +10,8 @@ public class OrdersDAO extends BaseDao {
     public int insert(Order o) {
         String sql = """
         INSERT INTO orders
-        (user_id, address_id, total_amount, status, payment_method, note,signature, key_id)
-        VALUES (:uid, :aid, :total, :status, :pm, :note,:sig, :kid)
+        (user_id, address_id, total_amount, status, payment_method, note,signature, key_id, signed_data)
+        VALUES (:uid, :aid, :total, :status, :pm, :note,:sig, :kid, :sdata)
     """;
 
         return get().withHandle(h ->
@@ -23,7 +23,8 @@ public class OrdersDAO extends BaseDao {
                         .bind("pm", o.getPayment_method())
                         .bind("note", o.getNote())
                         .bind("sig", o.getSignature())
-                        .bind("kid", o.getKeyId()) // keyId is now String
+                        .bind("kid", o.getKeyId())
+                        .bind("sdata", o.getSignedData())
                         .executeAndReturnGeneratedKeys("order_id")
                         .mapTo(int.class)
                         .one()

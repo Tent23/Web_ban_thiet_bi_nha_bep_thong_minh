@@ -20,6 +20,7 @@ public class Order implements Serializable {
     private String signature;
     private String keyId;
     private boolean signatureVerified;
+    private String signedData;
 
     public Order() {
     }
@@ -150,5 +151,11 @@ public class Order implements Serializable {
     public void setSignatureVerified(boolean signatureVerified) {
         this.signatureVerified = signatureVerified;
     }
+    public String getSignedData() {
+        return signedData;
+    }
 
+    public void setSignedData(String signedData) {
+        this.signedData = signedData;
+    }
 }

@@ -27,6 +27,7 @@
         <input type="hidden" name="mode" value="${mode}">
         <input type="hidden" id="cilentSign" name="cilentSign">
         <input type="hidden" id="signedDataHash" name="signedDataHash">
+        <input type="hidden" id="signedData" name="signedData">
 
 
         <c:choose>
@@ -247,6 +248,7 @@
                 };
 
                 const jsonString = JSON.stringify(dataToSign);
+                document.getElementById("signedData").value = jsonString;
                 console.log("2. JSON String to sign:", jsonString);
 
 
