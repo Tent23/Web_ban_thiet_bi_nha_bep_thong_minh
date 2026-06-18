@@ -7,6 +7,11 @@
 </head>
 <body>
 <div class="container">
+    <div class="back-container">
+        <a href="${pageContext.request.contextPath}/profile" class="back-btn-box">
+            <span class="back-icon">←</span> Quay lại
+        </a>
+    </div>
   <h1>Quản lý Khóa Bảo Mật Cá Nhân</h1>
 
   <c:if test="${not empty errorMessage}">
